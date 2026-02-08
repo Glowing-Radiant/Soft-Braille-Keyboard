@@ -14,6 +14,7 @@
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/Speech.java
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/PadUtilities.java
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/IntentActivity.java
+/home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/BrailleAccessibilityService.java
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/ActionHandler.java
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/MainActivity.java
 /home/runner/work/Soft-Braille-Keyboard/Soft-Braille-Keyboard/app/src/main/java/com/dalton/braillekeyboard/EditingUtilities.java

@@ -85,24 +85,57 @@ Access settings from:
 
 Configure:
 - Braille table (language and grade)
+- **Contraction Braille (Grade 2):** For faster input using English contractions
 - Keyboard orientation and style
 - Feedback preferences (vibration, sound, speech)
 - Echo settings (character, word, or both)
 - Voice input options
 - Privacy mode
 
+#### Using Contraction Braille (Grade 2)
+
+The keyboard now fully supports English contraction braille tables:
+- **en-UEB-g2:** Unified English Braille Grade 2 with contractions
+- **en-US-g2:** US English Grade 2 with contractions
+
+To enable contraction braille:
+1. Open keyboard Settings
+2. Go to **Braille Table**
+3. Select **Literary (Grade 1/2)** as the braille type
+4. Choose **en-UEB-g2** or **en-US-g2** from the table list
+5. Use standard braille contractions for faster typing
+
+Contraction braille allows you to type common words and letter combinations more quickly using standard Grade 2 contractions.
+
 ## Screen Reader Compatibility
 
 ### Using with TalkBack or Other Screen Readers
 
-**Good News:** You don't need to do anything special!
+**Good News:** The keyboard now includes an optional Accessibility Service for seamless integration!
 
-The keyboard now works perfectly with:
+The keyboard works perfectly with:
 - ✅ Google TalkBack
 - ✅ Android Voice Assistant
 - ✅ Third-party screen readers
 - ✅ BrailleBack
 - ✅ Any other accessibility service
+
+#### Enabling the Accessibility Service (Recommended for TalkBack Users)
+
+For the best experience with TalkBack:
+
+1. Go to Android **Settings** → **Accessibility**
+2. Find **Soft Braille Keyboard** in the list of services
+3. Enable the **Soft Braille Keyboard Accessibility Service**
+4. Grant the requested permissions
+
+**What does this do?**
+- Prevents conflicts between TalkBack's touch exploration and multi-touch braille input
+- Ensures smooth recognition of dots 1, 2, 3 and all other braille combinations
+- Provides better overall integration with screen readers
+- Does NOT interfere with TalkBack's normal operation
+
+**Note:** This is optional. The keyboard will work without it, but enabling the service provides a smoother multi-touch experience.
 
 **When touch exploration is enabled**, you'll receive:
 - Helpful spoken instructions
@@ -120,10 +153,12 @@ The keyboard works equally well without any screen reader:
 
 ### For Screen Reader Users
 
-1. **Enable helpful descriptions:** The keyboard provides audio guidance when you hover over it
-2. **Learn the gestures:** Swipe gestures are announced when you use them
-3. **Customize feedback:** Adjust speech, vibration, and sound in settings
-4. **Use the practice field:** Try the keyboard in the app's practice area first
+1. **Enable the Accessibility Service:** Go to Android Settings → Accessibility and enable the Soft Braille Keyboard service for better multi-touch support
+2. **Enable helpful descriptions:** The keyboard provides audio guidance when you hover over it
+3. **Learn the gestures:** Swipe gestures are announced when you use them
+4. **Customize feedback:** Adjust speech, vibration, and sound in settings
+5. **Use the practice field:** Try the keyboard in the app's practice area first
+6. **Try Grade 2 Braille:** If you're familiar with contractions, enable Grade 2 (en-UEB-g2 or en-US-g2) for faster typing
 
 ### For All Users
 
@@ -134,9 +169,16 @@ The keyboard works equally well without any screen reader:
 
 ## Supported Languages
 
-The keyboard supports multiple languages and braille tables:
-- English (UEB and Computer Braille)
-- And many more...
+The keyboard supports multiple languages and braille tables, including both Grade 1 (uncontracted) and Grade 2 (contracted) braille:
+
+**English:**
+- English UEB Grade 1 (en-UEB-g1)
+- **English UEB Grade 2 with contractions (en-UEB-g2)** ✨ New!
+- English US Grade 1 (en-US-g1)
+- **English US Grade 2 with contractions (en-US-g2)** ✨ New!
+- English US Computer Braille (en-US-comp8)
+
+**And many more languages...**
 
 Check Settings → Braille Table to see all available options.
 
@@ -156,12 +198,24 @@ Check Settings → Braille Table to see all available options.
 
 ### Keyboard Not Working with Screen Reader
 
-**This should no longer be an issue!** The keyboard now works with all screen readers.
+The keyboard includes an optional Accessibility Service for better integration!
 
 If you experience problems:
-1. Restart the keyboard (switch to another input method and back)
-2. Check that both the keyboard and screen reader are enabled
-3. Try the practice field in the app first
+1. **Enable the Accessibility Service:** Go to Settings → Accessibility → Soft Braille Keyboard and enable it
+2. Restart the keyboard (switch to another input method and back)
+3. Check that both the keyboard and screen reader are enabled
+4. Try the practice field in the app first
+
+**Multi-touch issues (dots 1, 2, 3 not registering smoothly)?**
+- Enable the Soft Braille Keyboard Accessibility Service in Android Settings
+- This provides better multi-touch detection when using TalkBack
+
+### Contraction Braille Not Working
+
+If Grade 2 (contraction) braille isn't working as expected:
+1. Verify you've selected a Grade 2 table (en-UEB-g2 or en-US-g2)
+2. Make sure Braille Type is set to "Literary" not "Computer"
+3. Consult a Grade 2 braille reference for correct contraction patterns
 
 ## Privacy & Permissions
 
