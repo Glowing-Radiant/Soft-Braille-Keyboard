@@ -23,6 +23,9 @@ import com.googlecode.eyesfree.braille.translate.TranslatorClient;
 
 // TODO(ddalton): Find a way to use the service directly without this class.
 public class MyTranslatorClient extends TranslatorClient {
+    // Inherit SUCCESS constant from parent
+    public static final int SUCCESS = TranslatorClient.SUCCESS;
+    
     private Intent mServiceIntent;
 
     public MyTranslatorClient(Context context, OnInitListener onInitListener) {

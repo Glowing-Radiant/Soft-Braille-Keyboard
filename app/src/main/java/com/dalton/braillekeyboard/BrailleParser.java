@@ -410,7 +410,7 @@ public class BrailleParser {
         TableInfo table = getTable(context);
         if (table != null
                 && (status == STATUS_OK || status == STATUS_TABLE_ERROR)) {
-            translator = client.getTranslator(table.getId());
+            translator = client.getTranslator(table);
             status = translator == null ? STATUS_TABLE_ERROR : STATUS_OK;
             return true;
         }

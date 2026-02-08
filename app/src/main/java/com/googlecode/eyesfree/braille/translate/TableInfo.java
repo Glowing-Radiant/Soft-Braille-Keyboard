@@ -8,21 +8,28 @@ public class TableInfo implements Parcelable {
     private String id;
     private Locale locale;
     private int grade;
+    private boolean eightDot;
     
     public TableInfo() {
         this.id = "";
         this.locale = Locale.US;
         this.grade = 1;
+        this.eightDot = false;
     }
     
     public TableInfo(String id) {
         this.id = id;
         this.locale = Locale.US;
         this.grade = 1;
+        this.eightDot = false;
     }
     
     public String getId() {
         return id;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
     }
     
     public Locale getLocale() {
@@ -41,6 +48,14 @@ public class TableInfo implements Parcelable {
         this.grade = grade;
     }
     
+    public boolean isEightDot() {
+        return eightDot;
+    }
+    
+    public void setEightDot(boolean eightDot) {
+        this.eightDot = eightDot;
+    }
+    
     @Override
     public int describeContents() {
         return 0;
@@ -51,6 +66,7 @@ public class TableInfo implements Parcelable {
         dest.writeString(id);
         dest.writeString(locale != null ? locale.toString() : "en_US");
         dest.writeInt(grade);
+        dest.writeByte((byte) (eightDot ? 1 : 0));
     }
     
     public static final Parcelable.Creator<TableInfo> CREATOR = new Parcelable.Creator<TableInfo>() {
@@ -60,6 +76,7 @@ public class TableInfo implements Parcelable {
             String localeStr = in.readString();
             info.locale = localeStr != null ? new Locale(localeStr) : Locale.US;
             info.grade = in.readInt();
+            info.eightDot = in.readByte() != 0;
             return info;
         }
         

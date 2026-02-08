@@ -16,6 +16,7 @@ gen/
 out/
 build/
 app/build/
+manual_build/
 
 # Gradle files
 .gradle/

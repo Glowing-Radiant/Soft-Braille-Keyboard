@@ -8,6 +8,10 @@ import java.util.List;
 
 public class TranslatorClient {
     
+    // Status constants
+    public static final int SUCCESS = 0;
+    public static final int ERROR = -1;
+    
     public interface OnInitListener {
         void onInit(int status);
     }
@@ -22,7 +26,7 @@ public class TranslatorClient {
             new Handler().post(new Runnable() {
                 @Override
                 public void run() {
-                    listener.onInit(0);
+                    listener.onInit(SUCCESS);
                 }
             });
         }
