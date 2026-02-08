@@ -21,6 +21,12 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Setup Android NDK
+      uses: android-actions/setup-android@v3
+
+    - name: Install NDK
+      run: sdkmanager --install "ndk;25.2.9519653"
+
     - name: Remove local.properties
       run: rm -f local.properties
 
