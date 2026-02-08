@@ -1,24 +1,29 @@
 # APK Build Information
 
 ## Build Date
-February 8, 2026
+February 8, 2026 (Updated)
 
 ## APK Details
 - **File:** SoftBrailleKeyboard.apk
 - **Location:** Root directory of repository
 - **Size:** 1.1 MB
+- **Package:** com.dalton.braillekeyboard
+- **Version Code:** 56
+- **Version Name:** 3.1.0
 - **Build Method:** Manual build using Android SDK tools
 - **Status:** Unsigned (for development/testing)
 
 ## Build Process
 
 The APK was built using the `manual_build.sh` script, which:
-1. Compiles resources using aapt2
+1. Compiles resources using aapt2 with version information
 2. Generates R.java files
 3. Compiles 24 Java source files
 4. Produces 82 .class files
 5. Converts to DEX format (119 KB)
 6. Packages into APK and aligns
+
+**Important:** Version code (56) and version name (3.1.0) are now properly set during the build to avoid "package name invalid" errors.
 
 ## Included Features
 

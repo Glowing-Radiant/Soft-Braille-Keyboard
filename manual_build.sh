@@ -30,6 +30,8 @@ $BUILD_TOOLS/aapt2 link \
     --manifest "$PROJECT_DIR/app/src/main/AndroidManifest.xml" \
     --java "$BUILD_DIR/gen" \
     --auto-add-overlay \
+    --version-code 56 \
+    --version-name "3.1.0" \
     "$BUILD_DIR/compiled_res"/*.flat
 
 # Compile Java sources
