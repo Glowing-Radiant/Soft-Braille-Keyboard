@@ -19,7 +19,12 @@ public class TranslatorClient {
     public void setOnInitListener(OnInitListener listener) {
         // Stub: call listener immediately with success
         if (listener != null) {
-            new Handler().post(() -> listener.onInit(0));
+            new Handler().post(new Runnable() {
+                @Override
+                public void run() {
+                    listener.onInit(0);
+                }
+            });
         }
     }
     

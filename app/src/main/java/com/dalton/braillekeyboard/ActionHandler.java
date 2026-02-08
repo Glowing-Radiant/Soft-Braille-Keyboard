@@ -24,7 +24,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.inputmethodservice.Keyboard;
-import androidx.core.content.ContextCompat;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dalton.braillekeyboard.EditingUtilities.Word;
@@ -879,7 +878,7 @@ public class ActionHandler {
     // Handle voice input.
     public boolean doVoiceInput(final Context context, boolean fastDoubleSwipe) {
         // Check for the "dangerous permission" for Android 6 and higher.
-        if (ContextCompat.checkSelfPermission(context,
+        if (context.checkSelfPermission(
                 Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             // Fast double swipe to show the permission dialog so we don't
             // surprise the user having no screen reader or talking keyboard in

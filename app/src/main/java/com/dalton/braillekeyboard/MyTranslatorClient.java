@@ -26,8 +26,8 @@ public class MyTranslatorClient extends TranslatorClient {
     private Intent mServiceIntent;
 
     public MyTranslatorClient(Context context, OnInitListener onInitListener) {
-        mContext = context;
-        mOnInitListener = onInitListener;
+        super(context, false);
+        setOnInitListener(onInitListener);
         mServiceIntent = new Intent(
                 context,
                 com.googlecode.eyesfree.braille.service.translate.TranslatorService.class);
@@ -35,12 +35,7 @@ public class MyTranslatorClient extends TranslatorClient {
     }
 
     private void doBindService() {
-        Connection localConnection = new Connection();
-        if (!mContext.bindService(mServiceIntent, localConnection,
-                Context.BIND_AUTO_CREATE)) {
-            mHandler.scheduleRebind();
-            return;
-        }
-        mConnection = localConnection;
+        // Stub: Service binding handled in parent class
     }
 }
+

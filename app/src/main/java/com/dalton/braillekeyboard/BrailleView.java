@@ -28,7 +28,6 @@ import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.os.Vibrator;
-import androidx.core.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -324,11 +323,11 @@ public class BrailleView extends View {
                 getWidth(), getHeight());
         int height = displayParams.autoRotate ? getHeight() : Math.min(
                 getWidth(), getHeight());
-        int action = MotionEventCompat.getActionMasked(motionEvent);
-        int index = MotionEventCompat.getActionIndex(motionEvent);
-        int id = MotionEventCompat.getPointerId(motionEvent, index);
-        int x = (int) MotionEventCompat.getX(motionEvent, index);
-        int y = (int) MotionEventCompat.getY(motionEvent, index);
+        int action = motionEvent.getActionMasked();
+        int index = motionEvent.getActionIndex();
+        int id = motionEvent.getPointerId(index);
+        int x = (int) motionEvent.getX(index);
+        int y = (int) motionEvent.getY(index);
 
         // Swap x and y if the view is being used perpendicular to it's intended
         // purpose see above.
@@ -392,11 +391,11 @@ public class BrailleView extends View {
                 invalidate();
             }
             break;
-        case MotionEventCompat.ACTION_HOVER_MOVE:
+        case MotionEvent.ACTION_HOVER_MOVE:
         case MotionEvent.ACTION_MOVE:
             updatePointer(dotsDown, id, x, y, false);
             break;
-        case MotionEventCompat.ACTION_POINTER_UP:
+        case MotionEvent.ACTION_POINTER_UP:
             if (!setPad(id, width, height, displayParams.autoRotate)) {
                 updatePointer(dotsDown, id, x, y, false);
                 setDots();

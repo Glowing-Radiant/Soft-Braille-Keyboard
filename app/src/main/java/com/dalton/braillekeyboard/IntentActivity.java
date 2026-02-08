@@ -22,7 +22,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
 
 /**
  * An Activity used purely for handling intents that require a backing activity.
@@ -83,7 +82,7 @@ public class IntentActivity extends Activity {
 
     // Ask the system to prompt the user for the record audio permission.
     private void askUserForRecordAudioPermission() {
-        ActivityCompat.requestPermissions(this,
+        requestPermissions(
                 new String[] { Manifest.permission.RECORD_AUDIO },
                 PERMISSION_RECORD_AUDIO_REQUEST);
     }

@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
-import androidx.core.content.ContextCompat;
 import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
@@ -89,7 +88,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             // Android 6+ show a permission dialog for record audio dangerous
             // permission.
             // Only do this once on the very first run though.
-            if (ContextCompat.checkSelfPermission(this,
+            if (checkSelfPermission(
                     Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
                 Intent intent = new Intent(this, IntentActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
