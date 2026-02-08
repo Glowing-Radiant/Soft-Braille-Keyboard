@@ -220,13 +220,11 @@ public class BrailleView extends View {
                                 R.string.pref_show_circles_default)))) {
             // We should show a visual representation of the view according to
             // user preference.
+            
+            // Provide helpful description for screen reader users
             if (accessibilityManager.isTouchExplorationEnabled()) {
-                // Display a message saying that talkback needs to be disabled.
-                // canvas.drawText(
-                // getContext().getString(R.string.switch_off_talkback),
-                // displayParams.x, displayParams.y, paint);
                 setContentDescription(getContext().getString(
-                        R.string.switch_off_talkback));
+                        R.string.braille_keyboard_ready));
             } else {
                 setContentDescription(null);
             }
@@ -247,8 +245,9 @@ public class BrailleView extends View {
         } else if (shrinkKeyboard) {
             String text = getContext().getString(R.string.expand_keyboard);
             if (accessibilityManager.isTouchExplorationEnabled()) {
+                // Use more descriptive text for screen reader users
                 text = getContext()
-                        .getString(R.string.expand_keyboard_talkback);
+                        .getString(R.string.expand_keyboard_accessible);
             }
             canvas.drawText(text, displayParams.x, displayParams.y, paint);
             setContentDescription(text);
@@ -292,16 +291,18 @@ public class BrailleView extends View {
 
     @Override
     public boolean onHoverEvent(MotionEvent event) {
+        // Provide helpful feedback for screen reader users
         if (accessibilityManager.isTouchExplorationEnabled()) {
             if (shrinkKeyboard) {
                 speech.speak(
                         getContext(),
                         getContext().getString(
-                                R.string.expand_keyboard_talkback),
+                                R.string.expand_keyboard_accessible),
                         Speech.QUEUE_FLUSH);
             } else {
+                // Provide helpful instructions for using the braille keyboard
                 speech.speak(getContext(),
-                        getContext().getString(R.string.switch_off_talkback),
+                        getContext().getString(R.string.braille_keyboard_instructions),
                         Speech.QUEUE_FLUSH);
             }
         }

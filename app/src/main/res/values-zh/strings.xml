@@ -18,8 +18,10 @@
     <string name="deleted">已刪除 %s</string>
     <string name="delete_selection">移除選取</string>
     <string name="end_of_text">文字結尾</string>
-    <string name="expand_keyboard_talkback">雙點此處擴展鍵盤</string>
+    <string name="expand_keyboard_accessible">雙點此處擴展鍵盤</string>
     <string name="expand_keyboard">輕點此處擴展鍵盤</string>
+    <string name="braille_keyboard_ready">點字鍵盤準備就緒。使用六個或八個手指位置以點字輸入。</string>
+    <string name="braille_keyboard_instructions">點字鍵盤已啟用。用最多六根手指觸摸螢幕以輸入點字。滑動以執行編輯命令。</string>
     <string name="grade_computer">電腦點字</string>
     <string name="grade_literary">書面點字</string>
     <string name="grade_table">%s 級</string>
@@ -124,7 +126,7 @@
     <string name="swipe_confirm_input">再滑一次顯示鍵盤選擇器</string>
     <string name="swipe_confirm_settings">再滑一次顯示軟點設定</string>
     <string name="swipe_confirm">再滑一次確認</string>
-    <string name="switch_off_talkback">請停用 talkback. 要這麼做可以畫 l 的手勢, 先往下再往右滑，然後觸摸螢幕左上角的暫停回應。Talkback 可以隨時按兩次電源鍵來重啟。</string>
+    <string name="screen_reader_compatible">此鍵盤與螢幕閱讀器相容。您可以將其與任何輔助功能服務一起使用。</string>
     <string name="translator_error">點字服務有一個問題</string>
     <string name="try_box">請在這裡打字.</string>
     <string name="unknown_character">未知的字元</string>

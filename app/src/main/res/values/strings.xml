@@ -70,9 +70,10 @@
     <string name="auto_caps_enabled">Auto-capitalisation</string>
     <string name="blank">Blank</string>
     <string name="braille_ime">Soft Braille Keyboard</string>
-    <string name="button_choose_default_keyboard">Set Soft Braille Keyboard as the default keyboard</string>
-    <string name="button_keyboard_settings">Enable Soft Braille Keyboard</string>
-    <string name="button_more_info">Read the quick start guide</string>
+    <string name="button_choose_default_keyboard">Set as default keyboard</string>
+    <string name="button_keyboard_settings">Enable keyboard</string>
+    <string name="button_more_info">Read the user guide</string>
+    <string name="welcome_message">Welcome to Soft Braille Keyboard - A braille input method that works with any screen reader or accessibility service.</string>
     <string name="capital">Capital %s</string>
     <string name="closing_keyboard">Closing keyboard</string>
     <string name="copied">Copied</string>
@@ -81,8 +82,10 @@
     <string name="deleted">Deleted %s</string>
     <string name="delete_selection">Delete selection</string>
     <string name="end_of_text">End of text</string>
-    <string name="expand_keyboard_talkback">Double tap here to expand the keyboard</string>
+    <string name="expand_keyboard_accessible">Double tap here to expand the keyboard</string>
     <string name="expand_keyboard">Tap here to expand the keyboard</string>
+    <string name="braille_keyboard_ready">Braille keyboard ready. Use six or eight finger positions to type in braille.</string>
+    <string name="braille_keyboard_instructions">Braille keyboard active. Touch the screen with up to six fingers to input braille dots. Swipe for editing commands.</string>
     <string name="grade_computer">Computer Braille</string>
     <string name="grade">Default Braille grade</string>
     <string name="grade_literary">Literary Braille</string>
@@ -187,7 +190,8 @@
     <string name="swipe_confirm_input">Swipe again to display the keyboard chooser</string>
     <string name="swipe_confirm_settings">Swipe again to show Soft Braille Keyboard settings</string>
     <string name="swipe_confirm">Swipe again to confirm</string>
-    <string name="switch_off_talkback">Please disable talkback. You can do this by performing the l gesture, swipe down and then to the right, and explore the circle to find the pause feedback option at the top left. Talkback can be restarted at any time by double pressing the power button</string>
+    <string name="screen_reader_compatible">This keyboard is compatible with screen readers. You can use it with any accessibility service.</string>
+    <string name="setup_instructions">To use this keyboard: 1. Enable the keyboard in settings. 2. Set it as your default keyboard. 3. Start typing in any text field.</string>
     <string name="translator_error">There is a problem with the Braille service</string>
     <string name="try_box">Try typing with the keyboard here.</string>
     <string name="unknown_character">Unknown character</string>
