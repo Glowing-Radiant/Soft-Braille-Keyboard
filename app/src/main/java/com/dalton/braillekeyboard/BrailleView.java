@@ -394,7 +394,21 @@ public class BrailleView extends View {
             break;
         case MotionEvent.ACTION_HOVER_MOVE:
         case MotionEvent.ACTION_MOVE:
-            updatePointer(dotsDown, id, x, y, false);
+            // Update all active pointers for better multi-touch support
+            // This is especially important for dots 1, 2, 3 combinations
+            int pointerCount = motionEvent.getPointerCount();
+            for (int i = 0; i < pointerCount; i++) {
+                int pointerId = motionEvent.getPointerId(i);
+                int pointerX = (int) motionEvent.getX(i);
+                int pointerY = (int) motionEvent.getY(i);
+                
+                // Apply same coordinate transformation as for ACTION_DOWN
+                int tempPointerX = pointerX;
+                pointerX = displayParams.autoRotate || getWidth() >= getHeight() ? pointerX : pointerY;
+                pointerY = displayParams.autoRotate || getWidth() >= getHeight() ? pointerY : tempPointerX;
+                
+                updatePointer(dotsDown, pointerId, pointerX, pointerY, false);
+            }
             break;
         case MotionEvent.ACTION_POINTER_UP:
             if (!setPad(id, width, height, displayParams.autoRotate)) {
