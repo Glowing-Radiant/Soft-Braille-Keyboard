@@ -298,12 +298,6 @@
     <string name="punctuation_right_brace">Right brace</string>
     
     <!--
-      Source: Description for the Braille Accessibility Service.
-      Description: This is shown to the user in accessibility settings. [CHAR LIMIT="NONE"]
-    -->
-    <string name="accessibility_service_description">Soft Braille Keyboard Accessibility Service.\n\nThis service allows the Braille keyboard to work seamlessly with screen readers like TalkBack. When enabled, it enables better multi-touch Braille input by preventing conflicts with touch exploration.\n\nEnable this service if you use TalkBack or other screen readers with the Soft Braille Keyboard.</string>
-    
-    <!--
       Source: Preference key for debug mode.
       Description: Internal preference key for debug mode. [CHAR LIMIT="NONE"]
     -->
