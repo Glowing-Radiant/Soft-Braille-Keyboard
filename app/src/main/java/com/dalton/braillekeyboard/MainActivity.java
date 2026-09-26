@@ -66,6 +66,11 @@ public class MainActivity extends Activity {
                 android.provider.Settings.ACTION_INPUT_METHOD_SETTINGS), 0);
     }
 
+    // Triggered when the user clicks the enable touch pass-through button.
+    public void onTouchPassthroughSettings(View view) {
+        startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
+    }
+
     // Triggered when the button to change default input method is pressed.
     public void onDefaultInputMethod(View view) {
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -109,6 +114,11 @@ public class MainActivity extends Activity {
         Button btnEnable = (Button) findViewById(R.id.btn_enable);
         Button btnDefaultKeyboard = (Button) findViewById(R.id.btn_default_keyboard);
         EditText text = (EditText) findViewById(R.id.txt_practice);
+        Button btnPassthrough = (Button) findViewById(R.id.btn_touch_passthrough);
+        // Touch pass-through needs Android 11. Only offer it until it's on.
+        btnPassthrough.setVisibility(TouchPassthroughService.isSupported()
+                && !TouchPassthroughService.isRunning() ? View.VISIBLE
+                : View.GONE);
         btnEnable.setEnabled(true);
         btnDefaultKeyboard.setEnabled(false);
         text.setVisibility(View.INVISIBLE);

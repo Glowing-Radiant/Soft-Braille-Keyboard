@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TouchPassthroughService only sets touch passthrough regions. It deliberately
+  subscribes to no events, doesn't request touch exploration and can't read
+  window content, so it never interferes with the user's screen reader.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/touch_passthrough_service_description"
+    android:isAccessibilityTool="true"
+    android:settingsActivity="com.dalton.braillekeyboard.PreferenceIME" />

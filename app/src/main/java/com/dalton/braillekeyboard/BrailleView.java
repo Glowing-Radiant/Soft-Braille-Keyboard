@@ -222,7 +222,9 @@ public class BrailleView extends View {
             // user preference.
             
             if (accessibilityManager.isTouchExplorationEnabled()) {
-                setContentDescription(getTouchExplorationHint());
+                setContentDescription(TouchPassthroughService.isRunning() ? getContext()
+                        .getString(R.string.braille_keyboard_ready)
+                        : getTouchExplorationHint());
             } else {
                 setContentDescription(null);
             }
@@ -302,7 +304,9 @@ public class BrailleView extends View {
 
     // What a screen reader user must do for the keyboard to get their touches.
     private String getTouchExplorationHint() {
-        return getContext().getString(R.string.switch_off_talkback);
+        return getContext().getString(
+                TouchPassthroughService.isSupported() ? R.string.touch_passthrough_needed
+                        : R.string.switch_off_talkback);
     }
 
     @Override

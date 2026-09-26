@@ -17,6 +17,13 @@
         android:layout_height="wrap_content"
         android:text="@string/button_choose_default_keyboard"
         android:onClick="onDefaultInputMethod" />
+    <Button style="@android:style/TextAppearance.Large"
+        android:id="@+id/btn_touch_passthrough"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_touch_passthrough"
+        android:onClick="onTouchPassthroughSettings"
+        android:visibility="gone" />
     <EditText
         android:id="@+id/txt_practice"
         android:layout_width="fill_parent"

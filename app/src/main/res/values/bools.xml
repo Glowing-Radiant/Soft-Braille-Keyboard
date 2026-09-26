@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Touch passthrough regions need Android 11 (API 30). -->
+    <bool name="touch_passthrough_supported">false</bool>
+</resources>

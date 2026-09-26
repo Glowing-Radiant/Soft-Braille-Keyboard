@@ -290,6 +290,13 @@
     -->
     <string name="punctuation_right_brace">Right brace</string>
 
+    <!-- Touch pass-through accessibility service that lets the keyboard receive
+         multi-touch while TalkBack explore by touch is on. [CHAR LIMIT="NONE"] -->
+    <string name="touch_passthrough_service_label">Soft Braille Keyboard touch pass-through</string>
+    <string name="touch_passthrough_service_description">Lets you type braille with several fingers while TalkBack or another screen reader has explore by touch turned on.\n\nWhile the Soft Braille Keyboard is expanded on screen, touches on the keyboard go straight to it instead of to the screen reader. As soon as the keyboard is shrunk or closed, the screen reader works normally again. This service does not read your screen or monitor what you do.</string>
+    <string name="button_touch_passthrough">Enable touch pass-through for TalkBack</string>
+    <string name="braille_keyboard_ready">Braille keyboard ready. Use six or eight finger positions to type in braille.</string>
+    <string name="touch_passthrough_needed">TalkBack is getting your touches instead of the keyboard. To type braille, turn on Soft Braille Keyboard touch pass-through in accessibility settings.</string>
 
 
 

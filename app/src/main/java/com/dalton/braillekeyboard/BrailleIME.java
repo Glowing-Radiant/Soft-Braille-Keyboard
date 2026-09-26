@@ -23,12 +23,14 @@ import java.util.Locale;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.os.Process;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
@@ -60,6 +62,19 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     private int mark = -1;
     private boolean predictionOn;
     private boolean selectAll = false;
+    private boolean inputViewStarted = false;
+    private final int[] keyboardLocation = new int[2];
+    private final Rect keyboardBounds = new Rect();
+
+    // Keeps the TalkBack touch passthrough region in sync with the keyboard's
+    // position on screen.
+    private final ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
+
+        @Override
+        public void onGlobalLayout() {
+            updateTouchPassthrough();
+        }
+    };
 
     @Override
     public void onCreate() {
@@ -79,8 +94,14 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     @Override
     public View onCreateInputView() {
         super.onCreateInputView();
+        if (brailleView != null) {
+            brailleView.getViewTreeObserver().removeOnGlobalLayoutListener(
+                    layoutListener);
+        }
         brailleView = (BrailleView) getLayoutInflater().inflate(
                 R.layout.keyboard, null);
+        brailleView.getViewTreeObserver().addOnGlobalLayoutListener(
+                layoutListener);
 
         if (!Options.getBooleanPreference(this,
                 R.string.pref_has_asked_record_audio_key, false)) {
@@ -142,11 +163,15 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             brailleView.onInitialiseForInput(this, this);
         }
         brailleParser.setTranslator(this);
+        inputViewStarted = true;
+        updateTouchPassthrough();
     }
 
     @Override
     public void onFinishInputView(boolean finishingInput) {
         super.onFinishInputView(finishingInput);
+        inputViewStarted = false;
+        TouchPassthroughService.clearKeyboardRegion();
         InputConnection ic = getCurrentInputConnection();
         if (ic != null) {
             finishComposingText(false);
@@ -158,7 +183,20 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     }
 
     @Override
+    public void onWindowShown() {
+        super.onWindowShown();
+        updateTouchPassthrough();
+    }
+
+    @Override
+    public void onWindowHidden() {
+        super.onWindowHidden();
+        TouchPassthroughService.clearKeyboardRegion();
+    }
+
+    @Override
     public void onDestroy() {
+        TouchPassthroughService.clearKeyboardRegion();
         super.onDestroy();
         if (brailleParser != null) {
             brailleParser.destroy();
@@ -174,6 +212,28 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         // If the keyboard is in the shrink state it will not use the full
         // screen.
         return brailleView != null ? !brailleView.getShrinkKeyboard() : false;
+    }
+
+    /**
+     * While the expanded keyboard is on screen, ask TouchPassthroughService to
+     * route touches on it straight to the keyboard, bypassing screen reader
+     * explore by touch. The shrunk keyboard is left to the screen reader so it
+     * can be found and activated like any other control.
+     */
+    private void updateTouchPassthrough() {
+        BrailleView view = brailleView;
+        if (view == null || !inputViewStarted || !view.isShown()
+                || view.getShrinkKeyboard() || view.getWidth() == 0
+                || view.getHeight() == 0 || view.getDisplay() == null) {
+            TouchPassthroughService.clearKeyboardRegion();
+            return;
+        }
+        view.getLocationOnScreen(keyboardLocation);
+        keyboardBounds.set(keyboardLocation[0], keyboardLocation[1],
+                keyboardLocation[0] + view.getWidth(), keyboardLocation[1]
+                        + view.getHeight());
+        TouchPassthroughService.setKeyboardRegion(view.getDisplay()
+                .getDisplayId(), keyboardBounds);
     }
 
     private void brailleParserReady(int status) {
