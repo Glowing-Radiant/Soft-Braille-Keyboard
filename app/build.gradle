@@ -11,8 +11,9 @@ android {
         applicationId "com.dalton.braillekeyboard"
         minSdk 21
         targetSdk 35
-        versionCode 57
-        versionName "3.2.0"
+        // The release workflow passes the version from the git tag.
+        versionCode project.findProperty('sbkVersionCode')?.toInteger() ?: 57
+        versionName project.findProperty('sbkVersionName') ?: "3.2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -30,8 +31,25 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            // Provided by the release workflow from repository secrets. See
+            // RELEASING.md. Without them the release APK is left unsigned.
+            def keystore = System.getenv('SIGNING_KEYSTORE_PATH')
+            if (keystore) {
+                storeFile file(keystore)
+                storePassword System.getenv('SIGNING_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('SIGNING_KEY_ALIAS')
+                keyPassword System.getenv('SIGNING_KEY_PASSWORD')
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (System.getenv('SIGNING_KEYSTORE_PATH')) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

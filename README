@@ -44,6 +44,8 @@ To run the tests:
   ./gradlew testDebugUnitTest          (on the computer)
   ./gradlew connectedDebugAndroidTest  (on a connected device)
 
+See RELEASING.md for building signed releases.
+
 BRAILLE TABLES
 
 liblouis is included as source in app/src/main/cpp/liblouis and is
