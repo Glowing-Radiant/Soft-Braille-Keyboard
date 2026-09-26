@@ -26,7 +26,6 @@
     <string name="grade_table">Typ %s</string>	<!-- ANNI: Same here, not sure if those "grades" exist in German? -->
     <string name="hide_keyboard">Tastatur wird eingeklappt</string>
     <string name="high">Oben</string>	<!-- ANNI: To what does high refer? -->
-    <string name="info_url">https://docs.google.com/document/d/1OX6yFjkK61VfROdU9uQNxjEZ_QNWxiMnUY_1ECnIyRQ/pub</string>
     <string name="keyboard_auto">Automatisch</string>
     <string name="keyboard_echo_all">Buchstaben und Worte</string>
     <string name="keyboard_echo_character">Nur Buchstaben</string>

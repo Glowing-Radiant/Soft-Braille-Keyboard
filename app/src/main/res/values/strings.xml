@@ -69,7 +69,7 @@
     <string name="braille_ime">Soft Braille Keyboard</string>
     <string name="button_choose_default_keyboard">Set Soft Braille Keyboard as the default keyboard</string>
     <string name="button_keyboard_settings">Enable Soft Braille Keyboard</string>
-    <string name="button_more_info">Read the quick start guide</string>
+    <string name="button_more_info">Read the user guide</string>
     <string name="capital">Capital %s</string>
     <string name="closing_keyboard">Closing keyboard</string>
     <string name="copied">Copied</string>
@@ -86,7 +86,6 @@
     <string name="grade_table">Grade %s</string>
     <string name="hide_keyboard">Hiding the keyboard.</string>
     <string name="high">High</string>
-    <string name="info_url">https://docs.google.com/document/d/1OX6yFjkK61VfROdU9uQNxjEZ_QNWxiMnUY_1ECnIyRQ/pub</string>
     <string name="keyboard_auto">Automatic</string>
     <string name="keyboard_echo_all">Both characters and words</string>
     <string name="keyboard_echo_character">Characters</string>
@@ -318,5 +317,7 @@
     <string name="tts_engine_no_settings">This engine has no settings screen of its own</string>
     <string name="speech_test_sample">This is how Soft Braille Keyboard sounds.</string>
 
+    <!-- Title of the in-app user guide. [CHAR LIMIT="30"] -->
+    <string name="manual_title">User guide</string>
 
 </resources>

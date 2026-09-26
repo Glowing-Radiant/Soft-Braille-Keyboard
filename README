@@ -6,7 +6,8 @@ faster and more comfortable input for the blind on Android with a
 variety of powerful editing commands and support for a number of
 different languages.
 
-Please see https://goo.gl/lD1v49 for more details on the project.
+The user guide is bundled with the app (Read the user guide on the
+app's main screen). Its source is app/src/main/assets/manual/index.html.
 
 If you are interested in becoming involved with any development or have questions please
 contact Daniel Dalton <daniel.dalton10@gmail.com>

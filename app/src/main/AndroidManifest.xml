@@ -33,6 +33,10 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ManualActivity"
+            android:label="@string/manual_title"
+            android:exported="false" />
         <activity android:name=".IntentActivity" android:label="" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

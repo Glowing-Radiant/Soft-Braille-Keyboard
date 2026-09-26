@@ -21,7 +21,6 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
@@ -77,13 +76,10 @@ public class MainActivity extends Activity {
         inputManager.showInputMethodPicker();
     }
 
-    // Triggered when the user clicks the button to read the manual.
-    // Visit the appropriate url for the documentation for the current Locale in
-    // the web browser.
+    // Triggered when the user clicks the button to read the manual, which is
+    // bundled with the app.
     public void onURL(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(getString(R.string.info_url)));
-        startActivity(intent);
+        startActivity(ManualActivity.createIntent(this, null));
     }
 
     @Override

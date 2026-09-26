@@ -16,6 +16,12 @@
 
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
          android:title="@string/settings_name">
+    <Preference
+         android:title="@string/manual_title">
+         <intent
+             android:targetPackage="com.dalton.braillekeyboard"
+             android:targetClass="com.dalton.braillekeyboard.ManualActivity" />
+    </Preference>
     <PreferenceScreen
          android:key="@string/pref_category_keyboard_key"
          android:title="@string/pref_category_keyboard_title" >
