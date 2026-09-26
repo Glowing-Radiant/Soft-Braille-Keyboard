@@ -142,6 +142,12 @@ public class Options {
         return sharedPref.getString(context.getString(resource), defaultValue);
     }
 
+    public static void writeBooleanPreference(Context context, int resource,
+            boolean value) {
+        PreferenceManager.getDefaultSharedPreferences(context).edit()
+                .putBoolean(context.getString(resource), value).apply();
+    }
+
     public static boolean switchBooleanPreference(Context context,
             int resource, boolean defaultValue) {
         SharedPreferences sharedPref = PreferenceManager
