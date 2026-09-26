@@ -129,6 +129,11 @@ public class HorizontalPad extends Pad {
     }
 
     @Override
+    protected boolean mirrorsLeftRight() {
+        return true;
+    }
+
+    @Override
     public Swipe getSwipe(Coords[] coords, boolean swap) {
         Swipe swipe = getGenericSwipeAction(coords, swap);
         switch (swipe) {

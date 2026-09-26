@@ -254,4 +254,31 @@ public interface KeyboardListener {
     void commitText(String text, int newCursorPosition);
 
     void finishComposingText();
+
+    /**
+     * Get the current selection.
+     *
+     * @return {anchor, focus} as absolute offsets in the text, equal when
+     *         nothing is selected, or null if unavailable.
+     */
+    int[] getSelectionRange();
+
+    /**
+     * Select the text between anchor and focus. The focus is the end that
+     * moves when the selection is extended.
+     */
+    boolean selectRange(int anchor, int focus);
+
+    /**
+     * Perform the editor's action such as send, search or go.
+     *
+     * @return false if the editor has no action.
+     */
+    boolean performEditorAction();
+
+    /** Hide the keyboard. */
+    void hideKeyboard();
+
+    /** Switch to the next input method, showing the picker if unsupported. */
+    void switchToNextKeyboard();
 }

@@ -27,8 +27,9 @@
   <li><a href="#setup">Setting it up</a></li>
   <li><a href="#talkback">Using the keyboard with TalkBack</a></li>
   <li><a href="#basic-use">Basic use</a></li>
-  <li><a href="#gestures">Swipe gestures</a></li>
-  <li><a href="#selection">Selecting text</a></li>
+  <li><a href="#gestures">Classic swipe gestures</a></li>
+  <li><a href="#selection">Selecting text with the classic gestures</a></li>
+  <li><a href="#talkback-gestures">TalkBack braille keyboard gestures</a></li>
   <li><a href="#settings">Settings</a></li>
   <li><a href="#tables">Supported braille tables</a></li>
   <li><a href="#feedback">Problems and feedback</a></li>
@@ -37,7 +38,7 @@
 
 <h2 id="introduction">1. Introduction</h2>
 <p>Soft Braille Keyboard replaces the on-screen keyboard with a six or eight dot braille keyboard. You type with your braille fingers on the touch screen exactly as you would on a Perkins brailler or the keyboard of a braille display. The keyboard speaks what you type and has gestures for moving around, reading, editing and selecting text.</p>
-<p>It was created by Daniel Dalton, who is blind, for blind people. This version adds 64-bit support, the latest liblouis braille translation and TalkBack touch pass-through.</p>
+<p>It was created by Daniel Dalton, who is blind, for blind people. This version adds 64-bit support, the latest liblouis braille translation, TalkBack touch pass-through and an optional mode that uses the gestures of the TalkBack braille keyboard.</p>
 
 <h2 id="setup">2. Setting it up</h2>
 <ol>
@@ -76,8 +77,8 @@
 <h3 id="shrinking">4.4 Shrinking the keyboard</h3>
 <p>You can shrink the keyboard to half the screen, for example to review suggestions from the app. The shrunk keyboard can't be typed on. With TalkBack, find it at the bottom of the screen and double tap to expand it again. Without TalkBack, tap it.</p>
 
-<h2 id="gestures">5. Swipe gestures</h2>
-<p>Each dot can be swiped left, right, up or down. Some gestures hold one dot still while another finger swipes. Dots on the left (1, 2, 3) move and read by character, word and line; dots on the right (4, 5, 6) delete by the same amounts.</p>
+<h2 id="gestures">5. Classic swipe gestures</h2>
+<p>These are the original Soft Braille Keyboard gestures, used unless you choose the <a href="#talkback-gestures">TalkBack gestures</a>. Each dot can be swiped left, right, up or down. Some gestures hold one dot still while another finger swipes. Dots on the left (1, 2, 3) move and read by character, word and line; dots on the right (4, 5, 6) delete by the same amounts.</p>
 <h3 id="gestures-moving">5.1 Moving around the text</h3>
 <table>
   <tr><th scope="col">Action</th><th scope="col">Gesture</th></tr>
@@ -139,16 +140,78 @@
   <tr><td>Auto-capitalisation</td><td>Hold dot 1, swipe any right hand finger up</td></tr>
 </table>
 
-<h2 id="selection">6. Selecting text</h2>
+<h2 id="selection">6. Selecting text with the classic gestures</h2>
 <p>Move to one end of the text you want, then set the mark: hold dot 1 and swipe any right hand finger right. Move to the other end with the usual movement gestures. The text between the mark and the cursor is selected.</p>
 <p>Swipe dot 6 right to hear the available actions and dot 6 up to perform the one you heard: speak selection, copy, cut, paste, delete or select all.</p>
 
-<h2 id="settings">7. Settings</h2>
-<p>Open settings from the app's menu, from the keyboard (swipe dot 5 up twice) or from the system language and input settings.</p>
-<h3 id="settings-keyboard">7.1 Keyboard Settings</h3>
+<h2 id="talkback-gestures">7. TalkBack braille keyboard gestures</h2>
+<p>If you already know the TalkBack braille keyboard, you can use its gestures here. In settings open <strong>Keyboard Settings</strong>, <strong>Gesture style</strong> and choose <strong>TalkBack braille keyboard</strong>. Typing and calibration stay the same.</p>
+<p>These gestures count how many fingers swipe together, wherever they are on the screen. Directions are from your point of view: holding the phone screen away, right means towards your right hand. Gestures that hold a dot work with either hand: holding dot 1 is the same as dot 4, dot 2 the same as dot 5 and dot 3 the same as dot 6.</p>
+<h3 id="talkback-basic">7.1 Basic gestures</h3>
+<table>
+  <tr><th scope="col">Action</th><th scope="col">Gesture</th></tr>
+  <tr><td>Add space</td><td>Swipe right with one finger</td></tr>
+  <tr><td>Delete character</td><td>Swipe left with one finger</td></tr>
+  <tr><td>Add new line</td><td>Swipe right with two fingers</td></tr>
+  <tr><td>Delete word</td><td>Swipe left with two fingers</td></tr>
+  <tr><td>Move cursor back or forward by the reading granularity</td><td>Swipe up or down with one finger</td></tr>
+  <tr><td>Submit text (send, search, go)</td><td>Swipe up with two fingers</td></tr>
+  <tr><td>Hide keyboard</td><td>Swipe down with two fingers</td></tr>
+  <tr><td>Keyboard menu</td><td>Swipe up with three fingers</td></tr>
+  <tr><td>Switch to the next keyboard</td><td>Swipe down with three fingers</td></tr>
+  <tr><td>Next or previous reading granularity</td><td>Swipe right or left with three fingers</td></tr>
+</table>
+<p>The reading granularities are characters, words, lines and spelling corrections.</p>
+<h3 id="talkback-cursor">7.2 Moving the cursor</h3>
+<table>
+  <tr><th scope="col">Action</th><th scope="col">Gesture</th></tr>
+  <tr><td>Previous or next character</td><td>Hold dot 3 or 6, swipe up or down with one finger</td></tr>
+  <tr><td>Previous or next word</td><td>Hold dot 2 or 5, swipe up or down with one finger</td></tr>
+  <tr><td>Previous or next line</td><td>Hold dot 1 or 4, swipe up or down with one finger</td></tr>
+  <tr><td>Start or end of text</td><td>Hold dots 1 and 2, or 4 and 5, swipe up or down with one finger</td></tr>
+</table>
+<h3 id="talkback-selection">7.3 Selecting and editing</h3>
+<table>
+  <tr><th scope="col">Action</th><th scope="col">Gesture</th></tr>
+  <tr><td>Select previous or next character</td><td>Hold dot 3 or 6, swipe up or down with two fingers</td></tr>
+  <tr><td>Select previous or next word</td><td>Hold dot 2 or 5, swipe up or down with two fingers</td></tr>
+  <tr><td>Select previous or next line</td><td>Hold dot 1 or 4, swipe up or down with two fingers</td></tr>
+  <tr><td>Select to start or end of text</td><td>Hold dots 1 and 2, or 4 and 5, swipe up or down with two fingers</td></tr>
+  <tr><td>Select all</td><td>Hold dot 1 or 4, swipe left with three fingers</td></tr>
+  <tr><td>Cut</td><td>Hold dot 1 or 4, swipe up with three fingers</td></tr>
+  <tr><td>Copy</td><td>Hold dot 1 or 4, swipe down with three fingers</td></tr>
+  <tr><td>Paste</td><td>Hold dot 1 or 4, swipe right with three fingers</td></tr>
+</table>
+<h3 id="talkback-spelling">7.4 Correcting spelling</h3>
+<p>Swipe right or left with three fingers until you hear "Spelling corrections". Then:</p>
+<table>
+  <tr><th scope="col">Action</th><th scope="col">Gesture</th></tr>
+  <tr><td>Next or previous misspelled word</td><td>Swipe down or up with one finger</td></tr>
+  <tr><td>Next or previous suggestion</td><td>Swipe right or left with one finger</td></tr>
+  <tr><td>Confirm the suggestion</td><td>Swipe right with two fingers</td></tr>
+  <tr><td>Undo, restoring the original word</td><td>Swipe left with two fingers</td></tr>
+</table>
+<h3 id="talkback-menu">7.5 The keyboard menu</h3>
+<p>Swipe up with three fingers to open a spoken menu with the features that have no TalkBack gesture: read all text, switch computer and literary braille, switch braille table, voice input, shrink the keyboard, word count, keyboard echo, keyboard feedback, auto-capitalisation, speak passwords, privacy screen, settings and this guide.</p>
+<ul>
+  <li>Swipe down or up with one finger to hear the next or previous item.</li>
+  <li>Swipe right with one finger to choose the item.</li>
+  <li>Swipe left with one finger to close the menu.</li>
+</ul>
+<h3 id="talkback-differences">7.6 Differences from the TalkBack braille keyboard</h3>
+<ul>
+  <li>Calibrate with three fingers of each hand as described in <a href="#calibration">calibrating the keyboard</a>.</li>
+  <li>TalkBack opens a dialog for help and other actions. Here the menu is spoken inside the keyboard.</li>
+  <li>Custom gesture assignments of TalkBack are not copied; the default TalkBack gestures are used.</li>
+</ul>
+
+<h2 id="settings">8. Settings</h2>
+<p>Open settings from the app's menu, from the keyboard (swipe dot 5 up twice, or the TalkBack keyboard menu) or from the system language and input settings.</p>
+<h3 id="settings-keyboard">8.1 Keyboard Settings</h3>
 <ul>
   <li><strong>Default Keyboard Layout.</strong> Vertical (screen away), horizontal (tabletop) or automatic based on screen size.</li>
   <li><strong>Keyboard style.</strong> Normal; Slate and stylus mode, which swaps dots 1 2 3 with dots 4 5 6; or Swap dots 1 and 4 with dots 3 and 6.</li>
+  <li><strong>Gesture style.</strong> Classic Soft Braille Keyboard gestures or the <a href="#talkback-gestures">TalkBack braille keyboard gestures</a>.</li>
   <li><strong>Automatically select keyboard layout based on the position of your fingers.</strong> Picks the layout from where you place your fingers when calibrating.</li>
   <li><strong>Rotate keyboard with device.</strong> Lets the keyboard follow the screen rotation.</li>
   <li><strong>Invert keyboard.</strong> Turns the keyboard 180 degrees if it is upside down.</li>
@@ -156,20 +219,20 @@
   <li><strong>Show circles on screen.</strong> Draws the keys on the screen. You don't need to hit them exactly.</li>
   <li><strong>Swipe sensitivity.</strong> How far you need to swipe for a gesture.</li>
 </ul>
-<h3 id="settings-braille">7.2 Braille Table Settings</h3>
+<h3 id="settings-braille">8.2 Braille Table Settings</h3>
 <ul>
   <li><strong>Default Braille grade.</strong> Computer or literary braille.</li>
   <li><strong>Computer Braille table</strong> and <strong>Literary Braille table.</strong> The tables to type with. Literary tables include uncontracted and contracted braille.</li>
   <li><strong>Enable Braille tables for on the fly switching.</strong> The tables to cycle through with the switch table gesture or menu item.</li>
 </ul>
-<h3 id="settings-feedback">7.3 Keyboard Feedback Settings</h3>
+<h3 id="settings-feedback">8.3 Keyboard Feedback Settings</h3>
 <ul>
   <li><strong>Keyboard Echo.</strong> Speak nothing, characters, words, or both as you type.</li>
   <li><strong>Keyboard Feedback.</strong> None, vibration, sound or both.</li>
   <li><strong>Speak passwords.</strong> When off, password characters are spoken as stars.</li>
   <li><strong>Echo misspellings as you type.</strong> Says "misspelled" after a misspelled word when you type a space.</li>
 </ul>
-<h3 id="settings-speech">7.4 Text To Speech Settings</h3>
+<h3 id="settings-speech">8.4 Text To Speech Settings</h3>
 <p>The keyboard speaks on the accessibility volume, the same volume TalkBack uses, so it isn't affected by the media volume.</p>
 <ul>
   <li><strong>Text To Speech Engine.</strong> Any engine installed on the device, or the system default.</li>
@@ -178,7 +241,7 @@
   <li><strong>Engine settings.</strong> Opens the settings of the selected engine to choose voices, languages and download voice data.</li>
   <li><strong>System text-to-speech settings.</strong> Opens Android's text-to-speech settings.</li>
 </ul>
-<h3 id="settings-misc">7.5 Miscellaneous Settings</h3>
+<h3 id="settings-misc">8.5 Miscellaneous Settings</h3>
 <ul>
   <li><strong>Auto-capitalisation.</strong> Capitalises the first word of each sentence.</li>
   <li><strong>Double-space period.</strong> Two quick spaces type a full stop and a space.</li>
@@ -187,14 +250,14 @@
   <li><strong>Vibrate when keyboard closes.</strong></li>
 </ul>
 
-<h2 id="tables">8. Supported braille tables</h2>
+<h2 id="tables">9. Supported braille tables</h2>
 <p>Braille translation uses liblouis 3.39.</p>
 <h3 id="tables-computer">Computer braille</h3>
 <p>Chinese, Chinese (Taiwan), Croatian, Danish, Finnish, French, German, English (United States), Italian, Polish, Portuguese, Portuguese (Brazil), Romanian, Spanish, Swedish and Turkish.</p>
 <h3 id="tables-literary">Literary braille</h3>
 <p>Czech grade 1, Danish grade 1, Dutch grade 1, English (UEB) grades 1 and 2, English (United States) grades 1 and 2, French (Canada) grade 1, French (France) grade 1, German grade 1, Greek grade 1, Italian grade 1, Polish grade 1, Portuguese grade 1, Portuguese (Brazil) grade 1, Russian grade 1, Slovak grade 1, Spanish grade 1, Swedish grade 1 and Vietnamese grade 1.</p>
 
-<h2 id="feedback">9. Problems and feedback</h2>
+<h2 id="feedback">10. Problems and feedback</h2>
 <p>Please report problems and ideas on the project's issue tracker: <a href="https://github.com/danieldalton10/Soft-Braille-Keyboard/issues">github.com/danieldalton10/Soft-Braille-Keyboard/issues</a>.</p>
 <p>Soft Braille Keyboard was originally written by Daniel Dalton and is licensed under the Apache License 2.0. Braille translation uses liblouis, licensed under the GNU LGPL 2.1 or later.</p>
 

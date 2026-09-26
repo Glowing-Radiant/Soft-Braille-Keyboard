@@ -320,4 +320,45 @@
     <!-- Title of the in-app user guide. [CHAR LIMIT="30"] -->
     <string name="manual_title">User guide</string>
 
+    <!-- TalkBack braille keyboard gesture mode. [CHAR LIMIT="NONE"] -->
+    <string name="pref_gesture_style_key" translatable="false">GESTURE_STYLE</string>
+    <string name="pref_gesture_style_classic_value" translatable="false">classic</string>
+    <string name="pref_gesture_style_talkback_value" translatable="false">talkback</string>
+    <string name="pref_gesture_style_default" translatable="false">classic</string>
+    <string name="pref_gesture_style_title">Gesture style</string>
+    <string name="pref_gesture_style_summary">%s</string>
+    <string name="gesture_style_classic">Classic Soft Braille Keyboard gestures</string>
+    <string name="gesture_style_talkback">TalkBack braille keyboard gestures</string>
+    <!-- Reading granularities, spoken when changed. -->
+    <string name="granularity_characters">Characters</string>
+    <string name="granularity_words">Words</string>
+    <string name="granularity_lines">Lines</string>
+    <string name="granularity_spelling">Spelling corrections</string>
+    <!-- Items of the spoken keyboard menu. -->
+    <string name="menu_read_all">Read all text</string>
+    <string name="menu_switch_grade">Switch computer and literary braille</string>
+    <string name="menu_switch_table">Switch braille table</string>
+    <string name="menu_voice_input">Voice input</string>
+    <string name="menu_shrink_keyboard">Shrink keyboard</string>
+    <string name="menu_word_count">Word count</string>
+    <string name="menu_keyboard_echo">Change keyboard echo</string>
+    <string name="menu_keyboard_feedback">Change keyboard feedback</string>
+    <string name="menu_auto_caps">Turn auto-capitalisation on or off</string>
+    <string name="menu_speak_passwords">Turn speaking passwords on or off</string>
+    <string name="menu_privacy">Turn privacy screen on or off</string>
+    <string name="menu_settings">Keyboard settings</string>
+    <string name="menu_help">User guide</string>
+    <string name="menu_opened">Keyboard menu.</string>
+    <string name="menu_closed">Menu closed</string>
+    <string name="menu_instructions">Keyboard menu. Swipe up or down to move, right to choose, left to close.</string>
+    <!-- Spoken feedback. -->
+    <string name="no_editor_action">No action available</string>
+    <string name="nothing_selected">Nothing selected</string>
+    <string name="cut_text">Cut</string>
+    <!-- %s is the text that was added to the selection. -->
+    <string name="text_selected">%s selected</string>
+    <!-- %s is the text that was removed from the selection. -->
+    <string name="text_unselected">%s unselected</string>
+    <string name="suggestion_confirmed">Suggestion confirmed</string>
+    <string name="nothing_to_undo">Nothing to undo</string>
 </resources>

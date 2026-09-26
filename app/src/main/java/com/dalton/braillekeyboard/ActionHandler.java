@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.inputmethodservice.Keyboard;
 import android.os.Process;
+import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dalton.braillekeyboard.EditingUtilities.Word;
@@ -195,12 +196,63 @@ public class ActionHandler {
         }
     }
 
+    /**
+     * The reading granularities cycled by TalkBack's three finger left and
+     * right swipes. One finger up and down swipes move by the current one.
+     */
+    private enum ReadingGranularity {
+        CHARACTER(R.string.granularity_characters, Granularity.CHARACTER), WORD(
+                R.string.granularity_words, Granularity.WORD), LINE(
+                R.string.granularity_lines, Granularity.LINE), SPELLING(
+                R.string.granularity_spelling, null);
+
+        public final int resource;
+        public final Granularity granularity;
+
+        ReadingGranularity(int resource, Granularity granularity) {
+            this.resource = resource;
+            this.granularity = granularity;
+        }
+    }
+
+    /**
+     * Items of the spoken menu opened with TalkBack's three finger swipe up.
+     * It gives TalkBack gesture users the features that have no TalkBack
+     * gesture. Most items perform the equivalent classic gesture.
+     */
+    private enum MenuItem {
+        READ_ALL(R.string.menu_read_all, Swipe.HOLD_SIX_UP), SWITCH_GRADE(
+                R.string.menu_switch_grade, Swipe.HOLD_THREE_RIGHT), SWITCH_TABLE(
+                R.string.menu_switch_table, Swipe.HOLD_THREE_DOWN), VOICE_INPUT(
+                R.string.menu_voice_input, null), SHRINK_KEYBOARD(
+                R.string.menu_shrink_keyboard, Swipe.HOLD_ONE_LEFT), WORD_COUNT(
+                R.string.menu_word_count, Swipe.HOLD_ONE_DOWN), KEYBOARD_ECHO(
+                R.string.menu_keyboard_echo, Swipe.TWO_DOWN), KEYBOARD_FEEDBACK(
+                R.string.menu_keyboard_feedback, Swipe.ONE_DOWN), AUTO_CAPS(
+                R.string.menu_auto_caps, Swipe.HOLD_ONE_UP), SPEAK_PASSWORDS(
+                R.string.menu_speak_passwords, Swipe.HOLD_SIX_DOWN), PRIVACY(
+                R.string.menu_privacy, Swipe.FOUR_UP), SETTINGS(
+                R.string.menu_settings, null), HELP(R.string.menu_help, null);
+
+        public final int resource;
+        // The classic gesture performing this item, if any.
+        public final Swipe swipe;
+
+        MenuItem(int resource, Swipe swipe) {
+            this.resource = resource;
+            this.swipe = swipe;
+        }
+    }
+
     private final ClipboardManager clipboard;
     private final InputMethodManager inputManager;
     private final SpellChecker spellChecker;
     private final VoiceInput voiceInput = new VoiceInput();
 
     private EditAction editAction = EditAction.COPY;
+    private ReadingGranularity readingGranularity = ReadingGranularity.CHARACTER;
+    // Index into MenuItem.values() while the spoken menu is open, else -1.
+    private int menuPosition = -1;
     private long lastTouchTime = 0; // Time screen was last touched.
     private Swipe lastSwipe = Swipe.NONE; // Type of last gesture.
     private KeyboardListener listener;
@@ -530,6 +582,11 @@ public class ActionHandler {
         }
 
         lastSwipe = Swipe.NONE;
+        if (menuPosition >= 0) {
+            callback.onText("%s",
+                    context.getString(R.string.menu_instructions), false);
+            return;
+        }
         String result;
         if ((result = listener.handleTypedCharacter(value)) == null) {
             // IME couldn't handle the dot pattern propergate the error to the
@@ -551,6 +608,351 @@ public class ActionHandler {
 
         // dots 7 and 8 should now be unset
         callback.onSetDots(false, false);
+    }
+
+    /**
+     * Handle a gesture of the TalkBack braille keyboard. See TalkBackGesture.
+     *
+     * @param context
+     *            The application context.
+     * @param action
+     *            The recognised TalkBack action.
+     */
+    public void handleTalkBackAction(Context context,
+            TalkBackGesture.Action action) {
+        if (voiceInput.isListening()) {
+            return;
+        }
+        lastSwipe = Swipe.NONE;
+        if (menuPosition >= 0) {
+            handleMenuAction(context, action);
+            return;
+        }
+        if (readingGranularity == ReadingGranularity.SPELLING
+                && handleSpellingAction(context, action)) {
+            callback.onNotify(true, true);
+            return;
+        }
+
+        callback.onNotify(true, true);
+        switch (action) {
+        case MOVE_CURSOR_BACKWARD:
+            moveLeft(context, readingGranularity.granularity);
+            break;
+        case MOVE_CURSOR_FORWARD:
+            moveRight(context, readingGranularity.granularity);
+            break;
+        case ADD_SPACE:
+            typeCharacter(context, (int) ' ', " ");
+            break;
+        case DELETE_CHARACTER:
+            backspace(context, Granularity.CHARACTER, false);
+            break;
+        case SUBMIT_TEXT:
+            if (listener.performEditorAction()) {
+                listener.hideKeyboard();
+            } else {
+                speak(context.getString(R.string.no_editor_action));
+            }
+            break;
+        case HIDE_KEYBOARD:
+            listener.hideKeyboard();
+            break;
+        case ADD_NEWLINE:
+            typeCharacter(context, '\n', context.getString(R.string.newline));
+            break;
+        case DELETE_WORD:
+            backspace(context, Granularity.WORD, false);
+            break;
+        case HELP_AND_OTHER_ACTIONS:
+            openMenu(context);
+            break;
+        case SWITCH_KEYBOARD:
+            listener.switchToNextKeyboard();
+            break;
+        case NEXT_GRANULARITY:
+            changeGranularity(context, 1);
+            break;
+        case PREVIOUS_GRANULARITY:
+            changeGranularity(context, -1);
+            break;
+        case PREVIOUS_CHARACTER:
+            moveLeft(context, Granularity.CHARACTER);
+            break;
+        case NEXT_CHARACTER:
+            moveRight(context, Granularity.CHARACTER);
+            break;
+        case PREVIOUS_WORD:
+            moveLeft(context, Granularity.WORD);
+            break;
+        case NEXT_WORD:
+            moveRight(context, Granularity.WORD);
+            break;
+        case PREVIOUS_LINE:
+            moveLeft(context, Granularity.LINE);
+            break;
+        case NEXT_LINE:
+            moveRight(context, Granularity.LINE);
+            break;
+        case START_OF_TEXT:
+            moveLeft(context, Granularity.ALL);
+            break;
+        case END_OF_TEXT:
+            moveRight(context, Granularity.ALL);
+            break;
+        case SELECT_PREVIOUS_CHARACTER:
+            extendSelection(context, Granularity.CHARACTER, false);
+            break;
+        case SELECT_NEXT_CHARACTER:
+            extendSelection(context, Granularity.CHARACTER, true);
+            break;
+        case SELECT_PREVIOUS_WORD:
+            extendSelection(context, Granularity.WORD, false);
+            break;
+        case SELECT_NEXT_WORD:
+            extendSelection(context, Granularity.WORD, true);
+            break;
+        case SELECT_PREVIOUS_LINE:
+            extendSelection(context, Granularity.LINE, false);
+            break;
+        case SELECT_NEXT_LINE:
+            extendSelection(context, Granularity.LINE, true);
+            break;
+        case SELECT_TO_START:
+            extendSelection(context, Granularity.ALL, false);
+            break;
+        case SELECT_TO_END:
+            extendSelection(context, Granularity.ALL, true);
+            break;
+        case SELECT_ALL:
+            listener.finishComposingText();
+            if (listener.performContextMenuAction(android.R.id.selectAll)) {
+                speak(context.getString(R.string.selected_all));
+            }
+            break;
+        case CUT:
+            clipboardAction(context, android.R.id.cut, R.string.cut_text,
+                    R.string.cut_error);
+            break;
+        case COPY:
+            clipboardAction(context, android.R.id.copy, R.string.copied,
+                    R.string.copy_error);
+            break;
+        case PASTE:
+            clipboardAction(context, android.R.id.paste, R.string.pasted,
+                    R.string.paste_error);
+            break;
+        default:
+        }
+    }
+
+    /**
+     * Returns true if the spoken menu is open. Typing is disabled meanwhile.
+     */
+    public boolean isMenuOpen() {
+        return menuPosition >= 0;
+    }
+
+    private void speak(String message) {
+        callback.onText("%s", message, false);
+    }
+
+    // Cut, copy or paste the real text selection like TalkBack does.
+    private void clipboardAction(Context context, int id, int success,
+            int error) {
+        listener.finishComposingText();
+        int[] range = listener.getSelectionRange();
+        if (id != android.R.id.paste
+                && (range == null || range[0] == range[1])) {
+            speak(context.getString(R.string.nothing_selected));
+            return;
+        }
+        speak(context.getString(listener.performContextMenuAction(id) ? success
+                : error));
+    }
+
+    // Moves the focus end of the selection by the given granularity, keeping
+    // the other end anchored, and speaks the text that was selected or
+    // unselected.
+    private void extendSelection(Context context, Granularity granularity,
+            boolean forward) {
+        listener.finishComposingText();
+        int[] range = listener.getSelectionRange();
+        if (range == null) {
+            return;
+        }
+        int anchor = range[0];
+        int focus = range[1];
+
+        // Move a collapsed cursor from the focus with the movement helpers.
+        listener.setSelection(focus);
+        switch (granularity) {
+        case CHARACTER:
+            if (forward) {
+                EditingUtilities.moveToNextCharacter(listener);
+            } else {
+                EditingUtilities.moveToPreviousCharacter(listener);
+            }
+            break;
+        case WORD:
+            if (forward) {
+                EditingUtilities.moveToNextWord(listener);
+            } else {
+                EditingUtilities.moveToPreviousWord(listener);
+            }
+            break;
+        case LINE:
+            if (forward) {
+                EditingUtilities.moveToNextLine(listener);
+            } else {
+                EditingUtilities.moveToPreviousLine(listener);
+            }
+            break;
+        default:
+            if (forward) {
+                EditingUtilities.moveToEnd(listener);
+            } else {
+                EditingUtilities.moveToHome(listener);
+            }
+        }
+        int newFocus = listener.getCursor();
+        listener.selectRange(anchor, newFocus);
+
+        if (newFocus == focus || newFocus < 0) {
+            speak(context.getString(forward ? R.string.end_of_text
+                    : R.string.start_of_text));
+            return;
+        }
+        ExtractedText text = listener.getAllText();
+        if (text == null || text.text == null) {
+            return;
+        }
+        int start = Math.max(0, Math.min(focus, newFocus) - text.startOffset);
+        int end = Math.min(text.text.length(), Math.max(focus, newFocus)
+                - text.startOffset);
+        if (start >= end) {
+            return;
+        }
+        String changed = text.text.subSequence(start, end).toString();
+        boolean selecting = Math.abs(newFocus - anchor) > Math.abs(focus
+                - anchor);
+        callback.onText(context.getString(selecting ? R.string.text_selected
+                : R.string.text_unselected), changed, listener.isPasswordField());
+    }
+
+    private void changeGranularity(Context context, int step) {
+        ReadingGranularity[] values = ReadingGranularity.values();
+        int count = values.length;
+        if (!spellChecker.isSpellCheckAvailable()) {
+            count--; // SPELLING is last and needs a spell checker.
+        }
+        int index = (readingGranularity.ordinal() + step + count) % count;
+        readingGranularity = values[index];
+        speak(context.getString(readingGranularity.resource));
+    }
+
+    // In the spelling granularity TalkBack's typo correction gestures apply.
+    // Returns false for gestures that keep their usual meaning.
+    private boolean handleSpellingAction(Context context,
+            TalkBackGesture.Action action) {
+        switch (action) {
+        case MOVE_CURSOR_BACKWARD:
+            doSpellCheck(context, SpellChecker.Direction.LEFT, 0,
+                    listener.getCursor());
+            return true;
+        case MOVE_CURSOR_FORWARD:
+            doSpellCheck(context, SpellChecker.Direction.RIGHT, 0,
+                    listener.getCursor());
+            return true;
+        case ADD_SPACE:
+            nextSpellCheckSuggestion(context);
+            return true;
+        case DELETE_CHARACTER:
+            previousSpellCheckSuggestion(context);
+            return true;
+        case ADD_NEWLINE: // Confirm the suggestion.
+            spellingSuggestion = null;
+            speak(context.getString(R.string.suggestion_confirmed));
+            return true;
+        case DELETE_WORD: // Undo the suggestion.
+            if (spellingSuggestion != null && spellCheckerMatchesWord()) {
+                spellingSuggestion.reset();
+                handleSpellingSuggestion(context);
+            } else {
+                speak(context.getString(R.string.nothing_to_undo));
+            }
+            return true;
+        default:
+            return false;
+        }
+    }
+
+    private void openMenu(Context context) {
+        menuPosition = 0;
+        speak(context.getString(R.string.menu_opened) + " "
+                + context.getString(MenuItem.values()[0].resource));
+    }
+
+    private void closeMenu(Context context, boolean announce) {
+        menuPosition = -1;
+        if (announce) {
+            speak(context.getString(R.string.menu_closed));
+        }
+    }
+
+    // While the menu is open swipe up and down to move, right to choose and
+    // left (or any gesture that closes things in TalkBack) to close.
+    private void handleMenuAction(Context context, TalkBackGesture.Action action) {
+        MenuItem[] items = MenuItem.values();
+        switch (action) {
+        case MOVE_CURSOR_BACKWARD:
+            menuPosition = (menuPosition - 1 + items.length) % items.length;
+            callback.onNotify(true, true);
+            speak(context.getString(items[menuPosition].resource));
+            break;
+        case MOVE_CURSOR_FORWARD:
+            menuPosition = (menuPosition + 1) % items.length;
+            callback.onNotify(true, true);
+            speak(context.getString(items[menuPosition].resource));
+            break;
+        case ADD_SPACE:
+            MenuItem item = items[menuPosition];
+            closeMenu(context, false);
+            performMenuItem(context, item);
+            break;
+        case DELETE_CHARACTER:
+        case HIDE_KEYBOARD:
+        case HELP_AND_OTHER_ACTIONS:
+            closeMenu(context, true);
+            break;
+        default:
+            speak(context.getString(R.string.menu_instructions));
+        }
+    }
+
+    private void performMenuItem(Context context, MenuItem item) {
+        if (item.swipe != null) {
+            handleSwipe(context, item.swipe);
+            return;
+        }
+        switch (item) {
+        case VOICE_INPUT:
+            doVoiceInput(context, true);
+            break;
+        case SETTINGS:
+            callback.onSetLocale(Locale.getDefault());
+            Intent settings = new Intent(context, PreferenceIME.class);
+            settings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(settings);
+            break;
+        case HELP:
+            callback.onSetLocale(Locale.getDefault());
+            context.startActivity(ManualActivity.createIntent(context,
+                    ManualActivity.SECTION_TALKBACK_GESTURES).addFlags(
+                    Intent.FLAG_ACTIVITY_NEW_TASK));
+            break;
+        default:
+        }
     }
 
     // Handle prompting user to confirm an action with a double swipe.

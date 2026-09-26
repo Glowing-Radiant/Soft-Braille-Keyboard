@@ -429,6 +429,43 @@ public abstract class Pad {
 
     abstract Swipe getSwipe(Coords[] coords, boolean swap);
 
+    /**
+     * Returns the direction each dot moved in during a gesture, from the
+     * user's point of view.
+     *
+     * @param coords
+     *            The touches sorted by dot, so coords[0] is dot 1.
+     * @return One Coords.DOT_* direction per dot, Coords.DOT_NONE if the dot
+     *         was held still or 0 if it wasn't touched.
+     */
+    public byte[] getDotDirections(Coords[] coords, boolean swap) {
+        byte[] directions = new byte[coords.length];
+        for (int i = 0; i < coords.length; i++) {
+            if (coords[i] == null) {
+                continue;
+            }
+            byte direction = coords[i].swipeDirection(swipeThreshold,
+                    swipeThreshold, swap, invert);
+            if (mirrorsLeftRight()) {
+                if (direction == Coords.DOT_LEFT) {
+                    direction = Coords.DOT_RIGHT;
+                } else if (direction == Coords.DOT_RIGHT) {
+                    direction = Coords.DOT_LEFT;
+                }
+            }
+            directions[i] = direction;
+        }
+        return directions;
+    }
+
+    /**
+     * Whether left and right swipes on this pad are reversed relative to the
+     * raw touch coordinates. Must agree with getSwipe().
+     */
+    protected boolean mirrorsLeftRight() {
+        return false;
+    }
+
     protected static int getXGap(List<Coords> list) {
         int[] array = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {

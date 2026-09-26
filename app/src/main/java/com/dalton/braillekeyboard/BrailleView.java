@@ -360,7 +360,12 @@ public class BrailleView extends View {
         case MotionEvent.ACTION_HOVER_EXIT:
         case MotionEvent.ACTION_UP:
             if (!handleVoiceInput()) {
-                if (pad != null && pressedDotString() != NO_DOTS) {
+                if (pad != null && pressedDotString() != NO_DOTS
+                        && useTalkBackGestures()) {
+                    setDots();
+                    handleTalkBackGesture();
+                    lastDotList.clear();
+                } else if (pad != null && pressedDotString() != NO_DOTS) {
                     setDots();
                     if (!handledSwipe) {
                         // single finger flicks
@@ -411,7 +416,13 @@ public class BrailleView extends View {
             }
             break;
         case MotionEvent.ACTION_POINTER_UP:
-            if (!setPad(id, width, height, displayParams.autoRotate)) {
+            if (useTalkBackGestures()) {
+                // TalkBack gestures are recognised once all fingers lift, so
+                // just remember where this finger left the screen.
+                if (!setPad(id, width, height, displayParams.autoRotate)) {
+                    updatePointer(dotsDown, id, x, y, false);
+                }
+            } else if (!setPad(id, width, height, displayParams.autoRotate)) {
                 updatePointer(dotsDown, id, x, y, false);
                 setDots();
                 if ((swipe = handledSwipeAction(dotsDown,
@@ -695,6 +706,35 @@ public class BrailleView extends View {
             // somehow is called
         }
         return Swipe.NONE;
+    }
+
+    // Whether the user chose the TalkBack braille keyboard gestures.
+    private boolean useTalkBackGestures() {
+        return getContext().getString(R.string.pref_gesture_style_talkback_value)
+                .equals(Options.getStringPreference(getContext(),
+                        R.string.pref_gesture_style_key, getContext()
+                                .getString(R.string.pref_gesture_style_default)));
+    }
+
+    // Types the pressed dots, or performs the TalkBack gesture if any finger
+    // swiped.
+    private void handleTalkBackGesture() {
+        byte[] directions = pad.getDotDirections(dotsDown, getHeight() > getWidth()
+                && !displayParams.autoRotate);
+        boolean swiped = false;
+        for (byte direction : directions) {
+            if (direction != 0 && direction != Coords.DOT_NONE) {
+                swiped = true;
+            }
+        }
+        if (!swiped) {
+            handleTypedCharacter();
+            return;
+        }
+        TalkBackGesture.Action action = TalkBackGesture.classify(directions);
+        if (action != null) {
+            actionHandler.handleTalkBackAction(getContext(), action);
+        }
     }
 
     private void handleTypedCharacter() {

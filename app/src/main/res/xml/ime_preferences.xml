@@ -39,6 +39,13 @@
              android:entries="@array/keyboard_style_entries"
              android:entryValues="@array/keyboard_style_entry_values"
              android:defaultValue="@string/pref_keyboard_style_normal_value" />
+         <ListPreference
+             android:key="@string/pref_gesture_style_key"
+             android:title="@string/pref_gesture_style_title"
+             android:summary="@string/pref_gesture_style_summary"
+             android:entries="@array/gesture_style_entries"
+             android:entryValues="@array/gesture_style_values"
+             android:defaultValue="@string/pref_gesture_style_default" />
          <CheckBoxPreference
          android:key="@string/pref_auto_match_keyboard_key"
          android:title="@string/pref_auto_match_keyboard_title"

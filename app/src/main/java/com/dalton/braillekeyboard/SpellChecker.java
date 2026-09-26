@@ -266,6 +266,12 @@ public class SpellChecker {
             return results.get(current);
         }
 
+        /** Goes back to the original, possibly misspelled, word. */
+        public String reset() {
+            current = 0;
+            return results.get(current);
+        }
+
         public String getCurrent() {
             return results.get(current);
         }

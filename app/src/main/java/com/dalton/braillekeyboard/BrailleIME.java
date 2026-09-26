@@ -24,6 +24,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Process;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
@@ -35,6 +36,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
 
 import com.googlecode.eyesfree.braille.translate.TableInfo;
 
@@ -536,6 +538,51 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     private void keyDownUp(InputConnection ic, int keyEventCode) {
         ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyEventCode));
         ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, keyEventCode));
+    }
+
+    @Override
+    public int[] getSelectionRange() {
+        ExtractedText text = getAllText();
+        if (text == null) {
+            return null;
+        }
+        return new int[] { text.startOffset + text.selectionStart,
+                text.startOffset + text.selectionEnd };
+    }
+
+    @Override
+    public boolean selectRange(int anchor, int focus) {
+        // A real selection replaces the mark based selection.
+        selectAll = false;
+        mark = -1;
+        return setSelection(anchor, focus);
+    }
+
+    @Override
+    public boolean performEditorAction() {
+        finishComposingText();
+        // Not from the enter key, so the action runs even in fields that
+        // don't want enter to trigger it, like many messaging apps.
+        return sendDefaultEditorAction(false);
+    }
+
+    @Override
+    public void hideKeyboard() {
+        finishComposingText();
+        requestHideSelf(0);
+    }
+
+    @Override
+    public void switchToNextKeyboard() {
+        finishComposingText();
+        boolean switched = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            switched = switchToNextInputMethod(false);
+        }
+        if (!switched) {
+            ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                    .showInputMethodPicker();
+        }
     }
 
     private boolean setSelection(int start, int end) {
