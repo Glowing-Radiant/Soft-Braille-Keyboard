@@ -22,6 +22,8 @@ import java.util.Map;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.os.Build;
@@ -60,16 +62,22 @@ public class Speech {
     private static final String SHUTDOWN_ID = "SHUTDOWN";
     private static TextToSpeech tts;
 
+    // Speak on the accessibility stream so the keyboard follows the
+    // accessibility volume like TalkBack does, rather than the media volume.
+    private static final AudioAttributes AUDIO_ATTRIBUTES = new AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build();
+
+    private final Context context;
     private final AudioManager audioManager;
+    private Object audioFocusRequest; // AudioFocusRequest on API 26+
     private final Map<String, String> speechMap = new HashMap<String, String>();
     @SuppressLint("NewApi")
     private final UtteranceProgressListener progressListener = new UtteranceProgressListener() {
 
         @Override
         public void onStart(String utteranceId) {
-            audioManager.requestAudioFocus(audioFocusChangeListener,
-                    AudioManager.STREAM_MUSIC,
-                    AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
+            requestAudioFocus();
         }
 
         @Override
@@ -79,7 +87,7 @@ public class Speech {
 
         @Override
         public void onDone(String utteranceId) {
-            audioManager.abandonAudioFocus(audioFocusChangeListener);
+            abandonAudioFocus();
             if (SHUTDOWN_ID.equals(utteranceId)) {
                 doShutdown();
             }
@@ -91,7 +99,7 @@ public class Speech {
         @Override
         public void onAudioFocusChange(int focusChange) {
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                audioManager.abandonAudioFocus(audioFocusChangeListener);
+                abandonAudioFocus();
             }
         }
     };
@@ -108,7 +116,8 @@ public class Speech {
      *            The callback that will be invoked when the tts service is
      *            ready for use.
      */
-    public Speech(final Context context, final OnReadyListener listener) {
+    public Speech(Context context, final OnReadyListener listener) {
+        this.context = context.getApplicationContext();
         audioManager = (AudioManager) context
                 .getSystemService(Context.AUDIO_SERVICE);
         // Some symbols are not spoken natively by TTS engines, so add them into
@@ -117,6 +126,10 @@ public class Speech {
 
         String engine = Options.getStringPreference(context,
                 R.string.pref_text_to_speech_engine_key, null);
+        if (engine != null && engine.length() == 0) {
+            // Empty means follow the system default engine.
+            engine = null;
+        }
 
         if (canSpeak || tts != null) {
             doShutdown();
@@ -125,8 +138,9 @@ public class Speech {
         tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
+                if (status == TextToSpeech.SUCCESS && tts != null) {
                     canSpeak = true;
+                    tts.setAudioAttributes(AUDIO_ATTRIBUTES);
                     setProgressListener();
                     listener.ttsReady();
                 }
@@ -347,6 +361,10 @@ public class Speech {
             }
 
             Bundle bundle = new Bundle();
+            bundle.putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME,
+                    getVolume(context));
+            tts.setSpeechRate(getSpeechRate(context));
+            tts.setPitch(getPitch(context));
             if (params != null) {
                 for (String key : params.keySet()) {
                     bundle.putString(key, params.get(key));
@@ -356,6 +374,62 @@ public class Speech {
             tts.speak(text, queueMode, bundle, id);
         } else {
             tts.speak(text, queueMode, params);
+        }
+    }
+
+    /** The user's speech rate, 1.0 being the engine's normal rate. */
+    public static float getSpeechRate(Context context) {
+        return getPercentPreference(context, R.string.pref_speech_rate_key);
+    }
+
+    /** The user's speech pitch, 1.0 being the engine's normal pitch. */
+    public static float getPitch(Context context) {
+        return getPercentPreference(context, R.string.pref_speech_pitch_key);
+    }
+
+    /** The user's speech volume from 0 to 1, relative to the stream volume. */
+    public static float getVolume(Context context) {
+        return Math.min(1f,
+                getPercentPreference(context, R.string.pref_speech_volume_key));
+    }
+
+    // Reads a preference stored as a percentage, defaulting to 100%.
+    private static float getPercentPreference(Context context, int key) {
+        try {
+            return Integer.parseInt(Options.getStringPreference(context, key,
+                    "100")) / 100f;
+        } catch (NumberFormatException e) {
+            return 1f;
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private void requestAudioFocus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (audioFocusRequest == null) {
+                audioFocusRequest = new AudioFocusRequest.Builder(
+                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK)
+                        .setAudioAttributes(AUDIO_ATTRIBUTES)
+                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
+                        .build();
+            }
+            audioManager.requestAudioFocus((AudioFocusRequest) audioFocusRequest);
+        } else {
+            audioManager.requestAudioFocus(audioFocusChangeListener,
+                    AudioManager.STREAM_MUSIC,
+                    AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private void abandonAudioFocus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (audioFocusRequest != null) {
+                audioManager
+                        .abandonAudioFocusRequest((AudioFocusRequest) audioFocusRequest);
+            }
+        } else {
+            audioManager.abandonAudioFocus(audioFocusChangeListener);
         }
     }
 

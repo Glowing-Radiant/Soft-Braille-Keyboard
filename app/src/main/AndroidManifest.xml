@@ -3,6 +3,14 @@
 
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- Android 11+ hides other apps unless declared. Without this only the
+         system default text-to-speech engine can be listed and used. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

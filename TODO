@@ -20,9 +20,6 @@ TODO
 
 * Find a common java code style template so we can format all files
   with the same conventions.
-* In Text To Speech engine there should be an option “auto - use
-  system default” which will always honour the default system tts
-  engine.
 * Russian support.
 * Do spell check with hunspell to support wider variety of devices.
 * Be smarter with contracted Braille. Make delete character remove the

@@ -298,6 +298,25 @@
     <string name="braille_keyboard_ready">Braille keyboard ready. Use six or eight finger positions to type in braille.</string>
     <string name="touch_passthrough_needed">TalkBack is getting your touches instead of the keyboard. To type braille, turn on Soft Braille Keyboard touch pass-through in accessibility settings.</string>
 
+    <!-- Text to speech settings. [CHAR LIMIT="NONE"] -->
+    <string name="pref_speech_rate_key" translatable="false">SPEECH_RATE</string>
+    <string name="pref_speech_pitch_key" translatable="false">SPEECH_PITCH</string>
+    <string name="pref_speech_volume_key" translatable="false">SPEECH_VOLUME</string>
+    <string name="pref_speech_test_key" translatable="false">SPEECH_TEST</string>
+    <string name="pref_tts_engine_settings_key" translatable="false">TTS_ENGINE_SETTINGS</string>
+    <string name="pref_tts_system_settings_key" translatable="false">TTS_SYSTEM_SETTINGS</string>
+    <string name="pref_speech_rate_title">Speech rate</string>
+    <string name="pref_speech_pitch_title">Pitch</string>
+    <string name="pref_speech_volume_title">Volume</string>
+    <string name="pref_speech_test_title">Test speech</string>
+    <string name="pref_speech_test_summary">Play a sample with these settings</string>
+    <string name="pref_tts_engine_settings_title">Engine settings</string>
+    <string name="pref_tts_engine_settings_summary">Voices, languages and voice data of the selected engine</string>
+    <string name="pref_tts_system_settings_title">System text-to-speech settings</string>
+    <string name="pref_tts_system_settings_summary">Android\'s default engine and speech settings</string>
+    <string name="tts_engine_system_default">System default</string>
+    <string name="tts_engine_no_settings">This engine has no settings screen of its own</string>
+    <string name="speech_test_sample">This is how Soft Braille Keyboard sounds.</string>
 
 
 </resources>

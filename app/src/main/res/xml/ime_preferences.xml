@@ -121,7 +121,42 @@
              android:title="@string/pref_text_to_speech_title" >
          <ListPreference
              android:key="@string/pref_text_to_speech_engine_key"
-             android:title="@string/pref_text_to_speech_engine_title" />
+             android:title="@string/pref_text_to_speech_engine_title"
+             android:summary="%s"
+             android:defaultValue="" />
+         <ListPreference
+             android:key="@string/pref_speech_rate_key"
+             android:title="@string/pref_speech_rate_title"
+             android:summary="%s"
+             android:entries="@array/speech_rate_entries"
+             android:entryValues="@array/speech_rate_values"
+             android:defaultValue="100" />
+         <ListPreference
+             android:key="@string/pref_speech_pitch_key"
+             android:title="@string/pref_speech_pitch_title"
+             android:summary="%s"
+             android:entries="@array/speech_pitch_entries"
+             android:entryValues="@array/speech_pitch_values"
+             android:defaultValue="100" />
+         <ListPreference
+             android:key="@string/pref_speech_volume_key"
+             android:title="@string/pref_speech_volume_title"
+             android:summary="%s"
+             android:entries="@array/speech_volume_entries"
+             android:entryValues="@array/speech_volume_values"
+             android:defaultValue="100" />
+         <Preference
+             android:key="@string/pref_speech_test_key"
+             android:title="@string/pref_speech_test_title"
+             android:summary="@string/pref_speech_test_summary" />
+         <Preference
+             android:key="@string/pref_tts_engine_settings_key"
+             android:title="@string/pref_tts_engine_settings_title"
+             android:summary="@string/pref_tts_engine_settings_summary" />
+         <Preference
+             android:key="@string/pref_tts_system_settings_key"
+             android:title="@string/pref_tts_system_settings_title"
+             android:summary="@string/pref_tts_system_settings_summary" />
          </PreferenceScreen>
          <PreferenceScreen
          android:key="@string/pref_category_misc_key"
