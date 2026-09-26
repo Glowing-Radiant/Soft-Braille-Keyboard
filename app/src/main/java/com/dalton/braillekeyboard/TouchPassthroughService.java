@@ -26,6 +26,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 
 /**
  * Lets the Braille keyboard receive raw multi-touch input while a screen
@@ -43,9 +44,19 @@ import android.view.accessibility.AccessibilityEvent;
  *
  * The keyboard (running in the same process) drives it through
  * {@link #setKeyboardRegion(int, Rect)} and {@link #clearKeyboardRegion()}.
+ *
+ * There is only one passthrough region per display, shared by all
+ * accessibility services. Some screen readers, such as Jieshuo, set it
+ * themselves or restart touch exploration at runtime. So while the keyboard is
+ * shown the region is set again when touch exploration or the enabled
+ * services change, and when the keyboard receives an explore by touch hover
+ * event, which shows the region was lost.
  */
 public class TouchPassthroughService extends AccessibilityService {
     private static final String TAG = "TouchPassthrough";
+    // Touch exploration restarts asynchronously, so set the region again a
+    // little later too.
+    private static final long REASSERT_DELAY_MS = 300;
 
     private static final Handler mainHandler = new Handler(
             Looper.getMainLooper());
@@ -58,6 +69,22 @@ public class TouchPassthroughService extends AccessibilityService {
     // The region currently applied to the system.
     private static int appliedDisplayId = -1;
     private static Rect appliedBounds;
+
+    private static final Runnable reassertRunnable = new Runnable() {
+        @Override
+        public void run() {
+            reassert();
+        }
+    };
+
+    private AccessibilityManager accessibilityManager;
+    private final AccessibilityManager.TouchExplorationStateChangeListener touchExplorationListener = new AccessibilityManager.TouchExplorationStateChangeListener() {
+        @Override
+        public void onTouchExplorationStateChanged(boolean enabled) {
+            reassertSoon();
+        }
+    };
+    private Object servicesListener; // AccessibilityServicesStateChangeListener
 
     /**
      * Returns true if this device supports touch passthrough regions.
@@ -98,9 +125,35 @@ public class TouchPassthroughService extends AccessibilityService {
             public void run() {
                 pendingDisplayId = -1;
                 pendingBounds = null;
+                mainHandler.removeCallbacks(reassertRunnable);
                 apply();
             }
         });
+    }
+
+    /**
+     * Sets the keyboard's region again, now and shortly after, in case
+     * another accessibility service replaced it or touch exploration
+     * restarted. Does nothing when the keyboard isn't shown.
+     */
+    public static void reassertSoon() {
+        runOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                reassert();
+                mainHandler.removeCallbacks(reassertRunnable);
+                mainHandler.postDelayed(reassertRunnable, REASSERT_DELAY_MS);
+            }
+        });
+    }
+
+    private static void reassert() {
+        TouchPassthroughService service = instance;
+        if (service != null && pendingDisplayId != -1) {
+            service.setRegion(pendingDisplayId, pendingBounds);
+            appliedDisplayId = pendingDisplayId;
+            appliedBounds = pendingBounds;
+        }
     }
 
     @Override
@@ -110,6 +163,42 @@ public class TouchPassthroughService extends AccessibilityService {
         appliedDisplayId = -1;
         appliedBounds = null;
         apply();
+        registerListeners();
+    }
+
+    @TargetApi(Build.VERSION_CODES.TIRAMISU)
+    private void registerListeners() {
+        accessibilityManager = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
+        accessibilityManager
+                .addTouchExplorationStateChangeListener(touchExplorationListener);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            AccessibilityManager.AccessibilityServicesStateChangeListener listener = new AccessibilityManager.AccessibilityServicesStateChangeListener() {
+                @Override
+                public void onAccessibilityServicesStateChanged(
+                        AccessibilityManager manager) {
+                    reassertSoon();
+                }
+            };
+            accessibilityManager.addAccessibilityServicesStateChangeListener(
+                    getMainExecutor(), listener);
+            servicesListener = listener;
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.TIRAMISU)
+    private void unregisterListeners() {
+        if (accessibilityManager == null) {
+            return;
+        }
+        accessibilityManager
+                .removeTouchExplorationStateChangeListener(touchExplorationListener);
+        if (servicesListener != null
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            accessibilityManager
+                    .removeAccessibilityServicesStateChangeListener((AccessibilityManager.AccessibilityServicesStateChangeListener) servicesListener);
+            servicesListener = null;
+        }
+        accessibilityManager = null;
     }
 
     @Override
@@ -134,6 +223,7 @@ public class TouchPassthroughService extends AccessibilityService {
     }
 
     private void release() {
+        unregisterListeners();
         if (instance == this) {
             setRegion(appliedDisplayId, null);
             appliedDisplayId = -1;
