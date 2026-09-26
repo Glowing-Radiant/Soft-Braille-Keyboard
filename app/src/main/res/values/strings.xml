@@ -184,6 +184,7 @@
     <string name="swipe_confirm_settings">Swipe again to show Soft Braille Keyboard settings</string>
     <string name="swipe_confirm">Swipe again to confirm</string>
     <string name="translator_error">There is a problem with the Braille service</string>
+    <string name="multi_finger_touch_taken">Your phone took a touch with three or more fingers, so it wasn\'t typed. Turn off three finger screenshot and other three finger gestures in your phone\'s settings.</string>
     <string name="switch_off_talkback">To type braille, pause TalkBack while the keyboard is open.</string>
     <string name="try_box">Try typing with the keyboard here.</string>
     <string name="unknown_character">Unknown character</string>

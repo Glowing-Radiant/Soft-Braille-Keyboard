@@ -68,6 +68,9 @@ public class BrailleView extends View {
     private static final byte NO_DOTS = 0;
     private static final long LONG_HOLD_DELAY = 1200;
     private static final long QUICK_VIBRATION = 25;
+    // Phones' multi-finger system gestures, like screenshots, use three or
+    // more fingers.
+    private static final int MIN_SYSTEM_GESTURE_FINGERS = 3;
 
     private final AccessibilityManager accessibilityManager;
     private final List<Coords> lastDotList = new ArrayList<Coords>();
@@ -135,6 +138,7 @@ public class BrailleView extends View {
     private Pad pad;
     private long requiredTouchTime = 0;
     private boolean shrinkKeyboard;
+    private boolean systemGestureHintSpoken;
     private Speech speech;
 
     public BrailleView(Context context, AttributeSet attrs) {
@@ -157,6 +161,7 @@ public class BrailleView extends View {
      */
     public void onInitialiseForInput(Context context, KeyboardListener listener) {
         this.listener = listener;
+        systemGestureHintSpoken = false;
 
         // Set up speech and announce when it's ready to the user.
         speech = new Speech(getContext(), new Speech.OnReadyListener() {
@@ -413,6 +418,21 @@ public class BrailleView extends View {
                 pointerY = displayParams.autoRotate || getWidth() >= getHeight() ? pointerY : tempPointerX;
                 
                 updatePointer(dotsDown, pointerId, pointerX, pointerY, false);
+            }
+            break;
+        case MotionEvent.ACTION_CANCEL:
+            // The system took the touch, for example for a multi-finger
+            // screenshot gesture. Nothing more is delivered for it, so forget
+            // its fingers rather than typing them into the next character.
+            resetDots();
+            lastDotList.clear();
+            if (motionEvent.getPointerCount() >= MIN_SYSTEM_GESTURE_FINGERS
+                    && !systemGestureHintSpoken) {
+                // Many phones have three finger screenshot gestures that take
+                // every such touch. Explain once each time the keyboard opens.
+                systemGestureHintSpoken = true;
+                speech.speak(getContext(), getContext().getString(
+                        R.string.multi_finger_touch_taken), Speech.QUEUE_ADD);
             }
             break;
         case MotionEvent.ACTION_POINTER_UP:
