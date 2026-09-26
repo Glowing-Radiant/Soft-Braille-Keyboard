@@ -116,6 +116,42 @@ public final class TalkBackGesture {
         }
     }
 
+    /**
+     * Counts the fingers that swiped, as opposed to being held still or not
+     * touching at all.
+     */
+    public static int countSwipingFingers(byte[] directions) {
+        int fingers = 0;
+        for (byte d : directions) {
+            if (d != 0 && d != Coords.DOT_NONE) {
+                fingers++;
+            }
+        }
+        return fingers;
+    }
+
+    /** Counts the dots held still during a gesture. */
+    public static int countHeldDots(byte[] directions) {
+        int held = 0;
+        for (byte d : directions) {
+            if (d == Coords.DOT_NONE) {
+                held++;
+            }
+        }
+        return held;
+    }
+
+    /**
+     * Whether an action is used in the mixed gesture style, where only
+     * gestures swiping with two or more fingers are TalkBack gestures. Reading
+     * granularity only changes what one finger swipes do, which are classic
+     * gestures in that style.
+     */
+    public static boolean isAvailableInMixedStyle(Action action) {
+        return action != Action.NEXT_GRANULARITY
+                && action != Action.PREVIOUS_GRANULARITY;
+    }
+
     private static Action swipe(byte direction, int fingers) {
         switch (fingers) {
         case 1:
