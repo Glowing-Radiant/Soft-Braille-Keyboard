@@ -18,81 +18,53 @@ This application is licensed under the Apache License, Version 2.0 (the "License
 You may obtain a copy of the License at
 http://www.apache.org/licenses/LICENSE-2.0
 
+Braille translation uses liblouis (http://liblouis.io), which is
+licensed under the GNU Lesser General Public License version 2.1 or
+later. See app/src/main/cpp/liblouis/COPYING.LESSER.
+
 BUILDING THE APP
 
-You can checkout sbk as follows:
-git clone git@bitbucket.org:daniel_dalton10/soft-braille-keyboard.git
+You need JDK 17 or later and the Android SDK with:
+* Android SDK Platform 35
+* NDK 27.1.12297006
+* CMake 3.22.1
 
-To build the app you will need a few things. 
-* Checkout Android Brailleback
-git clone http://github.com/google/brailleback
-* See brailleback/README for setup instructions. Follow these and make
-sure you can at least ant build the service and client packages
-each. Don't worry if brailleback isn't building we do not use this.
-Note: The liblouis and brltty patches wouldn't apply for me in the
-brailleback project. Solution was to manually enter the path to each
-file for each patch when applying.
-* Update the soft braille keyboard project.properties to use the right
-target and point to the required libraries:
-cd /path/to/soft-braille-keyboard
-android update project -p ./ --target <target_id> --library /path/to/brailleback/braille/service/
-android update project -p ./ --target <target_id> --library /path/to/brailleback/braille/client/
-* ant debug
-* If this all goes fine you should do the following:
-  - Checkout latest liblouis somewhere else and copy the pl-pl-comp8.ctb
-  file into the
-  brailleback/braille/service/jni/liblouiswrapper/liblouis/tables/
-  directory.
-  - Copy *.utb *.ctb to this same directory from sbk/patches:
-  cd /path/to/sbk_checkout
-  cp patches/*.utb /path/to/brailleback/braille/service/jni/liblouiswrapper/liblouis/tables/
-  cp patches/*.ctb /path/to/brailleback/braille/service/jni/liblouiswrapper/liblouis/tables/
-  cd /path/to/brailleback/braille/service/jni/liblouiswrapper/liblouis/
-  patch -p 0 < /path/to/sbk/patches/tablechanges.patch
-  cd /path/to/brailleback
-  patch -p 0 < /path/to/sbk/patches/tablelist-brailleback.patch
-    Update the TranslatorClient:
-    patch -p 1 < /path/to/soft-braille-keyboard/patches/TranslatorClient.patch
-  And finally update the Braille service to use the newly included
-  tables. If you make any changes to the liblouis tables or add
-  additional tables you should do this last step:
-  cd braille/service
-  ./tables/mktranslationtables
+Android Studio installs these when you open the project. From the
+command line, point ANDROID_HOME (or sdk.dir in local.properties) at the
+SDK and run:
 
-If this all works fine it is time to configure eclipse:
-1. Open eclipse. 
-2. File -> import -> existing android code 
-3. Browse and import the service package. 
-4. Select just the service package and finish.
-5. File -> import -> existing android code 
-6. Browse and import the client package. 
-7. Select just the client package and
-finish. 
-8. File -> import -> existing android code 
-9. Browse to the Soft braille keyboard package and import it. 
-10. Click finish. 
-11. The projects should now build right click on the sbk project and
-select run as -. android application 
+  ./gradlew assembleDebug
 
-ADDING A BRAILLE TABLE
+The APK is written to app/build/outputs/apk/debug/. It contains
+liblouis built for arm64-v8a, armeabi-v7a, x86_64 and x86.
 
-- add the new table in the
-brailleback/braille/service/jni/liblouiswrapper/liblouis/tables/
-directory.
-- Update brailleback/braille/service/res/xml/tables.xml.
-- Run brailleback/braille/service/tables/mktranslationtables from the
-brailleback/braille/service dir.
-- Update sbk/res/values/arrays.xml to also include the id of the newly
-defined table you created for the braille service.
-- Clean build everything in eclipse or whatever and test.
-- create the diffs:
-  + cd /path/to/brailleback
-  git diff braille/service/res/xml/tablelist.xml >/path/to/sbk/patches/tablelist-brailleback.patch
-  + Copy the new table into the patches dir for now, so others can use
-  it or otherwise get it included in liblouis and update the readme to
-  include this like the pl-comp8 table.
-- If you modify an existing table
-  + run mktranslationtables as described.
-  + Create the tablelist.xml diff as above if you changed that file. 
-  + cd /path/to/brailleback/braille/service/jni/liblouiswrapper/liblouis/
-  + git diff tables/ >/path/to/sbk/patches/tablechanges.patch
+To run the tests:
+
+  ./gradlew testDebugUnitTest          (on the computer)
+  ./gradlew connectedDebugAndroidTest  (on a connected device)
+
+BRAILLE TABLES
+
+liblouis is included as source in app/src/main/cpp/liblouis and is
+built with CMake. The braille tables the keyboard offers are declared
+in app/src/main/res/xml/tablelist.xml, and only the ones whose ids are
+listed in the braille_tables array in app/src/main/res/values/arrays.xml
+are shown to the user.
+
+The table files are bundled in app/src/main/assets/liblouis/tables and
+copied to the device's internal storage when the app is first used after
+an install or update.
+
+To add a table:
+- Add a table element to tablelist.xml with the liblouis file name.
+- Add its id to the braille_tables array in arrays.xml.
+- Copy the table files from a liblouis release:
+  python scripts/update_liblouis_tables.py /path/to/liblouis-x.y.z/tables
+  This copies every table in tablelist.xml plus the files they include.
+
+To update liblouis, replace the C sources in app/src/main/cpp/liblouis
+with those of the new release (regenerating liblouis.h from
+liblouis.h.in with widechar as unsigned short int and updating
+PACKAGE_VERSION in config.h), then refresh the tables as above. If a
+table has been renamed upstream, update its fileName in tablelist.xml;
+keep the id so users' settings are preserved.

@@ -18,13 +18,8 @@ BUGS
 
 TODO
 
-* Migrate to the new Android gradle build system / Android studio.
 * Find a common java code style template so we can format all files
   with the same conventions.
-* Currently we hack our way around the Braille service
-  TranslatorClient rather than using it directly. Ideally we would like
-  to use TranslatorClient directly without our own MyTranslatorClient
-  eg. like Brailleback does. Unfortunately, I couldn’t get this to work.
 * In Text To Speech engine there should be an option “auto - use
   system default” which will always honour the default system tts
   engine.
