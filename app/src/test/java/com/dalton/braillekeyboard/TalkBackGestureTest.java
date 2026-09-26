@@ -22,7 +22,9 @@ import static com.dalton.braillekeyboard.Pad.Coords.DOT_NONE;
 import static com.dalton.braillekeyboard.Pad.Coords.DOT_RIGHT;
 import static com.dalton.braillekeyboard.Pad.Coords.DOT_UP;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.dalton.braillekeyboard.TalkBackGesture.Action;
 
@@ -116,6 +118,34 @@ public class TalkBackGestureTest {
         // Hold dots 1 and 2 act as dots 4 and 5.
         assertEquals(Action.START_OF_TEXT,
                 TalkBackGesture.classify(dots(HOLD, HOLD, 0, DOT_UP)));
+    }
+
+    @Test
+    public void countsSwipingFingersAndHeldDots() {
+        byte[] holdAndSwipe = dots(DOT_UP, 0, 0, 0, 0, HOLD);
+        assertEquals(1, TalkBackGesture.countSwipingFingers(holdAndSwipe));
+        assertEquals(1, TalkBackGesture.countHeldDots(holdAndSwipe));
+
+        byte[] twoFingers = dots(DOT_RIGHT, 0, 0, DOT_RIGHT);
+        assertEquals(2, TalkBackGesture.countSwipingFingers(twoFingers));
+        assertEquals(0, TalkBackGesture.countHeldDots(twoFingers));
+
+        // A typed character: every finger held still.
+        byte[] chord = dots(HOLD, HOLD, 0, HOLD);
+        assertEquals(0, TalkBackGesture.countSwipingFingers(chord));
+        assertEquals(3, TalkBackGesture.countHeldDots(chord));
+    }
+
+    @Test
+    public void mixedStyleLeavesOutReadingGranularity() {
+        // Granularity only changes one finger swipes, which are classic
+        // gestures in the mixed style.
+        assertFalse(TalkBackGesture
+                .isAvailableInMixedStyle(Action.NEXT_GRANULARITY));
+        assertFalse(TalkBackGesture
+                .isAvailableInMixedStyle(Action.PREVIOUS_GRANULARITY));
+        assertTrue(TalkBackGesture.isAvailableInMixedStyle(Action.ADD_NEWLINE));
+        assertTrue(TalkBackGesture.isAvailableInMixedStyle(Action.COPY));
     }
 
     @Test

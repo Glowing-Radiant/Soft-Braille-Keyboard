@@ -325,11 +325,13 @@
     <string name="pref_gesture_style_key" translatable="false">GESTURE_STYLE</string>
     <string name="pref_gesture_style_classic_value" translatable="false">classic</string>
     <string name="pref_gesture_style_talkback_value" translatable="false">talkback</string>
+    <string name="pref_gesture_style_mixed_value" translatable="false">mixed</string>
     <string name="pref_gesture_style_default" translatable="false">classic</string>
     <string name="pref_gesture_style_title">Gesture style</string>
     <string name="pref_gesture_style_summary">%s</string>
     <string name="gesture_style_classic">Classic Soft Braille Keyboard gestures</string>
     <string name="gesture_style_talkback">TalkBack braille keyboard gestures</string>
+    <string name="gesture_style_mixed">Mixed: classic one finger gestures and TalkBack gestures with two or more fingers</string>
     <!-- Reading granularities, spoken when changed. -->
     <string name="granularity_characters">Characters</string>
     <string name="granularity_words">Words</string>

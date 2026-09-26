@@ -380,10 +380,18 @@ public class BrailleView extends View {
         case MotionEvent.ACTION_HOVER_EXIT:
         case MotionEvent.ACTION_UP:
             if (!handleVoiceInput()) {
+                GestureStyle style = getGestureStyle();
                 if (pad != null && pressedDotString() != NO_DOTS
-                        && useTalkBackGestures()) {
+                        && style == GestureStyle.TALKBACK) {
                     setDots();
                     handleTalkBackGesture();
+                    lastDotList.clear();
+                } else if (pad != null && pressedDotString() != NO_DOTS
+                        && style == GestureStyle.MIXED) {
+                    setDots();
+                    if (!handledSwipe) {
+                        handleMixedGesture();
+                    }
                     lastDotList.clear();
                 } else if (pad != null && pressedDotString() != NO_DOTS) {
                     setDots();
@@ -451,7 +459,7 @@ public class BrailleView extends View {
             }
             break;
         case MotionEvent.ACTION_POINTER_UP:
-            if (useTalkBackGestures()) {
+            if (getGestureStyle() == GestureStyle.TALKBACK) {
                 // TalkBack gestures are recognised once all fingers lift, so
                 // just remember where this finger left the screen.
                 if (!setPad(id, width, height, displayParams.autoRotate)) {
@@ -460,7 +468,8 @@ public class BrailleView extends View {
             } else if (!setPad(id, width, height, displayParams.autoRotate)) {
                 updatePointer(dotsDown, id, x, y, false);
                 setDots();
-                if ((swipe = handledSwipeAction(dotsDown,
+                if (isClassicHoldSwipeNow()
+                        && (swipe = handledSwipeAction(dotsDown,
                         getHeight() > getWidth() && !displayParams.autoRotate)) != Swipe.NONE) {
                     // Hold one finger while swiping with another
                     handledSwipe = true;
@@ -755,26 +764,74 @@ public class BrailleView extends View {
         return Swipe.NONE;
     }
 
-    // Whether the user chose the TalkBack braille keyboard gestures.
-    private boolean useTalkBackGestures() {
-        return getContext().getString(R.string.pref_gesture_style_talkback_value)
-                .equals(Options.getStringPreference(getContext(),
-                        R.string.pref_gesture_style_key, getContext()
-                                .getString(R.string.pref_gesture_style_default)));
+    // The gesture styles the user can choose in the settings.
+    private enum GestureStyle {
+        CLASSIC, TALKBACK, MIXED
+    }
+
+    private GestureStyle getGestureStyle() {
+        String style = Options.getStringPreference(getContext(),
+                R.string.pref_gesture_style_key,
+                getContext().getString(R.string.pref_gesture_style_default));
+        if (getContext().getString(R.string.pref_gesture_style_talkback_value)
+                .equals(style)) {
+            return GestureStyle.TALKBACK;
+        } else if (getContext().getString(
+                R.string.pref_gesture_style_mixed_value).equals(style)) {
+            return GestureStyle.MIXED;
+        }
+        return GestureStyle.CLASSIC;
+    }
+
+    private byte[] getDotDirections() {
+        return pad.getDotDirections(dotsDown, getHeight() > getWidth()
+                && !displayParams.autoRotate);
+    }
+
+    // Whether a finger lifting now completes a classic "hold a dot and swipe
+    // with another finger" gesture. In the mixed style that is only the case
+    // when exactly one finger swiped, as two or more swiping fingers are a
+    // TalkBack gesture recognised once all fingers lift.
+    private boolean isClassicHoldSwipeNow() {
+        if (getGestureStyle() != GestureStyle.MIXED) {
+            return true;
+        }
+        byte[] directions = getDotDirections();
+        return !actionHandler.isMenuOpen()
+                && TalkBackGesture.countSwipingFingers(directions) == 1
+                && TalkBackGesture.countHeldDots(directions) > 0;
+    }
+
+    // In the mixed style one swiping finger is a classic gesture and two or
+    // more are a TalkBack gesture. The TalkBack keyboard menu, navigated with
+    // one finger, takes every gesture while it is open.
+    private void handleMixedGesture() {
+        byte[] directions = getDotDirections();
+        int fingers = TalkBackGesture.countSwipingFingers(directions);
+        if (fingers == 0) {
+            handleTypedCharacter();
+        } else if (fingers > 1 || actionHandler.isMenuOpen()) {
+            TalkBackGesture.Action action = TalkBackGesture.classify(directions);
+            if (action != null
+                    && TalkBackGesture.isAvailableInMixedStyle(action)) {
+                actionHandler.handleTalkBackAction(getContext(), action);
+            }
+        } else {
+            Swipe swipe = handledSwipeAction(dotsDown, getHeight() > getWidth()
+                    && !displayParams.autoRotate);
+            if (swipe != Swipe.NONE) {
+                actionHandler.handleSwipe(getContext(), swipe);
+            } else {
+                handleTypedCharacter();
+            }
+        }
     }
 
     // Types the pressed dots, or performs the TalkBack gesture if any finger
     // swiped.
     private void handleTalkBackGesture() {
-        byte[] directions = pad.getDotDirections(dotsDown, getHeight() > getWidth()
-                && !displayParams.autoRotate);
-        boolean swiped = false;
-        for (byte direction : directions) {
-            if (direction != 0 && direction != Coords.DOT_NONE) {
-                swiped = true;
-            }
-        }
-        if (!swiped) {
+        byte[] directions = getDotDirections();
+        if (TalkBackGesture.countSwipingFingers(directions) == 0) {
             handleTypedCharacter();
             return;
         }
