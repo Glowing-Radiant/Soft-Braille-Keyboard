@@ -27,9 +27,11 @@ import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -63,6 +65,7 @@ import com.dalton.braillekeyboard.Pad.Swipe;
  * resources.
  */
 public class BrailleView extends View {
+    private static final String TAG = "BrailleView";
     private static final long LONG_VIBRATION = 300;
     private static final long MEDIUM_VIBRATION = 125;
     private static final byte NO_DOTS = 0;
@@ -297,8 +300,17 @@ public class BrailleView extends View {
     @Override
     public boolean onHoverEvent(MotionEvent event) {
         // Hover events mean explore by touch is getting the touches instead of
-        // the keyboard, so explain once per touch how to fix that.
-        if (accessibilityManager.isTouchExplorationEnabled()
+        // the keyboard. If touch pass-through is on, another accessibility
+        // service replaced its region or touch exploration restarted, so set
+        // it again. Otherwise explain once per touch how to fix that.
+        if (!shrinkKeyboard && TouchPassthroughService.isRunning()) {
+            if (event.getActionMasked() == MotionEvent.ACTION_HOVER_ENTER) {
+                if (BuildConfig.DEBUG) {
+                    Log.d(TAG, "Touch pass-through region lost, setting it again");
+                }
+                TouchPassthroughService.reassertSoon();
+            }
+        } else if (accessibilityManager.isTouchExplorationEnabled()
                 && event.getActionMasked() == MotionEvent.ACTION_HOVER_ENTER) {
             speech.speak(getContext(), shrinkKeyboard ? getContext().getString(
                     R.string.expand_keyboard_talkback)
@@ -331,6 +343,9 @@ public class BrailleView extends View {
                 getWidth(), getHeight());
         int action = motionEvent.getActionMasked();
         int index = motionEvent.getActionIndex();
+        if (BuildConfig.DEBUG) {
+            logTouchLatency(motionEvent);
+        }
         int id = motionEvent.getPointerId(index);
         int x = (int) motionEvent.getX(index);
         int y = (int) motionEvent.getY(index);
@@ -456,6 +471,18 @@ public class BrailleView extends View {
         default:
         }
         return true;
+    }
+
+    // For diagnosing sluggish input: how long touches took to reach the
+    // keyboard, for example through a screen reader's touch handling.
+    private static void logTouchLatency(MotionEvent event) {
+        int action = event.getActionMasked();
+        if (action == MotionEvent.ACTION_MOVE) {
+            return;
+        }
+        Log.d(TAG, MotionEvent.actionToString(action) + " pointers="
+                + event.getPointerCount() + " latency="
+                + (SystemClock.uptimeMillis() - event.getEventTime()) + "ms");
     }
 
     public boolean getShrinkKeyboard() {
