@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Locale;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
@@ -32,6 +34,9 @@ import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
@@ -65,6 +70,9 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     private boolean predictionOn;
     private boolean selectAll = false;
     private boolean inputViewStarted = false;
+    private AlertDialog switchKeyboardDialog;
+    // The user chose to keep this keyboard while no screen reader is on.
+    private boolean switchKeyboardDeclined = false;
     private final int[] keyboardLocation = new int[2];
     private final Rect keyboardBounds = new Rect();
 
@@ -167,6 +175,9 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         brailleParser.setTranslator(this);
         inputViewStarted = true;
         updateTouchPassthrough();
+        if (!restarting) {
+            maybeOfferOtherKeyboard();
+        }
     }
 
     @Override
@@ -174,6 +185,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         super.onFinishInputView(finishingInput);
         inputViewStarted = false;
         TouchPassthroughService.clearKeyboardRegion();
+        dismissSwitchKeyboardDialog();
         InputConnection ic = getCurrentInputConnection();
         if (ic != null) {
             finishComposingText(false);
@@ -194,6 +206,103 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     public void onWindowHidden() {
         super.onWindowHidden();
         TouchPassthroughService.clearKeyboardRegion();
+        dismissSwitchKeyboardDialog();
+    }
+
+    /**
+     * When the user asked for it in the settings, offers to switch to another
+     * keyboard if the keyboard opens while no screen reader is on, for example
+     * when someone who can see is using the device.
+     */
+    private void maybeOfferOtherKeyboard() {
+        AccessibilityManager accessibilityManager = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
+        if (accessibilityManager.isTouchExplorationEnabled()) {
+            // Ask again the next time the screen reader is off.
+            switchKeyboardDeclined = false;
+            return;
+        }
+        if (switchKeyboardDeclined
+                || brailleView == null
+                || !Options.getBooleanPreference(this,
+                        R.string.pref_offer_switch_keyboard_key, Boolean
+                                .parseBoolean(getString(R.string.pref_offer_switch_keyboard_default)))) {
+            return;
+        }
+        // The dialog needs the keyboard's window, which isn't attached yet.
+        brailleView.post(new Runnable() {
+            @Override
+            public void run() {
+                showSwitchKeyboardDialog();
+            }
+        });
+    }
+
+    private void showSwitchKeyboardDialog() {
+        if (!inputViewStarted || brailleView == null
+                || brailleView.getWindowToken() == null
+                || (switchKeyboardDialog != null && switchKeyboardDialog
+                        .isShowing())) {
+            return;
+        }
+        AlertDialog dialog = new AlertDialog.Builder(this,
+                android.R.style.Theme_DeviceDefault_Dialog_Alert)
+                .setTitle(R.string.switch_keyboard_title)
+                .setMessage(R.string.switch_keyboard_message)
+                .setPositiveButton(R.string.switch_keyboard_switch,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface d, int which) {
+                                switchToPreviousKeyboard();
+                            }
+                        })
+                .setNegativeButton(R.string.switch_keyboard_keep, null)
+                .setNeutralButton(R.string.switch_keyboard_never,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface d, int which) {
+                                Options.writeBooleanPreference(BrailleIME.this,
+                                        R.string.pref_offer_switch_keyboard_key,
+                                        false);
+                            }
+                        }).create();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface d) {
+                // Don't ask again while the screen reader stays off.
+                switchKeyboardDeclined = true;
+            }
+        });
+        // Attach the dialog to the keyboard's window, as an input method has
+        // no activity to show it from.
+        Window window = dialog.getWindow();
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.token = brailleView.getWindowToken();
+        params.type = WindowManager.LayoutParams.TYPE_APPLICATION_ATTACHED_DIALOG;
+        window.setAttributes(params);
+        window.addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        switchKeyboardDialog = dialog;
+        dialog.show();
+    }
+
+    private void dismissSwitchKeyboardDialog() {
+        if (switchKeyboardDialog != null) {
+            switchKeyboardDialog.dismiss();
+            switchKeyboardDialog = null;
+        }
+    }
+
+    // Goes back to the keyboard used before this one, or lets the user pick
+    // one where that isn't supported.
+    private void switchToPreviousKeyboard() {
+        finishComposingText();
+        boolean switched = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            switched = switchToPreviousInputMethod();
+        }
+        if (!switched) {
+            ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                    .showInputMethodPicker();
+        }
     }
 
     @Override

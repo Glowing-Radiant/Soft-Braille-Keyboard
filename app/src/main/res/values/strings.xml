@@ -364,4 +364,15 @@
     <string name="text_unselected">%s unselected</string>
     <string name="suggestion_confirmed">Suggestion confirmed</string>
     <string name="nothing_to_undo">Nothing to undo</string>
+
+    <!-- Offer to switch to another keyboard when no screen reader is on. [CHAR LIMIT="NONE"] -->
+    <string name="pref_offer_switch_keyboard_key" translatable="false">OFFER_SWITCH_KEYBOARD</string>
+    <string name="pref_offer_switch_keyboard_default" translatable="false">false</string>
+    <string name="pref_offer_switch_keyboard_title">Offer another keyboard without a screen reader</string>
+    <string name="pref_offer_switch_keyboard_summary">When the keyboard opens and TalkBack or another screen reader is off, ask whether to switch to another keyboard. Useful when someone who can see uses the device.</string>
+    <string name="switch_keyboard_title">No screen reader is on</string>
+    <string name="switch_keyboard_message">Soft Braille Keyboard is made for typing braille with a screen reader or its own speech. Switch to another keyboard?</string>
+    <string name="switch_keyboard_switch">Switch keyboard</string>
+    <string name="switch_keyboard_keep">Keep braille keyboard</string>
+    <string name="switch_keyboard_never">Don\'t ask again</string>
 </resources>
