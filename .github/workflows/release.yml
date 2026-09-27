@@ -22,21 +22,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v6
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
 
     - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
-    - name: Install NDK and CMake
-      # Must match ndkVersion and the CMake version in app/build.gradle.
-      run: sdkmanager --install "ndk;27.1.12297006" "cmake;3.22.1"
+      uses: android-actions/setup-android@v4
+      with:
+        # The NDK and CMake versions must match app/build.gradle.
+        packages: 'platform-tools ndk;27.1.12297006 cmake;3.22.1'
 
     - name: Work out the version
       id: version
