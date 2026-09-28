@@ -19,7 +19,7 @@
     <Preference
          android:title="@string/manual_title">
          <intent
-             android:targetPackage="com.dalton.braillekeyboard"
+             android:targetPackage="@string/application_id"
              android:targetClass="com.dalton.braillekeyboard.ManualActivity" />
     </Preference>
     <PreferenceScreen

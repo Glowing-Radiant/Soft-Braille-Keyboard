@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Names of the development build, which installs next to a release. -->
+<resources>
+    <string name="app_name">Soft Braille Keyboard Dev</string>
+    <string name="braille_ime">Soft Braille Keyboard Dev</string>
+    <string name="settings_name">Soft Braille Keyboard Dev Settings</string>
+    <string name="touch_passthrough_service_label">Soft Braille Keyboard Dev touch pass-through</string>
+</resources>
