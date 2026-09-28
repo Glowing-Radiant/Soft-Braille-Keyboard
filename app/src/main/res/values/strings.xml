@@ -375,4 +375,7 @@
     <string name="switch_keyboard_switch">Switch keyboard</string>
     <string name="switch_keyboard_keep">Keep braille keyboard</string>
     <string name="switch_keyboard_never">Don\'t ask again</string>
+
+    <!-- A new line can't be added to a single line field. -->
+    <string name="single_line_field">Single line field, no new line added</string>
 </resources>

@@ -676,6 +676,34 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     }
 
     @Override
+    public boolean insertNewline() {
+        InputConnection ic = getCurrentInputConnection();
+        EditorInfo info = getCurrentInputEditorInfo();
+        if (ic == null || info == null) {
+            return false;
+        }
+        if (selectAll) {
+            toggleMark();
+            selectAll = false;
+        }
+        finishComposingText();
+        if (info.inputType == InputType.TYPE_NULL) {
+            // Editors without text support, such as terminals, only
+            // understand keys.
+            keyDownUp(ic, KeyEvent.KEYCODE_ENTER);
+            return true;
+        }
+        // The enter key would perform the editor's action in many apps, like
+        // sending a message, so commit the line break as text.
+        if ((info.inputType & (InputType.TYPE_TEXT_FLAG_MULTI_LINE
+                | InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE)) == 0) {
+            return false;
+        }
+        ic.commitText("\n", 1);
+        return true;
+    }
+
+    @Override
     public void hideKeyboard() {
         finishComposingText();
         requestHideSelf(0);
