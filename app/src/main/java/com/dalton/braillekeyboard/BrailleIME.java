@@ -704,6 +704,27 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     }
 
     @Override
+    public boolean allowsCorrections() {
+        EditorInfo info = getCurrentInputEditorInfo();
+        if (info == null || (info.inputType & InputType.TYPE_MASK_CLASS)
+                != InputType.TYPE_CLASS_TEXT) {
+            return false;
+        }
+        switch (info.inputType & InputType.TYPE_MASK_VARIATION) {
+        case InputType.TYPE_TEXT_VARIATION_PASSWORD:
+        case InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD:
+        case InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD:
+        case InputType.TYPE_TEXT_VARIATION_URI:
+        case InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS:
+        case InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS:
+        case InputType.TYPE_TEXT_VARIATION_FILTER:
+            return false;
+        default:
+            return (info.inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) == 0;
+        }
+    }
+
+    @Override
     public void hideKeyboard() {
         finishComposingText();
         requestHideSelf(0);

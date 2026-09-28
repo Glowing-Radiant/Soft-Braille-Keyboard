@@ -284,6 +284,12 @@ public interface KeyboardListener {
      */
     boolean insertNewline();
 
+    /**
+     * Whether the field wants spelling corrections. Passwords, addresses and
+     * fields that turn off suggestions don't.
+     */
+    boolean allowsCorrections();
+
     /** Hide the keyboard. */
     void hideKeyboard();
 
