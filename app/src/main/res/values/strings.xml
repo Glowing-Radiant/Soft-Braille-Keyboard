@@ -378,4 +378,85 @@
 
     <!-- A new line can't be added to a single line field. -->
     <string name="single_line_field">Single line field, no new line added</string>
+
+    <!-- Gesture practice. [CHAR LIMIT="NONE"] -->
+    <string name="pref_gesture_practice_key" translatable="false">GESTURE_PRACTICE</string>
+    <string name="pref_gesture_practice_default" translatable="false">false</string>
+    <string name="pref_gesture_practice_title">Gesture practice</string>
+    <string name="pref_gesture_practice_summary">Gestures say what they do and how they were recognised instead of doing it. Typing braille still works. Turn it off here or in the keyboard menu, or by swiping dot 5 up twice to open settings.</string>
+    <string name="menu_gesture_practice">Turn gesture practice on or off</string>
+    <string name="gesture_practice_enabled">Gesture practice on. Gestures say what they do instead of doing it. Swipe up with three fingers for the keyboard menu to turn it off.</string>
+    <string name="gesture_practice_disabled">Gesture practice off</string>
+    <string name="gesture_practice_reminder">Gesture practice is on</string>
+    <!-- %1$s is what the gesture does, %2$s the gesture, such as "swipe right with two fingers". -->
+    <string name="practice_gesture">%1$s. %2$s</string>
+    <!-- %s is the gesture, such as "swipe up with four fingers". -->
+    <string name="practice_unknown_gesture">No action. %s</string>
+    <!-- %1$s is a direction, %2$s the number of fingers, for example "swipe right with two fingers". -->
+    <string name="gesture_swipe">swipe %1$s with %2$s</string>
+    <plurals name="gesture_fingers">
+        <item quantity="one">one finger</item>
+        <item quantity="other">%d fingers</item>
+    </plurals>
+    <!-- %1$s is the held dots, %2$s the swipe, for example "hold dot 4, swipe up with one finger". -->
+    <string name="gesture_hold">%1$s, %2$s</string>
+    <!-- %s is a list of dot numbers such as "4 5". -->
+    <plurals name="gesture_held_dots">
+        <item quantity="one">hold dot %s</item>
+        <item quantity="other">hold dots %s</item>
+    </plurals>
+    <string name="gesture_different_directions">fingers swiped in different directions</string>
+    <!-- %1$d is a dot number and %2$s a direction, for example "swipe dot 4 left". -->
+    <string name="gesture_classic_swipe">swipe dot %1$d %2$s</string>
+    <!-- %1$d is a dot number and %2$s a direction. -->
+    <string name="gesture_classic_hold">hold dot %1$d, swipe another finger %2$s</string>
+    <string name="direction_up">up</string>
+    <string name="direction_down">down</string>
+    <string name="direction_left">left</string>
+    <string name="direction_right">right</string>
+    <!-- What gestures do, spoken in gesture practice. -->
+    <string name="action_move_back">Move back by the reading granularity</string>
+    <string name="action_move_forward">Move forward by the reading granularity</string>
+    <string name="action_space">Space</string>
+    <string name="action_delete_character">Delete character</string>
+    <string name="action_submit">Submit, such as send or search</string>
+    <string name="action_hide_keyboard">Hide keyboard</string>
+    <string name="action_delete_word">Delete word</string>
+    <string name="action_keyboard_menu">Keyboard menu</string>
+    <string name="action_switch_keyboard">Switch to the next keyboard</string>
+    <string name="action_next_granularity">Next reading granularity</string>
+    <string name="action_previous_granularity">Previous reading granularity</string>
+    <string name="action_previous_character">Previous character</string>
+    <string name="action_next_character">Next character</string>
+    <string name="action_previous_word">Previous word</string>
+    <string name="action_next_word">Next word</string>
+    <string name="action_previous_line">Previous line</string>
+    <string name="action_next_line">Next line</string>
+    <string name="action_start_of_text">Move to start of text</string>
+    <string name="action_end_of_text">Move to end of text</string>
+    <string name="action_select_previous_character">Select previous character</string>
+    <string name="action_select_next_character">Select next character</string>
+    <string name="action_select_previous_word">Select previous word</string>
+    <string name="action_select_next_word">Select next word</string>
+    <string name="action_select_previous_line">Select previous line</string>
+    <string name="action_select_next_line">Select next line</string>
+    <string name="action_select_to_start">Select to start of text</string>
+    <string name="action_select_to_end">Select to end of text</string>
+    <string name="action_read_character">Read character</string>
+    <string name="action_read_word">Read word</string>
+    <string name="action_read_line">Read line</string>
+    <string name="action_dot_7">Add dot 7 to the next character</string>
+    <string name="action_dot_8">Add dot 8 to the next character</string>
+    <string name="action_enter">Enter</string>
+    <string name="action_open_settings">Open settings, swipe twice</string>
+    <string name="action_choose_keyboard">Choose another keyboard, swipe twice</string>
+    <string name="action_delete_line">Delete line, swipe twice</string>
+    <string name="action_delete_all">Delete all text, swipe twice</string>
+    <string name="action_next_selection_action">Next selection action</string>
+    <string name="action_perform_selection_action">Perform selection action</string>
+    <string name="action_set_mark">Set or clear the selection mark</string>
+    <string name="action_previous_misspelling">Previous misspelled word</string>
+    <string name="action_next_misspelling">Next misspelled word</string>
+    <string name="action_next_suggestion">Next spelling suggestion</string>
+    <string name="action_previous_suggestion">Previous spelling suggestion</string>
 </resources>

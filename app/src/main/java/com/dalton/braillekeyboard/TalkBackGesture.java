@@ -130,6 +130,38 @@ public final class TalkBackGesture {
         return fingers;
     }
 
+    /**
+     * The dots held still during a gesture, as bits of a braille cell (dot 1
+     * is bit 0).
+     */
+    public static int heldDots(byte[] directions) {
+        int held = 0;
+        for (int dot = 0; dot < directions.length; dot++) {
+            if (directions[dot] == Coords.DOT_NONE) {
+                held |= 1 << dot;
+            }
+        }
+        return held;
+    }
+
+    /**
+     * The direction all swiping fingers moved in, 0 if none swiped or
+     * {@link Coords#DOT_NONE} if they moved in different directions.
+     */
+    public static byte swipeDirection(byte[] directions) {
+        byte direction = 0;
+        for (byte d : directions) {
+            if (d == 0 || d == Coords.DOT_NONE) {
+                continue;
+            }
+            if (direction != 0 && direction != d) {
+                return Coords.DOT_NONE;
+            }
+            direction = d;
+        }
+        return direction;
+    }
+
     /** Counts the dots held still during a gesture. */
     public static int countHeldDots(byte[] directions) {
         int held = 0;

@@ -231,7 +231,8 @@ public class ActionHandler {
                 R.string.menu_keyboard_feedback, Swipe.ONE_DOWN), AUTO_CAPS(
                 R.string.menu_auto_caps, Swipe.HOLD_ONE_UP), SPEAK_PASSWORDS(
                 R.string.menu_speak_passwords, Swipe.HOLD_SIX_DOWN), PRIVACY(
-                R.string.menu_privacy, Swipe.FOUR_UP), SETTINGS(
+                R.string.menu_privacy, Swipe.FOUR_UP), GESTURE_PRACTICE(
+                R.string.menu_gesture_practice, null), SETTINGS(
                 R.string.menu_settings, null), HELP(R.string.menu_help, null);
 
         public final int resource;
@@ -335,6 +336,15 @@ public class ActionHandler {
         // states for dots 7 and 8
         boolean dots[] = { false, false };
         boolean fastDoubleSwipe = fastDoubleSwipe(value, DOUBLE_TOUCH_THRESHOLD);
+
+        // Practising gestures only describes them. Opening settings still
+        // works, so there is always a way to turn practice off.
+        if (value != Swipe.NONE && GesturePractice.isOn(context)
+                && !(value == Swipe.FIVE_UP && fastDoubleSwipe)) {
+            callback.onNotify(true, true);
+            speak(GesturePractice.describe(context, value));
+            return true;
+        }
 
         switch (value) {
         case ONE_LEFT:
@@ -616,16 +626,33 @@ public class ActionHandler {
      * @param context
      *            The application context.
      * @param action
-     *            The recognised TalkBack action.
+     *            The recognised TalkBack action, or null if the gesture has
+     *            none.
+     * @param directions
+     *            The direction of each dot, to describe the gesture in
+     *            gesture practice.
      */
     public void handleTalkBackAction(Context context,
-            TalkBackGesture.Action action) {
+            TalkBackGesture.Action action, byte[] directions) {
         if (voiceInput.isListening()) {
             return;
         }
         lastSwipe = Swipe.NONE;
         if (menuPosition >= 0) {
-            handleMenuAction(context, action);
+            if (action != null) {
+                handleMenuAction(context, action);
+            }
+            return;
+        }
+        // Practising gestures only describes them, except opening the menu
+        // which has the item to stop practising.
+        if (GesturePractice.isOn(context)
+                && action != TalkBackGesture.Action.HELP_AND_OTHER_ACTIONS) {
+            callback.onNotify(true, true);
+            speak(GesturePractice.describe(context, action, directions));
+            return;
+        }
+        if (action == null) {
             return;
         }
         if (readingGranularity == ReadingGranularity.SPELLING
@@ -938,6 +965,14 @@ public class ActionHandler {
         switch (item) {
         case VOICE_INPUT:
             doVoiceInput(context, true);
+            break;
+        case GESTURE_PRACTICE:
+            boolean practice = Options.switchBooleanPreference(context,
+                    R.string.pref_gesture_practice_key, Boolean
+                            .parseBoolean(context
+                                    .getString(R.string.pref_gesture_practice_default)));
+            speak(context.getString(practice ? R.string.gesture_practice_enabled
+                    : R.string.gesture_practice_disabled));
             break;
         case SETTINGS:
             callback.onSetLocale(Locale.getDefault());
