@@ -137,6 +137,15 @@ public class TalkBackGestureTest {
     }
 
     @Test
+    public void newlineAndSubmitAreDistinct() {
+        // Two fingers right only ever adds a new line, never submits.
+        assertEquals(Action.ADD_NEWLINE,
+                TalkBackGesture.classify(dots(0, 0, 0, DOT_RIGHT, DOT_RIGHT)));
+        assertEquals(Action.SUBMIT_TEXT,
+                TalkBackGesture.classify(dots(0, 0, 0, DOT_UP, DOT_UP)));
+    }
+
+    @Test
     public void mixedStyleLeavesOutReadingGranularity() {
         // Granularity only changes one finger swipes, which are classic
         // gestures in the mixed style.

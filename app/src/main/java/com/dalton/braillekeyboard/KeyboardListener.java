@@ -276,6 +276,14 @@ public interface KeyboardListener {
      */
     boolean performEditorAction();
 
+    /**
+     * Add a line break. Unlike the enter key this never performs the editor's
+     * action, such as sending a message.
+     *
+     * @return false if the field only holds a single line.
+     */
+    boolean insertNewline();
+
     /** Hide the keyboard. */
     void hideKeyboard();
 

@@ -659,7 +659,7 @@ public class ActionHandler {
             listener.hideKeyboard();
             break;
         case ADD_NEWLINE:
-            typeCharacter(context, '\n', context.getString(R.string.newline));
+            addNewline(context);
             break;
         case DELETE_WORD:
             backspace(context, Granularity.WORD, false);
@@ -1200,16 +1200,40 @@ public class ActionHandler {
     // Insert a certain character like a ' ' or '\n'
     private void typeCharacter(Context context, int code, String charName) {
         listener.finishComposingText();
-        Word word = EditingUtilities.getWord(listener);
-        String message = word == null ? null : word.word.substring(0,
-                word.charsBefore);
+        String word = wordBeforeCursor();
         listener.onKey(code);
+        announceTyped(context, word, charName);
+        echoMisspelling(context);
+    }
 
-        if ((message = echoWord(context, message)) == null) {
+    // Adds a line break, which unlike the enter key never submits the text.
+    private void addNewline(Context context) {
+        listener.finishComposingText();
+        String word = wordBeforeCursor();
+        if (!listener.insertNewline()) {
+            speak(context.getString(R.string.single_line_field));
+            return;
+        }
+        announceTyped(context, word, context.getString(R.string.newline));
+        echoMisspelling(context);
+    }
+
+    // The part of the word before the cursor.
+    private String wordBeforeCursor() {
+        Word word = EditingUtilities.getWord(listener);
+        return word == null ? null : word.word.substring(0, word.charsBefore);
+    }
+
+    // Echoes the word that a space or new line finished, or the character.
+    private void announceTyped(Context context, String word, String charName) {
+        String message;
+        if ((message = echoWord(context, word)) == null) {
             message = echoCharacter(context, charName);
         }
         callback.onText("%s", message, listener.isPasswordField());
+    }
 
+    private void echoMisspelling(Context context) {
         if (Options.getBooleanPreference(context,
                 R.string.pref_echo_misspellings_key,
                 Boolean.parseBoolean(context
