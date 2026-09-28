@@ -16,7 +16,9 @@
 
 package com.dalton.braillekeyboard;
 
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 import android.Manifest;
 import android.content.ClipboardManager;
@@ -229,7 +231,8 @@ public class ActionHandler {
                 R.string.menu_word_count, Swipe.HOLD_ONE_DOWN), KEYBOARD_ECHO(
                 R.string.menu_keyboard_echo, Swipe.TWO_DOWN), KEYBOARD_FEEDBACK(
                 R.string.menu_keyboard_feedback, Swipe.ONE_DOWN), AUTO_CAPS(
-                R.string.menu_auto_caps, Swipe.HOLD_ONE_UP), SPEAK_PASSWORDS(
+                R.string.menu_auto_caps, Swipe.HOLD_ONE_UP), AUTO_CORRECT(
+                R.string.menu_auto_correct, null), SPEAK_PASSWORDS(
                 R.string.menu_speak_passwords, Swipe.HOLD_SIX_DOWN), PRIVACY(
                 R.string.menu_privacy, Swipe.FOUR_UP), GESTURE_PRACTICE(
                 R.string.menu_gesture_practice, null), SETTINGS(
@@ -261,6 +264,12 @@ public class ActionHandler {
     private int directionThroughSuggestionList;
     private SpellChecker.Direction spellingDirection;
     private Suggestion spellingSuggestion;
+    private final AutoCorrect autoCorrect;
+    // The last auto-correction, undone by deleting the space right after it.
+    private String correctedFrom;
+    private String correctedTo;
+    // Words the user restored after they were corrected, left alone since.
+    private final Set<String> keptWords = new HashSet<String>();
 
     /**
      * Create a new ActionHandler for the given context.
@@ -274,6 +283,7 @@ public class ActionHandler {
         clipboard = (ClipboardManager) context
                 .getSystemService(Context.CLIPBOARD_SERVICE);
         spellChecker = new SpellChecker(context);
+        autoCorrect = new AutoCorrect(context);
     }
 
     /**
@@ -306,6 +316,7 @@ public class ActionHandler {
     public void shutdown() {
         voiceInput.destroy();
         spellChecker.destroy();
+        autoCorrect.destroy();
     }
 
     /**
@@ -592,6 +603,7 @@ public class ActionHandler {
         }
 
         lastSwipe = Swipe.NONE;
+        correctedFrom = null;
         if (menuPosition >= 0) {
             callback.onText("%s",
                     context.getString(R.string.menu_instructions), false);
@@ -966,6 +978,17 @@ public class ActionHandler {
         case VOICE_INPUT:
             doVoiceInput(context, true);
             break;
+        case AUTO_CORRECT:
+            boolean correct = Options.switchBooleanPreference(context,
+                    R.string.pref_auto_correct_key, Boolean.parseBoolean(context
+                            .getString(R.string.pref_auto_correct_default)));
+            if (correct && !autoCorrect.isAvailable()) {
+                speak(context.getString(R.string.auto_correct_unavailable));
+            } else {
+                speak(context.getString(correct ? R.string.auto_correct_enabled
+                        : R.string.auto_correct_disabled));
+            }
+            break;
         case GESTURE_PRACTICE:
             boolean practice = Options.switchBooleanPreference(context,
                     R.string.pref_gesture_practice_key, Boolean
@@ -1161,6 +1184,9 @@ public class ActionHandler {
         boolean canDelete = true;
         switch (granularity) {
         case CHARACTER:
+            if (undoAutoCorrection(context)) {
+                return true;
+            }
             listener.finishComposingText();
             word = EditingUtilities.moveToPreviousCharacter(listener);
             break;
@@ -1238,7 +1264,11 @@ public class ActionHandler {
         String word = wordBeforeCursor();
         listener.onKey(code);
         announceTyped(context, word, charName);
-        echoMisspelling(context);
+        if (code == ' ' && isAutoCorrectOn(context)) {
+            autoCorrectWord(context);
+        } else {
+            echoMisspelling(context);
+        }
     }
 
     // Adds a line break, which unlike the enter key never submits the text.
@@ -1277,6 +1307,84 @@ public class ActionHandler {
             doSpellCheck(context, SpellChecker.Direction.UNDER_CURSOR, 0,
                     listener.getCursor() - 2);
         }
+    }
+
+    private boolean isAutoCorrectOn(Context context) {
+        return Options.getBooleanPreference(context,
+                R.string.pref_auto_correct_key, Boolean.parseBoolean(context
+                        .getString(R.string.pref_auto_correct_default)))
+                && autoCorrect.isAvailable() && listener.allowsCorrections();
+    }
+
+    // Replaces the word before the space just typed with the spell checker's
+    // correction, if it is misspelled.
+    private void autoCorrectWord(final Context context) {
+        correctedFrom = null;
+        final String word = AutoCorrect.wordBeforeSpace(listener
+                .getTextBeforeCursor(AutoCorrect.MAX_WORD_LENGTH + 2));
+        if (word == null || keptWords.contains(word)) {
+            return;
+        }
+        final int cursor = listener.getCursor();
+        autoCorrect.check(word, new AutoCorrect.Listener() {
+            @Override
+            public void onChecked(String checked, String correction,
+                    boolean misspelled) {
+                if (correction == null) {
+                    if (misspelled) {
+                        announceMisspelled(context);
+                    }
+                    return;
+                }
+                // Only correct if nothing was typed since, which could be
+                // part of a contracted braille word being composed.
+                CharSequence before = listener.getTextBeforeCursor(word
+                        .length() + 1);
+                if (listener.getCursor() != cursor || before == null
+                        || !before.toString().equals(word + " ")) {
+                    return;
+                }
+                listener.deleteSurroundingText(word.length() + 1, 0);
+                listener.commitText(correction + " ", 1);
+                correctedFrom = word;
+                correctedTo = correction;
+                callback.onText(context.getString(R.string.auto_corrected),
+                        correction, listener.isPasswordField(),
+                        Speech.QUEUE_ADD);
+            }
+        });
+    }
+
+    private void announceMisspelled(Context context) {
+        if (Options.getBooleanPreference(context,
+                R.string.pref_echo_misspellings_key,
+                Boolean.parseBoolean(context
+                        .getString(R.string.pref_echo_misspellings_default)))) {
+            callback.onText("%s", context.getString(R.string.word_misspelled),
+                    false, Speech.QUEUE_ADD);
+        }
+    }
+
+    // Deleting the space right after an auto-correction puts back the word
+    // as it was typed, and leaves that word alone from then on.
+    private boolean undoAutoCorrection(Context context) {
+        String from = correctedFrom;
+        String to = correctedTo;
+        correctedFrom = null;
+        if (from == null) {
+            return false;
+        }
+        listener.finishComposingText();
+        CharSequence before = listener.getTextBeforeCursor(to.length() + 1);
+        if (before == null || !before.toString().equals(to + " ")) {
+            return false;
+        }
+        listener.deleteSurroundingText(to.length() + 1, 0);
+        listener.commitText(from, 1);
+        keptWords.add(from);
+        callback.onText(context.getString(R.string.auto_correct_undone), from,
+                listener.isPasswordField());
+        return true;
     }
 
     // Special logic for double space to insert a period followed by a space.

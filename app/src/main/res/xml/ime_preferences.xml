@@ -185,6 +185,11 @@
          android:summary="@string/pref_auto_caps_summary"
          android:defaultValue="@string/pref_auto_caps_default" />
          <CheckBoxPreference
+         android:key="@string/pref_auto_correct_key"
+         android:title="@string/pref_auto_correct_title"
+         android:summary="@string/pref_auto_correct_summary"
+         android:defaultValue="@string/pref_auto_correct_default" />
+         <CheckBoxPreference
          android:key="@string/pref_double_space_period_key"
          android:title="@string/pref_double_space_period_title"
          android:summary="@string/pref_double_space_period_summary"
