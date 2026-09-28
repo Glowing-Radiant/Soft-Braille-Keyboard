@@ -175,6 +175,11 @@ public class BrailleView extends View {
                 speech.speak(getContext(),
                         getContext().getString(R.string.ready),
                         Speech.QUEUE_FLUSH);
+                if (GesturePractice.isOn(getContext())) {
+                    speech.speak(getContext(), getContext().getString(
+                            R.string.gesture_practice_reminder),
+                            Speech.QUEUE_ADD);
+                }
             }
         });
 
@@ -813,9 +818,11 @@ public class BrailleView extends View {
         } else if (fingers > 1 || actionHandler.isMenuOpen()) {
             TalkBackGesture.Action action = TalkBackGesture.classify(directions);
             if (action != null
-                    && TalkBackGesture.isAvailableInMixedStyle(action)) {
-                actionHandler.handleTalkBackAction(getContext(), action);
+                    && !TalkBackGesture.isAvailableInMixedStyle(action)) {
+                action = null;
             }
+            actionHandler.handleTalkBackAction(getContext(), action,
+                    directions);
         } else {
             Swipe swipe = handledSwipeAction(dotsDown, getHeight() > getWidth()
                     && !displayParams.autoRotate);
@@ -835,10 +842,8 @@ public class BrailleView extends View {
             handleTypedCharacter();
             return;
         }
-        TalkBackGesture.Action action = TalkBackGesture.classify(directions);
-        if (action != null) {
-            actionHandler.handleTalkBackAction(getContext(), action);
-        }
+        actionHandler.handleTalkBackAction(getContext(),
+                TalkBackGesture.classify(directions), directions);
     }
 
     private void handleTypedCharacter() {

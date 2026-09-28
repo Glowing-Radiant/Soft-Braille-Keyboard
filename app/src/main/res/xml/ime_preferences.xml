@@ -47,6 +47,11 @@
              android:entryValues="@array/gesture_style_values"
              android:defaultValue="@string/pref_gesture_style_default" />
          <CheckBoxPreference
+         android:key="@string/pref_gesture_practice_key"
+         android:title="@string/pref_gesture_practice_title"
+         android:summary="@string/pref_gesture_practice_summary"
+         android:defaultValue="@string/pref_gesture_practice_default" />
+         <CheckBoxPreference
          android:key="@string/pref_auto_match_keyboard_key"
          android:title="@string/pref_auto_match_keyboard_title"
          android:summary="@string/pref_auto_match_keyboard_summary"

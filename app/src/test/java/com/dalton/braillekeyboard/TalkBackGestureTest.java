@@ -146,6 +146,16 @@ public class TalkBackGestureTest {
     }
 
     @Test
+    public void describesTheGestureShape() {
+        byte[] holdAndSwipe = dots(DOT_UP, DOT_UP, 0, HOLD, HOLD);
+        assertEquals((1 << 3) | (1 << 4), TalkBackGesture.heldDots(holdAndSwipe));
+        assertEquals(DOT_UP, TalkBackGesture.swipeDirection(holdAndSwipe));
+        assertEquals(DOT_NONE,
+                TalkBackGesture.swipeDirection(dots(DOT_UP, DOT_LEFT)));
+        assertEquals(0, TalkBackGesture.swipeDirection(dots(HOLD, HOLD)));
+    }
+
+    @Test
     public void mixedStyleLeavesOutReadingGranularity() {
         // Granularity only changes one finger swipes, which are classic
         // gestures in the mixed style.
