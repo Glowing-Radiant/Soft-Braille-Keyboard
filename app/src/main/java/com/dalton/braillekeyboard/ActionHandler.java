@@ -1249,6 +1249,11 @@ public class ActionHandler {
             boolean fastDoubleTouch) {
         EditingUtilities.Word word = null;
         boolean canDelete = true;
+        if ((granularity == Granularity.CHARACTER
+                || granularity == Granularity.WORD)
+                && deleteSelectedText(context)) {
+            return true;
+        }
         switch (granularity) {
         case CHARACTER:
             if (undoAutoCorrection(context)) {
@@ -1301,6 +1306,37 @@ public class ActionHandler {
     }
 
     // Given the text to delete and a canDelete flag do the actual deletion.
+    // Deletes the selected text, such as text selected with the TalkBack
+    // gestures, as editors do. Returns false if nothing is selected.
+    private boolean deleteSelectedText(Context context) {
+        listener.finishComposingText();
+        int[] range = listener.getSelectionRange();
+        if (range == null || range[0] == range[1]) {
+            return false;
+        }
+        int start = Math.min(range[0], range[1]);
+        int end = Math.max(range[0], range[1]);
+        String deleted = null;
+        ExtractedText text = listener.getAllText();
+        if (text != null && text.text != null) {
+            int from = Math.max(0, start - text.startOffset);
+            int to = Math.min(text.text.length(), end - text.startOffset);
+            if (from < to) {
+                deleted = text.text.subSequence(from, to).toString();
+            }
+        }
+        correctedFrom = null;
+        listener.setSelection(end);
+        if (!listener.deleteSurroundingText(end - start, 0)) {
+            return false;
+        }
+        if (deleted != null) {
+            callback.onText(context.getString(R.string.deleted), deleted,
+                    listener.isPasswordField());
+        }
+        return true;
+    }
+
     private boolean performDelete(Context context, EditingUtilities.Word word,
             boolean canDelete) {
         if (canDelete && word != null) {
