@@ -393,6 +393,33 @@
     <!-- %s is the word as it was typed before it was corrected. -->
     <string name="auto_correct_undone">%s restored</string>
 
+    <!-- Sound themes. [CHAR LIMIT="NONE"] -->
+    <string name="pref_sound_theme_key" translatable="false">SOUND_THEME</string>
+    <string name="pref_sound_theme_default" translatable="false">minimal</string>
+    <string name="pref_sound_theme_title">Sound theme</string>
+    <string name="pref_sound_theme_summary">%s</string>
+    <string name="sound_theme_minimal">Minimal: one click for everything</string>
+    <string name="sound_theme_abstract">Abstract: a different tone for each action</string>
+    <string name="pref_import_sound_theme_key" translatable="false">IMPORT_SOUND_THEME</string>
+    <string name="pref_import_sound_theme_title">Import a sound theme</string>
+    <string name="pref_import_sound_theme_summary">Choose a zip of sound files, or several sound files, named after the action they are for: type, space, delete, newline, submit, move, select, toggle, menu-open, menu-close and error. For example type.ogg or space.wav.</string>
+    <string name="pref_remove_sound_theme_key" translatable="false">REMOVE_SOUND_THEME</string>
+    <string name="pref_remove_sound_theme_title">Remove an imported sound theme</string>
+    <string name="sound_theme_name_title">Name of the sound theme</string>
+    <string name="sound_theme_default_name">My sound theme</string>
+    <string name="sound_theme_import">Import</string>
+    <!-- %s is the name of the theme. -->
+    <string name="sound_theme_imported">Sound theme %s imported and chosen</string>
+    <string name="sound_theme_import_no_sounds">No sounds found. Name the files after their action, such as type.ogg, space.ogg and delete.ogg.</string>
+    <!-- %s is the reason. -->
+    <string name="sound_theme_import_failed">Sound theme not imported: %s</string>
+    <string name="sound_theme_none_imported">No sound themes have been imported</string>
+    <!-- %s is the name of the theme. -->
+    <string name="sound_theme_remove_confirm">Remove the sound theme %s?</string>
+    <string name="sound_theme_remove">Remove</string>
+    <!-- %s is the name of the theme. -->
+    <string name="sound_theme_removed">Sound theme %s removed</string>
+
     <!-- Gesture practice. [CHAR LIMIT="NONE"] -->
     <string name="pref_gesture_practice_key" translatable="false">GESTURE_PRACTICE</string>
     <string name="pref_gesture_practice_default" translatable="false">false</string>

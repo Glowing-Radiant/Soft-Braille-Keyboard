@@ -81,6 +81,7 @@ public class BrailleView extends View {
     private final Paint paint;
     private final Rect circleTextBounds = new Rect();
     private final Vibrator vibrator;
+    private final SoundThemes sounds;
     private final ActionHandler.OnActionListener actionListener = new ActionHandler.OnActionListener() {
 
         @Override
@@ -102,8 +103,8 @@ public class BrailleView extends View {
         }
 
         @Override
-        public void onNotify(boolean vibrate, boolean playSound) {
-            sendNotification(vibrate, playSound);
+        public void onNotify(boolean vibrate, Earcons.Sound sound) {
+            sendNotification(vibrate, sound);
         }
 
         @Override
@@ -152,6 +153,7 @@ public class BrailleView extends View {
                 .getSystemService(Context.ACCESSIBILITY_SERVICE);
         vibrator = (Vibrator) context
                 .getSystemService(Context.VIBRATOR_SERVICE);
+        sounds = new SoundThemes(context);
     }
 
     /**
@@ -193,6 +195,7 @@ public class BrailleView extends View {
             invalidate();
             requestLayout();
         }
+        sounds.prepare();
         actionHandler = new ActionHandler(context);
         actionHandler.setCallback(actionListener);
         actionHandler.setKeyboardListener(listener);
@@ -211,6 +214,7 @@ public class BrailleView extends View {
         }
         speech.shutdown(getContext().getString(R.string.closing_keyboard));
         actionHandler.shutdown();
+        sounds.release();
         setLocale(Locale.getDefault(), false);
     }
 
@@ -704,7 +708,7 @@ public class BrailleView extends View {
         return value;
     }
 
-    private void sendNotification(boolean vibrate, boolean playSound) {
+    private void sendNotification(boolean vibrate, Earcons.Sound sound) {
         if (vibrate
                 && (KeyboardFeedback.VIBRATE.value & Integer.parseInt(Options
                         .getStringPreference(getContext(),
@@ -712,12 +716,14 @@ public class BrailleView extends View {
                                 KeyboardFeedback.ALL.getValue()))) != 0) {
             vibrator.vibrate(QUICK_VIBRATION);
         }
-        if (playSound
+        if (sound != null
                 && (KeyboardFeedback.SOUND.value & Integer.parseInt(Options
                         .getStringPreference(getContext(),
                                 R.string.pref_keyboard_feedback_key,
                                 KeyboardFeedback.ALL.getValue()))) != 0) {
-            playSoundEffect(SoundEffectConstants.CLICK);
+            if (!sounds.play(sound)) {
+                playSoundEffect(SoundEffectConstants.CLICK);
+            }
         }
     }
 

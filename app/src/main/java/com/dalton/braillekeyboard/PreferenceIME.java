@@ -17,16 +17,22 @@
 package com.dalton.braillekeyboard;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
@@ -36,6 +42,7 @@ import android.preference.PreferenceFragment;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.EngineInfo;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -71,6 +78,7 @@ public class PreferenceIME extends PreferenceActivity {
         private static final String TAG = "PreferenceIME";
         // Opens the system text-to-speech settings screen.
         private static final String ACTION_TTS_SETTINGS = "com.android.settings.TTS_SETTINGS";
+        private static final int REQUEST_IMPORT_SOUND_THEME = 1;
 
         private BrailleParser brailleParser;
         private TextToSpeech tts;
@@ -88,6 +96,8 @@ public class PreferenceIME extends PreferenceActivity {
 
             addOptions(keyboardFeedback, KeyboardFeedback.ALL);
             addOptions(keyboardEcho, KeyboardEcho.ALL);
+            addSoundThemes();
+            setUpSoundThemeImport();
             addTTSList(textToSpeechPreference);
             setUpSpeechPreferences();
 
@@ -170,6 +180,184 @@ public class PreferenceIME extends PreferenceActivity {
             compBraille.setEntries(entries.toArray(new String[entries.size()]));
             compBraille.setEntryValues(entryValues
                     .toArray(new String[entryValues.size()]));
+        }
+
+        // Lists the built in sound themes, then the recorded ones.
+        private void addSoundThemes() {
+            ListPreference pref = (ListPreference) findPreference(getString(R.string.pref_sound_theme_key));
+            List<CharSequence> entries = new ArrayList<CharSequence>(
+                    Arrays.asList(getResources().getTextArray(
+                            R.array.sound_theme_entries)));
+            List<CharSequence> values = new ArrayList<CharSequence>(
+                    Arrays.asList(getResources().getTextArray(
+                            R.array.sound_theme_values)));
+            for (String[] theme : SoundThemes.listThemes(getActivity())) {
+                values.add(theme[0]);
+                entries.add(theme[1]);
+            }
+            pref.setEntries(entries.toArray(new CharSequence[entries.size()]));
+            pref.setEntryValues(values.toArray(new CharSequence[values.size()]));
+            if (!values.contains(pref.getValue())) {
+                pref.setValue(getString(R.string.pref_sound_theme_default));
+            }
+        }
+
+        private void setUpSoundThemeImport() {
+            findPreference(getString(R.string.pref_import_sound_theme_key))
+                    .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                            intent.addCategory(Intent.CATEGORY_OPENABLE);
+                            intent.setType("*/*");
+                            intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {
+                                    "application/zip", "application/x-zip-compressed",
+                                    "audio/*" });
+                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                            try {
+                                startActivityForResult(intent,
+                                        REQUEST_IMPORT_SOUND_THEME);
+                            } catch (ActivityNotFoundException e) {
+                                toast(getString(R.string.sound_theme_import_failed,
+                                        e.getMessage()));
+                            }
+                            return true;
+                        }
+                    });
+            findPreference(getString(R.string.pref_remove_sound_theme_key))
+                    .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            chooseThemeToRemove();
+                            return true;
+                        }
+                    });
+        }
+
+        @Override
+        public void onActivityResult(int requestCode, int resultCode,
+                Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            if (requestCode != REQUEST_IMPORT_SOUND_THEME
+                    || resultCode != Activity.RESULT_OK || data == null) {
+                return;
+            }
+            List<Uri> uris = new ArrayList<Uri>();
+            ClipData clip = data.getClipData();
+            if (clip != null) {
+                for (int i = 0; i < clip.getItemCount(); i++) {
+                    uris.add(clip.getItemAt(i).getUri());
+                }
+            } else if (data.getData() != null) {
+                uris.add(data.getData());
+            }
+            if (!uris.isEmpty()) {
+                askThemeName(uris);
+            }
+        }
+
+        private void askThemeName(final List<Uri> uris) {
+            final EditText name = new EditText(getActivity());
+            String suggestion = SoundThemeImporter.suggestName(getActivity(),
+                    uris);
+            name.setText(suggestion == null ? getString(R.string.sound_theme_default_name)
+                    : suggestion);
+            name.setSelectAllOnFocus(true);
+            name.setContentDescription(getString(R.string.sound_theme_name_title));
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.sound_theme_name_title)
+                    .setView(name)
+                    .setPositiveButton(R.string.sound_theme_import,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                        int which) {
+                                    importTheme(uris, name.getText().toString());
+                                }
+                            })
+                    .setNegativeButton(android.R.string.cancel, null).show();
+        }
+
+        private void importTheme(final List<Uri> uris, final String name) {
+            final Activity activity = getActivity();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String id = null;
+                    String error = null;
+                    try {
+                        id = SoundThemeImporter.importTheme(activity, uris,
+                                name);
+                    } catch (SoundThemeImporter.ImportException e) {
+                        error = e.getMessage();
+                    } catch (Exception e) {
+                        error = activity.getString(
+                                R.string.sound_theme_import_failed,
+                                e.getMessage());
+                    }
+                    final String theme = id;
+                    final String message = error;
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (!isAdded()) {
+                                return;
+                            }
+                            if (theme == null) {
+                                toast(message);
+                                return;
+                            }
+                            addSoundThemes();
+                            ((ListPreference) findPreference(getString(R.string.pref_sound_theme_key)))
+                                    .setValue(theme);
+                            toast(getString(R.string.sound_theme_imported, name));
+                        }
+                    });
+                }
+            }).start();
+        }
+
+        private void chooseThemeToRemove() {
+            final List<String[]> themes = SoundThemes.listImported(getActivity());
+            if (themes.isEmpty()) {
+                toast(getString(R.string.sound_theme_none_imported));
+                return;
+            }
+            String[] names = new String[themes.size()];
+            for (int i = 0; i < names.length; i++) {
+                names[i] = themes.get(i)[1];
+            }
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.pref_remove_sound_theme_title)
+                    .setItems(names, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            confirmRemoveTheme(themes.get(which));
+                        }
+                    }).setNegativeButton(android.R.string.cancel, null).show();
+        }
+
+        private void confirmRemoveTheme(final String[] theme) {
+            new AlertDialog.Builder(getActivity())
+                    .setMessage(getString(R.string.sound_theme_remove_confirm,
+                            theme[1]))
+                    .setPositiveButton(R.string.sound_theme_remove,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                        int which) {
+                                    SoundThemeImporter.deleteTheme(getActivity(),
+                                            theme[0]);
+                                    addSoundThemes();
+                                    toast(getString(R.string.sound_theme_removed,
+                                            theme[1]));
+                                }
+                            })
+                    .setNegativeButton(android.R.string.cancel, null).show();
+        }
+
+        private void toast(String message) {
+            Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
         }
 
         private void addOptions(ListPreference pref, OptionList option) {

@@ -57,3 +57,12 @@ Thumbs.db
 # Miscellaneous
 captures/
 *.log
+
+# Candidate sound themes and recordings, see scripts/generate_sound_themes.py
+# and scripts/cut_sound_sources.py.
+sound-themes/
+sound-sources/
+scripts/__pycache__/
+# The personal "Keyboard" sound theme of development builds, from the
+# Guangrong screen reader, which isn't ours to publish.
+app/src/debug/assets/sounds/keyboard/

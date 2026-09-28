@@ -173,4 +173,13 @@
         <item>@string/pref_gesture_style_talkback_value</item>
         <item>@string/pref_gesture_style_mixed_value</item>
     </string-array>
+    <!-- The recorded sound themes in the assets are added to these. -->
+    <string-array name="sound_theme_entries">
+        <item>@string/sound_theme_minimal</item>
+        <item>@string/sound_theme_abstract</item>
+    </string-array>
+    <string-array name="sound_theme_values" translatable="false">
+        <item>minimal</item>
+        <item>abstract</item>
+    </string-array>
 </resources>

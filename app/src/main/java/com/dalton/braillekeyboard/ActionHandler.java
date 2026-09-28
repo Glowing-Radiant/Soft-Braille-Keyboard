@@ -92,10 +92,10 @@ public class ActionHandler {
          * @param vibrate
          *            true if the device should be vibrated for this
          *            notification.
-         * @param playSound
-         *            true if a sound should be played for this notification.
+         * @param sound
+         *            The sound for the action, or null for no sound.
          */
-        void onNotify(boolean vibrate, boolean playSound);
+        void onNotify(boolean vibrate, Earcons.Sound sound);
 
         /**
          * Called when dots 7 and 8 should be set in the View.
@@ -352,7 +352,7 @@ public class ActionHandler {
         // works, so there is always a way to turn practice off.
         if (value != Swipe.NONE && GesturePractice.isOn(context)
                 && !(value == Swipe.FIVE_UP && fastDoubleSwipe)) {
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.MOVE);
             speak(GesturePractice.describe(context, value));
             return true;
         }
@@ -566,7 +566,7 @@ public class ActionHandler {
         }
 
         // Invoke the notification callback
-        callback.onNotify(notify, notify);
+        callback.onNotify(notify, notify ? soundFor(value) : null);
         if (message != null) {
             // Only invoke onText callback if there is a message to send i.e. it
             // wasn't already handled.
@@ -613,10 +613,11 @@ public class ActionHandler {
         if ((result = listener.handleTypedCharacter(value)) == null) {
             // IME couldn't handle the dot pattern propergate the error to the
             // callback.
+            callback.onNotify(false, Earcons.Sound.ERROR);
             callback.onText("%s",
                     context.getString(R.string.unknown_character), false);
         } else {
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.TYPE);
 
             // Decide what to deliver to the callback such as a key echo or
             // autocompletion string.
@@ -660,7 +661,7 @@ public class ActionHandler {
         // which has the item to stop practising.
         if (GesturePractice.isOn(context)
                 && action != TalkBackGesture.Action.HELP_AND_OTHER_ACTIONS) {
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.MOVE);
             speak(GesturePractice.describe(context, action, directions));
             return;
         }
@@ -669,11 +670,11 @@ public class ActionHandler {
         }
         if (readingGranularity == ReadingGranularity.SPELLING
                 && handleSpellingAction(context, action)) {
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.SELECT);
             return;
         }
 
-        callback.onNotify(true, true);
+        callback.onNotify(true, soundFor(action));
         switch (action) {
         case MOVE_CURSOR_BACKWARD:
             moveLeft(context, readingGranularity.granularity);
@@ -782,6 +783,71 @@ public class ActionHandler {
                     R.string.paste_error);
             break;
         default:
+        }
+    }
+
+    private static Earcons.Sound soundFor(TalkBackGesture.Action action) {
+        switch (action) {
+        case ADD_SPACE:
+            return Earcons.Sound.SPACE;
+        case DELETE_CHARACTER:
+        case DELETE_WORD:
+        case CUT:
+            return Earcons.Sound.DELETE;
+        case ADD_NEWLINE:
+            return Earcons.Sound.NEWLINE;
+        case SUBMIT_TEXT:
+            return Earcons.Sound.SUBMIT;
+        case HELP_AND_OTHER_ACTIONS:
+            return Earcons.Sound.MENU_OPEN;
+        case HIDE_KEYBOARD:
+        case SWITCH_KEYBOARD:
+            return Earcons.Sound.MENU_CLOSE;
+        case NEXT_GRANULARITY:
+        case PREVIOUS_GRANULARITY:
+            return Earcons.Sound.TOGGLE;
+        case SELECT_PREVIOUS_CHARACTER:
+        case SELECT_NEXT_CHARACTER:
+        case SELECT_PREVIOUS_WORD:
+        case SELECT_NEXT_WORD:
+        case SELECT_PREVIOUS_LINE:
+        case SELECT_NEXT_LINE:
+        case SELECT_TO_START:
+        case SELECT_TO_END:
+        case SELECT_ALL:
+        case COPY:
+        case PASTE:
+            return Earcons.Sound.SELECT;
+        default:
+            return Earcons.Sound.MOVE;
+        }
+    }
+
+    private static Earcons.Sound soundFor(Swipe swipe) {
+        switch (swipe) {
+        case FOUR_RIGHT:
+            return Earcons.Sound.SPACE;
+        case FOUR_LEFT:
+        case FIVE_LEFT:
+        case SIX_LEFT:
+        case HOLD_THREE_LEFT:
+            return Earcons.Sound.DELETE;
+        case FOUR_DOWN:
+            return Earcons.Sound.NEWLINE;
+        case ONE_DOWN:
+        case TWO_DOWN:
+        case FOUR_UP:
+        case HOLD_SIX_DOWN:
+        case HOLD_ONE_UP:
+        case HOLD_THREE_RIGHT:
+        case HOLD_THREE_DOWN:
+            return Earcons.Sound.TOGGLE;
+        case HOLD_ONE_RIGHT:
+        case SIX_RIGHT:
+        case SIX_UP:
+            return Earcons.Sound.SELECT;
+        default:
+            return Earcons.Sound.MOVE;
         }
     }
 
@@ -935,6 +1001,7 @@ public class ActionHandler {
     private void closeMenu(Context context, boolean announce) {
         menuPosition = -1;
         if (announce) {
+            callback.onNotify(true, Earcons.Sound.MENU_CLOSE);
             speak(context.getString(R.string.menu_closed));
         }
     }
@@ -946,12 +1013,12 @@ public class ActionHandler {
         switch (action) {
         case MOVE_CURSOR_BACKWARD:
             menuPosition = (menuPosition - 1 + items.length) % items.length;
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.MOVE);
             speak(context.getString(items[menuPosition].resource));
             break;
         case MOVE_CURSOR_FORWARD:
             menuPosition = (menuPosition + 1) % items.length;
-            callback.onNotify(true, true);
+            callback.onNotify(true, Earcons.Sound.MOVE);
             speak(context.getString(items[menuPosition].resource));
             break;
         case ADD_SPACE:
