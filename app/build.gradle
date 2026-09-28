@@ -16,6 +16,8 @@ android {
         versionName project.findProperty('sbkVersionName') ?: "3.2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Lets resources name this app's package, see the debug build type.
+        resValue 'string', 'application_id', 'com.dalton.braillekeyboard'
 
         ndk {
             // liblouis is built from source for every ABI, so the app runs
@@ -46,6 +48,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            // A separate app, so a development build installs next to a
+            // release signed with another key instead of replacing it.
+            applicationIdSuffix '.dev'
+            versionNameSuffix '-dev'
+            resValue 'string', 'application_id', 'com.dalton.braillekeyboard.dev'
+        }
         release {
             if (System.getenv('SIGNING_KEYSTORE_PATH')) {
                 signingConfig signingConfigs.release
