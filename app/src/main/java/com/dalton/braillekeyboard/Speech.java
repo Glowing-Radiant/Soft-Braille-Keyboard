@@ -17,9 +17,11 @@
 package com.dalton.braillekeyboard;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioAttributes;
@@ -28,8 +30,14 @@ import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.LocaleSpan;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 
 /**
  * Allows the Braille IME to interface with the Android TTS service. This class
@@ -60,6 +68,7 @@ public class Speech {
 
     private static final int MAX_SPEECH_LENGTH = 3900;
     private static final String SHUTDOWN_ID = "SHUTDOWN";
+    private static final long SCREEN_READER_CHECK_MS = 1000;
     private static TextToSpeech tts;
 
     // Speak on the accessibility stream so the keyboard follows the
@@ -70,6 +79,11 @@ public class Speech {
 
     private final Context context;
     private final AudioManager audioManager;
+    private final AccessibilityManager accessibilityManager;
+    // The language of the speech, which the screen reader is told too.
+    private Locale locale;
+    private boolean screenReaderOn;
+    private long screenReaderCheckedAt = -SCREEN_READER_CHECK_MS - 1;
     private Object audioFocusRequest; // AudioFocusRequest on API 26+
     private final Map<String, String> speechMap = new HashMap<String, String>();
     @SuppressLint("NewApi")
@@ -120,6 +134,8 @@ public class Speech {
         this.context = context.getApplicationContext();
         audioManager = (AudioManager) context
                 .getSystemService(Context.AUDIO_SERVICE);
+        accessibilityManager = (AccessibilityManager) context
+                .getSystemService(Context.ACCESSIBILITY_SERVICE);
         // Some symbols are not spoken natively by TTS engines, so add them into
         // the map from strings.xml
         setSpeechMap(context, speechMap);
@@ -165,6 +181,10 @@ public class Speech {
      *            The message to be spoken on shutdown if any.
      */
     public void shutdown(String message) {
+        if (message != null && speaksThroughScreenReader()) {
+            announce(message, QUEUE_FLUSH);
+            message = null;
+        }
         if (tts != null) {
             if (message != null
                     && Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
@@ -306,6 +326,7 @@ public class Speech {
      *         engine does not support the locale.
      */
     public boolean setLocale(Locale locale) {
+        this.locale = locale;
         // Somehow tts can be null while canSpeak is true.
         // TODO This is really a work around, but the state that causes this
         // should be fully understood and canSpeak's state should be updated
@@ -320,6 +341,9 @@ public class Speech {
     }
 
     public void stop() {
+        if (speaksThroughScreenReader()) {
+            accessibilityManager.interrupt();
+        }
         if (tts != null) {
             tts.stop();
         }
@@ -329,6 +353,10 @@ public class Speech {
     // tts service for speaking.
     private void divideAndSpeak(final String text, final int queueMode,
             final HashMap<String, String> params) {
+        if (speaksThroughScreenReader()) {
+            announce(text, queueMode);
+            return;
+        }
         int end = MAX_SPEECH_LENGTH < text.length() ? MAX_SPEECH_LENGTH : text
                 .length();
         end = getBestEnd(text, end);
@@ -346,6 +374,50 @@ public class Speech {
                 ttsSpeak(text.substring(i, end), QUEUE_ADD, null, null);
             }
         }
+    }
+
+    // Whether to speak with the user's screen reader, such as TalkBack or
+    // Jieshuo, instead of the keyboard's own text to speech. Speech follows
+    // the screen reader being turned on or off within a second.
+    private boolean speaksThroughScreenReader() {
+        if (accessibilityManager == null || !accessibilityManager.isEnabled()
+                || !Options.getBooleanPreference(context,
+                        R.string.pref_speak_through_screen_reader_key,
+                        Boolean.parseBoolean(context.getString(
+                                R.string.pref_speak_through_screen_reader_default)))) {
+            return false;
+        }
+        // Listing the services blocks for a while, too long to do for every
+        // typed character.
+        long now = SystemClock.uptimeMillis();
+        if (now - screenReaderCheckedAt > SCREEN_READER_CHECK_MS) {
+            List<AccessibilityServiceInfo> screenReaders = accessibilityManager
+                    .getEnabledAccessibilityServiceList(
+                            AccessibilityServiceInfo.FEEDBACK_SPOKEN);
+            screenReaderOn = screenReaders != null && !screenReaders.isEmpty();
+            screenReaderCheckedAt = now;
+        }
+        return screenReaderOn;
+    }
+
+    // Asks the screen reader to speak the text, interrupting what it is
+    // saying unless the text is queued.
+    private void announce(String text, int queueMode) {
+        if (queueMode == QUEUE_FLUSH) {
+            accessibilityManager.interrupt();
+        }
+        AccessibilityEvent event = AccessibilityEvent
+                .obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT);
+        event.setPackageName(context.getPackageName());
+        event.setClassName(Speech.class.getName());
+        SpannableString spoken = new SpannableString(text);
+        if (locale != null) {
+            // TalkBack switches to a voice for the braille table's language.
+            spoken.setSpan(new LocaleSpan(locale), 0, spoken.length(),
+                    Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        }
+        event.getText().add(spoken);
+        accessibilityManager.sendAccessibilityEvent(event);
     }
 
     @SuppressLint("NewApi")

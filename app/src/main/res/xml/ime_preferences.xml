@@ -151,6 +151,11 @@
          </PreferenceScreen>
          <PreferenceScreen
              android:title="@string/pref_text_to_speech_title" >
+         <CheckBoxPreference
+             android:key="@string/pref_speak_through_screen_reader_key"
+             android:title="@string/pref_speak_through_screen_reader_title"
+             android:summary="@string/pref_speak_through_screen_reader_summary"
+             android:defaultValue="@string/pref_speak_through_screen_reader_default" />
          <ListPreference
              android:key="@string/pref_text_to_speech_engine_key"
              android:title="@string/pref_text_to_speech_engine_title"
