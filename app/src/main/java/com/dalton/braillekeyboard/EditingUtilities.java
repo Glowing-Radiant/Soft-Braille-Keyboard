@@ -220,6 +220,77 @@ public class EditingUtilities {
         return text == null ? null : text.toString();
     }
 
+    // The character at the cursor, which moving by character speaks, to
+    // delete ahead of the cursor. Null if the cursor is at the end.
+    public static Word getFocusedCharacter(KeyboardListener listener) {
+        CharSequence text = listener.getTextAfterCursor(2);
+        if (text == null || text.length() == 0) {
+            return null;
+        }
+        // Keep both halves of a surrogate pair such as an emoji.
+        int length = text.length() > 1
+                && Character.isSurrogatePair(text.charAt(0), text.charAt(1)) ? 2
+                : 1;
+        return new Word(text.subSequence(0, length).toString(), length, 0);
+    }
+
+    // The word at the cursor, which moving by word speaks, and the
+    // separators after it, to delete ahead of the cursor. The cursor is
+    // moved to the start of the word. On separators it is them and the
+    // word after. Null if the cursor is at the end.
+    public static Word getFocusedWord(KeyboardListener listener) {
+        int cursor = listener.getCursor();
+        CharSequence before = listener.getTextBeforeCursor(MAX_WORD_LENGTH);
+        CharSequence after = listener.getTextAfterCursor(MAX_WORD_LENGTH);
+        if (cursor == -1 || before == null || after == null
+                || after.length() == 0) {
+            return null;
+        }
+        String text = after.toString();
+        int start = before.length();
+        int wordStart = 0;
+        int end = 0;
+        if (matchesSeparator(text.charAt(0), WORD_SEPARATORS)) {
+            while (end < text.length()
+                    && matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
+                ++end;
+            }
+            wordStart = end;
+            while (end < text.length()
+                    && !matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
+                ++end;
+            }
+        } else {
+            while (start > 0
+                    && !matchesSeparator(before.charAt(start - 1),
+                            WORD_SEPARATORS)) {
+                --start;
+            }
+            while (end < text.length()
+                    && !matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
+                ++end;
+            }
+        }
+        int wordEnd = end;
+        if (wordStart == 0) {
+            while (end < text.length()
+                    && matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
+                ++end;
+            }
+        }
+
+        String deleted = before.toString().substring(start)
+                + text.substring(0, end);
+        String word = before.toString().substring(start)
+                + text.substring(wordStart, wordEnd);
+        int charsBefore = before.length() - start;
+        if (charsBefore > 0) {
+            listener.setSelection(cursor - charsBefore);
+        }
+        return new Word(word.length() > 0 ? word : deleted, deleted.length(),
+                0);
+    }
+
     public static Word getWord(KeyboardListener listener) {
         CharSequence before = listener.getTextBeforeCursor(MAX_WORD_LENGTH);
         CharSequence after = listener.getTextAfterCursor(MAX_WORD_LENGTH);

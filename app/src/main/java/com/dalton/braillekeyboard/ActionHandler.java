@@ -265,6 +265,10 @@ public class ActionHandler {
     private SpellChecker.Direction spellingDirection;
     private Suggestion spellingSuggestion;
     private final AutoCorrect autoCorrect;
+    // The cursor when moving or reading last spoke the text at it, else -1.
+    // Deleting while the cursor is still there deletes that text rather
+    // than the text before the cursor.
+    private int focusCursor = -1;
     // The last auto-correction, undone by deleting the space right after it.
     private String correctedFrom;
     private String correctedTo;
@@ -376,6 +380,7 @@ public class ActionHandler {
             break;
         case ONE_UP:
             message = getInput(Granularity.CHARACTER);
+            focusCursor = listener.getCursor();
             considerPassword = true;
             break;
         case TWO_LEFT:
@@ -386,6 +391,7 @@ public class ActionHandler {
             break;
         case TWO_UP:
             message = getInput(Granularity.WORD);
+            focusCursor = listener.getCursor();
             considerPassword = true;
             break;
         case TWO_DOWN:
@@ -406,6 +412,7 @@ public class ActionHandler {
             break;
         case THREE_UP:
             message = getInput(Granularity.LINE);
+            focusCursor = listener.getCursor();
             considerPassword = true;
             break;
         case THREE_DOWN:
@@ -1203,6 +1210,7 @@ public class ActionHandler {
         default:
         }
 
+        focusCursor = listener.getCursor();
         if (word != null) {
             callback.onText("%s",
                     !word.moveLeft ? context.getString(R.string.start_of_text)
@@ -1236,6 +1244,7 @@ public class ActionHandler {
         default:
         }
 
+        focusCursor = listener.getCursor();
         if (word != null) {
             callback.onText("%s",
                     !word.moveRight ? context.getString(R.string.end_of_text)
@@ -1252,10 +1261,25 @@ public class ActionHandler {
         if ((granularity == Granularity.CHARACTER
                 || granularity == Granularity.WORD)
                 && deleteSelectedText(context)) {
+            focusCursor = -1;
             return true;
         }
+        // After moving or reading, delete the text that was spoken.
+        boolean focused = focusCursor != -1
+                && focusCursor == listener.getCursor();
+        focusCursor = -1;
+        boolean deletedFocus = false;
         switch (granularity) {
         case CHARACTER:
+            if (focused) {
+                listener.finishComposingText();
+                word = EditingUtilities.getFocusedCharacter(listener);
+                if (word != null) {
+                    deletedFocus = true;
+                    correctedFrom = null;
+                    break;
+                }
+            }
             if (undoAutoCorrection(context)) {
                 return true;
             }
@@ -1264,6 +1288,13 @@ public class ActionHandler {
             break;
         case WORD:
             listener.finishComposingText();
+            if (focused) {
+                word = EditingUtilities.getFocusedWord(listener);
+                if (word != null) {
+                    deletedFocus = true;
+                    break;
+                }
+            }
             Word space = EditingUtilities.skipSepBackwards(listener,
                     EditingUtilities.WORD_SEPARATORS);
             word = EditingUtilities.getWord(listener);
@@ -1302,7 +1333,12 @@ public class ActionHandler {
             break;
         default:
         }
-        return performDelete(context, word, canDelete);
+        boolean deleted = performDelete(context, word, canDelete);
+        if (deletedFocus) {
+            // The text after the deleted text is now the focus.
+            focusCursor = listener.getCursor();
+        }
+        return deleted;
     }
 
     // Given the text to delete and a canDelete flag do the actual deletion.
