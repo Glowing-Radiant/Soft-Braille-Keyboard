@@ -37,6 +37,7 @@ import java.io.OutputStream;
  */
 public final class LibLouis {
     private static final String TAG = "LibLouis";
+    private static final char SHADDA = '\u0651';
     // Asset directory holding the tables. liblouis looks for tables in
     // <data path>/liblouis/tables.
     private static final String ASSET_TABLES_DIR = "liblouis/tables";
@@ -100,7 +101,39 @@ public final class LibLouis {
             if (!initialized) {
                 return null;
             }
-            return nativeBackTranslate(tableList, cells);
+            return fixShadda(nativeBackTranslate(tableList, cells));
+        }
+    }
+
+    // Arabic braille writes the shadda before the letter it doubles, and
+    // liblouis keeps that order, but in text it follows the letter.
+    private static String fixShadda(String text) {
+        if (text == null || text.indexOf(SHADDA) < 0) {
+            return text;
+        }
+        char[] chars = text.toCharArray();
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] == SHADDA && Character.isLetter(chars[i + 1])) {
+                chars[i] = chars[i + 1];
+                chars[i + 1] = SHADDA;
+                i++;
+            }
+        }
+        return new String(chars);
+    }
+
+    /**
+     * Translates text to braille cells.
+     *
+     * @return One byte per cell, dot 1 in the least significant bit, or null
+     *         if translation failed.
+     */
+    public static byte[] translate(String tableList, String text) {
+        synchronized (LOCK) {
+            if (!initialized) {
+                return null;
+            }
+            return nativeTranslate(tableList, text);
         }
     }
 
@@ -198,4 +231,7 @@ public final class LibLouis {
 
     private static native String nativeBackTranslate(String tableList,
             byte[] cells);
+
+    private static native byte[] nativeTranslate(String tableList,
+            String text);
 }

@@ -82,6 +82,17 @@ To add a table:
    python scripts/update_liblouis_tables.py /path/to/liblouis-x.y.z/tables
    ```
 
+4. Check that it types correctly on a device. `BrailleTablesTest` translates
+   the emoji names of every table's language to braille and back, and fails
+   if an offered table gets more than one in ten wrong:
+
+   ```bash
+   ./gradlew connectedDebugAndroidTest
+   ```
+
+   Some liblouis tables back translate badly, often because a letter and a
+   punctuation mark share dots, so only offer tables that pass.
+
 To update liblouis, replace the C sources in `app/src/main/cpp/liblouis`
 with those of the new release, regenerating `liblouis.h` from
 `liblouis.h.in` with `widechar` as `unsigned short int` and updating

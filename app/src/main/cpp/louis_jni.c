@@ -104,3 +104,50 @@ Java_com_googlecode_eyesfree_braille_translate_LibLouis_nativeBackTranslate(
     (*env)->ReleaseByteArrayElements(env, cells, cellBytes, JNI_ABORT);
     return result;
 }
+
+JNIEXPORT jbyteArray JNICALL
+Java_com_googlecode_eyesfree_braille_translate_LibLouis_nativeTranslate(
+        JNIEnv *env, jclass clazz, jstring tableList, jstring text) {
+    jsize inLength = (*env)->GetStringLength(env, text);
+    const jchar *chars = (*env)->GetStringChars(env, text, NULL);
+    if (chars == NULL) {
+        return NULL;
+    }
+
+    widechar *inbuf = malloc(sizeof(widechar) * (inLength + 1));
+    // Computer braille and indicators can make braille longer than the text.
+    int outCapacity = inLength * 4 + 64;
+    widechar *outbuf = malloc(sizeof(widechar) * outCapacity);
+    jbyteArray result = NULL;
+
+    if (inbuf != NULL && outbuf != NULL) {
+        for (jsize i = 0; i < inLength; i++) {
+            inbuf[i] = chars[i];
+        }
+        inbuf[inLength] = 0;
+
+        const char *table = (*env)->GetStringUTFChars(env, tableList, NULL);
+        if (table != NULL) {
+            int inlen = inLength;
+            int outlen = outCapacity;
+            if (lou_translateString(table, inbuf, &inlen, outbuf, &outlen,
+                    NULL, NULL, dotsIO)) {
+                result = (*env)->NewByteArray(env, outlen);
+                if (result != NULL) {
+                    jbyte *cells = (*env)->GetByteArrayElements(env, result,
+                            NULL);
+                    for (int i = 0; i < outlen; i++) {
+                        cells[i] = (jbyte) (outbuf[i] & 0xff);
+                    }
+                    (*env)->ReleaseByteArrayElements(env, result, cells, 0);
+                }
+            }
+            (*env)->ReleaseStringUTFChars(env, tableList, table);
+        }
+    }
+
+    free(inbuf);
+    free(outbuf);
+    (*env)->ReleaseStringChars(env, text, chars);
+    return result;
+}

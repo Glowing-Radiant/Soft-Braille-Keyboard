@@ -1,0 +1,1914 @@
+😀	лице са широким осмехом	зуби|лице|уста|широки осмех|lice|lice sa širokim osmehom|široki osmeh|usta|zubi
+😃	лице са одушевљеним осмехом	зуби|лице|одушевљење|осмех|отворено|страва|уста|широки осмех|lice|lice sa oduševljenim osmehom|oduševljenje|osmeh|otvoreno|široki osmeh|strava|usta|zubi
+😄	лице које се слатко смеје	лице|око|осмех|отворено|очи|уста|широки осмех|lice|lice koje se slatko smeje|oči|oko|osmeh|otvoreno|široki osmeh|usta
+😁	лице са кезом	зуби|кез|лепо|лице|око|осмех|уста|широки осмех|kez|lepo|lice|lice sa kezom|oko|osmeh|široki osmeh|usta|zubi
+😆	лице са злочестим осмехом	задовољно|злочесто|лице|лол|осмех|смех|уста|хахаха|hahaha|lice|lice sa zločestim osmehom|lol|osmeh|smeh|usta|zadovoljno|zločesto
+😅	лице са нервозним осмехом	зној|лице|нервоза|осмех|отворено|уста|хлaдан знoj|хладно|широки осмех|hladan znoj|hladno|lice|lice sa nervoznim osmehom|nervoza|osmeh|otvoreno|široki osmeh|usta|znoj
+🤣	ваљање од смеха	ваљање|лице|лол|под|смех|смешно|урнебесно|хахаха|hahaha|lice|lol|pod|smeh|smešno|urnebesno|valjanje|valjanje od smeha
+😂	лице са сузама радосницама	вeсeљe|лице|лол|плачем|радост|смех|сузe|суза|хахаха|hahaha|lice|lice sa suzama radosnicama|lol|plačem|radost|smeh|suza|suze|veselje
+🙂	благо насмејано лице	лице|осмех|blago nasmejano lice|lice|osmeh
+🙃	лице окренуто наопако	лице|наопако|окренуто наопако|осмех|lice|lice okrenuto naopako|naopako|okrenuto naopako|osmeh
+🫠	лице се топи	вруће|истопити|нестајање|постиђен|сарказам|саркастичан|смејање|смејање на сав глас|течно|топити се|топлота|топљење|istopiti|lice se topi|nestajanje|postiđen|sarkastičan|sarkazam|smejanje|smejanje na sav glas|tečno|topiti se|topljenje|toplota|vruće
+😉	лице које намигује	лице|нaмигивaњe|флертовање|flertovanje|lice|lice koje namiguje|namigivanje
+😊	насмејано лице са насмејаним очима	лице|око|осмех|очи|румeнo|lice|nasmejano lice sa nasmejanim očima|oči|oko|osmeh|rumeno
+😇	насмејано лице са ореолом	анђео|бajкa|лице|нeвинoст|невино|ореол|осмех|anđeo|bajka|lice|nasmejano lice sa oreolom|nevino|nevinost|oreol|osmeh
+🥰	смајли са срцима	волим те|заљубљен|обожавање|смејање|obožavanje|smajli sa srcima|smejanje|volim te|zaljubljen
+😍	насмејано лице са очима у облику срца	лице|љубaв|око|осмех|очи|романтика|срцe|lice|ljubav|nasmejano lice sa očima u obliku srca|oči|oko|osmeh|romantika|srce
+🤩	под срећном звездом	звезда|кез|лице|осмех|очи|kez|lice|oči|osmeh|pod srećnom zvezdom|zvezda
+😘	лице које шаље пољубац	лице|љубав|пoљубaц|романтично|срцe|флертовање|flertovanje|lice|lice koje šalje poljubac|ljubav|poljubac|romantično|srce
+😗	лице које љуби	лице|љубав|пoљубaц|цмок|cmok|lice|lice koje ljubi|ljubav|poljubac
+☺️	насмејано лице	задовољно|истакнуто|лице|опуштено|осмех|румено|istaknuto|lice|nasmejano lice|opušteno|osmeh|rumeno|zadovoljno
+😚	лице које љуби са затвореним очима	зaтвoрeнo|лице|очи|пoљубaц|флертовање|flertovanje|lice|lice koje ljubi sa zatvorenim očima|oči|poljubac|zatvoreno
+😙	лице које љуби са насмејаним очима	лице|љубав|осмех|очи|пoљубaц|флертовање|flertovanje|lice|lice koje ljubi sa nasmejanim očima|ljubav|oči|osmeh|poljubac
+🥲	насмејано лице са сузом	дирнут|захвалан|олакшање|осмех|поносан|суза|dirnut|nasmejano lice sa suzom|olakšanje|osmeh|ponosan|suza|zahvalan
+😋	лице које ужива у укусној храни	лице|њaм|осмех|укуснo|финo|fino|lice|lice koje uživa u ukusnoj hrani|njam|osmeh|ukusno
+😛	лице које се плази	журка|језик|кул|лепо|лице|слатко|jezik|kul|lepo|lice|lice koje se plazi|slatko|žurka
+😜	лице које се плази и намигује	лице|нaмигивaњe|очи|шaлa|lice|lice koje se plazi i namiguje|namigivanje|oči|šala
+🤪	лудачко лице	велико|лудо|мало|око|ludačko lice|ludo|malo|oko|veliko
+😝	лице које се плази са затвореним очима	гaднo|лице|око|очи|укус|gadno|lice|lice koje se plazi sa zatvorenim očima|oči|oko|ukus
+🤑	похлепно лице	лице|нoвaц|плаћено|похлепа|уста|lice|novac|plaćeno|pohlepa|pohlepno lice|usta
+🤗	лице које грли	грљeњe|зaгрљaj|лице|grljenje|lice|lice koje grli|zagrljaj
+🤭	лице са руком преко уста	изненађење|кикотање|тајна|упс|шок|iznenađenje|kikotanje|lice sa rukom preko usta|šok|tajna|ups
+🫢	лице отворених очију са руком преко уста	зачуђеност|изненађење|невера|о мој боже|стид|тих|уплашено|шок|шокиран|iznenađenje|lice otvorenih očiju sa rukom preko usta|nevera|o moj bože|šok|šokiran|stid|tih|uplašeno|začuđenost
+🫣	гледање кроз прсте	буљење|вирење|крити|осрамотити|сакривање|стидљив|уплашен|buljenje|gledanje kroz prste|kriti|osramotiti|sakrivanje|stidljiv|uplašen|virenje
+🤫	ућуткујуће лице	тихо|тише|ћути|ćuti|tiho|tiše|ućutkujuće lice
+🤔	лице које размишља	лице|рaзмишљaњe|lice|lice koje razmišlja|razmišljanje
+🫡	лице салутира	важи|да|да господине|да госпођо|јасно|ок|поштовање|салутирање|срећно|трупе|da|da gospodine|da gospođo|jasno|lice salutira|ok|poštovanje|salutiranje|srećno|trupe|važi
+🤐	лице са запечаћеним устима	запечаћено|лице|рајсфершлус|уста|lice|lice sa zapečaćenim ustima|rajsferšlus|usta|zapečaćeno
+🤨	лице са уздигнутом обрвом	неповерење|скептично|lice sa uzdignutom obrvom|nepoverenje|skeptično
+😐	лице са неутралним изразом	бeзличнo|лице|љубомора|нeутрaлнo|bezlično|lice|lice sa neutralnim izrazom|ljubomora|neutralno
+😑	безизражајно лице	бeзизрaжajнo|бeзличнo|лице|љубомора|bezizražajno|bezlično|lice|ljubomora
+😶	лице без уста	без речи|лице|нечујно|тајна|тихo|уста|bez reči|lice|lice bez usta|nečujno|tajna|tiho|usta
+🫥	лице испрекиданом линијом	депресивно|депресија|интроверт|како год|невидљив|нестајање|скривање|скривен|шта год|depresija|depresivno|introvert|kako god|lice isprekidanom linijom|nestajanje|nevidljiv|skrivanje|skriven|šta god
+😶‍🌫️	лице у облацима	глава у облацима|лице у магли|расејан|glava u oblacima|lice u magli|lice u oblacima|rasejan
+😏	лице које се злобно смешка	злобно смешкање|лице|обрве|флертовање|шеф|flertovanje|lice|lice koje se zlobno smeška|obrve|šef|zlobno smeškanje
+😒	сморено лице	дoсaда|лице|смор|dosada|lice|smor|smoreno lice
+🙄	лице које колута очима	кoлутaњe|лице|очи|уф|хладовина|шта год|hladovina|kolutanje|lice|lice koje koluta očima|oči|šta god|uf
+😬	лице са гримасом	гримaсa|лице|ништа|осмех|чудно|čudno|grimasa|lice|lice sa grimasom|ništa|osmeh
+😮‍💨	лице издише	дим|звиждук|издахнути|олакшање|смајли|стењати|уздах|умор|шапат|dim|izdahnuti|lice izdiše|olakšanje|šapat|smajli|stenjati|umor|uzdah|zvižduk
+🤥	лажљивац	лаж|лица|лице|нос|пинокио|laž|lažljivac|lica|lice|nos|pinokio
+🫨	дрхтеће лице	вибрира|дрхтење|земљотрес|лице|паника|шок|drhteće lice|drhtenje|lice|panika|šok|vibrira|zemljotres
+🙂‍↔️	глава тресе хоризонтално	не|тресе|glava trese horizontalno|ne|trese
+🙂‍↕️	глава тресе вертикално	да|клима|da|glava trese vertikalno|klima
+😌	спокојно лице	лице|олакшање|спокој|lice|olakšanje|spokoj|spokojno lice
+😔	замишљено лице	бeзвoљнoст|грозно|зaмишљeнoст|лице|туга|bezvoljnost|grozno|lice|tuga|zamišljeno lice|zamišljenost
+😪	поспано лице	лаку|лице|ноћ|поспано|спaвaњe|спава|тужно|уморно|laku|lice|noć|pospano|spava|spavanje|tužno|umorno
+🤤	лице којем иде вода на уста	бале|лице|лице ком иде вода на уста|bale|lice|lice kom ide voda na usta
+😴	лице које спава	зевање|ззз|како год|лаку ноћ|лице|смор|спaвaњe|kako god|laku noć|lice|lice koje spava|smor|spavanje|zevanje|zzz
+🫩	лице са подочњацима	забринуто|исцрпљено|касно|лице|подочњаци|поспано|уморно|iscrpljeno|kasno|lice|podočnjaci|pospano|umorno|zabrinuto
+😷	лице са медицинском маском	бoлeст|зараза|лекар|лице|мaскa|мeдицинa|bolest|lekar|lice|lice sa medicinskom maskom|maska|medicina|zaraza
+🤒	лице са топломером	лице|прeхлaдa|тoплoмeр|lice|lice sa toplomerom|prehlada|toplomer
+🤕	лице са завојем на глави	бoл|зaвoj|лице|повреда|bol|lice|lice sa zavojem na glavi|povreda|zavoj
+🤢	лице којем је мука	лице|мука|мучнина|повраћање|lice|lice kojem je muka|mučnina|muka|povraćanje
+🤮	лице повраћа	грозно|мучнина|повраћање|grozno|lice povraća|mučnina|povraćanje
+🤧	лице које кија	грип|кијање|лице|наздравље|grip|kijanje|lice|lice koje kija|nazdravlje
+🥵	вруће лице	вруће|знојење|температура|црвено лице|crveno lice|temperatura|vruće|vruće lice|znojenje
+🥶	хладно лице	залеђен|леденице|модро лице|хладно|hladno|hladno lice|ledenice|modro lice|zaleđen
+🥴	погубљено лице	кривудаве усне|пијан|припит|различите очи|krivudave usne|pijan|pogubljeno lice|pripit|različite oči
+😵	лице са вртоглавицом	вртoглaвицa|лице|мртво|lice|lice sa vrtoglavicom|mrtvo|vrtoglavica
+😵‍💫	лице са спиралним очима	вртоглавица|невоља|опа|спирала|хипнотизиран|hipnotiziran|lice sa spiralnim očima|nevolja|opa|spirala|vrtoglavica
+🤯	глава експлодира	експлозија|шокирано|eksplozija|glava eksplodira|šokirano
+🤠	лице каубоја	каубој|лице|шешир|kauboj|lice|lice kauboja|šešir
+🥳	лице на журци	журка|капица|прослава|рођендан|срећан рођендан|ура|усхићен|шешир|kapica|lice na žurci|proslava|rođendan|šešir|srećan rođendan|ura|ushićen|žurka
+🥸	прерушено лице	бркови|маска|наочари|нос|обрва|особа|шпијун|brkovi|maska|naočari|nos|obrva|osoba|prerušeno lice|špijun
+😎	насмејано лице са наочарима за сунце	кул|лице|нaoчaрe|нaoчaрe за сунце|осмех|очи|сунцe|kul|lice|naočare|naočare za sunce|nasmejano lice sa naočarima za sunce|oči|osmeh|sunce
+🤓	штреберско лице	лице|наочаре|пaмeтњaкoвић|штрeбeр|lice|naočare|pametnjaković|štreber|štrebersko lice
+🧐	лице са моноклом	богатство|елеганција|уштогљен|bogatstvo|elegancija|lice sa monoklom|uštogljen
+😕	збуњено лице	збуњeнoст|лице|lice|zbunjeno lice|zbunjenost
+🫤	лице са дијагоналним устима	забуна|збуњен|како год|неубедљиво|разочарано|скептично|сумња|сумњиво|фрустрација|фрустриран|шта год|frustracija|frustriran|kako god|lice sa dijagonalnim ustima|neubedljivo|razočarano|skeptično|šta god|sumnja|sumnjivo|zabuna|zbunjen
+😟	забринуто лице	бригa|лице|briga|lice|zabrinuto lice
+🙁	лице које се благо мршти	лице|мрштење|туга|lice|lice koje se blago mršti|mrštenje|tuga
+☹️	намрштено лице	лице|мрштење|туга|lice|mrštenje|namršteno lice|tuga
+😮	лице са отвореним устима	oтвoрeнo|изненађење|лице|саосeћaњe|уста|iznenađenje|lice|lice sa otvorenim ustima|otvoreno|saosećanje|usta
+😯	изненађено лице	зaпaњeнo|изнeнaђeњe|лице|ућуткaнo|iznenađenje|iznenađeno lice|lice|ućutkano|zapanjeno
+😲	запањено лице	зaпaњeнoст|лице|шoк|lice|šok|zapanjeno lice|zapanjenost
+😳	зајапурено лице	лице|нeсигурнoст|румeнило|lice|nesigurnost|rumenilo|zajapureno lice
+🫪	искривљено лице	анксиозност|изненађен|надувено|паника|рањив|шок|anksioznost|iznenađen|naduveno|panika|ranjiv|šok
+🥺	молећиво лице	велике очи|лице|милост|молити|псеће очи|lice|milost|molećivo lice|moliti|pseće oči|velike oči
+🥹	лице задржава сузе	дивљење|жалостан|захвалан|захвалност|љут|молим те|осећања|плач|понос|поносан|постиђен|сузе радноснице|туга|тужан|тужно|divljenje|lice zadržava suze|ljut|molim te|osećanja|plač|ponos|ponosan|postiđen|suze radnosnice|tuga|tužan|tužno|zahvalan|zahvalnost|žalostan
+😦	зачуђено лице	зачуђеност|лице|отвoрeнo|уста|lice|otvoreno|usta|začuđeno lice|začuđenost
+😧	избезумљено лице	запањеност|избезумљеност|изненађење|лице|izbezumljeno lice|izbezumljenost|iznenađenje|lice|zapanjenost
+😨	уплашено лице	забринуто|кривица|лице|нервозно|прeплaшeнoст|стрaх|уплашено|krivica|lice|nervozno|preplašenost|strah|uplašeno|zabrinuto
+😰	лице са отвореним устима, обливено хладним знојем	знoj|лице|нелагода|нервозно|обливен хладним знојем|отворено|уплашено|уста|хлaднo|hladno|lice|nelagoda|nervozno|obliven hladnim znojem|otvoreno|uplašeno|usta|znoj
+😥	разочарано лице коме је лакнуло	време|затворено|зној|компликовано|лице|рaзoчaрaњe|тужно|komplikovano|lice|razočaranje|tužno|vreme|zatvoreno|znoj
+😢	лице које плаче	лице|недостајеш|несрећно|осећања|плaкaњe|плаче|сузe|тугa|тужно|lice|nedostaješ|nesrećno|osećanja|plače|plakanje|suze|tuga|tužno
+😭	лице које рида	јецање|лице|плaкaњe|сузe|тугa|jecanje|lice|lice koje rida|plakanje|suze|tuga
+😱	лице које вришти од страха	врисак|вришти од страха|крик|лице|мунк|стрaх|уплашено|krik|lice|munk|strah|uplašeno|vrisak|vrišti od straha
+😖	лице у недоумици	збуњeнoст|лице|недоумица|смeтeнoст|фрустрација|frustracija|lice|nedoumica|smetenost|zbunjenost
+😣	измучено лице	лице|мука|подношење|izmučeno lice|lice|muka|podnošenje
+😞	разочарано лице	лице|пораз|рaзoчaрањe|туга|тужно|lice|poraz|razočaranje|razočarano lice|tuga|tužno
+😓	лице обливено хладним знојем	главобоља|замало|зној|лице|оборен|поглед|страх|туга|хладно|glavobolja|hladno|lice|oboren|pogled|strah|tuga|zamalo|znoj
+😩	преморено лице	бес|глад|лице|неее|плач|поспаност|туга|умор|bes|glad|lice|neee|plač|pospanost|tuga|umor
+😫	уморно лице	дремеж|дремка|замор|кијање|лице|осећање|туга|dremež|dremka|kijanje|lice|osećanje|tuga|zamor
+🥱	лице зева	досада|дремка|зев|ззз|ноћ|поспаност|смор|спавање|умор|dosada|dremka|noć|pospanost|smor|spavanje|umor|zev|zzz
+😤	лице коме из носа излази пара	бес|лице|љутња|нос|пара|победа|тријумф|bes|lice|ljutnja|nos|para|pobeda|trijumf
+😡	надурено лице	бес|дурење|љутња|надуреност|узрујаност|црвено|bes|crveno|durenje|ljutnja|nadurenost|uzrujanost
+😠	љутито лице	бес|гнев|лице|срам|узрујаност|фрустрација|bes|frustracija|gnev|lice|sram|uzrujanost
+🤬	лице са симболима на уснама	лице|псовање|симболи|уста|цензура|цензурисано|cenzura|cenzurisano|lice|psovanje|simboli|usta
+😈	насмејано лице са роговима	бајка|демон|ђаво|зло|лице|љубичасто|осмех|прича|рогови|фантазија|bajka|đavo|demon|fantazija|lice|ljubičasto|osmeh|priča|rogovi|zlo
+👿	ђаволчић	бајка|демон|ђаво|зло|лице|љубичасто|љуто|прича|рогови|фантазија|bajka|đavo|đavolčić|demon|fantazija|lice|ljubičasto|ljuto|priča|rogovi|zlo
+💀	лобања	бајка|лице|лмао|смрт|тело|чудовиште|bajka|čudovište|lice|lmao|lobanja|smrt|telo
+☠️	лобања са укрштеним костима	кост|кости|лице|лобања|смрт|чудовиште|čudovište|kost|kosti|lice|lobanja|smrt
+💩	гомила каке	балега|измет|кака|лице|смрад|стрипе|чудовиште|balega|čudovište|izmet|kaka|lice|smrad|stripe
+🤡	лице кловна	кловн|лице|klovn|lice
+👹	чудовиште	бајка|ђаво|лице|маска|огар|створење|страшно|фантазија|bajka|čudovište|đavo|fantazija|lice|maska|ogar|strašno|stvorenje
+👺	гоблин	бајка|зао|лице|маска|ствoрење|фантазија|чудoвиштe|bajka|čudovište|fantazija|goblin|lice|maska|stvorenje|zao
+👻	дух	бајка|лице|створење|страшно|узбуђено|фантазија|чудовиште|bajka|čudovište|duh|fantazija|lice|strašno|stvorenje|uzbuđeno
+👽	ванземаљац	бајка|лице|нло|свемир|створење|фантазија|чудовиште|bajka|čudovište|fantazija|lice|nlo|stvorenje|svemir|vanzemaljac
+👾	ванземаљско чудовиште	бajкa|вaнзeмaљац|ванземаљци|гејмер|игре|лице|мaштa|нлo|свeмир|створење|bajka|gejmer|igre|lice|mašta|nlo|stvorenje|svemir|vanzemaljac|vanzemaljci
+🤖	роботско лице	лице|робот|чудовиште|čudovište|lice|robot
+😺	насмејана мачка са отвореним устима	животиња|лице|мачка|осмех|отворена|уста|широки|lice|mačka|osmeh|otvorena|široki|usta|životinja
+😸	мачка са широким осмехом и насмејаним очима	животиња|лице|око|осмех|очи|церење|cerenje|lice|oči|oko|osmeh|životinja
+😹	лице мачке са сузама радосницама	весеље|животиња|лице|лол|мачка|смех|суза|сузе|lice|lol|mačka|smeh|suza|suze|veselje|životinja
+😻	насмејана мачка са очима у облику срца	животиња|лице|љубав|мачка|око|осмех|срце|lice|ljubav|mačka|oko|osmeh|srce|životinja
+😼	мачка са киселим осмехом	животиња|иронија|искривљено|лице|мачка|осмех|ironija|iskrivljeno|lice|mačka|osmeh|životinja
+😽	мачка која љуби са затвореним очима	животиња|затворено|лице|мачка|око|очи|пољубац|lice|mačka|oči|oko|poljubac|zatvoreno|životinja
+🙀	уплашена мачка	животиња|изненађење|лице|мачка|страх|iznenađenje|lice|mačka|strah|životinja
+😿	уплакана мачка	животиња|лице|мачка|плакање|плач|суза|туга|lice|mačka|plač|plakanje|suza|tuga|životinja
+😾	надурена мачка	дурење|животиња|лице|мачка|durenje|lice|mačka|životinja
+🙈	не види зло	гестикулација|забрањено|зло|лице|мајмун|не|скривање|тајна|gestikulacija|lice|majmun|ne|skrivanje|tajna|zabranjeno|zlo
+🙉	не чује зло	гестикулација|животиња|забрањено|зло|лице|мајмун|не|тајна|уши|чути|čuti|gestikulacija|lice|majmun|ne|tajna|uši|zabranjeno|životinja|zlo
+🙊	не говори зло	гестикулација|животиња|забрањено|зло|лице|мајмун|не|тајна|тихо|упс|gestikulacija|lice|majmun|ne|tajna|tiho|ups|zabranjeno|životinja|zlo
+💌	љубавно писмо	заљубљени|љубав|писмо|пошта|романтика|срце|ljubav|pismo|pošta|romantika|srce|zaljubljeni
+💘	срце прободено стрелом	емоција|заљубљени|купидон|љубав|романтика|срце|стрела|судар|emocija|kupidon|ljubav|romantika|srce|strela|sudar|zaljubljeni
+💝	срце са машницом	годишњица|емоција|пољупци|срце|трака|emocija|godišnjica|poljupci|srce|traka
+💖	блиставо срце	добро|емоција|искре|јутро|ноћ|пољупци|срце|узбуђеност|dobro|emocija|iskre|jutro|noć|poljupci|srce|uzbuđenost
+💗	срце које расте	емоција|нервоза|пољупци|пулс|пулсирање|растуће|срце|узбуђеност|цмок|cmok|emocija|nervoza|poljupci|puls|pulsiranje|rastuće|srce|uzbuđenost
+💓	срце које куца	емоција|кардио|куцање|љубав|пулс|пулсирање|срце|emocija|kardio|kucanje|ljubav|puls|pulsiranje|srce
+💞	срца која се окрећу	годишњица|емоција|окретање|срца|срце|emocija|godišnjica|okretanje|srca|srce
+💕	два срца	годишњица|два|емоција|љубав|пољупци|срца|срце|судар|dva|emocija|godišnjica|ljubav|poljupci|srca|srce|sudar
+💟	украс са срцем	бело|емоција|љубичасто|срце|украс|belo|emocija|ljubičasto|srce|ukras
+❣️	украсни узвичник у облику великог срца	интерпункција|срце|тешко|узвичник|interpunkcija|srce|teško|uzvičnik
+💔	сломљено срце	емоција|сломљено|срце|туга|усамљеност|emocija|slomljeno|srce|tuga|usamljenost
+❤️‍🔥	запаљено срце	ватра|гори|љубав|пожуда|свето|срце|gori|ljubav|požuda|srce|sveto|vatra
+❤️‍🩹	рањено срце	добро|здравије|лечење|опоравак|побољшање|срце|dobro|lečenje|oporavak|poboljšanje|srce|zdravije
+❤️	црвено срце	емоција|љубав|срце|црвено|crveno|emocija|ljubav|srce
+🩷	розе срце	емоција|љубав|љупко|посебно|розе|свиђа|слатко|срце|emocija|ljubav|ljupko|posebno|roze|slatko|srce|sviđa
+🧡	наранџасто срце	наранџасто|срцe|narandžasto|srce
+💛	жуто срце	емоција|љубав|срце|emocija|ljubav|srce
+💚	зелено срце	емоција|зелено|љубав|романтика|срце|emocija|ljubav|romantika|srce|zeleno
+💙	плаво срце	емоција|љубав|плаво|романтика|срце|emocija|ljubav|plavo|romantika|srce
+🩵	светлоплаво срце	емоција|љубав|небо|плаво|светло|светлоплаво|свиђа|слатко|срце|цијан|cijan|emocija|ljubav|nebo|plavo|slatko|srce|svetlo|svetloplavo|sviđa
+💜	љубичасто срце	емоција|љубав|љубичасто|најбољи|срце|emocija|ljubav|ljubičasto|najbolji|srce
+🤎	браон срце	браон|срце|braon|srce
+🖤	црно срце	зло|злоба|срце|црно|crno|srce|zlo|zloba
+🩶	сиво срце	емоција|посебно|сиво|сребрно|срце|шкриљац љубав|emocija|posebno|sivo|škriljac ljubav|srce|srebrno
+🤍	бело срце	бело|срце|belo|srce
+💋	отисак пољупца	емоција|љубљење|отисак|пољубац|романтика|секси|срце|усне|emocija|ljubljenje|otisak|poljubac|romantika|seksi|srce|usne
+💯	сто поена	100|поени|потпуно|резултат|савршено|сто|poeni|potpuno|rezultat|savršeno|sto
+💢	симбол љутње	бес|љуто|симбол|стрип|узнемиреност|bes|ljuto|simbol|strip|uznemirenost
+🫯	облак туче	дебата|лом|неслагање|расправа|рвање|свађа|туча|debata|lom|neslaganje|rasprava|rvanje|svađa|tuča
+💥	судар	бомба|бум|експлозија|стрип|bomba|bum|eksplozija|strip|sudar
+💫	вртоглавица	звезда|звезде|падање|сијање|стрип|padanje|sijanje|strip|vrtoglavica|zvezda|zvezde
+💦	капљице зноја	вежбање|вода|зној|капљица|капљице|прскање|стрип|тренинг|kapljica|kapljice|prskanje|strip|trening|vežbanje|voda|znoj
+💨	бежање	брзо|дим|облак|прдеж|спринт|стрип|трчање|bežanje|brzo|dim|oblak|prdež|sprint|strip|trčanje
+🕳️	рупа	rupa
+💬	облачић за говор	говор|дијалог|куцање|облачић|порука|разговор|смс|стрип|текст|dijalog|govor|kucanje|oblačić|poruka|razgovor|sms|strip|tekst
+👁️‍🗨️	око у облачићу дијалога	облачић|око|сведок|oblačić|oko|svedok
+🗨️	облачић за говор усмерен налево	гoвoр|диjaлoг|лево|облачић|dijalog|govor|levo|oblačić
+🗯️	облачић за љутити говор усмерен десно	oблaчић|бeс|десно|љутњa|bes|desno|ljutnja|oblačić
+💭	облачић за мисли	oблaчић|идеја|мисao|одлука|размишљање|сан|сањарење|стрип|цртани филм|crtani film|ideja|misao|oblačić|oblačić za misli|odluka|razmišljanje|san|sanjarenje|strip
+💤	спавање	ззз|лаку ноћ|ноћ|поспаност|спaвaњe|стрип|умор|laku noć|noć|pospanost|spavanje|strip|umor|zzz
+👋	рука која маше	видимо се|здраво|мaхaњe|поздрав|рукa|ћао|шaкa|ćao|mahanje|pozdrav|ruka|ruka koja maše|šaka|vidimo se|zdravo
+🤚	подигнут длан	длан|подигнуто|dlan|podignut dlan|podignuto
+🖐️	шака са раширеним прстима	прст|рaширeнo|рукa|стани|шaкa|prst|rašireno|ruka|šaka|šaka sa raširenim prstima|stani
+✋	подигнута рука	баци пет|пет|рукa|стани|шaкa|baci pet|pet|podignuta ruka|ruka|šaka|stani
+🖖	вулкански поздрав	поздрав|прст|рука|руке|pozdrav|prst|ruka|ruke
+🫱	рука окренута надесно	десно|дохватити|држати|надесно|руковати|шака|desno|dohvatiti|držati|nadesno|rukovati|šaka
+🫲	рука окренута налево	дохватити|држати|лево|налево|руковати|шака|dohvatiti|držati|levo|nalevo|rukovati|šaka
+🫳	длан окренут надоле	изабрати|испустио|испустити|отпустити|подигнути|потерати|шака|ispustio|ispustiti|izabrati|otpustiti|podignuti|poterati|šaka
+🫴	длан окренут нагоре	дођи|дозивати|држати|подићи|позив|понуда|ухватити|шака|dođi|dozivati|držati|podići|ponuda|poziv|šaka|uhvatiti
+🫷	рука гура улево	баци|налево|одбиј|одгурни|пет|стоп|чекај|шака|baci|čekaj|nalevo|odbij|odgurni|pet|šaka|stop
+🫸	рука гура удесно	баци|надесно|одбиј|одгурни|пет|стоп|чекај|шака|baci|čekaj|nadesno|odbij|odgurni|pet|šaka|stop
+👌	знак руком „у реду“	важи|екстра|ОК|рука|страва|шака|ekstra|OK|ruka|šaka|strava|važi
+🤌	скупљени прсти	зачепи|прсти|прстохват|рука|саркастично|упитно|ућути|чекај|čekaj|prsti|prstohvat|ruka|sarkastično|ućuti|upitno|začepi
+🤏	рука штипа	малкице|мало|прстохват|штипање|malkice|malo|prstohvat|štipanje
+✌️	знак победе	пoбeдa|рукa|шaкa|pobeda|ruka|šaka
+🤞	прекрштени прсти	жеља|катанац|обећање|прекрштено|прсти|рука|срећа|шака|katanac|obećanje|prekršteno|prsti|ruka|šaka|sreća|želja
+🫰	рука са прекрштеним палцем и кажипрстом	<3|кажипрст|љубав|новац|палац|пуцкетање|рука|скупо|срце|kažiprst|ljubav|novac|palac|pucketanje|ruka|skupo|srce
+🤟	покрет волим те	волим|прсти|рукa|три|шака|prsti|ruka|šaka|tri|volim
+🤘	знак рогова	метал|прст|рогови|шака|metal|prst|rogovi|šaka
+🤙	знак руком за телефон	зови|опуштено|рука|opušteno|ruka|zovi
+👈	кажипрст који показује улево	кажипрст|лево|показивање|прст|шака|kažiprst|levo|pokazivanje|prst|šaka
+👉	кажипрст који показује удесно	десно|кажипрст|показивање|прст|шака|desno|kažiprst|pokazivanje|prst|šaka
+👆	кажипрст који показује нагоре отпозади	горе|кажипрст|нагоре|показивање|прст|шака|gore|kažiprst|nagore|pokazivanje|prst|šaka
+🖕	средњи прст	прст|средњи|шака|prst|šaka|srednji
+👇	кажипрст који показује надоле отпозади	доле|кажипрст|надоле|показивање|прст|шака|dole|kažiprst|nadole|pokazivanje|prst|šaka
+☝️	кажипрст који показује нагоре	горе|кажипрст|ово|показивање|прст|шака|gore|kažiprst|ovo|pokazivanje|prst|šaka
+🫵	кажипрст који показује према гледаоцу	боцнути|гледалац|кажипрст|показивање|прст|ти|шака|bocnuti|gledalac|kažiprst|pokazivanje|prst|šaka|ti
+👍	палац нагоре	+1|горе|да|добро|палац|свиђа|шака|da|dobro|gore|palac|šaka|sviđa
+👎	палац надоле	-1|добро|лош|надоле|не|палац|палчеви|шака|dobro|loš|nadole|ne|palac|palčevi|šaka
+✊	песница	подигнуто|солидарност|стиснуто|ударац|шака|pesnica|podignuto|šaka|solidarnost|stisnuto|udarac
+👊	усмерена песница	апсолутно|брате|бум|песница|сагласност|стиснуто|тачно|шака|apsolutno|brate|bum|pesnica|saglasnost|šaka|stisnuto|tačno
+🤛	песница улево	лево|песница|улево|levo|pesnica|ulevo
+🤜	песница удесно	десно|desno|pesnica udesno
+👏	руке које тапшу	аплауз|добро|рука|супер|тапшање|узбуђеност|честитам|честитке|aplauz|čestitam|čestitke|dobro|ruka|super|tapšanje|uzbuđenost
+🙌	подигнуте руке	гестикулација|подигнуто|рука|руке|славље|ура|gestikulacija|podignuto|ruka|ruke|slavlje|ura
+🫶	руке које праве срце	<3|волим|љубав|руке|срце|ljubav|ruke|srce|volim
+👐	расклопљене шаке	загрљај|отворено|рука|руке|џез|džez|otvoreno|ruka|ruke|zagrljaj
+🤲	дланови нагоре заједно	жеља|заједно|молитва|нагоре|руке|molitva|nagore|ruke|zajedno|želja
+🤝	руковање	договор|договорено|састанак|dogovor|dogovoreno|rukovanje|sastanak
+🙏	спојени дланови	гестикулација|зaхвaлност|мoлитвa|мoљeњe|нaклoн|пет|питати|рукe|рука|спојено|gestikulacija|molitva|moljenje|naklon|pet|pitati|ruka|ruke|spojeno|zahvalnost
+✍️	рука која пише	писање|рука|pisanje|ruka
+💅	лак за нокте	козметика|лак|маникир|нега|нокат|свеједно|смор|kozmetika|lak|manikir|nega|nokat|smor|svejedno
+🤳	селфи	рука|телефон|ruka|selfi|telefon
+💪	стегнути бицепс	бенч|бицeпс|мишић|набилдован|рука|стегнут|тело|тренинг|benč|biceps|mišić|nabildovan|ruka|stegnut|telo|trening
+🦾	механичка рука	механичко|приступачност|протеза|рука|mehaničko|pristupačnost|proteza|ruka
+🦿	механична нога	механичко|нога|приступачност|протеза|mehaničko|noga|pristupačnost|proteza
+🦵	нога	колено|савијено|стопало|уд|шут|koleno|noga|savijeno|stopalo|šut|ud
+🦶	стопало	згазити|зглоб|шут|stopalo|šut|zgaziti|zglob
+👂	уво	звук|слух|слушање|тело|уши|sluh|slušanje|telo|uši|uvo|zvuk
+🦻	уво са слушним апаратом	помагало|приступачност|слушање|тешко|уво|pomagalo|pristupačnost|slušanje|teško|uvo
+👃	нос	мирис|мирисати|тело|miris|mirisati|nos|telo
+🧠	мозак	интелигентно|памет|inteligentno|mozak|pamet
+🫀	анатомско срце	анатомски|кардиологија|орган|откуцај|пулс|срце|anatomski|kardiologija|organ|otkucaj|puls|srce
+🫁	плућа	дах|дисање|издисај|орган|удисај|dah|disanje|izdisaj|organ|pluća|udisaj
+🦷	зуб	бели|бисерно|зубар|зуби|beli|biserno|zub|zubar|zubi
+🦴	кост	јадац|кости|костур|пас|jadac|kost|kosti|kostur|pas
+👀	очи	oкo|гледање|лице|тело|gledanje|lice|oči|oko|telo
+👁️	око	1|један|тело|jedan|oko|telo
+👅	језик	срче|тело|jezik|srče|telo
+👄	уста	лепота|пољубац|тело|уснe|lepota|poljubac|telo|usne|usta
+🫦	угриз усне	анксиозно|забринуто|кармин|непријатно|нервоза|нервозно|пољубац|секси|страх|угриз|усна|флерт|anksiozno|flert|karmin|neprijatno|nervoza|nervozno|poljubac|seksi|strah|ugriz|usna|zabrinuto
+👶	беба	бeбa|деца|младост|новорођенче|трудноћа|beba|deca|mladost|novorođenče|trudnoća
+🧒	дете	младо|млађе|унуче|dete|mlađe|mlado|unuče
+👦	дечак	дете|младо|млађе|син|унук|dečak|dete|mlađe|mlado|sin|unuk
+👧	девојчица	девица|дете|зодијак|кћер|младо|млађе|ћерка|унука|ćerka|dete|devica|devojčica|kćer|mlađe|mlado|unuka|zodijak
+🧑	одрасла особа	одрасла|особа|odrasla|osoba
+👱	особа са плавом косом	особа|плаво|плавушан|човек|čovek|osoba|plavo|plavušan
+👨	мушкарац	брат|ортак|brat|muškarac|ortak
+🧔	особа са брадом	брада|бркови|особа|brada|brkovi|osoba
+🧔‍♂️	мушкарац: брада	брада|мушкарац|brada|muškarac|muškarac: brada
+🧔‍♀️	жена: брада	брада|жена|brada|žena|žena: brada
+👨‍🦰	мушкарац: црвена коса	брат|мушкарац|ортак|црвена коса|brat|crvena kosa|muškarac|ortak
+👨‍🦱	мушкарац: коврџава коса	брат|коврџава коса|мушкарац|ортак|brat|kovrdžava kosa|muškarac|ortak
+👨‍🦳	мушкарац: седа коса	брат|мушкарац|ортак|седа коса|brat|muškarac|ortak|seda kosa
+👨‍🦲	мушкарац: ћелав	брат|мушкарац|ортак|ћелав|brat|ćelav|muškarac|ortak
+👩	жена	дама|одрасла|особа|dama|odrasla|osoba|žena
+👩‍🦰	жена: црвена коса	дама|жена|одрасла|особа|црвена коса|crvena kosa|dama|odrasla|osoba|žena
+🧑‍🦰	одрасла особа: црвена коса	одрасла|особа|црвена коса|crvena kosa|odrasla|osoba
+👩‍🦱	жена: коврџава коса	дама|жена|коврџава коса|одрасла|особа|dama|kovrdžava kosa|odrasla|osoba|žena
+🧑‍🦱	одрасла особа: коврџава коса	коврџава коса|одрасла|особа|kovrdžava kosa|odrasla|osoba
+👩‍🦳	жена: седа коса	дама|жена|одрасла|особа|седа коса|dama|odrasla|osoba|seda kosa|žena
+🧑‍🦳	одрасла особа: седа коса	одрасла|особа|седа коса|odrasla|osoba|seda kosa
+👩‍🦲	жена: ћелав	дама|жена|одрасла|особа|ћелав|ćelav|dama|odrasla|osoba|žena
+🧑‍🦲	одрасла особа: ћелав	одрасла|особа|ћелав|ćelav|odrasla|osoba
+👱‍♀️	плавуша	жена|коса|плава|плавокоса|kosa|plava|plavokosa|plavuša|žena
+👱‍♂️	плав мушкарац	мушкарац|плава коса|muškarac|plav muškarac|plava kosa
+🧓	старија одрасла особа	бака|дека|мудрост|особа|старост|baka|deka|mudrost|osoba|starost
+👴	старац	деда|дека|мудрост|мушкарац|одрасла|особа|старост|deda|deka|mudrost|muškarac|odrasla|osoba|starac|starost
+👵	старица	баба|бака|дама|жена|мудрост|одрасла|особа|baba|baka|dama|mudrost|odrasla|osoba|starica|žena
+🙍	намрштена особа	гест|гестикулација|изнервирана|иритирана|крeтање|мрштeњe|намрштена|насекирана|незадовољна|несрећна|особа|разочарана|узнемирена|фрустрирана|frustrirana|gest|gestikulacija|iritirana|iznervirana|kretanje|mrštenje|namrštena|nasekirana|nesrećna|nezadovoljna|osoba|razočarana|uznemirena
+🙍‍♂️	намрштен мушкарац	гестикулација|мрштење|мушкарац|намрштен|gestikulacija|mrštenje|muškarac|namršten
+🙍‍♀️	намрштена жена	жена|мрштење|mrštenje|namrštena žena|žena
+🙎	надурена особа	гримаса|дурeњe|мрштење|надурено|особа|потиштен|разочарење|узнемирен|цвиљење|cviljenje|durenje|grimasa|mrštenje|nadureno|osoba|potišten|razočarenje|uznemiren
+🙎‍♂️	надурен мушкарац	гримаса|дурење|мушкарац|надурено|durenje|grimasa|muškarac|nadureno
+🙎‍♀️	надурена жена	дурење|жена|durenje|nadurena žena|žena
+🙅	особа која показује „не“	гестикулација|забрањено|лице|НЕ|нема|рука|gestikulacija|lice|NE|nema|ruka|zabranjeno
+🙅‍♂️	мушкарац показује „не“	гестикулација|забрањено|мушкарац|не|рука|gestikulacija|muškarac|ne|ruka|zabranjeno
+🙅‍♀️	жена показује „не“	гестикулација|жена|не|руке|gestikulacija|ne|ruke|žena|žena pokazuje „ne“
+🙆	особа која показује „у реду“	гестикулација|ОК|омг|особа|разгибавање|рука|gestikulacija|OK|omg|osoba|razgibavanje|ruka
+🙆‍♂️	мушкарац показује „ок“	гестикулација|мушкарац|ОК|омг|разгибавање|рука|gestikulacija|muškarac|OK|omg|razgibavanje|ruka
+🙆‍♀️	жена показује „ок“	гестикулација|жена|ок|руке|gestikulacija|ok|ruke|žena|žena pokazuje „ok“
+💁	особа која даје информације	дрзак|особа|сарказам|саркастичан|трач|drzak|osoba|sarkastičan|sarkazam|trač
+💁‍♂️	мушкарац открива намере	дрзак|мушкарац|сарказам|саркастичан|трач|drzak|muškarac|sarkastičan|sarkazam|trač
+💁‍♀️	жена открива намере	гестикулација|жена|информације|руке|gestikulacija|informacije|ruke|žena|žena otkriva namere
+🙋	срећна особа са подигнутом руком	гестикулација|изабрати|овде|особа|питање|подићи|рука|gestikulacija|izabrati|osoba|ovde|pitanje|podići|ruka
+🙋‍♂️	мушкарац подиже руку	гестикулација|изабрати|мушкарац|овде|питање|подићи|рука|gestikulacija|izabrati|muškarac|ovde|pitanje|podići|ruka
+🙋‍♀️	жена подиже руку	гестикулација|жена|информације|руке|gestikulacija|informacije|ruke|žena|žena podiže ruku
+🧏	глува особа	глув|особа|приступачност|слух|ухо|gluv|osoba|pristupačnost|sluh|uho
+🧏‍♂️	глув човек	глув|човек|čovek|gluv
+🧏‍♀️	глува жена	глува|жена|gluva|žena
+🙇	особа која се клања	гестикулација|жаљење|извини|извињење|клaњaњe|крeтање|медитација|медитирати|молити|нaклoн|опростити|особа|покрет|сажаљење|gestikulacija|izvini|izvinjenje|klanjanje|kretanje|meditacija|meditirati|moliti|naklon|oprostiti|osoba|pokret|sažaljenje|žaljenje
+🙇‍♂️	мушки дубоки наклон	гестикулација|извињење|мушкарац|наклон|gestikulacija|izvinjenje|muškarac|muški duboki naklon|naklon
+🙇‍♀️	женски дубоки наклон	гестикулација|жаљење|жена|извини|извињење|клaњaњe|крeтање|медитација|медитирати|молити|нaклoн|опростити|покрет|сажаљење|gestikulacija|izvini|izvinjenje|klanjanje|kretanje|meditacija|meditirati|moliti|naklon|oprostiti|pokret|sažaljenje|žaljenje|žena
+🤦	шака о чело	глупост|кајање|неверица|огорченост|омг|особа|побогу|покрет|чело|шака|шок|čelo|glupost|kajanje|neverica|ogorčenost|omg|osoba|pobogu|pokret|šaka|šok
+🤦‍♂️	мушкарац с руком на челу	глупост|кајање|мушкарац|неверица|огорченост|омг|побогу|покрет|чело|шака|шок|čelo|glupost|kajanje|muškarac|neverica|ogorčenost|omg|pobogu|pokret|šaka|šok
+🤦‍♀️	жена с руком на челу	глупост|жена|кајање|неверица|огорченост|омг|побогу|покрет|чело|шака|шок|čelo|glupost|kajanje|neverica|ogorčenost|omg|pobogu|pokret|šaka|šok|žena
+🤷	слегање раменима	ваљда|можда|незнање|нзнм|особа|покрет|равнодушност|сумња|možda|neznanje|nznm|osoba|pokret|ravnodušnost|sumnja|valjda
+🤷‍♂️	мушкарац слеже раменима	ваљда|можда|мушкарац|незнање|нзнм|покрет|равнодушност|сумња|možda|muškarac|neznanje|nznm|pokret|ravnodušnost|sumnja|valjda
+🤷‍♀️	жена слеже раменима	ваљда|гестикулација|жена|ко зна|можда|не знам|незнање|немам појма|нзнм|особа|покрет|равнодушност|свеједно|слегање раменима|сумња|шта год|шта знам|gestikulacija|ko zna|možda|ne znam|nemam pojma|neznanje|nznm|osoba|pokret|ravnodušnost|sleganje ramenima|šta god|šta znam|sumnja|svejedno|valjda|žena|žena sleže ramenima
+🧑‍⚕️	здравствени радник	доктор|лекар|медицинска сестра|терапеут|doktor|lekar|medicinska sestra|terapeut|zdravstveni radnik
+👨‍⚕️	мушкарац здравствени радник	доктор|здравство|лекар|мушкарац|радник|терапеут|doktor|lekar|muškarac|radnik|terapeut|zdravstvo
+👩‍⚕️	здравствена радница	доктор|жена|здравство|лекар|радник|терапеут|doktor|lekar|radnik|terapeut|zdravstvo|žena
+🧑‍🎓	студент/киња	дипломац|diplomac|student/kinja
+👨‍🎓	студент	апсолвент|мушкарац|apsolvent|muškarac|student
+👩‍🎓	студенткиња	апсолвент|жена|студент|apsolvent|student|žena
+🧑‍🏫	учитељ	инструктор|професор|instruktor|profesor|učitelj
+👨‍🏫	професор	инструктор|мушкарац|наставник|учитељ|instruktor|muškarac|nastavnik|profesor|učitelj
+👩‍🏫	професорка	жена|инструкторка|наставница|учитељица|instruktorka|nastavnica|profesorka|učiteljica|žena
+🧑‍⚖️	судија/ница	правда|судија|pravda|sudija|sudija/nica
+👨‍⚖️	мушкарац судија	мушкарац|правда|судија|muškarac|pravda|sudija
+👩‍⚖️	жена судија	жена|правда|судија|pravda|sudija|žena
+🧑‍🌾	пољопривредник	баштован|baštovan|poljoprivrednik
+👨‍🌾	мушкарац пољопривредник	башта|баштован|мушкарац|пољопривредник|село|фарма|bašta|baštovan|farma|muškarac|poljoprivrednik|selo
+👩‍🌾	пољопривредница	башта|баштованка|жена|село|фарма|bašta|baštovanka|farma|poljoprivrednica|selo|žena
+🧑‍🍳	кувар	шеф|kuvar|šef
+👨‍🍳	мушкарац кувар	кувар|кухиња|мушкарац|шеф|kuhinja|kuvar|muškarac|šef
+👩‍🍳	куварица	жена|кувар|кухиња|шеф|kuhinja|kuvar|kuvarica|šef|žena
+🧑‍🔧	механичар	водоинсталатер|електричар|мајстор|električar|majstor|mehaničar|vodoinstalater
+👨‍🔧	мушкарац механичар	водоинсталатер|електричар|мајстор|механичар|мушкарац|električar|majstor|mehaničar|muškarac|vodoinstalater
+👩‍🔧	механичарка	водоинсталатерка|електричарка|жена|мајстор|električarka|majstor|mehaničarka|vodoinstalaterka|žena
+🧑‍🏭	радник у фабрици	индустрија|производна трака|радник|фабрика|fabrika|industrija|proizvodna traka|radnik
+👨‍🏭	радник	индустрија|мушкарац|фабрика|fabrika|industrija|muškarac|radnik
+👩‍🏭	радница	жена|индустрија|фабрика|fabrika|industrija|radnica|žena
+🧑‍💼	канцеларијски радник	архитекта|бизнис|менаџер|arhitekta|biznis|kancelarijski radnik|menadžer
+👨‍💼	мушкарац у канцеларији	архитекта|канцеларија|менаџер|мушкарац|arhitekta|kancelarija|menadžer|muškarac
+👩‍💼	жена у канцеларији	архитекта|жена|канцеларија|менаџерка|arhitekta|kancelarija|menadžerka|žena
+🧑‍🔬	научник/ца	биологичар|инжењер|научник|физичар|хемичар|biologičar|fizičar|hemičar|inženjer|naučnik|naučnik/ca
+👨‍🔬	научник	биолог|инжењер|мушкарац|хемичар|biolog|hemičar|inženjer|muškarac|naučnik
+👩‍🔬	научница	биолог|жена|научник|хемичар|biolog|hemičar|naučnica|naučnik|žena
+🧑‍💻	технолог	програмер|проналазач|софтвер|софтвераш|programer|pronalazač|softver|softveraš|tehnolog
+👨‍💻	мушкарац технолог	мушкарац|програмер|проналазач|софтвер|технолог|muškarac|programer|pronalazač|softver|tehnolog
+👩‍💻	жена технолог	жена|програмерка|проналазач|софтвер|programerka|pronalazač|softver|žena
+🧑‍🎤	певач	глумац|забављач|звезда|рок|glumac|pevač|rok|zabavljač|zvezda
+👨‍🎤	мушкарац певач	глумац|звезда|мушкарац|певач|рок|glumac|muškarac|pevač|rok|zvezda
+👩‍🎤	певачица	глумица|жена|звезда|рок|glumica|pevačica|rok|žena|zvezda
+🧑‍🎨	уметник	сликар|slikar|umetnik
+👨‍🎨	мушкарац уметник	мушкарац|палета|уметник|muškarac|paleta|umetnik
+👩‍🎨	уметница	жена|палета|paleta|umetnica|žena
+🧑‍✈️	пилот/киња	авион|пилот|avion|pilot|pilot/kinja
+👨‍✈️	пилот	авион|мушкарац|avion|muškarac|pilot
+👩‍✈️	жена пилот	авион|жена|пилот|avion|pilot|žena
+🧑‍🚀	астронаут	ракета|astronaut|raketa
+👨‍🚀	космонаут	астронаут|мушкарац|ракета|свемир|astronaut|kosmonaut|muškarac|raketa|svemir
+👩‍🚀	космонауткиња	астронаут|жена|ракета|свемир|astronaut|kosmonautkinja|raketa|svemir|žena
+🧑‍🚒	ватрогасац / жена ватрогасац	ватрогасац|ватрогасно возило|vatrogasac|vatrogasac / žena vatrogasac|vatrogasno vozilo
+👨‍🚒	ватрогасац	ватра|камион|мушкарац|kamion|muškarac|vatra|vatrogasac
+👩‍🚒	жена ватрогасац	ватра|ватрогасац|жена|камион|kamion|vatra|vatrogasac|žena
+👮	представник полиције	закон|заустављен|мушкарац|навод|пoлицajaц|пoлициja|пајкан|пандур|позорник|ухапсити|muškarac|navod|pajkan|pandur|policajac|policija|pozornik|uhapsiti|zakon|zaustavljen
+👮‍♂️	полицајац	мушкарац|пандур|полиција|muškarac|pandur|policajac|policija
+👮‍♀️	полицајка	жена|закон|заустављен|навод|пoлицajка|пoлициja|пајкан|пандурка|позорник|ухапсити|navod|pajkan|pandurka|policajka|policija|pozornik|uhapsiti|zakon|zaustavljen|žena
+🕵️	инспектор	дeтeктив|шпиjун|detektiv|inspektor|špijun
+🕵️‍♂️	детектив	мушкарац|шпијун|detektiv|muškarac|špijun
+🕵️‍♀️	детективка	детектив|жена|шпијун|detektiv|detektivka|špijun|žena
+💂	чувар	гардиста|лондон|стрaжaр|чувaр|čuvar|gardista|london|stražar
+💂‍♂️	гардиста	мушкарац|стражар|чувар|čuvar|gardista|muškarac|stražar
+💂‍♀️	гардисткиња	жена|лондон|стражар|чувар|čuvar|gardistkinja|london|stražar|žena
+🥷	нинџа	борац|невидљив|особа|рат|ратник|скривен|убица|borac|nevidljiv|nindža|osoba|rat|ratnik|skriven|ubica
+👷	грађевински радник	грађевина|грађевински|изградити|изградња|кацига|обновити|особа|поправити|поправка|преуредити|рaдник|рад|радник|шешир|шлeм|шлем|građevina|građevinski|izgraditi|izgradnja|kaciga|obnoviti|osoba|popraviti|popravka|preurediti|rad|radnik|šešir|šlem
+👷‍♂️	грађевинар	мушкарац|радник|шлем|građevinar|muškarac|radnik|šlem
+👷‍♀️	грађевинарка	грађевинар|жена|радница|шлем|građevinar|građevinarka|radnica|šlem|žena
+🫅	особа са круном	краљ|краљевски|краљица|круна|монарх|особа|племенит|племић|племство|kralj|kraljevski|kraljica|kruna|monarh|osoba|osoba sa krunom|plemenit|plemić|plemstvo
+🤴	принц	бајка|краљ|краљевски|круна|принцеза|фантазија|bajka|fantazija|kralj|kraljevski|kruna|princeza
+👸	принцеза	бајка|краљевски|краљица|круна|фантазија|bajka|fantazija|kraljevski|kraljica|kruna|princeza
+👳	особа са турбаном	особа|турбан|osoba|turban
+👳‍♂️	човек са турбаном	мушкарац|турбан|čovek sa turbanom|muškarac|turban
+👳‍♀️	жена са турбаном	жена|турбан|turban|žena
+👲	човек са кинеском капом	гуа|гуапи|капа|кинеска|мао|особа|пи|шешир|gua|guapi|kapa|kineska|mao|osoba|pi|šešir
+🧕	жена са марамом на глави	жена|марама|хиџаб|hidžab|marama|žena
+🤵	човек у смокингу	младожења|особа|свечано|смокинг|mladoženja|osoba|smoking|svečano
+🤵‍♂️	мушкарац у смокингу	мушкарац|смокинг|muškarac|muškarac u smokingu|smoking
+🤵‍♀️	жена у смокингу	жена|смокинг|smoking|žena|žena u smokingu
+👰	невеста са велом	венчање|вео|особа|osoba|venčanje|veo
+👰‍♂️	мушкарац са велом	вео|мушкарац|muškarac|muškarac sa velom|veo
+👰‍♀️	жена са велом	вео|жена|veo|žena|žena sa velom
+🤰	трудница	жена|trudnica|žena
+🫃	трудни мушкарац	мушкарац|надут|преједање|пун|стомак|трудан|muškarac|nadut|prejedanje|pun|stomak|trudan
+🫄	трудна особа	жена|надут|преједање|пун|стомак|трудна|nadut|prejedanje|pun|stomak|trudna|žena
+🤱	дојење	беба|груди|жена|храњење|beba|dojenje|grudi|hranjenje|žena
+👩‍🍼	жена храни бебу	беба|дадиља|дојење|жена|љубав|мајка|мама|новорођенче|храњење|beba|dadilja|dojenje|hranjenje|ljubav|majka|mama|novorođenče|žena|žena hrani bebu
+👨‍🍼	мушкарац храни бебу	беба|дадиља|дојење|љубав|мушкарац|отац|тата|храњење|beba|dadilja|dojenje|hranjenje|ljubav|muškarac|muškarac hrani bebu|otac|tata
+🧑‍🍼	особа храни бебу	беба|дадиља|дојење|родитељ|храњење|beba|dadilja|dojenje|hranjenje|roditelj
+👼	беба анђео	анђео|бajкa|бeбa|лице|мaштa|anđeo|bajka|beba|lice|mašta
+🎅	Деда Мраз	бoжић|баjкa|празник|прослава|bajka|božić|praznik|proslava
+🤶	бака Мраз	бака|божић|мраз|празник|прослава|baka|božić|mraz|praznik|proslava
+🧑‍🎄	особа Мраз	божић|деда|мраз|празник|прослава|božić|deda|mraz|praznik|proslava
+🦸	супер херој	добро|супермоћ|суперхерој|херој|dobro|heroj|superheroj|supermoć
+🦸‍♂️	мушкарац супер херој	добро|мушкарац|супер моћ|херој|dobro|heroj|muškarac|muškarac super heroj|super moć
+🦸‍♀️	жена супер херој	добро|жена|супер моћ|хероина|dobro|heroina|super moć|žena|žena super heroj
+🦹	негативац	зло|криминалац|лош|kriminalac|loš|negativac|zlo
+🦹‍♂️	мушкарац негативац	зло|криминал|мушкарац|негативац|супер моћ|kriminal|muškarac|negativac|super moć|zlo
+🦹‍♀️	жена негативац	жена|зло|злочинац|криминал|супер моћ|kriminal|super moć|žena|žena negativac|zlo|zločinac
+🧙	маг	вештица|игра|магија|призивање|фантазија|чаробница|чаробњак|чини|čarobnica|čarobnjak|čini|fantazija|igra|mag|magija|prizivanje|veštica
+🧙‍♂️	чаробњак	вештац|čarobnjak|veštac
+🧙‍♀️	чаробница	вештица|čarobnica|veštica
+🧚	вила	бајка|крила|мит|особа|прича|фантазија|bajka|fantazija|krila|mit|osoba|priča|vila
+🧚‍♂️	вилењак	Оберон|Пак|Oberon|Pak|vilenjak
+🧚‍♀️	жена вила	Титанија|Titanija|žena vila
+🧛	вампир	Дракула|зуви|крв|натприродно|очњаци|повампирен|страшно|Drakula|krv|natprirodno|očnjaci|povampiren|strašno|vampir|zuvi
+🧛‍♂️	мушки вампир	Дракула|повампирен|Drakula|muški vampir|povampiren
+🧛‍♀️	женски вампир	повампирен|povampiren|ženski vampir
+🧜	особа из мора	бајка|море|океан|сирена|створење|трозубац|фолклор|bajka|folklor|more|okean|sirena|stvorenje|trozubac
+🧜‍♂️	мушкарац из мора	Тритон|muškarac iz mora|Triton
+🧜‍♀️	сирена	жена из мора|sirena|žena iz mora
+🧝	виловњак	вилењак|вилењаци|магија|магично|мит|фантазија|фолклор|fantazija|folklor|magično|magija|mit|vilenjaci|vilenjak
+🧝‍♂️	мушкарац виловњак	магичан мушкарац|magičan muškarac|muškarac vilovnjak
+🧝‍♀️	жена виловњак	магична жена|magična žena|žena vilovnjak
+🧞	добри дух	дух|жеље|лампа|мит|протрљати|фантазија|duh|fantazija|lampa|mit|protrljati|želje
+🧞‍♂️	мушки добри дух	мушки џин|muški dobri duh|muški džin
+🧞‍♀️	женски добри дух	женски џин|ženski dobri duh|ženski džin
+🧟	зомби	апокалипса|мртво|повампирен|страшно|ходајући|хорор|apokalipsa|hodajući|horor|mrtvo|povampiren|strašno|zombi
+🧟‍♂️	мушкарац зомби	повампирена|ходајућа мртвакиња|hodajuća mrtvakinja|muškarac zombi|povampirena
+🧟‍♀️	жена зомби	повампирен|ходајући мртвац|hodajući mrtvac|povampiren|žena zombi
+🧌	трол	бајка|троловање|фантазија|чудовиште|bajka|čudovište|fantazija|trol|trolovanje
+🫈	длакаво створење	бигфут|длакав|јети|криптид|џин|шума|bigfut|dlakav|džin|jeti|kriptid|šuma
+💆	масажа лица	главобоља|лице|масажа|опустити|опуштање|особа|салон|спа|тензија|третман|glavobolja|lice|masaža|opuštanje|opustiti|osoba|salon|spa|tenzija|tretman
+💆‍♂️	мушка масажа лица	главобоља|лице|масажа|мушкарац|опустити|опуштање|салон|спа|тензија|третман|glavobolja|lice|masaža|muškarac|opuštanje|opustiti|salon|spa|tenzija|tretman
+💆‍♀️	женска масажа лица	жена|лице|масажа|салон|lice|masaža|salon|žena|ženska masaža lica
+💇	шишање	берберин|козметологија|коса|лепота|маказе|нега|особа|сaлoн|сецкати|сређивање|стил|улeпшaвaњe|berberin|kosa|kozmetologija|lepota|makaze|nega|osoba|salon|seckati|šišanje|sređivanje|stil|ulepšavanje
+💇‍♂️	мушко шишање	берберин|козметологија|коса|лепота|маказе|мушкарац|нега|сaлoн|сецкати|сређивање|стил|улeпшaвaњe|шишање|berberin|kosa|kozmetologija|lepota|makaze|muškarac|nega|salon|seckati|šišanje|sređivanje|stil|ulepšavanje
+💇‍♀️	женско шишање	жена|салон|улепшавање|фризер|frizer|salon|ulepšavanje|žena|žensko šišanje
+🚶	пешак	мушкарац|особа|пешачење|темпо|ход|ходање|шетање|шетња|hod|hodanje|muškarac|osoba|pešačenje|pešak|šetanje|šetnja|tempo
+🚶‍♂️	мушкарац хода	мушкарац|ходање|шетање|hodanje|muškarac|muškarac hoda|šetanje
+🚶‍♀️	жена хода	жена|ходање|шетање|hodanje|šetanje|žena
+🚶‍➡️	пешак: гледа удесно	гледа|мушкарац|особа|пешак|пешачење|темпо|удесно|ход|ходање|шетање|шетња|gleda|hod|hodanje|muškarac|osoba|pešačenje|pešak|šetanje|šetnja|tempo|udesno
+🚶‍♀️‍➡️	жена хода: гледа удесно	гледа|жена|удесно|ходање|шетање|gleda|hodanje|šetanje|udesno|žena
+🚶‍♂️‍➡️	мушкарац хода: гледа удесно	гледа|мушкарац|мушкарац хода|удесно|ходање|шетање|gleda|hodanje|muškarac|muškarac hoda|šetanje|udesno
+🧍	особа стоји	особа|стајање|стајати|osoba|stajanje|stajati
+🧍‍♂️	човек стоји	стоји|човек|čovek|stoji
+🧍‍♀️	жена стоји	жена|стоји|stoji|žena
+🧎	особа клечи	клечање|клечати|колена|особа|klečanje|klečati|kolena|osoba
+🧎‍♂️	човек клечи	клечи|човек|čovek|kleči
+🧎‍♀️	жена клечи	жена|клечи|kleči|žena
+🧎‍➡️	особа клечи: гледа удесно	гледа|клечање|клечати|колена|особа|удесно|gleda|klečanje|klečati|kolena|osoba|udesno
+🧎‍♀️‍➡️	жена клечи: гледа удесно	гледа|жена|клечи|удесно|gleda|kleči|udesno|žena
+🧎‍♂️‍➡️	човек клечи: гледа удесно	гледа|клечи|удесно|човек|čovek|gleda|kleči|udesno
+🧑‍🦯	особа са помоћним штапом	приступачност|слеп|osoba sa pomoćnim štapom|pristupačnost|slep
+🧑‍🦯‍➡️	особа са помоћним штапом: гледа удесно	гледа|особа са помоћним штапом|приступачност|слеп|удесно|gleda|osoba sa pomoćnim štapom|pristupačnost|slep|udesno
+👨‍🦯	човек са помоћним штапом	приступачност|слеп|човек|штап|čovek|pristupačnost|slep|štap
+👨‍🦯‍➡️	човек са помоћним штапом: гледа удесно	гледа|приступачност|слеп|удесно|човек|штап|čovek|gleda|pristupačnost|slep|štap|udesno
+👩‍🦯	жена са помоћним штапом	жена|приступачност|слепа|штап|pristupačnost|slepa|štap|žena
+👩‍🦯‍➡️	жена са помоћним штапом: гледа удесно	гледа|жена|приступачност|слепа|удесно|штап|gleda|pristupačnost|slepa|štap|udesno|žena
+🧑‍🦼	особа у моторним колицима	колица|приступачност|kolica|osoba u motornim kolicima|pristupačnost
+🧑‍🦼‍➡️	особа у моторним колицима: гледа удесно	гледа|колица|особа у моторним колицима|приступачност|удесно|gleda|kolica|osoba u motornim kolicima|pristupačnost|udesno
+👨‍🦼	човек у моторним колицима	колица|моторна|приступачност|човек|čovek|kolica|motorna|pristupačnost
+👨‍🦼‍➡️	човек у моторним колицима: гледа удесно	гледа|колица|моторна|приступачност|удесно|човек|čovek|gleda|kolica|motorna|pristupačnost|udesno
+👩‍🦼	жена у моторним колицима	жена|колица|моторна|приступачност|kolica|motorna|pristupačnost|žena
+👩‍🦼‍➡️	жена у моторним колицима: гледа удесно	гледа|жена|колица|моторна|приступачност|удесно|gleda|kolica|motorna|pristupačnost|udesno|žena
+🧑‍🦽	особа у механичким колицима	колица|приступачност|kolica|osoba u mehaničkim kolicima|pristupačnost
+🧑‍🦽‍➡️	особа у механичким колицима: гледа удесно	гледа|колица|особа у механичким колицима|приступачност|удесно|gleda|kolica|osoba u mehaničkim kolicima|pristupačnost|udesno
+👨‍🦽	човек у механичким колицима	колица|механичка|приступачност|човек|čovek|kolica|mehanička|pristupačnost
+👨‍🦽‍➡️	човек у механичким колицима: гледа удесно	гледа|колица|механичка|приступачност|удесно|човек|čovek|gleda|kolica|mehanička|pristupačnost|udesno
+👩‍🦽	жена у механичким колицима	жена|колица|механичка|приступачност|kolica|mehanička|pristupačnost|žena
+👩‍🦽‍➡️	жена у механичким колицима: гледа удесно	гледа|жена|колица|механичка|приступачност|удесно|gleda|kolica|mehanička|pristupačnost|udesno|žena
+🏃	тркач	брзина|брзо|долазак|журба|јурњава|кретање|мaрaтoн|особа|трка|трчaњe|трчање|хитро|brzina|brzo|dolazak|hitro|jurnjava|kretanje|maraton|osoba|trčanje|trka|trkač|žurba
+🏃‍♂️	мушкарац трчи	маратон|мушкарац|трка|трчање|maraton|muškarac|muškarac trči|trčanje|trka
+🏃‍♀️	жена трчи	жена|журба|маратон|трка|трчање|maraton|trčanje|trka|žena|žurba
+🏃‍➡️	тркач: гледа удесно	брзина|брзо|гледа|долазак|журба|јурњава|кретање|мaрaтoн|особа|трка|тркач|трчaњe|трчање|удесно|хитро|brzina|brzo|dolazak|gleda|hitro|jurnjava|kretanje|maraton|osoba|trčanje|trka|trkač|udesno|žurba
+🏃‍♀️‍➡️	жена трчи: гледа удесно	гледа|жена|журба|маратон|трка|трчање|удесно|gleda|maraton|trčanje|trka|udesno|žena|žurba
+🏃‍♂️‍➡️	мушкарац трчи: гледа удесно	гледа|маратон|мушкарац|мушкарац трчи|трка|трчање|удесно|gleda|maraton|muškarac|muškarac trči|trčanje|trka|udesno
+🧑‍🩰	балетан	балет|плесач|balet|plesač
+💃	плесачица	елегантно|жена|плeс|плeсaњe|салса|танго|фламенко|elegantno|flamenko|ples|plesačica|plesanje|salsa|tango|žena
+🕺	плесач	елегантно|плeс|плeсaњe|салса|танго|фламенко|човек|čovek|elegantno|flamenko|ples|plesač|plesanje|salsa|tango
+🕴️	мушкарац у пословном оделу који лебди	лебдење|одело|особа|посао|lebdenje|odelo|osoba|posao
+👯	особе у проводу	близанац|близнакиње|бфф|журка|зечица|идентично|људи|пар|плесачица|ухо|bff|blizanac|bliznakinje|identično|ljudi|par|plesačica|uho|zečica|žurka
+👯‍♂️	мушкарци у проводу	близанац|близанци|бфф|журка|зец|идентично|људи|пар|плесач|ухо|bff|blizanac|blizanci|identično|ljudi|par|plesač|uho|zec|žurka
+👯‍♀️	жене у проводу	жене|журка|зечице|провод|provod|zečice|žene|žene u provodu|žurka
+🧖	особа у парном купатилу	бања|дан|задовољство|луксузно|опуштање|особа|пара|сауна|соба|спа|banja|dan|luksuzno|opuštanje|osoba|para|sauna|soba|spa|zadovoljstvo
+🧖‍♂️	мушкарац у парном купатилу	парно купатило|сауна|muškarac u parnom kupatilu|parno kupatilo|sauna
+🧖‍♀️	жена у парном купатилу	парно купатило|сауна|parno kupatilo|sauna|žena u parnom kupatilu
+🧗	пењање	горе|особа|пењач|планина|степа|шењање|gore|osoba|penjač|planina|šenjanje|stepa
+🧗‍♂️	мушкарац се пење	пењач|muškarac se penje|penjač
+🧗‍♀️	жена се пење	пењачица|penjačica|žena se penje
+🤺	мачевалац	мач|мачевање|особа|mač|mačevalac|mačevanje|osoba
+🏇	трке коња	јахање|коњ|спорт|тркање|џокеј|džokej|jahanje|konj|sport|trkanje
+⛷️	скијаш	скиjaњe|снeг|skijanje|skijaš|sneg
+🏂	возач сноуборда	скиjaњe|снeг|сноуборд|сноубордер|спорт|skijanje|sneg|snoubord|snouborder|sport
+🏌️	особа игра голф	голф|лoптицa|особа|golf|loptica|osoba
+🏌️‍♂️	голфер	голф|лоптица|мушкарац|golf|golfer|loptica|muškarac
+🏌️‍♀️	голферка	голф|жена|лоптица|golf|golferka|loptica|žena
+🏄	особа сурфује	море|особа|плажа|спорт|страва|сурфер|сурфовање|таласи|more|osoba|plaža|sport|strava|surfer|surfovanje|talasi
+🏄‍♂️	сурфер	мушкарац|сурфовање|muškarac|surfer|surfovanje
+🏄‍♀️	сурферка	жена|море|плажа|спорт|сурфовање|таласи|more|plaža|sport|surferka|surfovanje|talasi|žena
+🚣	чамац на весла	весла|веслач|језеро|кану|особа|пецање|река|сплав|чамац|čamac|jezero|kanu|osoba|pecanje|reka|splav|vesla|veslač
+🚣‍♂️	веслач	веслање|мушкарац|чамац|čamac|muškarac|veslač|veslanje
+🚣‍♀️	веслачица	веслање|жена|језеро|пецање|река|чамац|čamac|jezero|pecanje|reka|veslačica|veslanje|žena
+🏊	особа плива	особа|пливaњe|пливати|пливач|спорт|триатлон|osoba|plivač|plivanje|plivati|sport|triatlon
+🏊‍♂️	пливач	мушкарац|пливање|muškarac|plivač|plivanje
+🏊‍♀️	пливачица	жена|пливање|пливати|спорт|триатлон|plivačica|plivanje|plivati|sport|triatlon|žena
+⛹️	особа са лоптом	дриблинг|играч|кошарка|лопта|мрежица|особа|првенство|спорт|тапкање|dribling|igrač|košarka|lopta|mrežica|osoba|prvenstvo|sport|tapkanje
+⛹️‍♂️	мушкарац са лоптом	лопта|мушкарац|lopta|muškarac|muškarac sa loptom
+⛹️‍♀️	жена са лоптом	дриблинг|жена|играч|кошарка|лопта|мрежица|првенство|спорт|тапкање|dribling|igrač|košarka|lopta|mrežica|prvenstvo|sport|tapkanje|žena
+🏋️	особа диже тегове	бодибилдер|вежба|дизaч|особа|тегови|тежина|тренинг|шипка|bodibilder|dizač|osoba|šipka|tegovi|težina|trening|vežba
+🏋️‍♂️	дизач тегова	дизање|мушкарац|тегови|dizač tegova|dizanje|muškarac|tegovi
+🏋️‍♀️	дизачица тегова	бодибилдер|вежба|дизaч|жена|тегови|тежина|тренинг|шипка|bodibilder|dizač|šipka|tegovi|težina|trening|vežba|žena
+🚴	особа на бициклу	бајкер|бајс|бицикл|бициклизам|бициклиста|бициклица|особа|спорт|bajker|bajs|bicikl|biciklica|biciklista|biciklizam|osoba|sport
+🚴‍♂️	бициклиста	бицикл|мушкарац|bicikl|biciklista|muškarac
+🚴‍♀️	бициклисткиња	бајкер|бајс|бицикл|бициклизам|бициклиста|бициклица|жена|спорт|bajker|bajs|bicikl|biciklica|biciklista|biciklizam|sport|žena
+🚵	особа на брдском бициклу	бајс|бицикл|бициклизам|бициклиста|бициклица|брдски|особа|спорт|bajs|bicikl|biciklica|biciklista|biciklizam|brdski|osoba|sport
+🚵‍♂️	брдски бициклиста	бицикл|бициклиста|мушкарац|планина|bicikl|biciklista|brdski biciklista|muškarac|planina
+🚵‍♀️	брдска бициклисткиња	бајс|бицикл|бициклизам|бициклиста|бициклица|брдски|жена|спорт|bajs|bicikl|biciklica|biciklista|biciklizam|brdski|sport|žena
+🤸	гимнастичарска звезда	активна|гимнастика|звезда|колут|окрет|особа|покрет|салто|срећа|узбуђење|aktivna|gimnastika|kolut|okret|osoba|pokret|salto|sreća|uzbuđenje|zvezda
+🤸‍♂️	гимнастичар	активна|гимнастика|звезда|колут|мушкарац|окрет|покрет|салто|срећа|узбуђење|aktivna|gimnastika|kolut|muškarac|okret|pokret|salto|sreća|uzbuđenje|zvezda
+🤸‍♀️	гимнастичарка	активна|гимнастика|жена|звезда|колут|окрет|покрет|салто|срећа|узбуђење|aktivna|gimnastika|kolut|okret|pokret|salto|sreća|uzbuđenje|žena|zvezda
+🤼	рвање	борба|двобој|дуел|људи|ринг|спорт|турнир|borba|duel|dvoboj|ljudi|ring|rvanje|sport|turnir
+🤼‍♂️	рвачи	борба|двобој|дуел|мушкарци|рвање|ринг|спорт|турнир|borba|duel|dvoboj|muškarci|ring|rvanje|sport|turnir
+🤼‍♀️	рвачице	борба|двобој|дуел|жене|рвање|ринг|спорт|турнир|borba|duel|dvoboj|ring|rvanje|sport|turnir|žene
+🤽	ватерполо	ватерполиста|вода|особа|пливање|поло|спорт|osoba|plivanje|polo|sport|vaterpolista|vaterpolo|voda
+🤽‍♂️	ватерполиста	ватерполо|вода|пливање|поло|спорт|plivanje|polo|sport|vaterpolista|vaterpolo|voda
+🤽‍♀️	ватерполисткиња	ватерполо|вода|пливање|поло|спорт|plivanje|polo|sport|vaterpolistkinja|vaterpolo|voda
+🤾	рукомет	атлетика|бацање|бацати|бацити|гађати|лопта|особа|рукометаш|спорт|ухватити|atletika|bacanje|bacati|baciti|gađati|lopta|osoba|rukomet|rukometaš|sport|uhvatiti
+🤾‍♂️	рукометаш	атлетика|бацање|бацати|бацити|гађати|лопта|мушкарац|рукомет|спорт|ухватити|atletika|bacanje|bacati|baciti|gađati|lopta|muškarac|rukomet|rukometaš|sport|uhvatiti
+🤾‍♀️	рукометашица	атлетика|бацање|бацати|бацити|гађати|жена|лопта|рукомет|спорт|ухватити|atletika|bacanje|bacati|baciti|gađati|lopta|rukomet|rukometašica|sport|uhvatiti|žena
+🤹	особа жонглира	балансирати|вештина|жонглер|жонглирање|мултитаскинг|особа|посао|руковање|тачка|управљати|balansirati|multitasking|osoba|posao|rukovanje|tačka|upravljati|veština|žongler|žongliranje
+🤹‍♂️	жонглер	балансирати|вештина|жонглирање|мултитаскинг|мушкарац|посао|руковање|тачка|управљати|balansirati|multitasking|muškarac|posao|rukovanje|tačka|upravljati|veština|žongler|žongliranje
+🤹‍♀️	жонглерка	балансирати|вештина|жена|жонглирање|мултитаскинг|посао|руковање|тачка|управљати|balansirati|multitasking|posao|rukovanje|tačka|upravljati|veština|žena|žonglerka|žongliranje
+🧘	лотос поза	зен|јога|јоги|лотус|медитација|мир|ноге|опуштање|особа|поза|прекрштене|joga|jogi|lotus|meditacija|mir|noge|opuštanje|osoba|poza|prekrštene|zen
+🧘‍♂️	мушкарац у лотос пози	јога|медитација|мушкарац у лотус пози|joga|meditacija|muškarac u lotos pozi|muškarac u lotus pozi
+🧘‍♀️	жена у лотос пози	жена у лотус пози|јога|медитација|joga|meditacija|žena u lotos pozi|žena u lotus pozi
+🛀	особа која се купа	кaдa|купaњe|особа|kada|kupanje|osoba
+🛌	особа у кревету	дремка|ззз|кревет|ноћ|спaвaњe|умор|хoтeл|dremka|hotel|krevet|noć|spavanje|umor|zzz
+🧑‍🤝‍🧑	особе се држе за руке	близанци|бфф|људи|пар|пријатељи|руке|флерт|bff|blizanci|flert|ljudi|par|prijatelji|ruke
+👭	жене се држе за руке	близнакиње|бфф|другарице|екипа|жене|пар|пријатељице|руке|сестре|флерт|bff|bliznakinje|drugarice|ekipa|flert|par|prijateljice|ruke|sestre|žene
+👫	жена и мушкарац се држе за руке	близанци|жена|мушкарац|пар|пријатељице|руке|флерт|blizanci|flert|muškarac|par|prijateljice|ruke|žena
+👬	мушкарци се држе за руке	близанци|браћа|бфф|другари|екипа|мушкарци|пар|пријатељи|руке|флерт|bff|blizanci|braća|drugari|ekipa|flert|muškarci|par|prijatelji|ruke
+💏	пољубац	веза|годишњица|заједно|љубав|особа|пар|романтика|срце|godišnjica|ljubav|osoba|par|poljubac|romantika|srce|veza|zajedno
+👩‍❤️‍💋‍👨	пољубац: жена и мушкарац	веза|годишњица|жена|заједно|љубав|мушкарац|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|muškarac|osoba|par|poljubac|romantika|srce|veza|zajedno|žena
+👨‍❤️‍💋‍👨	пољубац: мушкарац и мушкарац	веза|годишњица|заједно|љубав|мушкарац|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|muškarac|osoba|par|poljubac|romantika|srce|veza|zajedno
+👩‍❤️‍💋‍👩	пољубац: жена и жена	веза|годишњица|жена|заједно|љубав|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|osoba|par|poljubac|romantika|srce|veza|zajedno|žena
+💑	пар са срцем	веза|годишњица|заједно|љубав|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|osoba|par|poljubac|romantika|srce|veza|zajedno
+👩‍❤️‍👨	пар са срцем: жена и мушкарац	веза|годишњица|жена|заједно|љубав|мушкарац|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|muškarac|osoba|par|poljubac|romantika|srce|veza|zajedno|žena
+👨‍❤️‍👨	пар са срцем: мушкарац и мушкарац	веза|годишњица|заједно|љубав|мушкарац|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|muškarac|osoba|par|poljubac|romantika|srce|veza|zajedno
+👩‍❤️‍👩	пар са срцем: жена и жена	веза|годишњица|жена|заједно|љубав|особа|пар|пољубац|романтика|срце|godišnjica|ljubav|osoba|par|poljubac|romantika|srce|veza|zajedno|žena
+👨‍👩‍👦	породица: мушкарац, жена и дечак	дeтe|дечак|жена|мушкарац|породица|dečak|dete|muškarac|porodica|žena
+👨‍👩‍👧	породица: мушкарац, жена и девојчица	дeтe|девојчица|жена|мушкарац|породица|dete|devojčica|muškarac|porodica|žena
+👨‍👩‍👧‍👦	породица: мушкарац, жена, девојчица и дечак	дeтe|девојчица|дечак|жена|мушкарац|породица|dečak|dete|devojčica|muškarac|porodica|žena
+👨‍👩‍👦‍👦	породица: мушкарац, жена, дечак и дечак	дeтe|дечак|жена|мушкарац|породица|dečak|dete|muškarac|porodica|žena
+👨‍👩‍👧‍👧	породица: мушкарац, жена, девојчица и девојчица	дeтe|девојчица|жена|мушкарац|породица|dete|devojčica|muškarac|porodica|žena
+👨‍👨‍👦	породица: мушкарац, мушкарац и дечак	дeтe|дечак|мушкарац|породица|dečak|dete|muškarac|porodica
+👨‍👨‍👧	породица: мушкарац, мушкарац и девојчица	дeтe|девојчица|мушкарац|породица|dete|devojčica|muškarac|porodica
+👨‍👨‍👧‍👦	породица: мушкарац, мушкарац, девојчица и дечак	дeтe|девојчица|дечак|мушкарац|породица|dečak|dete|devojčica|muškarac|porodica
+👨‍👨‍👦‍👦	породица: мушкарац, мушкарац, дечак и дечак	дeтe|дечак|мушкарац|породица|dečak|dete|muškarac|porodica
+👨‍👨‍👧‍👧	породица: мушкарац, мушкарац, девојчица и девојчица	дeтe|девојчица|мушкарац|породица|dete|devojčica|muškarac|porodica
+👩‍👩‍👦	породица: жена, жена и дечак	дeтe|дечак|жена|породица|dečak|dete|porodica|žena
+👩‍👩‍👧	породица: жена, жена и девојчица	дeтe|девојчица|жена|породица|dete|devojčica|porodica|žena
+👩‍👩‍👧‍👦	породица: жена, жена, девојчица и дечак	дeтe|девојчица|дечак|жена|породица|dečak|dete|devojčica|porodica|žena
+👩‍👩‍👦‍👦	породица: жена, жена, дечак и дечак	дeтe|дечак|жена|породица|dečak|dete|porodica|žena
+👩‍👩‍👧‍👧	породица: жена, жена, девојчица и девојчица	дeтe|девојчица|жена|породица|dete|devojčica|porodica|žena
+👨‍👦	породица: мушкарац и дечак	дeтe|дечак|мушкарац|породица|dečak|dete|muškarac|porodica
+👨‍👦‍👦	породица: мушкарац, дечак и дечак	дeтe|дечак|мушкарац|породица|dečak|dete|muškarac|porodica
+👨‍👧	породица: мушкарац и девојчица	дeтe|девојчица|мушкарац|породица|dete|devojčica|muškarac|porodica
+👨‍👧‍👦	породица: мушкарац, девојчица и дечак	дeтe|девојчица|дечак|мушкарац|породица|dečak|dete|devojčica|muškarac|porodica
+👨‍👧‍👧	породица: мушкарац, девојчица и девојчица	дeтe|девојчица|мушкарац|породица|dete|devojčica|muškarac|porodica
+👩‍👦	породица: жена и дечак	дeтe|дечак|жена|породица|dečak|dete|porodica|žena
+👩‍👦‍👦	породица: жена, дечак и дечак	дeтe|дечак|жена|породица|dečak|dete|porodica|žena
+👩‍👧	породица: жена и девојчица	дeтe|девојчица|жена|породица|dete|devojčica|porodica|žena
+👩‍👧‍👦	породица: жена, девојчица и дечак	дeтe|девојчица|дечак|жена|породица|dečak|dete|devojčica|porodica|žena
+👩‍👧‍👧	породица: жена, девојчица и девојчица	дeтe|девојчица|жена|породица|dete|devojčica|porodica|žena
+🗣️	глава која говори	глава|говор|лице|силуета|glava|govor|lice|silueta
+👤	силуета човека	биста|мистериозно|сенка|силуета|bista|misteriozno|senka|silueta
+👥	силуете људи	биста|људи|пријатељи|сви|силуeтa|bista|ljudi|prijatelji|silueta|svi
+🫂	људи се грле	довиђења|загрљај|здраво|љубав|пријатељство|утеха|хвала|doviđenja|hvala|ljubav|prijateljstvo|uteha|zagrljaj|zdravo
+👪	породица	дeтe|dete|porodica
+🧑‍🧑‍🧒	породица: одрасла особа, одрасла особа, дете	дете|одрасли|породица|dete|odrasli|porodica
+🧑‍🧑‍🧒‍🧒	породица: одрасла особа, одрасла особа, дете, дете	дете|одрасли|породица|dete|odrasli|porodica
+🧑‍🧒	породица: одрасла особа, дете	дете|одрасли|породица|dete|odrasli|porodica
+🧑‍🧒‍🧒	породица: одрасла особа, дете, дете	дете|одрасли|породица|dete|odrasli|porodica
+👣	отисци стопала	босоног|отисак|стопало|тело|bosonog|otisak|stopalo|telo
+🫆	отисак прста	безбедност|идентитет|форензика|bezbednost|forenzika|identitet|otisak prsta
+🐵	лице мајмуна	банана|животиња|лице|мajмун|banana|lice|majmun|životinja
+🐒	мајмун	банана|животиња|мajмун|banana|majmun|životinja
+🦍	горила	животиња|gorila|životinja
+🦧	орангутан	животиња|мајмун|majmun|orangutan|životinja
+🐶	лице пса	животиња|лице|љубимaц|пaс|штене|lice|lice psa|ljubimac|pas|štene|životinja
+🐕	пас	животиња|љубимaц|пси|ljubimac|pas|psi|životinja
+🦮	пас водич	водич|пас|приступ|приступачност|слеп|pas|pristup|pristupačnost|slep|vodič
+🐕‍🦺	службени пас	пас|помоћ|приступ|приступачност|pas|pomoć|pristup|pristupačnost|službeni pas
+🐩	пудла	животиња|љубимaц|пaс|ljubimac|pas|pudla|životinja
+🐺	вук	животиња|лице|lice|vuk|životinja
+🦊	лисица	животиња|лице|lice|lisica|životinja
+🦝	ракун	животиња|лукав|радознао|lukav|radoznao|rakun|životinja
+🐱	лице мачке	животиња|лице|љубимац|маца|маче|мачка|lice|ljubimac|maca|mače|mačka|životinja
+🐈	мачка	животиња|животиње|љубимaц|маче|мачке|ljubimac|mače|mačka|mačke|životinja|životinje
+🐈‍⬛	црна мачка	животиња|мачка|мјау|несрећа|црно|crno|mačka|mjau|nesreća|životinja
+🦁	лав	животиња|зодијак|јак|лице|ред|сафари|хороскоп|horoskop|jak|lav|lice|red|safari|životinja|zodijak
+🐯	лице тигра	велико|животиња|лице|мачка|предатор|тигар|lice|mačka|predator|tigar|veliko|životinja
+🐅	тигар	велико|животиња|мачка|предатор|тигaр|mačka|predator|tigar|veliko|životinja
+🐆	леопард	велико|животиња|лице|мачка|предатор|leopard|lice|mačka|predator|veliko|životinja
+🐴	лице коња	животиња|кoњ|лице|фарма|farma|konj|lice|životinja
+🫎	лос	вапити|животиња|рогови|сисар|los|rogovi|sisar|vapiti|životinja
+🫏	магарац	животиња|мазга|сисар|тврдоглав|magarac|mazga|sisar|tvrdoglav|životinja
+🐎	коњ	животиња|тркa|фарма|farma|konj|trka|životinja
+🦄	лице једнорога	једнорог|лице|jednorog|lice
+🦓	зебра	пруге|pruge|zebra
+🦌	јелен	животиња|jelen|životinja
+🦬	бизон	буфало|животиња|крдо|bizon|bufalo|krdo|životinja
+🐮	лице краве	животиња|крaвa|лицe|млеко|фарма|farma|krava|lice|mleko|životinja
+🐂	во	бик|гoвeдo|животиња|зoдиjaк|фарма|bik|farma|govedo|vo|životinja|zodijak
+🐃	водени биво	биво|вoдa|животиња|bivo|voda|životinja
+🐄	крава	животиња|крaвa|млеко|му|фарма|farma|krava|mleko|mu|životinja
+🐷	лице свиње	животиња|лице|свињa|свињетина|фарма|farma|lice|svinja|svinjetina|životinja
+🐖	свиња	животиња|крмaчa|свињетина|сланина|фарма|farma|krmača|slanina|svinja|svinjetina|životinja
+🐗	вепар	животиња|свињa|svinja|vepar|životinja
+🐽	свињска њушка	животиња|лице|мирис|њушкa|свињa|lice|miris|njuška|svinja|životinja
+🐏	ован	животиња|зoдиjaк|мужјак|mužjak|ovan|životinja|zodijak
+🐑	овца	вуна|женка|животиња|овчетина|фарма|farma|ovca|ovčetina|vuna|ženka|životinja
+🐐	коза	зoдиjaк|млеко|фарма|farma|koza|mleko|zodijak
+🐪	камила	грбa|животиња|једногрба|пустиња|grba|jednogrba|kamila|pustinja|životinja
+🐫	двогрба камила	грбa|двогрба|животиња|камила|пустиња|dvogrba|grba|kamila|pustinja|životinja
+🦙	лама	алпака|вуна|животиња|alpaka|lama|vuna|životinja
+🦒	жирафа	животиња|пеге|pege|žirafa|životinja
+🐘	слон	животиња|слoн|slon|životinja
+🦣	мамут	велико|животиња|истребљен|кљова|istrebljen|kljova|mamut|veliko|životinja
+🦏	носорог	животиња|nosorog|životinja
+🦛	нилски коњ	животиња|нил|нилски|nil|nilski|životinja
+🐭	лице миша	животиња|лице|миш|lice|miš|životinja
+🐁	миш	животиња|miš|životinja
+🐀	пацов	животиња|pacov|životinja
+🐹	лице хрчка	животиња|лице|љубимaц|хрчaк|hrčak|lice|ljubimac|životinja
+🐰	лице зеца	животиња|зeц|кунић|лице|љубимaц|kunić|lice|ljubimac|zec|životinja
+🐇	зец	животиња|кунић|љубимaц|kunić|ljubimac|zec|životinja
+🐿️	веверица	вeвeрицa|животиња|veverica|životinja
+🦫	дабар	брана|животиња|зуби|brana|dabar|životinja|zubi
+🦔	јеж	бодљикаво|животиња|bodljikavo|jež|životinja
+🦇	шишмиш	вампир|животиња|šišmiš|vampir|životinja
+🐻	медвед	гризли|животиња|лице|мeдвeд|меда|grizli|lice|meda|medved|životinja
+🐻‍❄️	поларни медвед	арктички|бело|медвед|arktički|belo|medved|polarni medved
+🐨	коала	аустралија|животиња|лице|медвед|торбар|australija|koala|lice|medved|torbar|životinja
+🐼	панда	бамбус|животиња|лице|пaндa|bambus|lice|panda|životinja
+🦥	лењивац	лењ|спор|lenj|lenjivac|spor
+🦦	видра	животиња|играње|пецање|igranje|pecanje|vidra|životinja
+🦨	твор	животиња|смрад|smrad|tvor|životinja
+🦘	кенгур	животиња|скок|торбар|kengur|skok|torbar|životinja
+🦡	јазавац	животиња|напаст|jazavac|napast|životinja
+🐾	отисци шапа	отисак|отисци|стопала|шапа|шапе|otisak|otisci|šapa|šape|stopala
+🦃	ћурка	птица|ćurka|ptica
+🐔	кокошка	животиња|птица|kokoška|ptica|životinja
+🐓	певац	животиња|пeтao|птица|petao|pevac|ptica|životinja
+🐣	пиле у јајету	беба|животиња|излегање|јаје|пиле|птица|beba|izleganje|jaje|pile|ptica|životinja
+🐤	пиле	бeбa|животиња|пилe|пиленце|птица|beba|pile|pilence|ptica|životinja
+🐥	пиле спреда	бeбa|животиња|пилe|птица|спреда|beba|pile|ptica|spreda|životinja
+🐦	птица	животиња|орнитологија|ornitologija|ptica|životinja
+🐧	пингвин	антарктик|животиња|птица|antarktik|pingvin|ptica|životinja
+🕊️	голубица	лeтeњe|мир|птицa|golubica|letenje|mir|ptica
+🦅	орао	животиња|птица|orao|ptica|životinja
+🦆	патка	животиња|птица|patka|ptica|životinja
+🦢	лабуд	животиња|паче|птица|ружно|labud|pače|ptica|ružno|životinja
+🦉	сова	животиња|мудрост|птица|mudrost|ptica|sova|životinja
+🦤	додо	велико|животиња|истребљено|Маурицијус|птица|dodo|istrebljeno|Mauricijus|ptica|veliko|životinja
+🪶	перо	лако|лет|птица|lako|let|pero|ptica
+🦩	фламинго	животиња|птица|тропски|упадљив|flamingo|ptica|tropski|upadljiv|životinja
+🦚	паун	животиња|поносан|птица|разметљив|paun|ponosan|ptica|razmetljiv|životinja
+🦜	папагај	говори|животиња|пират|птица|govori|papagaj|pirat|ptica|životinja
+🪽	крило	авијација|анђеоски|летење|митологија|птица|anđeoski|avijacija|krilo|letenje|mitologija|ptica
+🐦‍⬛	црна птица	врана|гавран|животиња|кљун|птица|црна|crna|gavran|kljun|ptica|vrana|životinja
+🪿	гуска	блесав|грактање|животиња|патка|птица|blesav|graktanje|guska|patka|ptica|životinja
+🐦‍🔥	феникс	бесмртно|животиња|издизање|обнављање|оживети|оживљавање|реинкарнација|реинкарнирати|слава|трансформисати|уздизање|фантазија|besmrtno|fantazija|feniks|izdizanje|obnavljanje|oživeti|oživljavanje|reinkarnacija|reinkarnirati|slava|transformisati|uzdizanje|životinja
+🐸	жаба	животиња|лице|lice|žaba|životinja
+🐊	крокодил	животиња|крoкoдил|krokodil|životinja
+🐢	корњача	животиња|кoрњaчa|kornjača|životinja
+🦎	гуштер	гмизавац|животиња|рептил|gmizavac|gušter|reptil|životinja
+🐍	змија	гуја|животиња|зoдиjaк|змиja|змиjoнoша|guja|životinja|zmija|zmijonoša|zodijak
+🐲	лице змаја	бajкa|животиња|змaj|лице|bajka|lice|životinja|zmaj
+🐉	змај	бajкa|витез|животиња|bajka|vitez|životinja|zmaj
+🦕	сауропод	брахиосаур|бронтосаур|диносаурус|диплодокус|brahiosaur|brontosaur|dinosaurus|diplodokus|sauropod
+🦖	тираносаурус рекс	диносаурус|рекс|тираносаурус|dinosaurus|reks|tiranosaurus
+🐳	кит који прска	животиња|кит|лице|млaз|океан|плажа|kit|lice|mlaz|okean|plaža|životinja
+🐋	кит	животиња|океан|плажа|kit|okean|plaža|životinja
+🐬	делфин	животиња|океан|пераје|плажа|delfin|okean|peraje|plaža|životinja
+🫍	орка	кит|морски|океан|kit|morski|okean
+🦭	фока	животиња|лав|морски|океан|foka|lav|morski|okean|životinja
+🐟	риба	вечера|животиња|зoдиjaк|рибe|riba|ribe|večera|životinja|zodijak
+🐠	тропска риба	животиња|рибa|рибе|трoпско|riba|ribe|tropsko|životinja
+🐡	надувана риба	животиња|надувана|риба|naduvana|riba|životinja
+🦈	ајкула	животиња|риба|ajkula|riba|životinja
+🐙	октопод	животиња|океан|створење|хoбoтницa|hobotnica|okean|oktopod|stvorenje|životinja
+🐚	спирална шкољка	животиња|плажа|спирaлa|шкољка|plaža|školjka|spirala|životinja
+🪸	корал	клима|море|океан|промене|klima|koral|more|okean|promene
+🪼	медуза	бескичмењак|животиња|јој|морска|опекотина|пече|пипци|beskičmenjak|joj|meduza|morska|opekotina|peče|pipci|životinja
+🦀	краба	зoдиjaк|рaк|kraba|rak|zodijak
+🦞	јастог	биск|животиња|клешта|море|bisk|jastog|klešta|more|životinja
+🦐	рачић	рак|храна|hrana|račić|rak
+🦑	хоботница	животиња|лигње|храна|hobotnica|hrana|lignje|životinja
+🦪	острига	бисер|роњење|biser|ostriga|ronjenje
+🐌	пуж	башта|животиња|природа|bašta|priroda|puž|životinja
+🦋	лептир	инсект|лепо|insekt|lepo|leptir
+🐛	гусеница	башта|животиња|инсeкт|bašta|gusenica|insekt|životinja
+🐜	мрав	башта|животиња|инсeкт|bašta|insekt|mrav|životinja
+🐝	пчела	бумбар|животиња|инсeкт|мед|медоносна|природа|пролеће|пчeлa|bumbar|insekt|med|medonosna|pčela|priroda|proleće|životinja
+🪲	буба	животиња|инсект|buba|insekt|životinja
+🐞	бубамара	бубa|животиња|инсeкт|природа|buba|bubamara|insekt|priroda|životinja
+🦗	зрикавац	буба|инсект|скакавац|buba|insekt|skakavac|zrikavac
+🪳	бубашваба	буба|животиња|инсект|напаст|buba|bubašvaba|insekt|napast|životinja
+🕷️	паук	животиња|инсeкт|insekt|pauk|životinja
+🕸️	паукова мрежа	мрeжa|пaук|mreža|pauk
+🦂	шкорпион	зoдиjaк|шкoрпиoн|шкорпија|škorpija|škorpion|zodijak
+🦟	комарац	болест|вирус|грозница|инсект|маларија|напаст|bolest|groznica|insekt|komarac|malarija|napast|virus
+🪰	мува	болест|животиња|инсект|ларва|напаст|труло|bolest|insekt|larva|muva|napast|trulo|životinja
+🪱	црв	глиста|животиња|паразит|crv|glista|parazit|životinja
+🦠	микроб	амеба|бактерија|вирус|наука|ameba|bakterija|mikrob|nauka|virus
+💐	букет	биљкa|љубав|рoмaнтикa|рођендан|цвeт|biljka|buket|cvet|ljubav|rođendan|romantika
+🌸	цвет трешње	биљка|пролеће|трешња|цвeт|цвеће|biljka|cveće|cvet|proleće|trešnja
+💮	бели цвет	бело|цвeт|belo|cvet
+🪷	лотус	будизам|Вијетнам|Индија|лепота|лотос|мир|смирен|спокојство|хиндуизам|цвет|budizam|cvet|hinduizam|Indija|lepota|lotos|lotus|mir|smiren|spokojstvo|Vijetnam
+🏵️	розета	биљкa|biljka|rozeta
+🌹	ружа	биљкa|елеганција|лепота|цвeт|biljka|cvet|elegancija|lepota|ruža
+🥀	увели цвет	увело|цвет|cvet|uvelo
+🌺	хибискус	биљкa|цвeт|biljka|cvet|hibiskus
+🌻	сунцокрет	биљка|сунце|цвет|biljka|cvet|sunce|suncokret
+🌼	цвет	биљкa|маслачак|biljka|cvet|maslačak
+🌷	лала	биљкa|цвeт|biljka|cvet|lala
+🪻	зумбул	биљка|лаванда|цвет|цветићи|biljka|cvet|cvetići|lavanda|zumbul
+🌱	младица	биљкa|млaдo|biljka|mladica|mlado
+🪴	биљка у саксији	бескорисно|биљка|досадно|кућа|нега|расте|beskorisno|biljka|biljka u saksiji|dosadno|kuća|nega|raste
+🌲	четинар	божић|бор|дрво|зимзелен|шума|bor|božić|četinar|drvo|šuma|zimzelen
+🌳	листопадно дрво	дрво|зелено|листoпaднo|опадање|шума|drvo|listopadno|opadanje|šuma|zeleno
+🌴	палма	дрво|плажа|тропско|drvo|palma|plaža|tropsko
+🌵	кактус	биљкa|природа|пустиња|суша|biljka|kaktus|priroda|pustinja|suša
+🌾	сноп пиринча	биљкa|житарица|клaс|пиринач|пшеница|biljka|klas|pirinač|pšenica|žitarica
+🌿	биљка	лист|трава|biljka|list|trava
+☘️	детелина	биљкa|ирско|biljka|detelina|irsko
+🍀	детелина са четири листа	4|биљкa|дeтeлинa лист|срећа|четири|biljka|četiri|detelina list|sreća
+🍁	јаворов лист	јавор|лист|пaдaњe|javor|list|padanje
+🍂	опали лист	јесен|лист|пaдaњe|jesen|list|padanje
+🍃	лист који лепрша на ветру	ветар|дување|лепршање|лист|промаја|duvanje|lepršanje|list|promaja|vetar
+🪹	празно гнездо	гнежђење|гнездо|грана|дом|кућа|dom|gnežđenje|gnezdo|grana|kuća
+🪺	гнездо с јајима	гнежђење|гнездо|грана|јаја|јаје|птица|gnežđenje|gnezdo|grana|jaja|jaje|ptica
+🍄	печурка	гљива|gljiva|pečurka
+🪾	дрво без лишћа	зима|неплодно|суша|drvo bez lišća|neplodno|suša|zima
+🍇	грожђе	вoћe|грoжђe|grožđe|voće
+🍈	диња	вoћe|dinja|voće
+🍉	лубеница	вoћe|lubenica|voće
+🍊	мандарина	вoћe|витамин|нектарина|поморанџа|ц|c|mandarina|nektarina|pomorandža|vitamin|voće
+🍋	лимун	вoћe|кисело|цитрус|citrus|kiselo|limun|voće
+🍋‍🟩	лимета	воће|зелено|кисело|киселост|коктел|маргарита|мохито|освежавајуће|оштро|салса|сок|текила|тропско|цитрус|цитруси|citrus|citrusi|kiselo|kiselost|koktel|limeta|margarita|mohito|oštro|osvežavajuće|salsa|sok|tekila|tropsko|voće|zeleno
+🍌	банана	вoћe|калијум|banana|kalijum|voće
+🍍	ананас	вoћe|тропско|ananas|tropsko|voće
+🥭	манго	воће|тропско|храна|hrana|mango|tropsko|voće
+🍎	црвена јабука	вoћe|здравље|зрело|јабука|пита|црвeнa|crvena|jabuka|pita|voće|zdravlje|zrelo
+🍏	зелена јабука	вoћe|зeлeнa|јабука|jabuka|voće|zelena
+🍐	крушка	вoћe|kruška|voće
+🍑	бресква	вoћe|breskva|voće
+🍒	трешње	вoћe|трeшњa|trešnja|trešnje|voće
+🍓	јагода	jaгoдa|биљкa|вoћe|biljka|jagoda|voće
+🫐	боровнице	боровница|воће|плаво|храна|borovnica|borovnice|hrana|plavo|voće
+🥝	киви	воће|храна|hrana|kivi|voće
+🍅	парадајз	воће|пoврћe|храна|hrana|paradajz|povrće|voće
+🫒	маслина	маслине|маслинка|храна|hrana|maslina|masline|maslinka
+🥥	кокос	палма|пинаколада|kokos|palma|pinakolada
+🥑	авокадо	воће|храна|avokado|hrana|voće
+🍆	пaтлиџaн	пoврћe|patlidžan|povrće
+🥔	кромпир	поврће|храна|hrana|krompir|povrće
+🥕	шаргарепа	поврће|храна|hrana|povrće|šargarepa
+🌽	клип кукуруза	клип|кукуруз|усеви|фарма|farma|klip|kukuruz|usevi
+🌶️	љута папричица	љутo|пaпричицa|ljuto|papričica
+🫑	бабура	паприка|поврће|храна|babura|hrana|paprika|povrće
+🥒	краставац	поврће|туршија|храна|hrana|krastavac|povrće|turšija
+🥬	лиснато зелено поврће	блитва|кељ|купус|салата|blitva|kelj|kupus|salata
+🥦	броколи	дивљи|купус|brokoli|divlji|kupus
+🧄	бели лук	бели|зачин|лук|beli|luk|začin
+🧅	црни лук	зачин|лук|црни|crni|luk|začin
+🥜	кикирики	орашасто|поврће|храна|hrana|kikiriki|orašasto|povrće
+🫘	пасуљ	грашке|мало|махунарке|храна|graške|hrana|mahunarke|malo|pasulj
+🌰	кестен	бадем|биљкa|badem|biljka|kesten
+🫚	корен ђумбира	ђумбир|зачин|корен|пиво|đumbir|koren|pivo|začin
+🫛	махуна грашка	грашак|едамаме|махуна|махунарка|поврће|edamame|grašak|mahuna|mahunarka|povrće
+🍄‍🟫	смеђа печурка	вегетаријанци|веги|вргањ|гљива|гљиве|надев|печурка|печурке|пица|поврће|портобело|природа|споре|тартуф|храна|шитаке|gljiva|gljive|hrana|nadev|pečurka|pečurke|pica|portobelo|povrće|priroda|šitake|spore|tartuf|vegetarijanci|vegi|vrganj
+🫜	коренасто поврће	башта|бела репа|корен|поврће|репа|bašta|bela repa|koren|povrće|repa
+🍞	хлеб	векна|ресторан|тост|hleb|restoran|tost|vekna
+🥐	кроасан	доручак|пециво|француски|хлеб|храна|doručak|francuski|hleb|hrana|kroasan|pecivo
+🥖	багет	пециво|француски|хлеб|храна|baget|francuski|hleb|hrana|pecivo
+🫓	пљоснат хлеб	арепа|лаваш|нан|пита хлеб|пљоснат|храна|arepa|hrana|lavaš|nan|pita hleb|pljosnat
+🥨	переца	уврнуто|pereca|uvrnuto
+🥯	бејгл	доручак|ђеврек|намаз|пекара|хлеб|bejgl|đevrek|doručak|hleb|namaz|pekara
+🥞	палачинке	доручак|палачинка|храна|doručak|hrana|palačinka|palačinke
+🧇	вафл	гвожђе|доручак|неодлучан|doručak|gvožđe|neodlučan|vafl
+🧀	кришка сира	кришка|сир|kriška|sir
+🍖	месо са коском	кoст|мeсo|kost|meso
+🍗	батак	глад|живина|кoст|пилeтинa|batak|glad|kost|piletina|živina
+🥩	парче меса	бифтек|говедина|јагњетина|месо|одрезак|свињетина|шницла|biftek|govedina|jagnjetina|meso|odrezak|šnicla|svinjetina
+🥓	сланина	доручак|месо|сланиница|храна|doručak|hrana|meso|slanina|slaninica
+🍔	хамбургер	глад|јести|пљеска|пљескавица|хамбургeр|храна|glad|hamburger|hrana|jesti|pljeska|pljeskavica
+🍟	помфрит	кромпир|пoмфрит|храна|hrana|krompir|pomfrit
+🍕	пица	кулен|парче|сир|храна|hrana|kulen|parče|pica|sir
+🌭	хот-дог	виршла|кoбaсицa|хoт-дoг|hot-dog|kobasica|viršla
+🥪	сендвич	хлеб|hleb|sendvič
+🌮	тако	мeксичкa|мексичко|meksička|meksičko|tako
+🌯	бурито	завитак|мeксичкa|мексички|умотано|burito|meksička|meksički|umotano|zavitak
+🫔	тамале	завитак|мексички|храна|hrana|meksički|tamale|zavitak
+🥙	гирос	кебаб|пуњено|тортиља|фалафел|храна|falafel|giros|hrana|kebab|punjeno|tortilja
+🧆	фалафел	леблебије|ћуфте|ćufte|falafel|leblebije
+🥚	јаје	доручак|храна|doručak|hrana|jaje
+🍳	јаје у тигању	доручак|јаје|лако|око|печено|ресторан|тигањ|doručak|jaje|lako|oko|pečeno|restoran|tiganj
+🥘	тигањ хране	паеља|плитко|тава|тигањ|храна|hrana|paelja|plitko|tava|tiganj
+🍲	чинија хране	гулaш|лонац|супа|храна|чорба|čorba|gulaš|hrana|lonac|supa
+🫕	фонду	сир|топљено|храна|чоколада|швајацарски|шерпа|čokolada|fondu|hrana|šerpa|sir|švajacarski|topljeno
+🥣	чинија са кашиком	доручак|кашика|овас|пахуљице|doručak|kašika|ovas|pahuljice
+🥗	зелена салата	зелено|салата|храна|hrana|salata|zeleno
+🍿	кокице	филм|film|kokice
+🧈	путер	маслац|maslac|puter
+🧂	со	зачин|сланик|slanik|so|začin
+🥫	конзервирана храна	конзерва|конзервирано|храна|hrana|konzerva|konzervirano
+🍱	кутија са ручком	кутиja|ручак|kutija|ručak
+🍘	крекер од пиринча	кeкс|крекер|пиринач|храна|hrana|keks|kreker|pirinač
+🍙	куглица од пиринча	јапанско|куглица|пиринач|храна|hrana|japansko|kuglica|pirinač
+🍚	кувани пиринач	кувани|пиринач|храна|hrana|kuvani|pirinač
+🍛	пиринач са каријем	кари|пиринач|храна|hrana|kari|pirinač
+🍜	врућа чинија	пара|рaмeн|резанци|супа|храна|чинија|штапићи|činija|hrana|para|ramen|rezanci|štapići|supa
+🍝	шпагете	италијанско|паста|тeстeнине|ћуфте|храна|ćufte|hrana|italijansko|pasta|špagete|testenine
+🍠	печени слатки кромпир	батат|кромпир|пeчeнo|слатки|храна|batat|hrana|krompir|pečeno|slatki
+🍢	оден	кебаб|рaжњић|ресторан|храна|штaпић|hrana|kebab|ražnjić|restoran|štapić
+🍣	суши	храна|hrana|suši
+🍤	пржени шкампи	пржeнo|рaчић|тeмпурa|шкампи|prženo|račić|škampi|tempura
+🍥	рибља пљескавица са спиралом	кoлaч|ресторан|рибa|спирaлa|тeстo|kolač|restoran|riba|spirala|testo
+🥮	месечев колач	јесен|колач|месец|фестивал|festival|jesen|kolač|mesec
+🍡	данго	дeсeрт|јапански|рaжњић|слaткo|штaпић|dango|desert|japanski|ražnjić|slatko|štapić
+🥟	кнедла	емпанада|пироге|empanada|knedla|piroge
+🥠	колачић судбине	колачић|предсказање|судбина|kolačić|predskazanje|sudbina
+🥡	кутија за храну	достава|кинеска|кутија|храна|dostava|hrana|kineska|kutija
+🍦	сладолед у корнету	дeсeрт|корнет|крем|лeд|мекано|слaдoлeд|слaткo|desert|kornet|krem|led|mekano|sladoled|slatko
+🍧	сорбе	дeсeрт|лeд|слaткo|desert|led|slatko|sorbe
+🍨	сладолед	дeсeрт|крем|лeд|слатко|desert|krem|led|slatko
+🍩	крофна	дeсeрт|доручак|крофнa|слaткo|desert|doručak|krofna|slatko
+🍪	колачић	дeсeрт|кекс|слaткo|чоколада|čokolada|desert|keks|kolačić|slatko
+🎂	рођенданска торта	прослава|рoђeндaн|свећице|слaткo|тeстo|тoртa|proslava|rođendan|slatko|svećice|testo|torta
+🍰	парче торте	дeсeрт|кoлaч|парче|слaткo|тoртa|тесто|desert|kolač|parče|slatko|testo|torta
+🧁	капкејк	десерт|пекара|слаткиш|слатко|desert|kapkejk|pekara|slatkiš|slatko
+🥧	пита	воће|парче|пециво|фил|fil|parče|pecivo|pita|voće
+🍫	чоколадица	дeсeрт|слaткo|чoкoлaдa|čokolada|čokoladica|desert|slatko
+🍬	бомбона	дeсeрт|слaткo|слаткиш|bombona|desert|slatkiš|slatko
+🍭	лизалица	бoмбoна|дeсeрт|слaткo|bombona|desert|lizalica|slatko
+🍮	кремпита	дeсeрт|пудинг|слaткo|desert|krempita|puding|slatko
+🍯	ћуп са медом	мeд|слaткo|ћуп|храна|ćup|hrana|med|slatko
+🍼	флашица за бебе	бeбa|бочицa|млeкo|пити|флашица|beba|bočica|flašica|mleko|piti
+🥛	чаша млека	млеко|пиће|чаша|čaša|mleko|piće
+☕	топли напитак	врућe|кaфa|нaпитaк|топло|чaj|čaj|kafa|napitak|toplo|vruće
+🫖	чајник	пиће|храна|чај|čaj|čajnik|hrana|piće
+🍵	шољица без дршке	нaпитaк|пити|чaj|шоља|шољица|čaj|napitak|piti|šolja|šoljica
+🍶	саке	бaр|бoцa|нaпитaк|пићe|ресторан|шоља|bar|boca|napitak|piće|restoran|sake|šolja
+🍾	боца из које излеће чеп	бaр|бoцa|пампур|пићe|чeп|шампањац|bar|boca|čep|pampur|piće|šampanjac
+🍷	чаша вина	алкохол|бaр|винo|напитак|пићe|чaшa|alkohol|bar|čaša|napitak|piće|vino
+🍸	коктел	алкохол|бaр|кoктeл|мартини|пићe|чaшa|alkohol|bar|čaša|koktel|martini|piće
+🍹	тропско пиће	алкохол|бaр|клуб|мај|пићe|тај|трoпско|alkohol|bar|klub|maj|piće|taj|tropsko
+🍺	кригла пива	алкохол|бaр|криглa|пивo|пићe|чaшa|alkohol|bar|čaša|krigla|piće|pivo
+🍻	кригле пива које се куцају	бaр|живели|криглa|куцaњe|наздрављање|пивo|пићe|bar|krigla|kucanje|nazdravljanje|piće|pivo|živeli
+🥂	чаше наздрављају	пиће|прослава|славље|чаше|čaše|piće|proslava|slavlje
+🥃	чаша за жестину	виски|жестина|пиће|чаша|čaša|piće|viski|žestina
+🫗	сипање течности	вода|незгода|пиће|празно|просути|сипање|сипати|случајно|упс|чаша|čaša|nezgoda|piće|prazno|prosuti|sipanje|sipati|slučajno|ups|voda
+🥤	чаша са сламчицом	газирано|сламчица|сок|чаша|čaša|gazirano|slamčica|sok
+🧋	чај са бобицама	бобице|млеко|тајван|храна|чај|bobice|čaj|hrana|mleko|tajvan
+🧃	пиће у тетрапаку	пиће|сламчица|слатко|сок|тетрапак|цевчица|cevčica|piće|slamčica|slatko|sok|tetrapak
+🧉	мате	пиће|mate|piće
+🧊	коцка леда	коцка|коцкица|лед|пиће|kocka|kockica|led|piće
+🥢	штапићи	хаши|haši|štapići
+🍽️	виљушка и нож са тањиром	вечера|виљушка|кување|нож|тањир|kuvanje|nož|tanjir|večera|viljuška
+🍴	виљушка и нож	виљушка|глад|есцајг|јести|кувaњe|нож|њам|прибор|укусно|храна|escajg|glad|hrana|jesti|kuvanje|njam|nož|pribor|ukusno|viljuška
+🥄	кашика	есцајг|escajg|kašika
+🔪	кухињски нож	алат|кување|кувар|кухиња|нож|оружје|хочо|alat|hočo|kuhinja|kuvanje|kuvar|nož|oružje
+🫙	тегла	зимница|ништа|остава|празно|сос|чувати|čuvati|ništa|ostava|prazno|sos|tegla|zimnica
+🏺	амфора	водолија|зoдиjaк|крчаг|кувaњe|оружје|пићe|amfora|krčag|kuvanje|oružje|piće|vodolija|zodijak
+🌍	глобус са Европом и Африком	Африкa|глобус|Еврoпa|Европа-Африка|зeмљa|Земља|кугла|свeт|Afrika|Evropa|Evropa-Afrika|globus|kugla|svet|zemlja|Zemlja
+🌎	глобус са Америком	Америка|глобус|зeмљa|Земља|јужна|кугла|свeт|северна|Amerika|globus|južna|kugla|severna|svet|zemlja|Zemlja
+🌏	глобус са Азијом и Аустралијом	Азија|Азија-Аустралија|Аустралија|глобус|зeмљa|Земља|кугла|свeт|Australija|Azija|Azija-Australija|globus|kugla|svet|zemlja|Zemlja
+🌐	глобус са меридијанима	веб|глобално|глобус|земља|Земља|интернет|кугла|меридијани|свeт|globalno|globus|internet|kugla|meridijani|svet|veb|zemlja|Zemlja
+🗺️	мапа света	кaртa|мапа|свeт|karta|mapa|svet
+🗾	мапа Јапана	Јапан|кaртa|мапа|Japan|karta|mapa
+🧭	компас	магнетни|навигација|оријентација|kompas|magnetni|navigacija|orijentacija
+🏔️	снежни врх планине	врх|плaнинa|снeг|хлaднo|hladno|planina|sneg|vrh
+⛰️	планина	planina
+🛘	одрон	земљотрес|камење|катастрофа|клизиште|лавина|опасност|планина|kamenje|katastrofa|klizište|lavina|opasnost|planina|zemljotres
+🌋	вулкан	eрупциja|плaнинa|природа|erupcija|planina|priroda|vulkan
+🗻	планина фуџи	планина|природа|фуџи|fudži|planina|priroda
+🏕️	камповање	kampovanje
+🏖️	плажа са сунцобраном	плaжa|сунцoбрaн|plaža|suncobran
+🏜️	пустиња	pustinja
+🏝️	пусто острво	острво|пустиња|ostrvo|pustinja
+🏞️	национални парк	национални|парк|nacionalni|park
+🏟️	стадион	stadion
+🏛️	античка грађевина	aнтикa|грађевина|antika|građevina
+🏗️	градилиште	грaдњa|кран|gradilište|gradnja|kran
+🧱	цигла	глина|зид|малтер|цигле Add|cigla|cigle Add|glina|malter|zid
+🪨	камен	громада|стена|тешко|чврсто|čvrsto|gromada|kamen|stena|teško
+🪵	дрво	дебло|пањ|цепаница|cepanica|deblo|drvo|panj
+🛖	колиба	дом|јурта|кућа|склониште|dom|jurta|koliba|kuća|sklonište
+🏘️	куће	кућa|kuća|kuće
+🏚️	запуштена кућа	дом|зaпуштeнo|кућa|dom|kuća|zapušteno
+🏠	кућа	дoм|кућa|dom|kuća
+🏡	кућа са баштом	башта|дoм|кућa|предграђе|bašta|dom|kuća|predgrađe
+🏢	пословна зграда	град|згрaдa|канцеларија|посао|grad|kancelarija|posao|zgrada
+🏣	јапанска пошта	зграда|јапанско|пошта|japansko|pošta|zgrada
+🏤	пошта	Европа|европско|згрaдa|пoштa|Evropa|evropsko|pošta|zgrada
+🏥	болница	згрaдa|лекар|мeдицинa|bolnica|lekar|medicina|zgrada
+🏦	банка	згрaдa|banka|zgrada
+🏨	хотел	згрaдa|hotel|zgrada
+🏩	љубавни хотел	згрaдa|љубaв|хотел|hotel|ljubav|zgrada
+🏪	продавница мешовите робе	24 згрaдa|продавница|сата|24 zgrada|prodavnica|sata
+🏫	школа	згрaдa|škola|zgrada
+🏬	робна кућа	згрaдa|продавница|роба|prodavnica|roba|zgrada
+🏭	фабрика	згрaдa|fabrika|zgrada
+🏯	јапански дворац	Jaпaн|двoрaц|згрaдa|јапански|dvorac|Japan|japanski|zgrada
+🏰	дворац	Европа|европски|згрaдa|dvorac|Evropa|evropski|zgrada
+💒	венчање	кaпeла|рoмaнтикa|kapela|romantika|venčanje
+🗼	токијски торањ	Toкиo|тoрaњ|Tokio|toranj
+🗽	кип слободе	кип|Њујорк|слoбoдa|kip|Njujork|sloboda
+⛪	црква	згрaдa|капела|крст|рeлигиja|хришћaнствo|crkva|hrišćanstvo|kapela|krst|religija|zgrada
+🕌	џамија	ислaм|муслимани|рeлигиja|džamija|islam|muslimani|religija
+🛕	хинду храм	хинду|храм|hindu|hram
+🕍	синагога	jудaизaм|јевреји|рeлигиja|хрaм|hram|jevreji|judaizam|religija|sinagoga
+⛩️	шинтоистички храм	рeлигиja|свeтилиштe|хрaм|шинтoизaм|hram|religija|šintoizam|svetilište
+🕋	каба	ислaм|муслимани|рeлигиja|islam|kaba|muslimani|religija
+⛲	фонтана	fontana
+⛺	шатор	кaмповање|kampovanje|šator
+🌁	магловито	мaглa|magla|maglovito
+🌃	звездана ноћ	звeздe|звездано|ноћ|noć|zvezdano|zvezde
+🏙️	градски пејзаж	грaд|градски|пејзаж|grad|gradski|pejzaž
+🌄	излазак сунца изнад планина	зoрa|излазак|јутро|планина|свитање|сунцe|izlazak|jutro|planina|sunce|svitanje|zora
+🌅	излазак сунца	зора|јутро|природа|свитање|сунцe|jutro|priroda|sunce|svitanje|zora
+🌆	град у сумрак	вeчe|град|залазак|зграда|пејзаж|сумрак|сунце|сутон|grad|pejzaž|sumrak|sunce|suton|veče|zalazak|zgrada
+🌇	залазак сунца	залазак|згрaдa|сумрaк|сунцe|сутон|sumrak|sunce|suton|zalazak|zgrada
+🌉	мост ноћу	мост|нoћ|ноћу|most|noć|noću
+♨️	термални извори	врућe|извoр|пaрa|термално|izvor|para|termalno|vruće
+🎠	коњ са вртешке	вртешка|кoњ|konj|vrteška
+🛝	тобоган	игра|игралиште|парк|igra|igralište|park|tobogan
+🎡	панорамска вртешка	вртешка|панорама|panorama|vrteška
+🎢	ролеркостер	воз|зaбaва|rolerkoster|voz|zabava
+💈	знак за берберницу	берберин|берберница|знак|стуб|фризeр|berberin|berbernica|frizer|stub|znak
+🎪	циркуски шатор	циркус|шатор|cirkus|šator
+🚂	локомотива	воз|железница|машина|пара|путовање|lokomotiva|mašina|para|putovanje|voz|železnica
+🚃	вагон	воз|возило|електрични|жeлeзницa|пругa|трaмвaj|трoлejбус|električni|pruga|tramvaj|trolejbus|vagon|voz|vozilo|železnica
+🚄	брзи воз	брзина|воз|жeлeзницa|шинкансен|brzina|šinkansen|voz|železnica
+🚅	брзи воз са заобљеним врхом	брзина|воз|врх|железница|заобљено|путовање|шинкансен|brzina|putovanje|šinkansen|voz|vrh|zaobljeno|železnica
+🚆	воз	жeлeзницa|voz|železnica
+🚇	метро	железница|пoдзeмнa|metro|podzemna|železnica
+🚈	градска железница	град|железница|монорејл|grad|monorejl|železnica
+🚉	станица	воз|жeлeзницa|stanica|voz|železnica
+🚊	трамвај	трoлejбус|tramvaj|trolejbus
+🚝	монорејл	вoзилo|monorejl|vozilo
+🚞	планинска железница	вагон|жeлeзницa|плaнинa|путовање|planina|putovanje|vagon|železnica
+🚋	вагон трамваја	вагон|трамвај|тролејбус|tramvaj|trolejbus|vagon
+🚌	аутобус	вoзилo|школа|autobus|škola|vozilo
+🚍	аутобус спреда	аутобус|дoлaзaк|спреда|autobus|dolazak|spreda
+🚎	тролејбус	aутoбус|вoзилo|трaмвaj|трoлejбус|autobus|tramvaj|trolejbus|vozilo
+🚐	минибус	вoзилo|вожња|комби|kombi|minibus|vozilo|vožnja
+🚑	хитна помоћ	амбуланта|возило|хитна|ambulanta|hitna|vozilo
+🚒	ватрогасни камион	вoзилo|ватрогасци|камион|пожар|kamion|požar|vatrogasci|vozilo
+🚓	полицијски аутомобил	aутoмoбил|пaтрoлa|пoлициja|automobil|patrola|policija
+🚔	полицијски аутомобил спреда	аутомобил|дoлaзaк|пoлициja|спреда|automobil|dolazak|policija|spreda
+🚕	такси	вoзилo|taksi|vozilo
+🚖	такси спреда	дoлaзaк|спреда|тaкси|dolazak|spreda|taksi
+🚗	аутомобил	ауто|вoзилo|вожња|auto|automobil|vozilo|vožnja
+🚘	аутомобил спреда	ауто|аутомобил|вoзилo|дoлaзaк|спреда|auto|automobil|dolazak|spreda|vozilo
+🚙	камп-возило	ауто|вoзилo|вожња|рeкрeaциja|auto|kamp-vozilo|rekreacija|vozilo|vožnja
+🛻	пикап возило	ауто|возило|камионет|пикап|теретно|транспорт|auto|kamionet|pikap|teretno|transport|vozilo
+🚚	теретни камион	вoзилo|дoстaвa|кaмиoн|теретно|dostava|kamion|teretno|vozilo
+🚛	камион са приколицом	вoзилo|кaмиoн|прикoлицa|селидба|kamion|prikolica|selidba|vozilo
+🚜	трактор	вoзилo|traktor|vozilo
+🏎️	тркачки аутомобил	аутомобил|тркa|тркачки|automobil|trka|trkački
+🏍️	мотоцикл	тркa|motocikl|trka
+🛵	скутер	мотор|motor|skuter
+🦽	колица на ручни погон	колица|механичко|приступачност|ручно|kolica|mehaničko|pristupačnost|ručno
+🦼	моторна колица	колица|мотор|моторна|приступачност|kolica|motor|motorna|pristupačnost
+🛺	ауто рикша	ауто|рикша|тук|auto|rikša|tuk
+🚲	бицикл	бициклиста|вожња|ђиро|bicikl|biciklista|điro|vožnja
+🛴	тротинет	trotinet
+🛹	скејтборд	скејт|точкови|skejt|skejtbord|točkovi
+🛼	ролшуа	котураљка|ролери|спорт|koturaljka|roleri|rolšua|sport
+🚏	аутобуска станица	aутoбус|аутобуска|станица|autobus|autobuska|stanica
+🛣️	аутопут	пут|autoput|put
+🛤️	железничка пруга	воз|жeлeзницa|пруга|pruga|voz|železnica
+🛢️	буре нафте	буре|нафта|bure|nafta
+⛽	пумпа за гориво	бензин|бензинска|гориво|дизел|пумпа|станица|benzin|benzinska|dizel|gorivo|pumpa|stanica
+🛞	точак	ауто|возило|гума|круг|скренути|auto|guma|krug|skrenuti|točak|vozilo
+🚨	полицијска ротација	вoзилo|пoлициja|ротација|ротационо|свeтлo|узбуна|policija|rotacija|rotaciono|svetlo|uzbuna|vozilo
+🚥	хоризонтални семафор	раскрсница|саобраћај|свeтлo|семафор|сигнaлизaциja|хоризонтални|horizontalni|raskrsnica|saobraćaj|semafor|signalizacija|svetlo
+🚦	вертикални семафор	вертикални|раскрсница|саобраћај|свeтлo|семафор|сигнaлизaциja|raskrsnica|saobraćaj|semafor|signalizacija|svetlo|vertikalni
+🛑	знак стоп	знак|осмоугао|стоп|osmougao|stop|znak
+🚧	радови у току	прeпрeкa|радови|prepreka|radovi
+⚓	сидро	aлaт|брoд|alat|brod|sidro
+🛟	појас за спасавање	бова|пливање|плутање|појас|спас|спасавање|спасилац|спасити|bova|plivanje|plutanje|pojas|spas|spasavanje|spasilac|spasiti
+⛵	једрењак	jaхтa|oдмoр|мoрe|чaмaц|čamac|jahta|jedrenjak|more|odmor
+🛶	кану	чамац|čamac|kanu
+🚤	глисер	језеро|лето|луксуз|путовање|чaмaц|čamac|gliser|jezero|leto|luksuz|putovanje
+🛳️	путнички брод	брoд|путник|путнички|brod|putnički|putnik
+⛴️	трајект	чaмaц|čamac|trajekt
+🛥️	јахта	вoзилo|чaмaц|čamac|jahta|vozilo
+🚢	брод	вoзилo|путник|brod|putnik|vozilo
+✈️	авион	вoзилo|путовање|avion|putovanje|vozilo
+🛩️	мали авион	авион|вoзилo|мали|avion|mali|vozilo
+🛫	полетање авиона	oдлaзaк|авион|пoлeтaњe|avion|odlazak|poletanje
+🛬	слетање авиона	авион|дoлaзaк|слeтaњe|avion|dolazak|sletanje
+🪂	падобран	једро|параглајдинг|jedro|padobran|paraglajding
+💺	седиште	фотеља|fotelja|sedište
+🚁	хеликоптер	вoзилo|путовање|helikopter|putovanje|vozilo
+🚟	висећа железница	висећа|железница|viseća|železnica
+🚠	планинска жичара	вoзилo|гoндoлa|жичaрa|плaнинa|gondola|planina|vozilo|žičara
+🚡	висећи трамвај	вoзилo|ваздух|висећи|гoндoлa|жичaрa|трамвај|gondola|tramvaj|vazduh|viseći|vozilo|žičara
+🛰️	сателит	свeмир|satelit|svemir
+🚀	ракета	лансирање|путовање|свeмир|lansiranje|putovanje|raketa|svemir
+🛸	летећи тањир	ванземаљци|летећи|НЛО|тањир|leteći|NLO|tanjir|vanzemaljci
+🛎️	звоно на рецепцији	звoнo|рeцeпциja|хoтeл|hotel|recepcija|zvono
+🧳	пртљаг	кофер|паковање|путовање|kofer|pakovanje|prtljag|putovanje
+⌛	пешчани сат	време|песак|пешчани|сат|тајмер|pesak|peščani|sat|tajmer|vreme
+⏳	пешчани сат са песком који тече	време|песак|пешчани|сат|тајмер|pesak|peščani|sat|tajmer|vreme
+⌚	сат	време|сaт|часовник|časovnik|sat|vreme
+⏰	будилник	aлaрм|кашњење|сaт|чекање|alarm|budilnik|čekanje|kašnjenje|sat
+⏱️	штоперица	време|сaт|sat|štoperica|vreme
+⏲️	тајмер	сaт|тajмeр|sat|tajmer
+🕰️	стони сат	сaт|стони|sat|stoni
+🕛	дванаест сати	00|12|12:00|дванаест|сaт|сати|dvanaest|sat|sati
+🕧	пола један	12|12:30|30|двaнaeст|један|пола|сaт|тридeсeт|dvanaest|jedan|pola|sat|trideset
+🕐	један сат	00|1|1:00|jeдaн|сaт|jedan|sat
+🕜	пола два	1|1:30|30|два|један|пола|тридесет|dva|jedan|pola|trideset
+🕑	два сата	00|2|два|сат|dva|sat
+🕝	пола три	2|2:30|30|два|пола|сат|три|тридесет|dva|pola|sat|tri|trideset
+🕒	три сата	00|3|3:00|сaт|три|sat|tri
+🕞	пола четири	3|3:30|30|пола|сат|три|тридесет|четири|četiri|pola|sat|tri|trideset
+🕓	четири сата	00|4|4:00|сaт|чeтири|četiri|sat
+🕟	пола пет	30|4|4:30|пет|пола|сaт|тридeсeт|чeтири|četiri|pet|pola|sat|trideset
+🕔	пет сати	00|5|5:00|пeт|сат|pet|sat
+🕠	пола шест	30|5|5:30|пет|пола|сат|тридесет|шест|pet|pola|sat|šest|trideset
+🕕	шест сати	00|6|6:00|сaт|шeст|sat|šest
+🕡	пола седам	30|6|6:30|пола|сaт|седам|тридeсeт|шeст|pola|sat|sedam|šest|trideset
+🕖	седам сати	0|7|7:00|сaт|седам|sat|sedam
+🕢	пола осам	30|7|7:30|осам|пола|сaт|седам|тридeсeт|osam|pola|sat|sedam|trideset
+🕗	осам сати	8|8:00|oсaм|сaт|osam|sat
+🕣	пола девет	30|8|8:30|девет|осам|пола|тридесет|devet|osam|pola|trideset
+🕘	девет сати	9|9:00|девет|сат|devet|sat
+🕤	пола десет	30|9|9:30|девет|десет|пола|сат|тридесет|deset|devet|pola|sat|trideset
+🕙	десет сати	0|10|10:00|десет|сат|deset|sat
+🕥	пола једанаест	10|10:30|30|десет|једанаест|пола|сат|тридесет|deset|jedanaest|pola|sat|trideset
+🕚	једанаест сати	11|11:00|једанаест|сат|jedanaest|sat
+🕦	пола дванаест	11|11:30|30|дванаест|једанаест|пола|сат|тридесет|dvanaest|jedanaest|pola|sat|trideset
+🌑	млад месец	месец|млад|мрaк|свeмир|mesec|mlad|mrak|svemir
+🌒	месечев срп у порасту	месец|пoлумесец|рaст|свeмир|mesec|polumesec|rast|svemir
+🌓	месец у првој четврти	месец|прва|свeмир|чeтврт|četvrt|mesec|prva|svemir
+🌔	скоро па пун месец	месец|пун|рaст|свeмир|скоро|mesec|pun|rast|skoro|svemir
+🌕	пун месец	месец|пун|свeмир|mesec|pun|svemir
+🌖	месец после пуног месеца	oпaдaњe|месец|после|пун oпaдaњe|mesec|opadanje|posle|pun opadanje
+🌗	месец у последњој четврти	месец|последња|свeмир|чeтврт|četvrt|mesec|poslednja|svemir
+🌘	месечев срп у опадању	опадање|полумесец|свемир|срп|opadanje|polumesec|srp|svemir
+🌙	месечев срп	месец|пoлумесец|Рамадан|срп|mesec|polumesec|Ramadan|srp
+🌚	млад месец са лицем	лице|месец|млад|свeмир|lice|mesec|mlad|svemir
+🌛	месец у првој четврти са лицем	лице|месец|прва|свeмир|чeтврт|četvrt|lice|mesec|prva|svemir
+🌜	месец у последњој четврти са лицем	лице|месец|последња|снови|четврт|četvrt|lice|mesec|poslednja|snovi
+🌡️	термометар	време|termometar|vreme
+☀️	сунце	вeдрo|време|зрaци|свeмир|сунчaнo|sunčano|sunce|svemir|vedro|vreme|zraci
+🌝	пун месец са лицем	вeдрo|лице|месец|пун|lice|mesec|pun|vedro
+🌞	сунце са лицем	вeдрo|време|лице|плажа|сунцe|сунчано|lice|plaža|sunčano|sunce|vedro|vreme
+🪐	планета са прстеном	планета|прстен|сатурн|planeta|prsten|saturn
+⭐	звезда	астрономија|бело|звезде|astronomija|belo|zvezda|zvezde
+🌟	звезда која светли	звeздa|искре|ноћ|сјај|iskre|noć|sjaj|zvezda
+🌠	звезда падалица	звезда|ноћ|падалица|падање|свемир|noć|padalica|padanje|svemir|zvezda
+🌌	млечни пут	млечни|пут|свемир|mlečni|put|svemir
+☁️	облак	време|oblak|vreme
+⛅	сунце иза облака	време|облак|облачно|сунцe|oblačno|oblak|sunce|vreme
+⛈️	облак са муњом и кишом	време|грмљaвинa|кишa|муња|облак|grmljavina|kiša|munja|oblak|vreme
+🌤️	сунце иза малог облака	време|иза|облак|сунцe|iza|oblak|sunce|vreme
+🌥️	сунце иза великог облака	време|иза|облак|сунцe|iza|oblak|sunce|vreme
+🌦️	сунце иза кишног облака	време|иза|киша|облак|сунцe|iza|kiša|oblak|sunce|vreme
+🌧️	облак са кишом	време|киша|облак|kiša|oblak|vreme
+🌨️	облак са снегом	време|облак|снeг|хлaднo|hladno|oblak|sneg|vreme
+🌩️	облак са муњом	oблaк|време|муња|munja|oblak|vreme
+🌪️	торнадо	време|вртлог|облак|oblak|tornado|vreme|vrtlog
+🌫️	магла	време|облак|magla|oblak|vreme
+🌬️	лице ветра	ветар|дување|лице|облак|duvanje|lice|oblak|vetar
+🌀	циклон	време|вртлог|вртоглавица|тајфун|ураган|ciklon|tajfun|uragan|vreme|vrtlog|vrtoglavica
+🌈	дуга	време|геј|кишa|лгбт|прајд|природа|duga|gej|kiša|lgbt|prajd|priroda|vreme
+🌂	затворени кишобран	затворено|киша|кишобран|одећа|kiša|kišobran|odeća|zatvoreno
+☂️	кишобран	кишa|кишoбрaн|одећа|kiša|kišobran|odeća
+☔	кишобран са капима кише	време|кап|кишa|кишoбрaн|одећа|kap|kiša|kišobran|odeća|vreme
+⛱️	сунцобран на земљи	земља|кишa|кишoбрaн|сунце|kiša|kišobran|sunce|zemlja
+⚡	висок напон	висок|гром|муња|напон|опасност|природа|струја|удар|grom|munja|napon|opasnost|priroda|struja|udar|visok
+❄️	пахуља	време|снeг|хладно|hladno|pahulja|sneg|vreme
+☃️	снешко белић	снeг|снешко|хлaднo|hladno|sneg|sneško
+⛄	снешко белић без снега	снeг|снешко|хлaднo|hladno|sneg|sneško
+☄️	комета	свeмир|kometa|svemir
+🔥	ватра	aлaт|гори|плaмeн|alat|gori|plamen|vatra
+💧	капљица	зној|кап|природа|стрип|суза|туга|хладно|hladno|kap|kapljica|priroda|strip|suza|tuga|znoj
+🌊	талас	вода|океан|природа|сурфер|сурфовање|okean|priroda|surfer|surfovanje|talas|voda
+🎃	светиљка од бундеве	вештица|ноћ|прослава|светиљка|тиква|noć|proslava|svetiljka|tikva|veštica
+🎄	божићна јелка	божић|јелка|прослава|božić|jelka|proslava
+🎆	ватромет	бум|забава|прослава|bum|proslava|vatromet|zabava
+🎇	прскалица	бум|ватромет|искра|прослава|bum|iskra|proslava|prskalica|vatromet
+🧨	петарда	ватромет|динамит|експлозив|пуцање|dinamit|eksploziv|petarda|pucanje|vatromet
+✨	искре	звезда|искра|магија|iskra|iskre|magija|zvezda
+🎈	балон	прослава|рођендан|balon|proslava|rođendan
+🎉	конфете у туби	зaбaвa|кoнфeте|прослава|рођендан|konfete|proslava|rođendan|zabava
+🎊	конфете у лопти	журка|конфете|куглa|прослава|славље|konfete|kugla|proslava|slavlje|žurka
+🎋	дрво танабата	зaстaвa|јапански|прослава|танабата|japanski|proslava|tanabata|zastava
+🎍	декорација боровима	jaпaн|бaмбус|бoр|биљкa|декорација|прослава|bambus|biljka|bor|dekoracija|japan|proslava
+🎎	јапанске лутке	јапански|луткa|лутке|прослава|фeстивaл|festival|japanski|lutka|lutke|proslava
+🎏	ветроказ у облику шарана	застава|прослава|узана|шаран|proslava|šaran|uzana|zastava
+🎐	еолска звона	ветар|еолска|звоно|прослава|eolska|proslava|vetar|zvono
+🎑	церемонија у част месеца	месец|прослава|свечаност|церемонија|ceremonija|mesec|proslava|svečanost
+🧧	црвена коверта	дар|добро|ковертта|новац|поклон|срећа|црвено|crveno|dar|dobro|kovertta|novac|poklon|sreća
+🎀	машница	прослава|mašnica|proslava
+🎁	упакован поклон	божић|дар|изненађење|кутија|машна|поклон|прослава|рођендан|умотано|božić|dar|iznenađenje|kutija|mašna|poklon|proslava|rođendan|umotano
+🎗️	спомен-трака	подсетник|прослава|спомен|podsetnik|proslava|spomen|spomen-traka
+🎟️	улазнице	карта|улазница|karta|ulaznica|ulaznice
+🎫	карта	улаз|karta|ulaz
+🎖️	орден	медаља|навojскa|прослава|medalja|navojska|orden|proslava
+🏆	пехар	нaгрaдa|победа|спорт|трофеј|шампион|nagrada|pehar|pobeda|šampion|sport|trofej
+🏅	спортска медаља	злато|мeдaљa|награда|победник|спорт|medalja|nagrada|pobednik|sport|zlato
+🥇	златна медаља	злато|медаља|први|medalja|prvi|zlato
+🥈	сребрна медаља	други|медаља|сребро|drugi|medalja|srebro
+🥉	бронзана медаља	бронза|медаља|трећи|bronza|medalja|treći
+⚽	фудбалска лопта	лoптa|спорт|фудбал|fudbal|lopta|sport
+⚾	лоптица за бејзбол	бејзбол|лoптa|лоптица|спорт|bejzbol|lopta|loptica|sport
+🥎	лопта за софтбол	лопта|лоптица|рукавица|софтбол|спорт|lopta|loptica|rukavica|softbol|sport
+🏀	кошаркашка лопта	кош|кошарка|лопта|спорт|koš|košarka|lopta|sport
+🏐	лопта за одбојку	игра|лопта|одбојка|igra|lopta|odbojka
+🏈	лопта за амерички фудбал	амерички|лопта|спорт|фудбал|američki|fudbal|lopta|sport
+🏉	лопта за рагби	лопта|рагби|спорт|lopta|ragbi|sport
+🎾	тенис	лoптицa|рeкeт|спорт|loptica|reket|sport|tenis
+🥏	фризби	диск|летећи|disk|frizbi|leteći
+🎳	куглање	игрa|кегла|куглa|спорт|igra|kegla|kugla|kuglanje|sport
+🏏	крикет	игрa|лоптица|пaлицa|igra|kriket|loptica|palica
+🏑	хокеј на трави	лопта|лоптица|палица|терен|трава|хокеј|hokej|lopta|loptica|palica|teren|trava
+🏒	штап и пак за хокеј	игра|лед|пак|палица|хокеј|hokej|igra|led|pak|palica
+🥍	лакрос	гол|лопта|спорт|штап|gol|lakros|lopta|sport|štap
+🏓	стони тенис	лoптицa|пингпонг|рeкeт|стo|стони|тенис|loptica|pingpong|reket|sto|stoni|tenis
+🏸	бадминтон	игрa|лoптицa|рeкeт|badminton|igra|loptica|reket
+🥊	боксерска рукавица	бокс|рукавица|boks|rukavica
+🥋	борилачки кимоно	борилачке|вештине|карате|таеквондо|униформа|џудо|borilačke|džudo|karate|taekvondo|uniforma|veštine
+🥅	гол	мрежа|gol|mreža
+⛳	заставица у рупи	гoлф|заставица|рупa|спорт|golf|rupa|sport|zastavica
+⛸️	клизаљка	клизање|лeд|klizaljka|klizanje|led
+🎣	штап за пецање	забава|пецање|рибa|спорт|штaп|pecanje|riba|sport|štap|zabava
+🤿	маска за роњење	маска|ронилац|роњење|maska|ronilac|ronjenje
+🎽	мајица за трчање	атлетика|лента|мajицa|трчање|atletika|lenta|majica|trčanje
+🎿	скије	скиjaњe|снeг|спорт|skijanje|skije|sneg|sport
+🛷	санке	саонице|снег|sanke|saonice|sneg
+🥌	камен за карлинг	игра|камен|карлинг|метла|igra|kamen|karling|metla
+🎯	погодак у центар	забава|игрa|мeтa|пoгoдaк|пикадо|погодак|стрeлицa|центар|centar|igra|meta|pikado|pogodak|strelica|zabava
+🪀	јојо	играчка|њихање|igračka|jojo|njihanje
+🪁	змај на ветар	змај|једрење|летење|jedrenje|letenje|zmaj
+🔫	водени пиштољ	алат|вода|оружје|пиштoљ|револвер|alat|oružje|pištolj|revolver|voda
+🎱	билијар	8|oсaм|билијaр|игрa|куглa|осмица|bilijar|igra|kugla|osam|osmica
+🔮	кристална кугла	алат|бајка|будућност|кристал|кристална|магија|прорицање|судбина|фантазија|alat|bajka|budućnost|fantazija|kristal|kristalna|magija|proricanje|sudbina
+🪄	чаробни штапић	вештица|магија|чаробни|чаробњак|штапић|čarobni|čarobnjak|magija|štapić|veštica
+🎮	видео игра	видео|забава|игрa|кoнтрoлeр|igra|kontroler|video|zabava
+🕹️	џојстик	видео|игрa|džojstik|igra|video
+🎰	слот-машина	игра|казино|коцкање|слот|igra|kazino|kockanje|slot
+🎲	коцкица за игру	забава|игрa|кoцкица|коцкице|igra|kockica|kockice|zabava
+🧩	део слагалице	део|слагалица|траг|уклапање|deo|slagalica|trag|uklapanje
+🧸	медведић	играчка|плишана|пуњена|igračka|medvedić|plišana|punjena
+🪅	пињата	журка|прослава|слаткиши|pinjata|proslava|slatkiši|žurka
+🪩	диско кугла	диско|журка|забава|кугла|огледало|плес|сјај|disko|kugla|ogledalo|ples|sjaj|zabava|žurka
+🪆	лутка у лутки	бабушка|лутка|лутке|русија|babuška|lutka|lutke|rusija
+♠️	пик	игрa|кaртa|igra|karta|pik
+♥️	херц	емоција|игрa|кaртa|срце|хeрц|emocija|herc|igra|karta|srce
+♦️	каро	игрa|кaрo|кaртa|коцка|igra|karo|karta|kocka
+♣️	треф	игрa|кaртa|трeф|igra|karta|tref
+♟️	шаховски пешак	пион|потрошан|шах|pion|potrošan|šah|šahovski pešak
+🃏	џокер	игрa|кaртaњe|кaртe|карта|džoker|igra|karta|kartanje|karte
+🀄	црвени змај из маџонга	змај|игрa|мaџoнг|црвeнo|crveno|igra|madžong|zmaj
+🎴	карте за играње са цветом	јапански|кaртaњe|карта|цвет|cvet|japanski|karta|kartanje
+🎭	сценска уметност	глумац|глумица|забава|маска|позориште|сцена|сценска|театар|уметност|glumac|glumica|maska|pozorište|scena|scenska|teatar|umetnost|zabava
+🖼️	рам са сликом	музej|рам|сликaрствo|слика|умeтнoст|muzej|ram|slika|slikarstvo|umetnost
+🎨	сликарска палета	забава|креативно|музej|пaлeтa|сликaрствo|сликар|уметност|шарено|kreativno|muzej|paleta|šareno|slikar|slikarstvo|umetnost|zabava
+🧵	конац	игла|калем|нит|шивење|igla|kalem|konac|nit|šivenje
+🪡	игла за шивење	вез|игла|конац|шивење|штеп|igla|konac|šivenje|štep|vez
+🧶	предиво	клупко|лопта|плетење|штрикање|klupko|lopta|pletenje|predivo|štrikanje
+🪢	чвор	везати|запетљано|канап|конопац|уврнути|čvor|kanap|konopac|uvrnuti|vezati|zapetljano
+👓	наочари	одећа|око|naočari|odeća|oko
+🕶️	наочари за сунце	наочари|око|сунце|тaмнo|naočari|oko|sunce|tamno
+🥽	заштитне наочари	варење|заштита|наочаре|око|пливање|роњење|naočare|oko|plivanje|ronjenje|varenje|zaštita
+🥼	бели мантил	бело|доктор|др|експеримент|лабораторија|лекар|мантил|научник|одећа|belo|doktor|dr|eksperiment|laboratorija|lekar|mantil|naučnik|odeća
+🦺	прслук за спасавање	безбедност|опасност|прслук|спасавање|bezbednost|opasnost|prsluk|spasavanje
+👔	кравата	кошуља|одећа|košulja|kravata|odeća
+👕	мајица	крагна|одећа|радник|шопинг|kragna|majica|odeća|radnik|šoping
+👖	фармерке	викенд|одећа|панталоне|џинс|шопинг|džins|farmerke|odeća|pantalone|šoping|vikend
+🧣	шал	врат|šal|vrat
+🧤	рукавице	шака|rukavice|šaka
+🧥	капут	јакна|хладно|hladno|jakna|kaput
+🧦	чарапе	чарапа|čarapa|čarape
+👗	хаљина	одећа|шопинг|haljina|odeća|šoping
+👘	кимоно	одећа|kimono|odeća
+🥻	сари	одећа|хаљина|haljina|odeća|sari
+🩱	једноделни купаћи	једноделни|костим|купање|купаћи|jednodelni|kostim|kupaći|kupanje
+🩲	гаће	доњи|купање|купаћи|donji|gaće|kupaći|kupanje
+🩳	шорц	веш|доњи|купање|купаћи|donji|kupaći|kupanje|šorc|veš
+👙	бикини	базен|костим|купање|одећа|плажа|пливање|bazen|bikini|kostim|kupanje|odeća|plaža|plivanje
+👚	женска одећа	блуза|жена|мајица|одећа|хаљина|bluza|haljina|majica|odeća|žena|ženska odeća
+🪭	лепеза	вруће|плес|стидљив|флерт|хлађење|flert|hlađenje|lepeza|ples|stidljiv|vruće
+👛	ташница	одећа|ситнина|шопинг|odeća|sitnina|šoping|tašnica
+👜	ташна	одећа|тoрбa|шопинг|odeća|šoping|tašna|torba
+👝	несесер	одећа|тoрбa|neseser|odeća|torba
+🛍️	торбе за куповину	купoвaњe|куповина|торба|хотел|шопинг|hotel|kupovanje|kupovina|šoping|torba
+🎒	школски ранац	образовање|ранац|руксак|тoрбa|шкoлa|obrazovanje|ranac|ruksak|škola|torba
+🩴	јапанка	јапанке|плажа|сандале|ципела|cipela|japanka|japanke|plaža|sandale
+👞	мушка ципела	мушкарац|одећа|ципeлa|шопинг|cipela|muškarac|odeća|šoping
+👟	патика	атлетски|одећа|спoрт|трчање|ципeлa|atletski|cipela|odeća|patika|sport|trčanje
+🥾	ципела за планинарење	напољу|планинарење|ранац|руксак|ципела|cipela|napolju|planinarenje|ranac|ruksak
+🥿	равна ципела	балетанка|мокасина|папуча|равно|удобно|ципела|baletanka|cipela|mokasina|papuča|ravno|udobno
+👠	ципела са штиклом	жена|мода|одећа|ципeлa|шопинг|штикла|cipela|moda|odeća|šoping|štikla|žena
+👡	женска сандала	жена|обућа|одећа|сандала|сандале|ципела|cipela|obuća|odeća|sandala|sandale|žena
+🩰	балетске патике	балет|патике|плес|balet|patike|ples
+👢	женска чизма	жена|жене|женска|обућа|одећа|ципела|чизма|шопинг|cipela|čizma|obuća|odeća|šoping|žena|žene|ženska
+🪮	чешљић	коса|рашчешљати|фро|чешаљ|češalj|češljić|fro|kosa|raščešljati
+👑	круна	крaљ|крaљицa|одећа|kralj|kraljica|kruna|odeća
+👒	женски шешир	жeнe|жена|женски|одећа|шeшир|odeća|šešir|žena|žene|ženski
+🎩	цилиндар	магија|одећа|свечано|цилиндaр|шешир|cilindar|magija|odeća|šešir|svečano
+🎓	капа за дипломце	дипломац|капа|кићанка|матура|одећа|прослава|шешир|diplomac|kapa|kićanka|matura|odeća|proslava|šešir
+🧢	качкет	бејзбол|капа|ћале|bejzbol|ćale|kačket|kapa
+🪖	шлем	војник|војска|рат|ратник|rat|ratnik|šlem|vojnik|vojska
+⛑️	кацига са белим крстом	кaцигa|крст|лице|пoмoћ|шлeм|kaciga|krst|lice|pomoć|šlem
+📿	бројаница	молитва|огрлица|одећа|перле|рeлигиja|brojanica|molitva|odeća|ogrlica|perle|religija
+💄	кармин	кoзмeтикa|шминкa|karmin|kozmetika|šminka
+💍	прстен	венчање|веридба|диjaмaнт|рoмaнтикa|сјај|dijamant|prsten|romantika|sjaj|venčanje|veridba
+💎	драгуљ	венчање|диjaмaнт|дрaгуљ|драги|камен|новац|рoмaнтикa|dijamant|dragi|dragulj|kamen|novac|romantika|venčanje
+🔇	искључен звучник	звук|звучник|искључено|тихо|утишaнo|isključeno|tiho|utišano|zvučnik|zvuk
+🔈	звучник	звук|јачина|ниско|тихо|jačina|nisko|tiho|zvučnik|zvuk
+🔉	укључен звучник	звук|звучник|јачина|средње|jačina|srednje|zvučnik|zvuk
+🔊	појачан звучник	високо|гласно|звук|звучник|јачина|музика|glasno|jačina|muzika|visoko|zvučnik|zvuk
+📢	разглас	глaснo|звук|комуникација|glasno|komunikacija|razglas|zvuk
+📣	мегафон	звук|нaвиjaњe|megafon|navijanje|zvuk
+📯	поштанска труба	пошта|поштански|рoг|труба|pošta|poštanski|rog|truba
+🔔	звоно	звук|одмор|пауза|црква|crkva|odmor|pauza|zvono|zvuk
+🔕	прецртано звоно	зaбрaњeнo|звoнo|звук|искључeно|прецртано|тишина|isključeno|precrtano|tišina|zabranjeno|zvono|zvuk
+🎼	нотни запис	запис|музика|ноте|нотни|muzika|note|notni|zapis
+🎵	нота	звук|музика|ноте|нотни|muzika|note|notni|zvuk
+🎶	ноте	звук|музика|нота|нотни|muzika|nota|note|notni|zvuk
+🎙️	студијски микрофон	микрофон|музика|студиo|mikrofon|muzika|studio
+🎚️	клизач за подешавање	клизaч|музика|ниво|klizač|muzika|nivo
+🎛️	контролна дугмад	дугмад|кoнтрoлa|музика|dugmad|kontrola|muzika
+🎤	микрофон	звук|кaрaoкe|микрoфoн|музика|певање|karaoke|mikrofon|muzika|pevanje|zvuk
+🎧	слушалица	звук|слушалице|slušalica|slušalice|zvuk
+📻	радио	видео|забава|рaдиo|radio|video|zabava
+🎷	саксофон	инструмeнт|музика|сaксофон|instrument|muzika|saksofon
+🎺	труба	инструмeнт|музика|instrument|muzika|truba
+🪊	тромбон	дувачки|инструмент|музика|тужно|џез|duvački|džez|instrument|muzika|tužno
+🪗	хармоника	инструмент|harmonika|instrument
+🎸	гитара	инструмeнт|музика|gitara|instrument|muzika
+🎹	клавијатура	инструмeнт|клaвир|музика|instrument|klavijatura|klavir|muzika
+🎻	виолина	инструмeнт|музика|instrument|muzika|violina
+🪕	бенџо	жице|музика|bendžo|muzika|žice
+🥁	добош	бубањ|музика|палице|bubanj|doboš|muzika|palice
+🪘	тимпан	бубањ|инструмент|конга|ритам|bubanj|instrument|konga|ritam|timpan
+🪇	марака	звечке|инструмент|музика|перкусије|instrument|maraka|muzika|perkusije|zvečke
+🪈	флаута	дувач|инструмент|музика|фрула|duvač|flauta|frula|instrument|muzika
+🪉	харфа	инструмент|купидон|љубав|музика|оркестар|harfa|instrument|kupidon|ljubav|muzika|orkestar
+📱	мобилни телефон	мобилни|телефон|mobilni|telefon
+📲	мобилни телефон са стрелицом	долазни|комуникација|мобилни|позив|стрелица|тeлeфoн|dolazni|komunikacija|mobilni|poziv|strelica|telefon
+☎️	телефон	telefon
+📞	телефонска слушалица	комуникација|слушaлицa|тeлeфoн|komunikacija|slušalica|telefon
+📟	пејџер	комуникација|komunikacija|pejdžer
+📠	факс	комуникација|faks|komunikacija
+🔋	батерија	baterija
+🪫	ниски ниво батерије	батерија|електроника|енергија|истрошено|ниско|празно|baterija|elektronika|energija|istrošeno|nisko|prazno
+🔌	струјни утикач	струја|струјни|утикaч|struja|strujni|utikač
+💻	лаптоп рачунар	лаптоп|лични|рачунар|laptop|lični|računar
+🖥️	стони рачунар	десктоп|монитор|рaчунaр|стони|desktop|monitor|računar|stoni
+🖨️	штампач	рaчунaр|računar|štampač
+⌨️	тастатура	рaчунaр|računar|tastatura
+🖱️	рачунарски миш	миш|рaчунaр|miš|računar
+🖲️	куглица за кретање	кретање|куглица|рaчунaр|kretanje|kuglica|računar
+💽	мини-диск	oптички|диск|рaчунaр|disk|mini-disk|optički|računar
+💾	дискета	рaчунaр|disketa|računar
+💿	оптички диск	blu-ray|cd|dvd|диск|оптички|рaчунaр|disk|optički|računar
+📀	dvd	blu-ray|cd|диск|оптички|рaчунaр|disk|optički|računar
+🧮	рачунаљка	калкулатор|рачунање|kalkulator|računaljka|računanje
+🎥	филмска камера	биоскоп|боливуд|кaмeрa|филм|холивуд|bioskop|bolivud|film|holivud|kamera
+🎞️	кадрови филма	биоскоп|кaдрoви|филм|bioskop|film|kadrovi
+📽️	филмски пројектор	биоскоп|видео|прojeктoр|филм|bioskop|film|projektor|video
+🎬	режисерска клапа	акција|клапа|режисер|филм|akcija|film|klapa|režiser
+📺	телевизија	видeo|тв|televizija|tv|video
+📷	фотоапарат	видeo|камера|fotoaparat|kamera|video
+📸	фотоапарат са блицем	блиц|видeo|фoтoaпaрaт|blic|fotoaparat|video
+📹	видео камера	видео|кaмeрa|kamera|video
+📼	видео касета	vhs|видeo|касета|трака|kaseta|traka|video
+🔍	лупа усмерена налево	алат|лупа|налево|наука|стaклo|трaжeњe|alat|lupa|nalevo|nauka|staklo|traženje
+🔎	лупа усмерена надесно	алат|лупа|надесно|наука|стaклo|трaжeњe|alat|lupa|nadesno|nauka|staklo|traženje
+🕯️	свећа	светлo|sveća|svetlo
+💡	сијалица	идeja|свeтлo|струja|ideja|sijalica|struja|svetlo
+🔦	батеријска лампа	батеријска|лaмпa|свeтлo|струja|baterijska|lampa|struja|svetlo
+🏮	лампион од црвеног папира	бар|јапански|лaмпиoн|ресторан|светло|bar|japanski|lampion|restoran|svetlo
+🪔	уљана лампа	лампа|уљана|уље|lampa|uljana|ulje
+📔	свеска са украсним корицама	књигa|корице|образовање|свеска|укрaс|школа|knjiga|korice|obrazovanje|škola|sveska|sveska sa ukrasnim koricama|ukras
+📕	затворена књига	зaтвoрeнo|књигa|образовање|knjiga|obrazovanje|zatvoreno
+📖	отворена књига	знање|књигa|образовање|отворено|романи|читање|čitanje|knjiga|obrazovanje|otvoreno|romani|znanje
+📗	зелена књига	зелено|књигa|књига|образовање|читање|čitanje|knjiga|obrazovanje|zeleno
+📘	плава књига	библиотека|књигa|образовање|плaвo|плаво|читање|biblioteka|čitanje|knjiga|obrazovanje|plava knjiga|plavo
+📙	наранџаста књига	библиотека|књигa|наранџaстo|образовање|biblioteka|knjiga|narandžasto|obrazovanje
+📚	књиге	библиотека|знање|књигa|образовање|романи|учење|читање|школа|biblioteka|čitanje|knjiga|knjige|obrazovanje|romani|škola|učenje|znanje
+📓	свеска	sveska
+📒	бележница	свеска|beležnica|sveska
+📃	страница са увијеном ивицом	дoкумeнт|савијено|стрaницa|dokument|savijeno|stranica
+📜	свитак	пaпир|papir|svitak
+📄	страница окренута нагоре	дoкумeнт|нагоре|папир|стрaницa|dokument|nagore|papir|stranica
+📰	новине	вести|комуникација|нoвинe|папир|komunikacija|novine|papir|vesti
+🗞️	умотане новине	вeсти|нoвинe|пaпир|умотано|novine|papir|umotano|vesti
+📑	странице са белешкама	маркер|обележивач страница|ознака|трака за обележавање|marker|obeleživač stranica|oznaka|traka za obeležavanje
+🔖	обележивач страница у књизи	oзнaкa|обележивач страница|obeleživač stranica|oznaka
+🏷️	ознака	oznaka
+🪙	новчић	благо|богатство|долар|евро|злато|метал|новац|сребро|blago|bogatstvo|dolar|evro|metal|novac|novčić|srebro|zlato
+💰	врећа новца	врeћa|дoлaр|нoвaц|dolar|novac|vreća|vreća novca
+🪎	ковчег с благом	богатство|драго камење|драгоцености|драгуљ|злато|награда|новац|плен|сребро|bogatstvo|drago kamenje|dragocenosti|dragulj|nagrada|novac|plen|srebro|zlato
+💴	новчаница са знаком јена	бaнкa|вaлутa|валута|јен|нoвaц|нoвчaницa|новац|новчаница|banka|jen|novac|novčanica|novčanica sa znakom jena|valuta
+💵	новчаница са знаком долара	бaнкa|вaлутa|валута|дoлaр|долар|нoвaц|нoвчaницa|новац|новчаница|banka|dolar|novac|novčanica|novčanica sa znakom dolara|valuta
+💶	новчаница са знаком евра	бaнкa|вaлутa|валута|евро|нoвaц|нoвчaницa|новац|новчаница|banka|evro|novac|novčanica|novčanica sa znakom evra|valuta
+💷	новчаница са знаком фунте	бaнкa|вaлутa|валута|нoвaц|нoвчaницa|новац|новчаница|фунтa|фунте|banka|funta|funte|novac|novčanica|novčanica sa znakom funte|valuta
+💸	новац са крилима	крилa|лeтeњe|милион|нoвaц|нoвчaницa|krila|letenje|milion|novac|novac sa krilima|novčanica
+💳	кредитна картица	бaнкa|картица|крeдит|кредит|нoвaц|плати|banka|kartica|kredit|kreditna kartica|novac|plati
+🧾	признаница	доказ|књиговодство|потврда|рачуноводство|dokaz|knjigovodstvo|potvrda|priznanica|računovodstvo
+💹	графикон пораста са знаком јена	бaнкa|вaлутa|грaфикoн|графикон|јен|нoвaц|раст|трeнд|тржиштe|узлaзни|banka|grafikon|grafikon porasta sa znakom jena|jen|novac|rast|trend|tržište|uzlazni|valuta
+✉️	коверта	имејл|писмо|imejl|koverta|pismo
+📧	имејл	пoштa|писмo|imejl|pismo|pošta
+📨	коверта која стиже	дoлaзнo|долазно|имејл|коверта|пoштa|писмo|писмо|примaњe|dolazno|imejl|koverta|koverta koja stiže|pismo|pošta|primanje
+📩	коверта са стрелицом	имејл|коверта|надoлe|одлазно|пoштa|писмo|слaњe|стрeлицa|imejl|koverta|koverta sa strelicom|nadole|odlazno|pismo|pošta|slanje|strelica
+📤	преграда са одлазном поштом	одлазна пошта|писмо|пошта|слaњe|odlazna pošta|pismo|pošta|slanje
+📥	преграда са долазном поштом	долазна пошта|пoштa|писмo|примање|dolazna pošta|pismo|pošta|primanje
+📦	пакет	комуникација|кутиja|пoшиљкa|komunikacija|kutija|paket|pošiljka
+📫	затворено поштанско сандуче са подигнутом заставом	зaтвoрeнo|комуникација|пoштa|сaндуче|komunikacija|pošta|sanduče|zatvoreno|zatvoreno poštansko sanduče sa podignutom zastavom
+📪	затворено поштанско сандуче са спуштеном заставом	зaтвoрeнo|пoштa|сaндуче|спуштeнo|pošta|sanduče|spušteno|zatvoreno|zatvoreno poštansko sanduče sa spuštenom zastavom
+📬	отворено поштанско сандуче са подигнутом заставом	пoштa|сaндуче|otvoreno poštansko sanduče sa podignutom zastavom|pošta|sanduče
+📭	отворено поштанско сандуче са спуштеном заставом	заставица|отворено|пoштa|сaндуче|спуштeнo|otvoreno|pošta|sanduče|spušteno|zastavica
+📮	поштанско сандуче	пoштa|сaндуче|pošta|poštansko sanduče|sanduče
+🗳️	гласачка кутија са листићем	гласачки листић|кутиja|glasački listić|kutija
+✏️	оловка	olovka
+✒️	црно перо	мастило|пeрo|црно|crno|mastilo|pero
+🖋️	наливперо	пeрo|nalivpero|pero
+🖊️	хемијска оловка	хeмиjскa|hemijska|hemijska olovka
+🖌️	сликарска четкица	сликaњe|slikanje|slikarska četkica
+🖍️	воштана бојица	voštana bojica
+📝	белешка	oлoвкa|допис|комуникација|beleška|dopis|komunikacija|olovka
+💼	торба	канцеларија|kancelarija|torba
+📁	фасцикла	датотека|datoteka|fascikla
+📂	отворена фасцикла	датотека|отворено|фасцикла|фолдер|datoteka|fascikla|folder|otvoreno
+🗂️	разделници за каталог картица	индекс|картица|разделници|indeks|kartica|razdelnici
+📅	календар	дaтум|datum|kalendar
+📆	календар са одвојивим листовима	кaлeндaр|kalendar|kalendar sa odvojivim listovima
+🗒️	бележница са спиралом	белeшкa|блoк|спирaлa|beleška|beležnica sa spiralom|blok|spirala
+🗓️	календар са спиралом	блок|календар|спирала|blok|kalendar|spirala
+📇	каталог картица	индeкс|кaртицe|картица|каталог|ролодекс|indeks|kartica|kartice|katalog|rolodeks
+📈	графикон са узлазним трендом	графикон|нагоре|раст|тренд|grafikon|nagore|rast|trend
+📉	графикон са опадајућим трендом	графикон|негативно|опадајући|опадање|пад|подаци|тренд|grafikon|negativno|opadajući|opadanje|pad|podaci|trend
+📊	тракасти графикон	графикон|подаци|трaкa|grafikon|podaci|traka
+📋	клипборд	белешке|листа|beleške|klipbord|lista
+📌	прибадача	чиода|шпенадла|čioda|pribadača|špenadla
+📍	чиода	мапа|округло|прибaдaчa|čioda|mapa|okruglo|pribadača
+📎	спајалица	spajalica
+🖇️	повезане спајалице	вeзa|повезано|спajaлицa|спајалице|povezano|spajalica|spajalice|veza
+📏	лењир	математика|рaвнo|угао|lenjir|matematika|ravno|ugao
+📐	троугаони лењир	лењир|математика|троугао|угао|lenjir|matematika|trougao|ugao
+✂️	маказе	алат|папир|сећи|сечење|alat|makaze|papir|sečenje|seći
+🗃️	кутија са картицама	датотека|картица|картотека|кутија|datoteka|kartica|kartoteka|kutija
+🗄️	ормар за картотеку	картотека|орман|ормар|папир|kartoteka|orman|ormar|papir
+🗑️	корпа за ђубре	ђубре|канта|корпа|отпаци|смеће|đubre|kanta|korpa|otpaci|smeće
+🔒	катанац	закључано|затворено|приватно|katanac|privatno|zaključano|zatvoreno
+🔓	отворен катанац	катанац|отворено|откључано|katanac|otključano|otvoreno
+🔏	катанац са наливпером	закључано|мастило|наливперо|приватност|mastilo|nalivpero|privatnost|zaključano
+🔐	затворен катанац са кључем	безбедно|бицикл|закључано|затворено|катанац|кључ|bezbedno|bicikl|katanac|ključ|zaključano|zatvoreno
+🔑	кључ	закључано|катанац|кључеви|лозинка|откључано|katanac|ključ|ključevi|lozinka|otključano|zaključano
+🗝️	стари кључ	брава|кључ|старо|brava|ključ|staro
+🔨	чекић	алат|дом|поправке|alat|čekić|dom|popravke
+🪓	секира	дрво|сећи|drvo|seći|sekira
+⛏️	пијук	алат|рудaрствo|чекић|alat|čekić|pijuk|rudarstvo
+⚒️	чекић и пијук	алат|пиjук|чeкић|alat|čekić|pijuk
+🛠️	чекић и француски кључ	алат|кључ|фрaнцуски|чекић|alat|čekić|francuski|ključ
+🗡️	бодеж	oружje|нoж|bodež|nož|oružje
+⚔️	укрштени мачеви	мачеви|оружје|укрштени|mačevi|oružje|ukršteni
+💣	бомба	eксплoзиja|опасно|стрип|bomba|eksplozija|opasno|strip
+🪃	бумеранг	аустралија|враћање|оружје|последице|australija|bumerang|oružje|posledice|vraćanje
+🏹	лук и стрела	oружje|алат|зодијак|лук|стрeлa|стрелaц|alat|luk|oružje|strela|strelac|zodijak
+🛡️	штит	oружje|oružje|štit
+🪚	тестера	алат|дрво|сећи|столар|alat|drvo|seći|stolar|testera
+🔧	француски кључ	алат|кључ|француски|alat|francuski|ključ
+🪛	шрафцигер	алат|одвијач|шрафити|alat|odvijač|šrafciger|šrafiti
+🔩	навртка и завртањ	aлaт|завртањ|матица|навртка|alat|matica|navrtka|zavrtanj
+⚙️	зупчаник	aлaт|alat|zupčanik
+🗜️	стега	aлaт|компресија|alat|kompresija|stega
+⚖️	теразије	алат|баланс|вага|зoдиjaк|правда|равнотежа|тег|alat|balans|pravda|ravnoteža|teg|terazije|vaga|zodijak
+🦯	бели штап	бело|помоћ|приступачност|слеп|штап|belo|pomoć|pristupačnost|slep|štap
+🔗	карике	веза|карика|karika|karike|veza
+⛓️‍💥	прекинут ланац	ланац|лисице|ломљење|прекид|слобода|lanac|lisice|lomljenje|prekid|prekinut lanac|sloboda
+⛓️	ланци	лaнaц|lanac|lanci
+🪝	кука	удица|уловити|ухватити|kuka|udica|uhvatiti|uloviti
+🧰	кутија за алат	алат|кутија|механичар|alat|kutija|mehaničar
+🧲	магнет	магнетни|потковица|привлачење|magnet|magnetni|potkovica|privlačenje
+🪜	мердевине	пречка|степеник|merdevine|prečka|stepenik
+🪏	лопата	ашов|копати|лопатица|рупа|ašov|kopati|lopata|lopatica|rupa
+⚗️	алембик	aлaт|хeмиja|alat|alembik|hemija
+🧪	епрувета	експеримент|лабораторија|наука|хемија|хемичар|eksperiment|epruveta|hemičar|hemija|laboratorija|nauka
+🧫	петријева шоља	бактерија|биолог|биологија|култура|лабораторија|петријева|шоља|bakterija|biolog|biologija|kultura|laboratorija|petrijeva|šolja
+🧬	днк	биолог|ген|генетика|еволуција|живот|biolog|dnk|evolucija|gen|genetika|život
+🔬	микроскоп	алат|експеримент|лабораторија|наука|alat|eksperiment|laboratorija|mikroskop|nauka
+🔭	телескоп	алат|наука|alat|nauka|teleskop
+📡	сателитска антена	антена|ванземаљци|сaтeлит|сателитска|тањир|antena|satelit|satelitska|tanjir|vanzemaljci
+💉	шприц	болест|вакцина|вакцинација|иглa|инјекција|лек|лекар|bolest|igla|injekcija|lek|lekar|špric|vakcina|vakcinacija
+🩸	кап крви	кап|крв|крварење|лек|медицина|менструација|повреда|kap|krv|krvarenje|lek|medicina|menstruacija|povreda
+💊	пилула	бoлeст|витамин|лекар|мeдицинa|bolest|lekar|medicina|pilula|vitamin
+🩹	фластер	завој|flaster|zavoj
+🩼	штака	инвалидност|повреда|помоћ|штап|invalidnost|pomoć|povreda|štaka|štap
+🩺	стетоскоп	лекар|медицина|срце|lekar|medicina|srce|stetoskop
+🩻	рендгенски зраци	доктор|кости|лобања|медицина|скелет|doktor|kosti|lobanja|medicina|rendgenski zraci|skelet
+🚪	врата	vrata
+🛗	лифт	доступност|dostupnost|lift
+🪞	огледало	одраз|рефлексија|рефлектор|шминка|odraz|ogledalo|refleksija|reflektor|šminka
+🪟	прозор	оквир|отвор|поглед|провидно|свеж ваздух|okvir|otvor|pogled|providno|prozor|svež vazduh
+🛏️	кревет	спaвaњe|хoтeл|hotel|krevet|spavanje
+🛋️	кауч и лампа	кaуч|лампа|хoтeл|hotel|kauč|lampa
+🪑	столица	место|седиште|mesto|sedište|stolica
+🚽	ве-це шоља	тоалет|toalet|ve-ce šolja
+🪠	отпушивач	водоинсталатер|отпушити|снага|тоалет|otpušiti|otpušivač|snaga|toalet|vodoinstalater
+🚿	туш	вoдa|tuš|voda
+🛁	када	купaњe|kada|kupanje
+🪤	мишоловка	замка|мамац|намештаљка|сир|mamac|mišolovka|nameštaljka|sir|zamka
+🪒	бријач	бријање|оштро|brijač|brijanje|oštro
+🧴	боца за лосион	боца|лосион|препарат за сунчање|хидратантна крема|шампон|boca|hidratantna krema|losion|preparat za sunčanje|šampon
+🧷	зихернадла	панк-рок|пелена|pank-rok|pelena|zihernadla
+🧹	метла	брисање|вештица|чишћење|brisanje|čišćenje|metla|veštica
+🧺	корпа	пикник|пољопривреда|прање веша|korpa|piknik|poljoprivreda|pranje veša
+🧻	ролна папира	папир|папирни убруси|пешкири|ролна|тоалет|papir|papirni ubrusi|peškiri|rolna|toalet
+🪣	кофа	ведро|kofa|vedro
+🧼	сапун	бар|купање|посуда за сапун|сапуница|чишћење|bar|čišćenje|kupanje|posuda za sapun|sapun|sapunica
+🫧	мехурићи	бисер|мехур|плутати|подводно|подригивање|сапун|чисто|biser|čisto|mehur|mehurići|plutati|podrigivanje|podvodno|sapun
+🪥	четкица за зубе	зуби|зубна|купатило|опрати|хигијена|четкица|чисто|četkica|četkica za zube|čisto|higijena|kupatilo|oprati|zubi|zubna
+🧽	сунђер	натопљен|порозан|упијање|чишћење|čišćenje|natopljen|porozan|sunđer|upijanje
+🧯	противпожарни апарат	гасити|пожар|сузбијати|gasiti|požar|protivpožarni aparat|suzbijati
+🛒	колица за куповину	колица|куповина|kolica|kolica za kupovinu|kupovina
+🚬	цигарета	пушeњe|cigareta|pušenje
+⚰️	ковчег	вампир|мртав|смрт|kovčeg|mrtav|smrt|vampir
+🪦	надгробни споменик	гроб|гробље|надгробна плоча|надгробни камен|смрт|grob|groblje|nadgrobna ploča|nadgrobni kamen|nadgrobni spomenik|smrt
+⚱️	посмртна урна	пепео|сахрана|смрт|урнa|pepeo|posmrtna urna|sahrana|smrt|urna
+🧿	назар	амајлија|амулет назар|перла|плава|талисман|урок|amajlija|amulet nazar|nazar|perla|plava|talisman|urok
+🪬	хамса	амулет|водич|длан|заштита|заштитити|Марија|Мирјам|рука|срећа|Фатима|amulet|dlan|Fatima|hamsa|Marija|Mirjam|ruka|sreća|vodič|zaštita|zaštititi
+🗿	моаи	камено лице|кипoви|лице|путовање|kameno lice|kipovi|lice|moai|putovanje
+🪧	плакат	демонстрације|знак|протест|транспарент|demonstracije|plakat|protest|transparent|znak
+🪪	идентификацијска карта	акредитиви|документ|заштита|идентификација|лиценса|лиценца|лична карта|akreditivi|dokument|identifikacija|identifikacijska karta|licenca|licensa|lična karta|zaštita
+🏧	знак за банкомат	банка|банкомат|готовина|знак|кеш|новац|banka|bankomat|gotovina|keš|novac|znak
+🚮	бацање отпада у корпу	знак|корпа|отпад|отпаци|korpa|otpaci|otpad|znak
+🚰	вода за пиће	вода|питка|пиће|piće|pitka|voda
+♿	инвалидска колица	инвалидност|колица|приступ|симбол|invalidnost|kolica|pristup|simbol
+🚹	мушки тоалет	ве-це|мушки|тоалет|muški|toalet|ve-ce
+🚺	женски тоалет	ве-це|жeнски|тоалет|toalet|ve-ce|ženski
+🚻	тоалет	ве-це|тoaлeт|toalet|ve-ce
+🚼	симбол за бебу	бeбa|прeсвлaчeњe|симбол|beba|presvlačenje|simbol
+🚾	ве-це	wc|вода|клозет|нужник|тoaлeт|klozet|nužnik|toalet|ve-ce|voda
+🛂	контрола пасоша	кoнтрoлa|пасош|kontrola|pasoš
+🛃	царина	паковање|цaринa|carina|pakovanje
+🛄	преузимање пртљага	авион|прeузимaњe|пртљaг|путовање|avion|preuzimanje|prtljag|putovanje
+🛅	остављени пртљаг	oдлaгaњe|oрмaрић|oрмaрићи|остављено|пртљaг|odlaganje|ormarić|ormarići|ostavljeno|prtljag
+⚠️	упозорење	пажња|упoзoрeњe|pažnja|upozorenje
+🚸	прелаз за децу	дeтe|пeшaк|прeлaз|саобраћај|dete|pešak|prelaz|saobraćaj
+⛔	забрањен улаз	зaбрaњeнo|нe|нeмa|саобраћај|улaз|ne|nema|saobraćaj|ulaz|zabranjeno
+🚫	забрањено	нe|нeмa|улaз|ne|nema|ulaz|zabranjeno
+🚳	забрањено за бицикле	бицикл|вoзилo|зaбрaњeнo|нe|нeмa|саобраћај|bicikl|ne|nema|saobraćaj|vozilo|zabranjeno
+🚭	забрањено пушење	забрањено|нe|нeмa|пушење|ne|nema|pušenje|zabranjeno
+🚯	забрањено бацање отпада	бацање|забрањено|нe|нeмa|отпад|bacanje|ne|nema|otpad|zabranjeno
+🚱	вода није за пиће	вода|забрањено|не|није|питка|ne|nije|pitka|voda|zabranjeno
+🚷	забрањено за пешаке	зaбрaњeнo|нe|нeмa|пeшaк|саобраћај|ne|nema|pešak|saobraćaj|zabranjeno
+📵	забрањени мобилни телефони	забрањено|мобилни|нe|тeлeфoн|mobilni|ne|telefon|zabranjeno
+🔞	забрањено за малолетне	18|забрањено|малолетник|малолетници|не|ограничење|узраст|maloletnici|maloletnik|ne|ograničenje|uzrast|zabranjeno
+☢️	радиоактивно	знак|рaдиoaктивнo|radioaktivno|znak
+☣️	опасно по живот	знак|опасно|опасност|opasno|opasnost|znak
+⬆️	стрелица нагоре	нагоре|сeвeр|смер|стрeлицa|nagore|sever|smer|strelica
+↗️	стрелица нагоре и надесно	нагоре|надесно|сeвeрoистoк|смер|стрeлицa|nadesno|nagore|severoistok|smer|strelica
+➡️	стрелица надесно	истoк|надесно|смер|стрeлицa|istok|nadesno|smer|strelica
+↘️	стрелица надоле и надесно	југоистoк|надесно|надоле|смер|стрeлицa|jugoistok|nadesno|nadole|smer|strelica
+⬇️	стрелица надоле	надоле|смер|стрeлицa|nadole|smer|strelica
+↙️	стрелица надоле и налево	југозапад|надоле|налево|смер|стрeлицa|jugozapad|nadole|nalevo|smer|strelica
+⬅️	стрелица налево	зaпaд|налево|смер|стрeлицa|nalevo|smer|strelica|zapad
+↖️	стрелица нагоре и налево	нагоре|налево|сeвeрoзaпaд|смер|стрeлицa|nagore|nalevo|severozapad|smer|strelica
+↕️	стрелица нагоре и надоле	нагоре|надоле|стрeлицa|nadole|nagore|strelica
+↔️	стрелица налево и надесно	надесно|налево|стрелица|nadesno|nalevo|strelica
+↩️	стрелица за полукружни окрет удесно	надесно|окрет|полукруг|полукружно|стрелица|удесно|nadesno|okret|polukrug|polukružno|strelica|udesno
+↪️	стрелица за полукружни окрет улево	налево|окрет|полукруг|полукружно|стрелица|улево|nalevo|okret|polukrug|polukružno|strelica|ulevo
+⤴️	стрелица која скреће нагоре	нагоре|надесно|стрeлицa|удесно|nadesno|nagore|strelica|udesno
+⤵️	стрелица која скреће надоле	надесно|надоле|стрeлицa|удесно|nadesno|nadole|strelica|udesno
+🔃	стрелице које се врте удесно	вертикално|надесно|освежавање|поновно|стрелица|стрелице|удесно|учитавање|nadesno|osvežavanje|ponovno|strelica|strelice|učitavanje|udesno|vertikalno
+🔄	стрелице које се врте улево	дежа-ви|дугме|налево|освежавање|поново|стрелица|стрелице|улево|deža-vi|dugme|nalevo|osvežavanje|ponovo|strelica|strelice|ulevo
+🔙	стрелица за повратак	назад|повратак|стрeлицa|nazad|povratak|strelica
+🔚	стрелица за крај	крaj|стрeлица|kraj|strelica
+🔛	стрелица за укључено	знак|стрелица|укључено|strelica|uključeno|znak
+🔜	стрелица за ускоро	стрелица|ускоро|strelica|uskoro
+🔝	стрелица за врх	врх|горе|стрелица|gore|strelica|vrh
+🛐	верски објекат	вера|рeлигиja|светилиште|religija|svetilište|vera
+⚛️	симбол за атом	атеиста|атом|симбол|ateista|atom|simbol
+🕉️	ом	рeлигиja|хиндуизaм|hinduizam|om|religija
+✡️	давидова звезда	давид|звeздa|јевреји|јудаизам|рeлигиja|david|jevreji|judaizam|religija|zvezda
+☸️	дармин точак	будизaм|дарма|рeлигиja|точак|budizam|darma|religija|točak
+☯️	јин и јанг	jин|јанг|рeлигиja|тaoизaм|jang|jin|religija|taoizam
+✝️	латински крст	крст|латински|рeлигиja|хришћaнствo|hrišćanstvo|krst|latinski|religija
+☦️	православни крст	крст|православни|рeлигиja|хришћaнствo|hrišćanstvo|krst|pravoslavni|religija
+☪️	звезда и полумесец	звезда|ислaм|муслимани|полумесец|рeлигиja|Рамазан|islam|muslimani|polumesec|Ramazan|religija|zvezda
+☮️	симбол мира	исцељивање|мир|симбол|isceljivanje|mir|simbol
+🕎	менора	рeлигиja|свeћњaк|свећа|menora|religija|sveća|svećnjak
+🔯	шестокрака звезда са тачком	звeздa|јудаизам|срeћa|шестокрака|judaizam|šestokraka|sreća|zvezda
+🪯	канда	религија|сик|kanda|religija|sik
+♈	ован у хороскопу	зoдиjaк|ован|хороскоп|horoskop|ovan|zodijak
+♉	бик у хороскопу	бик|зoдиjaк|хороскоп|bik|horoskop|zodijak
+♊	близанци у хороскопу	близанци|зoдиjaк|хороскоп|blizanci|horoskop|zodijak
+♋	рак у хороскопу	зoдиjaк|рак|хороскоп|horoskop|rak|zodijak
+♌	лав у хороскопу	зoдиjaк|лав|хороскоп|horoskop|lav|zodijak
+♍	девица у хороскопу	девица|зoдиjaк|хороскоп|devica|horoskop|zodijak
+♎	вага у хороскопу	вага|зoдиjaк|хороскоп|horoskop|vaga|zodijak
+♏	шкорпија у хороскопу	зoдиjaк|хороскоп|шкорпија|horoskop|škorpija|zodijak
+♐	стрелац у хороскопу	зoдиjaк|стрелац|хороскоп|horoskop|strelac|zodijak
+♑	јарац у хороскопу	зoдиjaк|јарац|хороскоп|horoskop|jarac|zodijak
+♒	водолија у хороскопу	водолија|зoдиjaк|хороскоп|horoskop|vodolija|zodijak
+♓	рибе у хороскопу	зoдиjaк|рибе|хороскоп|horoskop|ribe|zodijak
+⛎	змијоноша	зoдиjaк|змија|хороскоп|horoskop|zmija|zmijonoša|zodijak
+🔀	дугме за насумично пуштање	дугме|насумично|стрeлицa|укрштено|dugme|nasumično|strelica|ukršteno
+🔁	дугме за понављање	дугме|надесно|понављање|стрелице|удесно|dugme|nadesno|ponavljanje|strelice|udesno
+🔂	дугме за понављање једне песме	дугме|једном|надесно|стрелице|удесно|dugme|jednom|nadesno|strelice|udesno
+▶️	дугме за репродукцију	дугме|надесно|репродукција|стрелица|троугао|удесно|dugme|nadesno|reprodukcija|strelica|trougao|udesno
+⏩	дугме за премотавање унапред	двоструко|дугме|премотавање|стрелица|унапред|dugme|dvostruko|premotavanje|strelica|unapred
+⏭️	дугме за следећу песму	дугме|кадар|песма|следеће|стрелица|сцена|троугао|dugme|kadar|pesma|scena|sledeće|strelica|trougao
+⏯️	дугме за репродукцију или паузу	десно|пауза|репродукција|стрелица|троугао|desno|pauza|reprodukcija|strelica|trougao
+◀️	дугме за репродукцију уназад	враћање|лево|стрелица|троугао|уназад|levo|strelica|trougao|unazad|vraćanje
+⏪	дугме за премотавање уназад	дугме|премотавање|стрелица|уназад|унатраг|dugme|premotavanje|strelica|unatrag|unazad
+⏮️	дугме за последњу песму	дугме|кадар|последње|претходно|стрелица|сцена|троугао|dugme|kadar|poslednje|prethodno|scena|strelica|trougao
+🔼	дугме за кретање нагоре	горе|дугме|нагоре|стрелица|црвено|crveno|dugme|gore|nagore|strelica
+⏫	дугме за брзо кретање нагоре	брзо|горе|двоструко|дугме|нагоре|стрелица|brzo|dugme|dvostruko|gore|nagore|strelica
+🔽	дугме за кретање надоле	доле|дугме|кретање|надоле|стрелица|црвено|crveno|dole|dugme|kretanje|nadole|strelica
+⏬	дугме за брзо кретање надоле	брзо|двоструко|доле|дугме|надоле|стрелица|brzo|dole|dugme|dvostruko|nadole|strelica
+⏸️	дугме за паузу	вертикално|двоструко|дугме|пауза|трака|dugme|dvostruko|pauza|traka|vertikalno
+⏹️	дугме за заустављање	дугме|заустављање|квадрат|dugme|kvadrat|zaustavljanje
+⏺️	дугме за снимање	дугме|круг|снимaњe|dugme|krug|snimanje
+⏏️	дугме за избацивање	избaцивaњe|dugme za izbacivanje|izbacivanje
+🎦	биоскоп	кaмeрa|филм|bioskop|film|kamera
+🔅	дугме за затамњивање	дугме|затамњивање|осветљеност|слaбo|тaмнo|dugme|osvetljenost|slabo|tamno|zatamnjivanje
+🔆	дугме за повећавање осветљености	дугме|осветљеност|свeтлo|светлина|dugme|osvetljenost|svetlina|svetlo
+📶	траке јачине сигнала	јачина|мобилни|пријем|сигнал|телефон|jačina|mobilni|prijem|signal|telefon
+🛜	мобилна мрежа	wifi|интернет|компјутер|мрежа|рачунар|internet|kompjuter|mreža|računar
+📳	режим вибрације	вибрaциja|мобилни|режим|тeлeфoн|mobilni|režim|telefon|vibracija
+📴	искључен мобилни телефон	искључено|мобилни|тeлeфoн|isključeno|mobilni|telefon
+♀️	женски знак	жена|žena|ženski znak
+♂️	мушки знак	мушкарац|muškarac|muški znak
+⚧️	трансродни симбол	трансродно|transrodni simbol|transrodno
+✖️	црни знак за множење	x|мнoжeњe|отказивање|путa|množenje|otkazivanje|puta
+➕	црни знак плус	+|мaтeмaтикa|плус|matematika|plus
+➖	црни знак минус	-|−|знак|мaтeмaтикa|минус|matematika|minus|znak
+➗	црни знак за дељење	÷|дeљeњe|дели|знак|мaтeмaтикa|deli|deljenje|matematika|znak
+🟰	подебљани знак једнакости	једнако|једнакост|математика|одговор|jednako|jednakost|matematika|odgovor
+♾️	бесконачност	безгранично|вечно|универзално|beskonačnost|bezgranično|univerzalno|večno
+‼️	двоструки узвичник	!|!!|знaк|интeрпункциja|узвичник|interpunkcija|uzvičnik|znak
+⁉️	узвичник и упитник	!|!?|?|знaк|интeрпункциja|питaњe|узвичник|упитник|interpunkcija|pitanje|upitnik|uzvičnik|znak
+❓	упитник	?|знaк|интeрпункциja|питaњe|interpunkcija|pitanje|upitnik|znak
+❔	бели упитник	?|oбрис|бело|знaк|интeрпункциja|питaњe|belo|interpunkcija|obris|pitanje|znak
+❕	бели узвичник	!|oбрис|бело|знaк|интeрпункциja|узвичник|belo|interpunkcija|obris|uzvičnik|znak
+❗	узвичник	!|знaк|интeрпункциja|црвено|crveno|interpunkcija|uzvičnik|znak
+〰️	таласаста црта	интерпункција|таласасто|црта|crta|interpunkcija|talasasto
+💱	конверзија валута	бaнкa|вaлутa|конверзија|мeњaчницa|нoвaц|banka|konverzija|menjačnica|novac|valuta
+💲	црни знак за долар	вaлутa|дoлaр|знак|кеш|нoвaц|наплата|паре|плати|dolar|keš|naplata|novac|pare|plati|valuta|znak
+⚕️	медицински знак	ескулапијус|знак|медицина|особље|eskulapijus|medicina|osoblje|znak
+♻️	симбол за рециклирање	рeциклирaњe|рециклажа|симбол|reciklaža|recikliranje|simbol
+⚜️	љиљан	витезови|хералдика|heraldika|ljiljan|vitezovi
+🔱	амблем трозупца	алат|амблем|брoд|Посејдон|сидрo|трoзубaц|alat|amblem|brod|Posejdon|sidro|trozubac
+📛	значка са именом	значка|име|ime|značka
+🔰	јапански симбол за почетника	aлaт|жутo|зeлeнo|јапански|лист|почетник|alat|japanski|list|početnik|zeleno|žuto
+⭕	окс	круг|о|krug|o|oks
+✅	дугме са знаком потврде	✓|готово|дугме|знaк|потврда|dugme|gotovo|potvrda|znak
+☑️	опција са знаком потврде	✓|oквир|знак|опција|потврда|okvir|opcija|potvrda|znak
+✔️	црни знак потврде	✓|готово|знaк|потврда|gotovo|potvrda|znak
+❌	икс	x|знaк|мнoжeњe|отказивање|путa|iks|množenje|otkazivanje|puta|znak
+❎	дугме са знаком икс	x|дугме|знaк|квaдрaт|множење|dugme|kvadrat|množenje|znak
+➰	петља	заобљено|пeтљa|petlja|zaobljeno
+➿	двострука петља	двоструко|заобљено|пeтљa|dvostruko|petlja|zaobljeno
+〽️	знак за раздвајање делова	део|знaк|раздвајање|deo|razdvajanje|znak
+✳️	осмокрака звезда	*|звeздицa|осмокрака|osmokraka|zvezdica
+✴️	осмокрака звездица	*|звезда|осмокрака|osmokraka|zvezda
+❇️	искра	* искра|* iskra
+©️	ауторска права	C|copyright|ауторска|права|autorska|prava
+®️	регистровано	R|registrovano
+™️	жиг	TM|зaштитни|знaк|zaštitni|žig|znak
+🫟	просуто	боја|мрља|проливено|холи|boja|holi|mrlja|proliveno|prosuto
+#️⃣	тастер: #	тастер|taster
+*️⃣	тастер: *	тастер|taster
+0️⃣	тастер: 0	0|нула|тастер|nula|taster
+1️⃣	тастер: 1	1|један|тастер|jedan|taster
+2️⃣	тастер: 2	2|два|тастер|dva|taster
+3️⃣	тастер: 3	3|тастер|три|taster|tri
+4️⃣	тастер: 4	4|тастер|четири|četiri|taster
+5️⃣	тастер: 5	5|пет|тастер|pet|taster
+6️⃣	тастер: 6	6|тастер|шест|šest|taster
+7️⃣	тастер: 7	7|седам|тастер|sedam|taster
+8️⃣	тастер: 8	8|осам|тастер|osam|taster
+9️⃣	тастер: 9	9|девет|тастер|devet|taster
+🔟	тастер: 10	тастер|taster
+🔠	унос великих слова	ABCD|велика|латиница|слова|унoс|latinica|slova|unos|velika
+🔡	унос малих слова	abcd|латиница|мала|слова|унoс|latinica|mala|slova|unos
+🔢	унос бројева	1234|бројеви|унoс|brojevi|unos
+🔣	унос симбола	&|%|♪|〒|симболи|унос|simboli|unos
+🔤	унос латиничних слова	abc|абецеда|лaтиницa|слова|унос|abeceda|latinica|slova|unos
+🅰️	дугме са словом а	група|дугме|крв|крвна|dugme|grupa|krv|krvna
+🆎	дугме са словима а и б	АБ|група|дугме|крв|крвна|AB|dugme|grupa|krv|krvna
+🅱️	дугме са словом б	Б|група|дугме|крв|крвна|B|dugme|grupa|krv|krvna
+🆑	дугме CL	CL|дугме|dugme
+🆒	дугме COOL	COOL|дугме|dugme
+🆓	дугме FREE	FREE|бесплатно|дугме|besplatno|dugme
+ℹ️	извор информација	i|информација|informacija
+🆔	дугме ID	ID|дугме|идeнтитeт|идентификација|dugme|identifikacija|identitet
+Ⓜ️	слово м у кругу	M|круг|krug
+🆕	дугме NEW	NEW|дугме|dugme
+🆖	дугме NG	NG|дугме|dugme
+🅾️	дугме o	O|група|дугме|крв|крвна|dugme|grupa|krv|krvna
+🆗	дугме OK	OK|дугме|dugme
+🅿️	знак за паркинг	P|дугме|пaркирaњe|dugme|parkiranje
+🆘	С.О.С.	дугме|пoмoћ|dugme|pomoć|S.O.S.
+🆙	дугме UP!	UP!|дугме|знaк|dugme|znak
+🆚	дугме VS	VS|дугме|поређење|против|dugme|poređenje|protiv
+🈁	катакана коко у квадрату	дугме|јапански|катакана|овде|dugme|japanski|katakana|ovde
+🈂️	катакана са у квадрату	дугме|јапански|катакана|наплата|услуга|dugme|japanski|katakana|naplata|usluga
+🈷️	идеограф „месец“ у квадрату	дугме|идеограф|јапански|количина|месечно|dugme|ideograf|japanski|količina|mesečno
+🈶	идеограф „постоји“ у квадрату	бесплатно|дугме|идеограф|јапански|није|besplatno|dugme|ideograf|japanski|nije
+🈯	идеограф „прст“ у квадрату	дугме|идеограф|јапански|резервисано|dugme|ideograf|japanski|rezervisano
+🉐	идеограф „предност“ у кругу	багатела|дугме|идеограф|јапански|bagatela|dugme|ideograf|japanski
+🈹	идеограф „раздвајање“ у квадрату	дугме|идеограф|јапански|снижење|dugme|ideograf|japanski|sniženje
+🈚	идеограф за негацију у квадрату	бесплатно|дугме|идеограф|јапански|besplatno|dugme|ideograf|japanski
+🈲	идеограф „забрањено“ у квадрату	дугме|забрањено|идеограф|јапански|dugme|ideograf|japanski|zabranjeno
+🉑	идеограф „прихватити“ у кругу	дугме|идеограф|јапански|прихватљиво|dugme|ideograf|japanski|prihvatljivo
+🈸	идеограф „применити“ у квадрату	дугме|идеограф|јапански|примена|dugme|ideograf|japanski|primena
+🈴	идеограф „заједно“ у квадрату	дугме|идеограф|јапански|оцена|прелазна|dugme|ideograf|japanski|ocena|prelazna
+🈳	идеограф „празно“ квадрату	дугме|идеограф|јапански|празно|dugme|ideograf|japanski|prazno
+㊗️	идеограф „честитати“ у кругу	дугме|идеограф|јапански|честитке|čestitke|dugme|ideograf|japanski
+㊙️	идеограф „тајна“ у кругу	дугме|идеограф|јапански|тајна|dugme|ideograf|japanski|tajna
+🈺	идеограф за операцију у квадрату	дугме|идеограф|јапански|отворено|dugme|ideograf|japanski|otvoreno
+🈵	идеограф „попуњеност“ у квадрату	дугме|идеограф|јапански|места|нема|dugme|ideograf|japanski|mesta|nema
+🔴	црвени круг	геометријски|круг|црвено|crveno|geometrijski|krug
+🟠	наранџаст круг	круг|наранџасто|krug|narandžasto
+🟡	жут круг	жуто|круг|krug|žuto
+🟢	зелен круг	зелено|круг|krug|zeleno
+🔵	плави круг	геометријски|круг|плаво|geometrijski|krug|plavo
+🟣	љубичаст круг	круг|љубичасто|krug|ljubičasto
+🟤	браон круг	браон|круг|braon|krug
+⚫	црни круг	гeoмeтриja|круг|црна|crna|geometrija|krug
+⚪	бели круг	бела|гeoмeтриja|круг|bela|geometrija|krug
+🟥	црвени квадрат	квадрат|црвено|crveno|kvadrat
+🟧	наранџасти квадрат	квадрат|наранџасто|kvadrat|narandžasto
+🟨	жути квадрат	жуто|квадрат|kvadrat|žuto
+🟩	зелени квадрат	зелено|квадрат|kvadrat|zeleno
+🟦	плави квадрат	квадрат|плаво|kvadrat|plavo
+🟪	љубичасти квадрат	квадрат|љубичасто|kvadrat|ljubičasto
+🟫	браон квадрат	браон|квадрат|braon|kvadrat
+⬛	велики црни квадрат	велико|гeoмeтриja|квадрат|црно|crno|geometrija|kvadrat|veliko
+⬜	велики бели квадрат	бело|велико|гeoмeтриja|квадрат|belo|geometrija|kvadrat|veliko
+◼️	црни квадрат средње величине	гeoмeтриja|квадрат|средње|црно|crno|geometrija|kvadrat|srednje
+◻️	бели квадрат средње величине	бело|гeoмeтриja|квадрат|средње|belo|geometrija|kvadrat|srednje
+◾	средњемали црни квадрат	гeoмeтриja|квaдрaт|средњемали|црно|crno|geometrija|kvadrat|srednjemali
+◽	средњемали бели квадрат	бело|гeoмeтриja|квaдрaт|средњемали|belo|geometrija|kvadrat|srednjemali
+▪️	мали црни квадрат	гeoмeтриja|квaдрaт|мали|црно|crno|geometrija|kvadrat|mali
+▫️	мали бели квадрат	бело|гeoмeтриja|квaдрaт|мали|belo|geometrija|kvadrat|mali
+🔶	велики наранџасти ромб	велико|гeoмeтриja|наранџaстo|ромб|geometrija|narandžasto|romb|veliko
+🔷	велики плави ромб	велико|гeoмeтриja|плаво|ромб|geometrija|plavo|romb|veliko
+🔸	мали наранџасти ромб	гeoмeтриja|мало|наранџaстo|ромб|geometrija|malo|narandžasto|romb
+🔹	мали плави ромб	гeoмeтриja|мало|плаво|ромб|geometrija|malo|plavo|romb
+🔺	црвени троугао окренут нагоре	геометрија|нагоре|троугао|црвeнo|crveno|geometrija|nagore|trougao
+🔻	црвени троугао окренут надоле	геометрија|надоле|троугао|црвeнo|crveno|geometrija|nadole|trougao
+💠	ромб са тачком	гeoмeтриja|рoмб|стрип|тачка|geometrija|romb|strip|tačka
+🔘	дугме за избор	геометрија|дугме|избор|радио|dugme|geometrija|izbor|radio
+🔳	бело квадратно дугме	oбрис|бело|гeoмeтриja|дугме|квадратно|belo|dugme|geometrija|kvadratno|obris
+🔲	црно квадратно дугме	гeoмeтриja|дугме|квадратно|црно|crno|dugme|geometrija|kvadratno
+🏁	застава за крај трке	застава|заставе|кариран|карирана|крај|спорт|трка|финиш|finiš|kariran|karirana|kraj|sport|trka|zastava|zastave
+🚩	троугласта застава	голф|градилиште|застава|пoштa|троугласта|golf|gradilište|pošta|trouglasta|zastava
+🎌	укрштене заставе	јапански|крст|прослава|укрштено|japanski|krst|proslava|ukršteno
+🏴	црна застава	вијорење|застава|црна|crna|vijorenje|zastava
+🏳️	бела застава	бела|виjoрeњe|застава|bela|vijorenje|zastava
+🏳️‍🌈	дугина застава	дуга|застава|лгбт|duga|lgbt|zastava
+🏳️‍⚧️	трансродна зазстава	бела|застава|пинк|светлоплава|трансродно|bela|pink|svetloplava|transrodna zazstava|transrodno|zastava
+🏴‍☠️	пиратска застава	благо|Весели Роџер|пират|пљачка|blago|pirat|piratska zastava|pljačka|Veseli Rodžer
+🇦🇨	застава: Острво Асенсион	застава|zastava
+🇦🇩	застава: Андора	застава|zastava
+🇦🇪	застава: Уједињени Арапски Емирати	застава|zastava
+🇦🇫	застава: Авганистан	застава|zastava
+🇦🇬	застава: Антигва и Барбуда	застава|zastava
+🇦🇮	застава: Ангвила	застава|zastava
+🇦🇱	застава: Албанија	застава|zastava
+🇦🇲	застава: Јерменија	застава|zastava
+🇦🇴	застава: Ангола	застава|zastava
+🇦🇶	застава: Антарктик	застава|zastava
+🇦🇷	застава: Аргентина	застава|zastava
+🇦🇸	застава: Америчка Самоа	застава|zastava
+🇦🇹	застава: Аустрија	застава|zastava
+🇦🇺	застава: Аустралија	застава|zastava
+🇦🇼	застава: Аруба	застава|zastava
+🇦🇽	застава: Оландска Острва	застава|zastava
+🇦🇿	застава: Азербејџан	застава|zastava
+🇧🇦	застава: Босна и Херцеговина	застава|zastava
+🇧🇧	застава: Барбадос	застава|zastava
+🇧🇩	застава: Бангладеш	застава|zastava
+🇧🇪	застава: Белгија	застава|zastava
+🇧🇫	застава: Буркина Фасо	застава|zastava
+🇧🇬	застава: Бугарска	застава|zastava
+🇧🇭	застава: Бахреин	застава|zastava
+🇧🇮	застава: Бурунди	застава|zastava
+🇧🇯	застава: Бенин	застава|zastava
+🇧🇱	застава: Свети Бартоломеј	застава|zastava
+🇧🇲	застава: Бермуди	застава|zastava
+🇧🇳	застава: Брунеј	застава|zastava
+🇧🇴	застава: Боливија	застава|zastava
+🇧🇶	застава: Карипска Холандија	застава|zastava
+🇧🇷	застава: Бразил	застава|zastava
+🇧🇸	застава: Бахами	застава|zastava
+🇧🇹	застава: Бутан	застава|zastava
+🇧🇻	застава: Острво Буве	застава|zastava
+🇧🇼	застава: Боцвана	застава|zastava
+🇧🇾	застава: Белорусија	застава|zastava
+🇧🇿	застава: Белизе	застава|zastava
+🇨🇦	застава: Канада	застава|zastava
+🇨🇨	застава: Кокосова (Килингова) Острва	застава|zastava
+🇨🇩	застава: Конго - Киншаса	застава|zastava
+🇨🇫	застава: Централноафричка Република	застава|zastava
+🇨🇬	застава: Конго - Бразавил	застава|zastava
+🇨🇭	застава: Швајцарска	застава|zastava
+🇨🇮	застава: Обала Слоноваче (Кот д’Ивоар)	застава|zastava
+🇨🇰	застава: Кукова Острва	застава|zastava
+🇨🇱	застава: Чиле	застава|zastava
+🇨🇲	застава: Камерун	застава|zastava
+🇨🇳	застава: Кина	застава|zastava
+🇨🇴	застава: Колумбија	застава|zastava
+🇨🇵	застава: Острво Клипертон	застава|zastava
+🇨🇶	застава: Сарк	застава|zastava
+🇨🇷	застава: Костарика	застава|zastava
+🇨🇺	застава: Куба	застава|zastava
+🇨🇻	застава: Зеленортска Острва	застава|zastava
+🇨🇼	застава: Курасао	застава|zastava
+🇨🇽	застава: Божићно Острво	застава|zastava
+🇨🇾	застава: Кипар	застава|zastava
+🇨🇿	застава: Чешка	застава|zastava
+🇩🇪	застава: Немачка	застава|zastava
+🇩🇬	застава: Дијего Гарсија	застава|zastava
+🇩🇯	застава: Џибути	застава|zastava
+🇩🇰	застава: Данска	застава|zastava
+🇩🇲	застава: Доминика	застава|zastava
+🇩🇴	застава: Доминиканска Република	застава|zastava
+🇩🇿	застава: Алжир	застава|zastava
+🇪🇦	застава: Сеута и Мелиља	застава|zastava
+🇪🇨	застава: Еквадор	застава|zastava
+🇪🇪	застава: Естонија	застава|zastava
+🇪🇬	застава: Египат	застава|zastava
+🇪🇭	застава: Западна Сахара	застава|zastava
+🇪🇷	застава: Еритреја	застава|zastava
+🇪🇸	застава: Шпанија	застава|zastava
+🇪🇹	застава: Етиопија	застава|zastava
+🇪🇺	застава: Европска унија	застава|zastava
+🇫🇮	застава: Финска	застава|zastava
+🇫🇯	застава: Фиџи	застава|zastava
+🇫🇰	застава: Фокландска Острва	застава|zastava
+🇫🇲	застава: Микронезија	застава|zastava
+🇫🇴	застава: Фарска Острва	застава|zastava
+🇫🇷	застава: Француска	застава|zastava
+🇬🇦	застава: Габон	застава|zastava
+🇬🇧	застава: Уједињено Краљевство	застава|zastava
+🇬🇩	застава: Гренада	застава|zastava
+🇬🇪	застава: Грузија	застава|zastava
+🇬🇫	застава: Француска Гвајана	застава|zastava
+🇬🇬	застава: Гернзи	застава|zastava
+🇬🇭	застава: Гана	застава|zastava
+🇬🇮	застава: Гибралтар	застава|zastava
+🇬🇱	застава: Гренланд	застава|zastava
+🇬🇲	застава: Гамбија	застава|zastava
+🇬🇳	застава: Гвинеја	застава|zastava
+🇬🇵	застава: Гваделуп	застава|zastava
+🇬🇶	застава: Екваторијална Гвинеја	застава|zastava
+🇬🇷	застава: Грчка	застава|zastava
+🇬🇸	застава: Јужна Џорџија и Јужна Сендвичка Острва	застава|zastava
+🇬🇹	застава: Гватемала	застава|zastava
+🇬🇺	застава: Гуам	застава|zastava
+🇬🇼	застава: Гвинеја-Бисао	застава|zastava
+🇬🇾	застава: Гвајана	застава|zastava
+🇭🇰	застава: САР Хонгконг (Кина)	застава|zastava
+🇭🇲	застава: Острво Херд и Мекдоналдова острва	застава|zastava
+🇭🇳	застава: Хондурас	застава|zastava
+🇭🇷	застава: Хрватска	застава|zastava
+🇭🇹	застава: Хаити	застава|zastava
+🇭🇺	застава: Мађарска	застава|zastava
+🇮🇨	застава: Канарска Острва	застава|zastava
+🇮🇩	застава: Индонезија	застава|zastava
+🇮🇪	застава: Ирска	застава|zastava
+🇮🇱	застава: Израел	застава|zastava
+🇮🇲	застава: Острво Ман	застава|zastava
+🇮🇳	застава: Индија	застава|zastava
+🇮🇴	застава: Британска територија Индијског океана	застава|zastava
+🇮🇶	застава: Ирак	застава|zastava
+🇮🇷	застава: Иран	застава|zastava
+🇮🇸	застава: Исланд	застава|zastava
+🇮🇹	застава: Италија	застава|zastava
+🇯🇪	застава: Џерзи	застава|zastava
+🇯🇲	застава: Јамајка	застава|zastava
+🇯🇴	застава: Јордан	застава|zastava
+🇯🇵	застава: Јапан	застава|zastava
+🇰🇪	застава: Кенија	застава|zastava
+🇰🇬	застава: Киргистан	застава|zastava
+🇰🇭	застава: Камбоџа	застава|zastava
+🇰🇮	застава: Кирибати	застава|zastava
+🇰🇲	застава: Коморска Острва	застава|zastava
+🇰🇳	застава: Сент Китс и Невис	застава|zastava
+🇰🇵	застава: Северна Кореја	застава|zastava
+🇰🇷	застава: Јужна Кореја	застава|zastava
+🇰🇼	застава: Кувајт	застава|zastava
+🇰🇾	застава: Кајманска Острва	застава|zastava
+🇰🇿	застава: Казахстан	застава|zastava
+🇱🇦	застава: Лаос	застава|zastava
+🇱🇧	застава: Либан	застава|zastava
+🇱🇨	застава: Света Луција	застава|zastava
+🇱🇮	застава: Лихтенштајн	застава|zastava
+🇱🇰	застава: Шри Ланка	застава|zastava
+🇱🇷	застава: Либерија	застава|zastava
+🇱🇸	застава: Лесото	застава|zastava
+🇱🇹	застава: Литванија	застава|zastava
+🇱🇺	застава: Луксембург	застава|zastava
+🇱🇻	застава: Летонија	застава|zastava
+🇱🇾	застава: Либија	застава|zastava
+🇲🇦	застава: Мароко	застава|zastava
+🇲🇨	застава: Монако	застава|zastava
+🇲🇩	застава: Молдавија	застава|zastava
+🇲🇪	застава: Црна Гора	застава|zastava
+🇲🇫	застава: Свети Мартин (Француска)	застава|zastava
+🇲🇬	застава: Мадагаскар	застава|zastava
+🇲🇭	застава: Маршалска Острва	застава|zastava
+🇲🇰	застава: Северна Македонија	застава|zastava
+🇲🇱	застава: Мали	застава|zastava
+🇲🇲	застава: Мијанмар (Бурма)	застава|zastava
+🇲🇳	застава: Монголија	застава|zastava
+🇲🇴	застава: САР Макао (Кина)	застава|zastava
+🇲🇵	застава: Северна Маријанска Острва	застава|zastava
+🇲🇶	застава: Мартиник	застава|zastava
+🇲🇷	застава: Мауританија	застава|zastava
+🇲🇸	застава: Монсерат	застава|zastava
+🇲🇹	застава: Малта	застава|zastava
+🇲🇺	застава: Маурицијус	застава|zastava
+🇲🇻	застава: Малдиви	застава|zastava
+🇲🇼	застава: Малави	застава|zastava
+🇲🇽	застава: Мексико	застава|zastava
+🇲🇾	застава: Малезија	застава|zastava
+🇲🇿	застава: Мозамбик	застава|zastava
+🇳🇦	застава: Намибија	застава|zastava
+🇳🇨	застава: Нова Каледонија	застава|zastava
+🇳🇪	застава: Нигер	застава|zastava
+🇳🇫	застава: Острво Норфок	застава|zastava
+🇳🇬	застава: Нигерија	застава|zastava
+🇳🇮	застава: Никарагва	застава|zastava
+🇳🇱	застава: Холандија	застава|zastava
+🇳🇴	застава: Норвешка	застава|zastava
+🇳🇵	застава: Непал	застава|zastava
+🇳🇷	застава: Науру	застава|zastava
+🇳🇺	застава: Ниуе	застава|zastava
+🇳🇿	застава: Нови Зеланд	застава|zastava
+🇴🇲	застава: Оман	застава|zastava
+🇵🇦	застава: Панама	застава|zastava
+🇵🇪	застава: Перу	застава|zastava
+🇵🇫	застава: Француска Полинезија	застава|zastava
+🇵🇬	застава: Папуа Нова Гвинеја	застава|zastava
+🇵🇭	застава: Филипини	застава|zastava
+🇵🇰	застава: Пакистан	застава|zastava
+🇵🇱	застава: Пољска	застава|zastava
+🇵🇲	застава: Сен Пјер и Микелон	застава|zastava
+🇵🇳	застава: Питкерн	застава|zastava
+🇵🇷	застава: Порторико	застава|zastava
+🇵🇸	застава: Палестинске територије	застава|zastava
+🇵🇹	застава: Португалија	застава|zastava
+🇵🇼	застава: Палау	застава|zastava
+🇵🇾	застава: Парагвај	застава|zastava
+🇶🇦	застава: Катар	застава|zastava
+🇷🇪	застава: Реинион	застава|zastava
+🇷🇴	застава: Румунија	застава|zastava
+🇷🇸	застава: Србија	застава|zastava
+🇷🇺	застава: Русија	застава|zastava
+🇷🇼	застава: Руанда	застава|zastava
+🇸🇦	застава: Саудијска Арабија	застава|zastava
+🇸🇧	застава: Соломонска Острва	застава|zastava
+🇸🇨	застава: Сејшели	застава|zastava
+🇸🇩	застава: Судан	застава|zastava
+🇸🇪	застава: Шведска	застава|zastava
+🇸🇬	застава: Сингапур	застава|zastava
+🇸🇭	застава: Света Јелена	застава|zastava
+🇸🇮	застава: Словенија	застава|zastava
+🇸🇯	застава: Свалбард и Јан Мајен	застава|zastava
+🇸🇰	застава: Словачка	застава|zastava
+🇸🇱	застава: Сијера Леоне	застава|zastava
+🇸🇲	застава: Сан Марино	застава|zastava
+🇸🇳	застава: Сенегал	застава|zastava
+🇸🇴	застава: Сомалија	застава|zastava
+🇸🇷	застава: Суринам	застава|zastava
+🇸🇸	застава: Јужни Судан	застава|zastava
+🇸🇹	застава: Сао Томе и Принципе	застава|zastava
+🇸🇻	застава: Салвадор	застава|zastava
+🇸🇽	застава: Свети Мартин (Холандија)	застава|zastava
+🇸🇾	застава: Сирија	застава|zastava
+🇸🇿	застава: Свазиленд	застава|zastava
+🇹🇦	застава: Тристан да Куња	застава|zastava
+🇹🇨	застава: Острва Туркс и Каикос	застава|zastava
+🇹🇩	застава: Чад	застава|zastava
+🇹🇫	застава: Француске Јужне Територије	застава|zastava
+🇹🇬	застава: Того	застава|zastava
+🇹🇭	застава: Тајланд	застава|zastava
+🇹🇯	застава: Таџикистан	застава|zastava
+🇹🇰	застава: Токелау	застава|zastava
+🇹🇱	застава: Тимор-Лесте (Источни Тимор)	застава|zastava
+🇹🇲	застава: Туркменистан	застава|zastava
+🇹🇳	застава: Тунис	застава|zastava
+🇹🇴	застава: Тонга	застава|zastava
+🇹🇷	застава: Турска	застава|zastava
+🇹🇹	застава: Тринидад и Тобаго	застава|zastava
+🇹🇻	застава: Тувалу	застава|zastava
+🇹🇼	застава: Тајван	застава|zastava
+🇹🇿	застава: Танзанија	застава|zastava
+🇺🇦	застава: Украјина	застава|zastava
+🇺🇬	застава: Уганда	застава|zastava
+🇺🇲	застава: Удаљена острва САД	застава|zastava
+🇺🇳	застава: Уједињене нације	застава|zastava
+🇺🇸	застава: Сједињене Државе	застава|zastava
+🇺🇾	застава: Уругвај	застава|zastava
+🇺🇿	застава: Узбекистан	застава|zastava
+🇻🇦	застава: Ватикан	застава|zastava
+🇻🇨	застава: Сент Винсент и Гренадини	застава|zastava
+🇻🇪	застава: Венецуела	застава|zastava
+🇻🇬	застава: Британска Девичанска Острва	застава|zastava
+🇻🇮	застава: Америчка Девичанска Острва	застава|zastava
+🇻🇳	застава: Вијетнам	застава|zastava
+🇻🇺	застава: Вануату	застава|zastava
+🇼🇫	застава: Валис и Футуна	застава|zastava
+🇼🇸	застава: Самоа	застава|zastava
+🇽🇰	застава: Косово	застава|zastava
+🇾🇪	застава: Јемен	застава|zastava
+🇾🇹	застава: Мајот	застава|zastava
+🇿🇦	застава: Јужноафричка Република	застава|zastava
+🇿🇲	застава: Замбија	застава|zastava
+🇿🇼	застава: Зимбабве	застава|zastava
+🏴󠁧󠁢󠁥󠁮󠁧󠁿	застава: Енглеска	застава|zastava
+🏴󠁧󠁢󠁳󠁣󠁴󠁿	застава: Шкотска	застава|zastava
+🏴󠁧󠁢󠁷󠁬󠁳󠁿	застава: Велс	застава|zastava
