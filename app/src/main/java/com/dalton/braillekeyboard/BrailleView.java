@@ -355,6 +355,11 @@ public class BrailleView extends View {
         if (BuildConfig.DEBUG) {
             logTouchLatency(motionEvent);
         }
+        if ((action == MotionEvent.ACTION_UP
+                || action == MotionEvent.ACTION_CANCEL)
+                && TouchPassthroughService.isRunning()) {
+            TouchPassthroughService.reassertAfterTouch();
+        }
         int id = motionEvent.getPointerId(index);
         int x = (int) motionEvent.getX(index);
         int y = (int) motionEvent.getY(index);

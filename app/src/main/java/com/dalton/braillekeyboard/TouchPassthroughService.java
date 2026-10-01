@@ -17,16 +17,20 @@
 package com.dalton.braillekeyboard;
 
 import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.graphics.Region;
 import android.os.Build;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+
+import java.util.List;
 
 /**
  * Lets the Braille keyboard receive raw multi-touch input while a screen
@@ -50,22 +54,41 @@ import android.view.accessibility.AccessibilityManager;
  * themselves or restart touch exploration at runtime. So while the keyboard is
  * shown the region is set again when touch exploration or the enabled
  * services change, and when the keyboard receives an explore by touch hover
- * event, which shows the region was lost.
+ * event, which shows the region was lost. Jieshuo replaces it after every
+ * touch the keyboard handles, so while Jieshuo is on it is also set again
+ * many times after each touch.
  */
 public class TouchPassthroughService extends AccessibilityService {
     private static final String TAG = "TouchPassthrough";
+    // Jieshuo's packages, such as com.nirenr.talkman.
+    private static final String JIESHUO_PACKAGE_PREFIX = "com.nirenr.";
     // Touch exploration restarts asynchronously, so set the region again a
     // little later too.
     private static final long REASSERT_DELAY_MS = 300;
+    // Jieshuo replaces the region at some point in the first few dozen
+    // milliseconds after each touch ends, and sometimes again seconds later,
+    // so while it is on the region is set again at these times after each
+    // touch ends. Fast typists start the next touch 50 to 150 ms after
+    // lifting their fingers, hence every 5 ms at first.
+    private static final long[] AFTER_TOUCH_DELAYS_MS = { 5, 10, 15, 20, 25,
+            30, 35, 40, 45, 50, 60, 70, 80, 100, 150, 250, 400, 700, 1000,
+            1500, 2500, 4000 };
 
     private static final Handler mainHandler = new Handler(
             Looper.getMainLooper());
+    // Setting a region blocks for a millisecond or more, and with Jieshuo it
+    // is set many times after each touch, so it is done off the keyboard's
+    // main thread.
+    private static Handler regionHandler;
 
     // All static state is only touched on the main thread.
     private static TouchPassthroughService instance;
     // The region the keyboard wants, applied when the service connects.
     private static int pendingDisplayId = -1;
     private static Rect pendingBounds;
+    // Whether the Jieshuo screen reader is on, updated when the enabled
+    // services change.
+    private static boolean jieshuoOn;
     // The region currently applied to the system.
     private static int appliedDisplayId = -1;
     private static Rect appliedBounds;
@@ -77,10 +100,24 @@ public class TouchPassthroughService extends AccessibilityService {
         }
     };
 
+    private static int afterTouchStep;
+    private static final Runnable afterTouchRunnable = new Runnable() {
+        @Override
+        public void run() {
+            reassert();
+            if (++afterTouchStep < AFTER_TOUCH_DELAYS_MS.length) {
+                mainHandler.postDelayed(this,
+                        AFTER_TOUCH_DELAYS_MS[afterTouchStep]
+                                - AFTER_TOUCH_DELAYS_MS[afterTouchStep - 1]);
+            }
+        }
+    };
+
     private AccessibilityManager accessibilityManager;
     private final AccessibilityManager.TouchExplorationStateChangeListener touchExplorationListener = new AccessibilityManager.TouchExplorationStateChangeListener() {
         @Override
         public void onTouchExplorationStateChanged(boolean enabled) {
+            updateJieshuoOn();
             reassertSoon();
         }
     };
@@ -126,6 +163,7 @@ public class TouchPassthroughService extends AccessibilityService {
                 pendingDisplayId = -1;
                 pendingBounds = null;
                 mainHandler.removeCallbacks(reassertRunnable);
+                mainHandler.removeCallbacks(afterTouchRunnable);
                 apply();
             }
         });
@@ -147,6 +185,26 @@ public class TouchPassthroughService extends AccessibilityService {
         });
     }
 
+    /**
+     * Call when the keyboard handled a touch. While Jieshuo is on, sets the
+     * keyboard's region again several times over the next moments. Does
+     * nothing otherwise, or when the keyboard isn't shown.
+     */
+    public static void reassertAfterTouch() {
+        if (!jieshuoOn) {
+            return;
+        }
+        runOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                mainHandler.removeCallbacks(afterTouchRunnable);
+                afterTouchStep = 0;
+                mainHandler.postDelayed(afterTouchRunnable,
+                        AFTER_TOUCH_DELAYS_MS[0]);
+            }
+        });
+    }
+
     private static void reassert() {
         TouchPassthroughService service = instance;
         if (service != null && pendingDisplayId != -1) {
@@ -164,6 +222,27 @@ public class TouchPassthroughService extends AccessibilityService {
         appliedBounds = null;
         apply();
         registerListeners();
+        updateJieshuoOn();
+    }
+
+    private void updateJieshuoOn() {
+        boolean on = false;
+        if (accessibilityManager != null) {
+            List<AccessibilityServiceInfo> services = accessibilityManager
+                    .getEnabledAccessibilityServiceList(
+                            AccessibilityServiceInfo.FEEDBACK_ALL_MASK);
+            for (AccessibilityServiceInfo service : services) {
+                String id = service.getId();
+                if (id != null && id.startsWith(JIESHUO_PACKAGE_PREFIX)) {
+                    on = true;
+                    break;
+                }
+            }
+        }
+        if (BuildConfig.DEBUG && on != jieshuoOn) {
+            Log.d(TAG, "Jieshuo on: " + on);
+        }
+        jieshuoOn = on;
     }
 
     @TargetApi(Build.VERSION_CODES.TIRAMISU)
@@ -176,6 +255,7 @@ public class TouchPassthroughService extends AccessibilityService {
                 @Override
                 public void onAccessibilityServicesStateChanged(
                         AccessibilityManager manager) {
+                    updateJieshuoOn();
                     reassertSoon();
                 }
             };
@@ -257,14 +337,29 @@ public class TouchPassthroughService extends AccessibilityService {
         appliedBounds = pendingBounds;
     }
 
-    // Sets both passthrough regions on the display. A null or empty bounds
-    // clears them.
-    @TargetApi(Build.VERSION_CODES.R)
-    private void setRegion(int displayId, Rect bounds) {
+    // Sets both passthrough regions on the display, in order on a background
+    // thread. A null or empty bounds clears them.
+    private void setRegion(final int displayId, Rect bounds) {
         if (!isSupported() || displayId == -1) {
             return;
         }
-        Region region = bounds != null ? new Region(bounds) : new Region();
+        final Region region = bounds != null ? new Region(bounds)
+                : new Region();
+        if (regionHandler == null) {
+            HandlerThread thread = new HandlerThread(TAG);
+            thread.start();
+            regionHandler = new Handler(thread.getLooper());
+        }
+        regionHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                applyRegion(displayId, region);
+            }
+        });
+    }
+
+    @TargetApi(Build.VERSION_CODES.R)
+    private void applyRegion(int displayId, Region region) {
         try {
             // Touches starting in the region skip the touch explorer...
             setTouchExplorationPassthroughRegion(displayId, region);
