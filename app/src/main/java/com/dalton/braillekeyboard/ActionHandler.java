@@ -59,6 +59,10 @@ public class ActionHandler {
     // The maximum time between two identical swipe patterns which constitutes a
     // double swipe.
     private static final long DOUBLE_TOUCH_THRESHOLD = 1300;
+    // Deleting a word twice within this time deletes all text. Shorter than
+    // DOUBLE_TOUCH_THRESHOLD, since deleting words one after another is
+    // common and shouldn't clear the text.
+    private static final long CLEAR_TEXT_THRESHOLD = 500;
 
     /**
      * Listener for handling the results of requests to the input methods. You
@@ -258,6 +262,7 @@ public class ActionHandler {
     // Index into MenuItem.values() while the spoken menu is open, else -1.
     private int menuPosition = -1;
     private long lastTouchTime = 0; // Time screen was last touched.
+    private long lastWordDeleteTime = 0; // Time of the last TalkBack delete word.
     private Swipe lastSwipe = Swipe.NONE; // Type of last gesture.
     private KeyboardListener listener;
     private OnActionListener callback;
@@ -709,7 +714,14 @@ public class ActionHandler {
             addNewline(context);
             break;
         case DELETE_WORD:
-            backspace(context, Granularity.WORD, false);
+            long now = System.currentTimeMillis();
+            if (now - lastWordDeleteTime < CLEAR_TEXT_THRESHOLD) {
+                lastWordDeleteTime = 0;
+                backspace(context, Granularity.ALL, true);
+            } else {
+                lastWordDeleteTime = now;
+                backspace(context, Granularity.WORD, false);
+            }
             break;
         case HELP_AND_OTHER_ACTIONS:
             openMenu(context);
