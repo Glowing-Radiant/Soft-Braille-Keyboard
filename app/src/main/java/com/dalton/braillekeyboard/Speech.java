@@ -378,9 +378,13 @@ public class Speech {
 
     // Whether to speak with the user's screen reader, such as TalkBack or
     // Jieshuo, instead of the keyboard's own text to speech. Speech follows
-    // the screen reader being turned on or off within a second.
+    // the screen reader being turned on or off within a second. A screen
+    // reader that turned explore by touch off while the keyboard is shown,
+    // as Jieshuo can, also stops speaking, so then the keyboard speaks
+    // itself.
     private boolean speaksThroughScreenReader() {
         if (accessibilityManager == null || !accessibilityManager.isEnabled()
+                || !accessibilityManager.isTouchExplorationEnabled()
                 || !Options.getBooleanPreference(context,
                         R.string.pref_speak_through_screen_reader_key,
                         Boolean.parseBoolean(context.getString(
