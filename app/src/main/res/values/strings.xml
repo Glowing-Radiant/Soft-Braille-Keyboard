@@ -371,6 +371,10 @@
     <string name="nothing_to_undo">Nothing to undo</string>
 
     <!-- Offer to switch to another keyboard when no screen reader is on. [CHAR LIMIT="NONE"] -->
+    <string name="pref_force_orientation_lock_key" translatable="false">FORCE_ORIENTATION_LOCK</string>
+    <string name="pref_force_orientation_lock_default" translatable="false">false</string>
+    <string name="pref_force_orientation_lock_title">Force orientation lock</string>
+    <string name="pref_force_orientation_lock_summary">Keep the dots fixed to the phone whichever way the screen turns, for example when the screen flips while the phone lies flat. The keyboard is laid out as if the phone is in landscape with its top on the left; use Invert keyboard for the other way. Overrides Rotate keyboard with device.</string>
     <string name="pref_offer_switch_keyboard_key" translatable="false">OFFER_SWITCH_KEYBOARD</string>
     <string name="pref_offer_switch_keyboard_default" translatable="false">false</string>
     <string name="pref_offer_switch_keyboard_title">Offer another keyboard without a screen reader</string>

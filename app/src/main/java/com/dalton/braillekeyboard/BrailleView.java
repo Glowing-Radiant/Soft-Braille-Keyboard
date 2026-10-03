@@ -26,6 +26,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -33,8 +34,10 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
+import android.view.Surface;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 
@@ -80,6 +83,8 @@ public class BrailleView extends View {
     private final Paint circlePaint;
     private final Paint paint;
     private final Rect circleTextBounds = new Rect();
+    private final Point displaySize = new Point();
+    private final int[] point = new int[2];
     private final Vibrator vibrator;
     private final SoundThemes sounds;
     private final ActionHandler.OnActionListener actionListener = new ActionHandler.OnActionListener() {
@@ -191,6 +196,7 @@ public class BrailleView extends View {
         }
 
         if (displayParams != null) {
+            setDisplayParams(getWidth(), getHeight());
             loadDefaultPad(getWidth(), getHeight());
             invalidate();
             requestLayout();
@@ -250,10 +256,11 @@ public class BrailleView extends View {
             // For each dot draw a circle on the screen at it's position and
             // write the corresponding dot number in the circle.
             for (int i = 0; i < keys.size(); i++) {
-                int x = displayParams.autoRotate || getWidth() >= getHeight() ? keys
-                        .get(i).x : keys.get(i).y;
-                int y = displayParams.autoRotate || getWidth() >= getHeight() ? keys
-                        .get(i).y : keys.get(i).x;
+                point[0] = keys.get(i).x;
+                point[1] = keys.get(i).y;
+                toView(point);
+                int x = point[0];
+                int y = point[1];
                 String text = String.valueOf(i + 1);
                 paint.getTextBounds(text, 0, text.length(), circleTextBounds);
                 canvas.drawCircle(x, y, displayParams.radius, circlePaint);
@@ -339,17 +346,17 @@ public class BrailleView extends View {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         super.onTouchEvent(motionEvent);
         // Get the height and width of the keyboard.
-        // If autoRotate is enabled then the standard dimenssions are correct.
-        // If autoRotate is disabled the width is the maximum of the height and
-        // the width and the height is the minimum of the two.
+        // If the keyboard follows the screen the standard dimensions are
+        // correct. Otherwise the width is the maximum of the height and the
+        // width and the height is the minimum of the two.
         // This is because the user holds the phone in landscape mode, but the
-        // screen might be fixed to portrate mode. It makes more sense to use
+        // screen might be fixed to portrait mode. It makes more sense to use
         // the keyboard in landscape mode and the user doesn't care about
         // orientation of the screen.
-        int width = displayParams.autoRotate ? getWidth() : Math.max(
-                getWidth(), getHeight());
-        int height = displayParams.autoRotate ? getHeight() : Math.min(
-                getWidth(), getHeight());
+        int width = followsScreen() ? getWidth() : Math.max(getWidth(),
+                getHeight());
+        int height = followsScreen() ? getHeight() : Math.min(getWidth(),
+                getHeight());
         int action = motionEvent.getActionMasked();
         int index = motionEvent.getActionIndex();
         if (BuildConfig.DEBUG) {
@@ -361,14 +368,13 @@ public class BrailleView extends View {
             TouchPassthroughService.reassertAfterTouch();
         }
         int id = motionEvent.getPointerId(index);
-        int x = (int) motionEvent.getX(index);
-        int y = (int) motionEvent.getY(index);
-
-        // Swap x and y if the view is being used perpendicular to it's intended
-        // purpose see above.
-        int tempX = x;
-        x = displayParams.autoRotate || getWidth() >= getHeight() ? x : y;
-        y = displayParams.autoRotate || getWidth() >= getHeight() ? y : tempX;
+        point[0] = (int) motionEvent.getX(index);
+        point[1] = (int) motionEvent.getY(index);
+        // The view may be used perpendicular to its intended purpose, see
+        // above, or locked to the device.
+        toKeyboard(point);
+        int x = point[0];
+        int y = point[1];
         Swipe swipe;
         switch (action) {
         case MotionEvent.ACTION_DOWN:
@@ -412,8 +418,7 @@ public class BrailleView extends View {
                     if (!handledSwipe) {
                         // single finger flicks
                         if ((swipe = handledSwipeAction(dotsDown,
-                                getHeight() > getWidth()
-                                        && !displayParams.autoRotate)) != Swipe.NONE) {
+                                isPortraitLayout())) != Swipe.NONE) {
                             actionHandler.handleSwipe(getContext(), swipe);
                         } else { // all swipe attempts failed so resort to
                             // entering character
@@ -426,8 +431,7 @@ public class BrailleView extends View {
             resetDots();
 
             if (pad != null) {
-                pad.updateKeys(!displayParams.autoRotate
-                        && getHeight() > getWidth());
+                pad.updateKeys(isPortraitLayout());
             }
 
             if (Options.getBooleanPreference(
@@ -446,15 +450,11 @@ public class BrailleView extends View {
             int pointerCount = motionEvent.getPointerCount();
             for (int i = 0; i < pointerCount; i++) {
                 int pointerId = motionEvent.getPointerId(i);
-                int pointerX = (int) motionEvent.getX(i);
-                int pointerY = (int) motionEvent.getY(i);
-                
+                point[0] = (int) motionEvent.getX(i);
+                point[1] = (int) motionEvent.getY(i);
                 // Apply same coordinate transformation as for ACTION_DOWN
-                int tempPointerX = pointerX;
-                pointerX = displayParams.autoRotate || getWidth() >= getHeight() ? pointerX : pointerY;
-                pointerY = displayParams.autoRotate || getWidth() >= getHeight() ? pointerY : tempPointerX;
-                
-                updatePointer(dotsDown, pointerId, pointerX, pointerY, false);
+                toKeyboard(point);
+                updatePointer(dotsDown, pointerId, point[0], point[1], false);
             }
             break;
         case MotionEvent.ACTION_CANCEL:
@@ -476,15 +476,15 @@ public class BrailleView extends View {
             if (getGestureStyle() == GestureStyle.TALKBACK) {
                 // TalkBack gestures are recognised once all fingers lift, so
                 // just remember where this finger left the screen.
-                if (!setPad(id, width, height, displayParams.autoRotate)) {
+                if (!setPad(id, width, height)) {
                     updatePointer(dotsDown, id, x, y, false);
                 }
-            } else if (!setPad(id, width, height, displayParams.autoRotate)) {
+            } else if (!setPad(id, width, height)) {
                 updatePointer(dotsDown, id, x, y, false);
                 setDots();
                 if (isClassicHoldSwipeNow()
                         && (swipe = handledSwipeAction(dotsDown,
-                        getHeight() > getWidth() && !displayParams.autoRotate)) != Swipe.NONE) {
+                        isPortraitLayout())) != Swipe.NONE) {
                     // Hold one finger while swiping with another
                     handledSwipe = true;
                     actionHandler.handleSwipe(getContext(), swipe);
@@ -535,8 +535,8 @@ public class BrailleView extends View {
     }
 
     private void loadDefaultPad(int w, int h) {
-        int width = displayParams.autoRotate ? w : Math.max(w, h);
-        int height = displayParams.autoRotate ? h : Math.min(w, h);
+        int width = followsScreen() ? w : Math.max(w, h);
+        int height = followsScreen() ? h : Math.min(w, h);
         if (!setDefaultPad(w, h, width, height)) {
             speech.speak(getContext(),
                     getContext().getString(R.string.keyboard_error),
@@ -544,7 +544,7 @@ public class BrailleView extends View {
         }
     }
 
-    private boolean setPad(int id, int width, int height, boolean autoRotate) {
+    private boolean setPad(int id, int width, int height) {
         final int TOTAL_DOTS = 6;
         final int ONE_SIDE = 3;
         // For whatever reason we won't be able to set a pad
@@ -614,8 +614,8 @@ public class BrailleView extends View {
                         R.string.pref_use_eight_dots_default)));
         try {
             pad = PadUtilities
-                    .displayDefaultPad(getContext(), padWidth, padHeight, h > w
-                            && !displayParams.autoRotate, useEightDots);
+                    .displayDefaultPad(getContext(), padWidth, padHeight,
+                            isPortraitLayout(h > w), useEightDots);
             return true;
         } catch (IllegalArgumentException e) {
             // handled below
@@ -633,13 +633,96 @@ public class BrailleView extends View {
                         R.string.pref_use_eight_dots_default)));
         try {
             pad = PadUtilities.selectPad(getContext(), dots, width, height,
-                    !displayParams.autoRotate && getHeight() > getWidth(),
-                    useEightDots);
+                    isPortraitLayout(), useEightDots);
             return true;
         } catch (IllegalArgumentException e) {
             // handled below
         }
         return false;
+    }
+
+    // Whether the keyboard turns with the screen.
+    private boolean followsScreen() {
+        return displayParams.autoRotate && !displayParams.forceLock;
+    }
+
+    // Whether a portrait screen is used as a landscape keyboard by swapping
+    // the axes, which pads lay out and read swipes for differently.
+    private boolean isPortraitLayout() {
+        return isPortraitLayout(getHeight() > getWidth());
+    }
+
+    private boolean isPortraitLayout(boolean portraitScreen) {
+        return portraitScreen && !displayParams.autoRotate
+                && !displayParams.forceLock;
+    }
+
+    // Maps a point on the view to the keyboard.
+    private void toKeyboard(int[] p) {
+        if (displayParams.forceLock) {
+            mapLocked(p, false);
+        } else if (isPortraitLayout()) {
+            swap(p);
+        }
+    }
+
+    // Maps a point on the keyboard to the view.
+    private void toView(int[] p) {
+        if (displayParams.forceLock) {
+            mapLocked(p, true);
+        } else if (isPortraitLayout()) {
+            swap(p);
+        }
+    }
+
+    private static void swap(int[] p) {
+        int x = p[0];
+        p[0] = p[1];
+        p[1] = x;
+    }
+
+    // With the orientation lock forced the keyboard is fixed to the device:
+    // it is laid out as on a landscape screen with the top of the device on
+    // the left, whichever way the screen has turned. Maps between that and
+    // the view.
+    private void mapLocked(int[] p, boolean toView) {
+        int w = getWidth();
+        int h = getHeight();
+        int x = p[0];
+        int y = p[1];
+        switch (getLockRotation()) {
+        case Surface.ROTATION_0:
+            p[0] = toView ? w - y : y;
+            p[1] = toView ? x : w - x;
+            break;
+        case Surface.ROTATION_180:
+            p[0] = toView ? y : h - y;
+            p[1] = toView ? h - x : x;
+            break;
+        case Surface.ROTATION_270:
+            p[0] = w - x;
+            p[1] = h - y;
+            break;
+        default: // ROTATION_90 is the keyboard's own layout.
+        }
+    }
+
+    // The screen's rotation from the device's portrait orientation. Tablets
+    // are naturally landscape, so their rotation is counted from a quarter
+    // turn earlier.
+    private int getLockRotation() {
+        Display display = getDisplay();
+        if (display == null) {
+            return getWidth() >= getHeight() ? Surface.ROTATION_90
+                    : Surface.ROTATION_0;
+        }
+        int rotation = display.getRotation();
+        display.getRealSize(displaySize);
+        boolean sideways = rotation == Surface.ROTATION_90
+                || rotation == Surface.ROTATION_270;
+        boolean naturallyLandscape = sideways ? displaySize.y > displaySize.x
+                : displaySize.x > displaySize.y;
+        return naturallyLandscape ? (rotation + 1) % 4 : rotation;
     }
 
     private List<Coords> getKeys() {
@@ -800,8 +883,7 @@ public class BrailleView extends View {
     }
 
     private byte[] getDotDirections() {
-        return pad.getDotDirections(dotsDown, getHeight() > getWidth()
-                && !displayParams.autoRotate);
+        return pad.getDotDirections(dotsDown, isPortraitLayout());
     }
 
     // Whether a finger lifting now completes a classic "hold a dot and swipe
@@ -835,8 +917,7 @@ public class BrailleView extends View {
             actionHandler.handleTalkBackAction(getContext(), action,
                     directions);
         } else {
-            Swipe swipe = handledSwipeAction(dotsDown, getHeight() > getWidth()
-                    && !displayParams.autoRotate);
+            Swipe swipe = handledSwipeAction(dotsDown, isPortraitLayout());
             if (swipe != Swipe.NONE) {
                 actionHandler.handleSwipe(getContext(), swipe);
             } else {
@@ -896,8 +977,13 @@ public class BrailleView extends View {
                 R.string.pref_auto_rotate_keyboard_key,
                 Boolean.parseBoolean(getContext().getString(
                         R.string.pref_auto_rotate_keyboard_default)));
+        boolean forceLock = Options.getBooleanPreference(
+                getContext(),
+                R.string.pref_force_orientation_lock_key,
+                Boolean.parseBoolean(getContext().getString(
+                        R.string.pref_force_orientation_lock_default)));
         displayParams = new DisplayParams(strokeWidth, textSize, radius,
-                autoRotate);
+                autoRotate, forceLock);
         paint.setColor(getContext().getResources().getColor(
                 android.R.color.black));
         paint.setTextSize(displayParams.textSize);
@@ -934,16 +1020,20 @@ public class BrailleView extends View {
         public final int textSize;
         public final int radius;
         public final boolean autoRotate;
+        // The keyboard stays fixed to the device whichever way the screen
+        // turns, overriding autoRotate.
+        public final boolean forceLock;
 
         public float x;
         public float y;
 
         public DisplayParams(int strokeWidth, int textSize, int radius,
-                boolean autoRotate) {
+                boolean autoRotate, boolean forceLock) {
             this.strokeWidth = strokeWidth;
             this.textSize = textSize;
             this.radius = radius;
             this.autoRotate = autoRotate;
+            this.forceLock = forceLock;
         }
     }
 }

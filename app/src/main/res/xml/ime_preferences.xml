@@ -67,6 +67,11 @@
          android:summary="@string/pref_keyboard_invert_summary"
          android:defaultValue="@string/pref_keyboard_invert_default" />
          <CheckBoxPreference
+         android:key="@string/pref_force_orientation_lock_key"
+         android:title="@string/pref_force_orientation_lock_title"
+         android:summary="@string/pref_force_orientation_lock_summary"
+         android:defaultValue="@string/pref_force_orientation_lock_default" />
+         <CheckBoxPreference
          android:key="@string/pref_use_eight_dots_key"
          android:title="@string/pref_use_eight_dots_title"
          android:summary="@string/pref_use_eight_dots_summary"
