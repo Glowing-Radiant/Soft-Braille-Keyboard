@@ -1441,13 +1441,21 @@ public class ActionHandler {
         return word == null ? null : word.word.substring(0, word.charsBefore);
     }
 
-    // Echoes the word that a space or new line finished, or the character.
+    // Echoes the word that a space or new line finished. Character echo
+    // names the space or new line instead, as does word echo when there is
+    // no word before it.
     private void announceTyped(Context context, String word, String charName) {
-        String message;
-        if ((message = echoWord(context, word)) == null) {
+        boolean hasWord = word != null && word.trim().length() > 0;
+        String message = hasWord ? echoWord(context, word) : null;
+        if (message == null) {
             message = echoCharacter(context, charName);
         }
-        callback.onText("%s", message, listener.isPasswordField());
+        if (message == null && !hasWord) {
+            message = echoWord(context, charName);
+        }
+        if (message != null) {
+            callback.onText("%s", message, listener.isPasswordField());
+        }
     }
 
     private void echoMisspelling(Context context) {
