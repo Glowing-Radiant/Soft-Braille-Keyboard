@@ -154,6 +154,9 @@ public class BrailleParser {
     private final List<String> tableIds;
 
     private BrailleTranslator translator;
+    // The grade 1 table of a contracted table's language, to echo typed cells.
+    private BrailleTranslator uncontractedTranslator;
+    private boolean contracted;
     private List<TableInfo> tables;
     private int status = STATUS_PREPARING;
 
@@ -371,6 +374,34 @@ public class BrailleParser {
      *         possible.
      */
     public String backTranslate(Context context, Byte[] cellBytes) {
+        return status == STATUS_OK ? backTranslate(translator, cellBytes)
+                : null;
+    }
+
+    /**
+     * Whether the active table contracts words, so a cell's meaning depends
+     * on the cells typed after it.
+     */
+    public boolean isContracted() {
+        return status == STATUS_OK && contracted;
+    }
+
+    /**
+     * Back translate cells with the uncontracted table of the active
+     * contracted table's language, to tell the user what each cell is while
+     * the word is incomplete.
+     *
+     * @return The back translation or null if there is no such table.
+     */
+    public String backTranslateUncontracted(Byte[] cellBytes) {
+        if (status != STATUS_OK || uncontractedTranslator == null) {
+            return null;
+        }
+        return backTranslate(uncontractedTranslator, cellBytes);
+    }
+
+    private String backTranslate(BrailleTranslator translator,
+            Byte[] cellBytes) {
         // Convert from a Byte[] to a byte[]O
         byte[] cells = new byte[cellBytes.length + 2];
         // Pad the cells so that we have spaces on each size. This makes the
@@ -385,10 +416,9 @@ public class BrailleParser {
             }
         }
 
-        String text = null;
-        if (status == STATUS_OK) {
-            text = translator.backTranslate(cells);
-            text = handleUnknownPatterns(context, text, cells);
+        String text = translator.backTranslate(cells);
+        if (text != null) {
+            text = handleUnknownPatterns(text, cells);
         }
         return text != null ? text.trim() : text;
     }
@@ -413,9 +443,35 @@ public class BrailleParser {
                 && (status == STATUS_OK || status == STATUS_TABLE_ERROR)) {
             translator = client.getTranslator(table);
             status = translator == null ? STATUS_TABLE_ERROR : STATUS_OK;
+            contracted = !table.isEightDot() && table.getGrade() >= 2;
+            TableInfo uncontracted = contracted ? findUncontractedTable(table)
+                    : null;
+            uncontractedTranslator = uncontracted != null ? client
+                    .getTranslator(uncontracted) : null;
             return true;
         }
         return false;
+    }
+
+    // Finds the grade 1 table for the language of a contracted table,
+    // preferring the same country.
+    private TableInfo findUncontractedTable(TableInfo contractedTable) {
+        Locale locale = contractedTable.getLocale();
+        TableInfo best = null;
+        for (TableInfo table : tables) {
+            if (table.isEightDot() || table.getGrade() != 1
+                    || !table.getLocale().getLanguage()
+                            .equals(locale.getLanguage())) {
+                continue;
+            }
+            if (table.getLocale().equals(locale)) {
+                return table;
+            }
+            if (best == null) {
+                best = table;
+            }
+        }
+        return best;
     }
 
     // Checks if a given Braille table matches the given BrailleType filter.
@@ -501,8 +557,7 @@ public class BrailleParser {
     // The BrailleTranslator can populate the output string with garbage for
     // unknown Braille patterns. Remove these from the string.
     // These are of the form \dotpattern/ eg. \12/ if dots 12 is unknown.
-    private String handleUnknownPatterns(Context context, String text,
-            byte[] cells) {
+    private static String handleUnknownPatterns(String text, byte[] cells) {
         for (byte cell : cells) {
             String value = "\\" + computeCellValue(cell) + "/";
             if (text.contains(value)) {

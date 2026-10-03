@@ -61,6 +61,11 @@ import com.googlecode.eyesfree.braille.translate.TableInfo;
 public class BrailleIME extends InputMethodService implements KeyboardListener {
     private final List<Byte> cells = new ArrayList<Byte>();
     private final StringBuilder composingText = new StringBuilder();
+    // With a contracted table the cells of a word are held back until the
+    // word ends, since each new cell can change what the earlier ones mean.
+    private boolean holdingCells = false;
+    // The uncontracted reading of the held cells, echoed as they are typed.
+    private String heldEcho = "";
 
     private BrailleParser brailleParser;
     private BrailleView brailleView = null;
@@ -510,6 +515,12 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     @Override
     public String handleTypedCharacter(byte dots) {
         if (brailleParser != null) {
+            if (cells.isEmpty()) {
+                holdingCells = brailleParser.isContracted();
+            }
+            if (holdingCells) {
+                return holdCharacter(dots);
+            }
             String oldText = composingText.toString();
             setCells(dots);
             String text = brailleParser.backTranslate(this,
@@ -527,8 +538,96 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         return null;
     }
 
+    // Holds a cell of a contracted word and returns the change to the word's
+    // uncontracted reading, so the user hears letters rather than
+    // contractions that change as the word goes on.
+    private String holdCharacter(byte dots) {
+        setCells(dots);
+        Byte[] typed = cells.toArray(new Byte[cells.size()]);
+        String text = brailleParser.backTranslate(this, typed);
+        if (text == null) {
+            cells.remove(cells.size() - 1);
+            return null;
+        }
+        String echo = brailleParser.backTranslateUncontracted(typed);
+        if (echo == null) {
+            echo = text;
+        }
+        String change = describeCell(stringDifference(heldEcho, echo), dots);
+        heldEcho = echo;
+        return change;
+    }
+
+    // Uncontracted braille has no reading for cells that only stand for a
+    // contraction, like "the", so those are said as the contraction alone.
+    private String describeCell(String uncontracted, byte cell) {
+        if (isPlainText(uncontracted)) {
+            return uncontracted;
+        }
+        String alone = brailleParser.backTranslate(this, new Byte[] { cell });
+        return alone != null && alone.length() > 0 ? alone : uncontracted;
+    }
+
+    private static boolean isPlainText(String text) {
+        if (text.length() == 0) {
+            return false;
+        }
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (!Character.isLetterOrDigit(c)
+                    && (c >= 128 || Character.isISOControl(c))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String deleteHeldCell() {
+        if (!holdingCells || cells.size() <= 1) {
+            return null;
+        }
+        byte cell = cells.remove(cells.size() - 1);
+        String echo = "";
+        if (cells.size() > 1 && brailleParser != null) {
+            Byte[] typed = cells.toArray(new Byte[cells.size()]);
+            echo = brailleParser.backTranslateUncontracted(typed);
+            if (echo == null) {
+                echo = brailleParser.backTranslate(this, typed);
+            }
+            echo = echo == null ? "" : echo;
+        }
+        String deleted = describeCell(stringDifference(echo, heldEcho), cell);
+        heldEcho = echo;
+        return deleted;
+    }
+
+    // Writes the word made of the held cells to the editor.
+    private void commitHeldCells(InputConnection ic) {
+        String text = brailleParser == null ? null : brailleParser
+                .backTranslate(this, cells.toArray(new Byte[cells.size()]));
+        if (text == null || text.length() == 0) {
+            return;
+        }
+        if (selectAll) {
+            toggleMark();
+            selectAll = false;
+        }
+        updateShiftState();
+        text = capitalise(text).toString();
+        if (predictionOn) {
+            ic.commitText(text, 1);
+        } else {
+            // One character at a time, as compose() does.
+            for (int i = 0; i < text.length(); i++) {
+                ic.commitText(text.subSequence(i, i + 1), 1);
+            }
+        }
+    }
+
     @Override
     public int switchBrailleType() {
+        finishComposingText();
         if (brailleParser != null) {
             return brailleParser.switchBrailleType(this).dots;
         }
@@ -537,6 +636,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
 
     @Override
     public String switchTable() {
+        finishComposingText();
         if (brailleParser != null) {
             return brailleParser.switchTable(this);
         }
@@ -769,6 +869,11 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
 
     private void finishComposingText(boolean commit) {
         InputConnection ic = getCurrentInputConnection();
+        // Held cells aren't in the text yet, so they're written even when
+        // composing text is left as it is.
+        if (holdingCells && cells.size() > 1 && ic != null) {
+            commitHeldCells(ic);
+        }
         if (composingText.length() > 0) {
             if (predictionOn && commit) {
                 ic.commitText(composingText, 1);
@@ -776,6 +881,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             composingText.setLength(0);
         }
         cells.clear();
+        heldEcho = "";
     }
 
     private void setCells(byte dots) {

@@ -1258,6 +1258,19 @@ public class ActionHandler {
             boolean fastDoubleTouch) {
         EditingUtilities.Word word = null;
         boolean canDelete = true;
+        if (granularity == Granularity.CHARACTER) {
+            // A contracted word still being typed isn't in the text yet.
+            String cell = listener.deleteHeldCell();
+            if (cell != null) {
+                if (cell.trim().length() > 0) {
+                    callback.onText(context.getString(R.string.deleted), cell,
+                            listener.isPasswordField());
+                } else {
+                    speak(context.getString(R.string.cell_deleted));
+                }
+                return true;
+            }
+        }
         if ((granularity == Granularity.CHARACTER
                 || granularity == Granularity.WORD)
                 && deleteSelectedText(context)) {

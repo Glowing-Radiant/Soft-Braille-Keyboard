@@ -79,6 +79,16 @@ public interface KeyboardListener {
     String handleTypedCharacter(byte dots);
 
     /**
+     * Deletes the last Braille cell of a contracted word that is being typed.
+     * Such words are only written to the text once they end, so deleting
+     * from the text would miss them.
+     * 
+     * @return The text the deleted cell stood for, which may be empty, or
+     *         null if no cells are held.
+     */
+    String deleteHeldCell();
+
+    /**
      * Determine if the active input session pertains to a password typed field.
      * 
      * @return true if it's a password field otherwise false.

@@ -115,6 +115,7 @@
     <string name="no_rotate_keyboard">Don\'t rotate keyboard</string>
     <string name="no_suggestions">No suggestions available</string>
     <string name="nothing_to_delete">Nothing to delete</string>
+    <string name="cell_deleted">Cell deleted</string>
     <string name="pad_horizontal">Set keyboard to horizontal layout</string>
     <string name="pad_vertical">Set keyboard to vertical layout</string>
     <string name="pasted">Pasted</string>
