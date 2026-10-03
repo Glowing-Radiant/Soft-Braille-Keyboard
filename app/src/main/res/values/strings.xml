@@ -388,11 +388,12 @@
     <string name="pref_auto_correct_key" translatable="false">AUTO_CORRECT</string>
     <string name="pref_auto_correct_default" translatable="false">false</string>
     <string name="pref_auto_correct_title">Auto-correct</string>
-    <string name="pref_auto_correct_summary">Correct a misspelled word when you type a space after it. Delete the space right away to get back the word you typed.</string>
+    <string name="pref_auto_correct_summary">Correct a misspelled word when you type a space after it, in the language of the braille table. Delete the space right away to get back the word you typed.</string>
     <string name="menu_auto_correct">Turn auto-correct on or off</string>
     <string name="auto_correct_enabled">Auto-correct on</string>
     <string name="auto_correct_disabled">Auto-correct off</string>
     <string name="auto_correct_unavailable">Auto-correct needs a spell checker. Turn one on in the system language settings.</string>
+    <string name="auto_correct_unavailable_language">Auto-correct needs a spell checker for %s, the language of the braille table. The spell checker in the system language settings doesn\'t have it.</string>
     <!-- %s is the corrected word. -->
     <string name="auto_corrected">corrected to %s</string>
     <!-- %s is the word as it was typed before it was corrected. -->

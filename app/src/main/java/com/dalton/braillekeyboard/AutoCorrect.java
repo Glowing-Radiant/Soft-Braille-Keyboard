@@ -32,6 +32,7 @@ import android.view.textservice.TextServicesManager;
  * Checks each word as a space is typed after it and suggests the correction
  * of a misspelling, like the auto-correct of phone keyboards. It has its own
  * spell checker session so it doesn't interfere with the spelling gestures.
+ * Words are checked in the language of the braille table, see setLocale.
  */
 public class AutoCorrect {
     // Longer words aren't corrected; it also bounds the text read back.
@@ -66,7 +67,10 @@ public class AutoCorrect {
 
     // Results arrive in the order the words were sent.
     private final Queue<Request> pending = new ArrayDeque<Request>();
-    private final SpellCheckerSession session;
+    private final TextServicesManager textServices;
+    private SpellCheckerSession session;
+    private Locale locale;
+    private boolean localeSet = false;
 
     private final SpellCheckerSessionListener sessionListener = new SpellCheckerSessionListener() {
         @Override
@@ -96,7 +100,8 @@ public class AutoCorrect {
             }
             String correction = null;
             if (info.getSuggestionsCount() > 0) {
-                correction = matchCase(request.word, info.getSuggestionAt(0));
+                correction = matchCase(request.word, info.getSuggestionAt(0),
+                        locale != null ? locale : Locale.getDefault());
                 if (correction.equals(request.word)) {
                     correction = null;
                 }
@@ -106,13 +111,50 @@ public class AutoCorrect {
     };
 
     public AutoCorrect(Context context) {
-        TextServicesManager tsm = (TextServicesManager) context
+        textServices = (TextServicesManager) context
                 .getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        session = tsm == null ? null : tsm.newSpellCheckerSession(null, null,
-                sessionListener, true);
     }
 
-    /** Whether a spell checker is available to correct words. */
+    /**
+     * Sets the language words are checked in. The spell checker's session is
+     * only opened again when the language changes.
+     *
+     * @param locale
+     *            The language of the braille table, or null to use the
+     *            spell checker's language setting.
+     */
+    public void setLocale(Locale locale) {
+        if (localeSet && (locale == null ? this.locale == null : locale
+                .equals(this.locale))) {
+            return;
+        }
+        localeSet = true;
+        this.locale = locale;
+        pending.clear();
+        if (session != null) {
+            session.close();
+            session = null;
+        }
+        if (textServices == null) {
+            return;
+        }
+        // Without a language the spell checker's own setting is used. With
+        // one, there is no session if the spell checker lacks the language,
+        // so words of one language aren't corrected into another.
+        session = locale == null ? textServices.newSpellCheckerSession(null,
+                null, sessionListener, true) : textServices
+                .newSpellCheckerSession(null, locale, sessionListener, false);
+    }
+
+    /** The language words are checked in, or null if not set. */
+    public Locale getLocale() {
+        return locale;
+    }
+
+    /**
+     * Whether a spell checker is available to correct words in the language
+     * set with setLocale.
+     */
     public boolean isAvailable() {
         return session != null;
     }
@@ -138,6 +180,7 @@ public class AutoCorrect {
         pending.clear();
         if (session != null) {
             session.close();
+            session = null;
         }
     }
 
@@ -195,15 +238,24 @@ public class AutoCorrect {
      * "i" becomes "I" and names are capitalised.
      */
     public static String matchCase(String word, String suggestion) {
+        return matchCase(word, suggestion, Locale.getDefault());
+    }
+
+    /**
+     * Gives the suggestion the case of the typed word, using the case rules
+     * of the given language.
+     */
+    public static String matchCase(String word, String suggestion,
+            Locale locale) {
         if (suggestion.isEmpty()) {
             return suggestion;
         }
         if (word.length() > 1 && word.equals(word.toUpperCase(Locale.ROOT))
                 && !word.equals(word.toLowerCase(Locale.ROOT))) {
-            return suggestion.toUpperCase(Locale.getDefault());
+            return suggestion.toUpperCase(locale);
         }
         if (Character.isUpperCase(word.charAt(0))) {
-            return suggestion.substring(0, 1).toUpperCase(Locale.getDefault())
+            return suggestion.substring(0, 1).toUpperCase(locale)
                     + suggestion.substring(1);
         }
         return suggestion;

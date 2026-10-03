@@ -1056,8 +1056,14 @@ public class ActionHandler {
             boolean correct = Options.switchBooleanPreference(context,
                     R.string.pref_auto_correct_key, Boolean.parseBoolean(context
                             .getString(R.string.pref_auto_correct_default)));
-            if (correct && !autoCorrect.isAvailable()) {
+            autoCorrect.setLocale(listener.getLocale());
+            Locale language = autoCorrect.getLocale();
+            if (correct && !autoCorrect.isAvailable() && language == null) {
                 speak(context.getString(R.string.auto_correct_unavailable));
+            } else if (correct && !autoCorrect.isAvailable()) {
+                speak(String.format(context.getString(
+                        R.string.auto_correct_unavailable_language),
+                        language.getDisplayLanguage()));
             } else {
                 speak(context.getString(correct ? R.string.auto_correct_enabled
                         : R.string.auto_correct_disabled));
@@ -1470,10 +1476,13 @@ public class ActionHandler {
     }
 
     private boolean isAutoCorrectOn(Context context) {
-        return Options.getBooleanPreference(context,
+        if (!Options.getBooleanPreference(context,
                 R.string.pref_auto_correct_key, Boolean.parseBoolean(context
-                        .getString(R.string.pref_auto_correct_default)))
-                && autoCorrect.isAvailable() && listener.allowsCorrections();
+                        .getString(R.string.pref_auto_correct_default)))) {
+            return false;
+        }
+        autoCorrect.setLocale(listener.getLocale());
+        return autoCorrect.isAvailable() && listener.allowsCorrections();
     }
 
     // Replaces the word before the space just typed with the spell checker's
