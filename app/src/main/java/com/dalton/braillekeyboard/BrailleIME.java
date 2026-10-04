@@ -73,6 +73,8 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     private boolean predictionOn;
     private boolean selectAll = false;
     private boolean inputViewStarted = false;
+    // The keyboard menu is on screen, so touches go to the screen reader.
+    private boolean menuShown = false;
     private AlertDialog switchKeyboardDialog;
     // The user chose to keep this keyboard while no screen reader is on.
     private boolean switchKeyboardDeclined = false;
@@ -318,6 +320,27 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         }
     }
 
+    // While the keyboard menu is shown, back goes back in it rather than
+    // hiding the keyboard.
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && menuShown) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && menuShown) {
+            if (!event.isCanceled() && brailleView != null) {
+                brailleView.backInMenu();
+            }
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
     @Override
     public boolean onEvaluateFullscreenMode() {
         // The view dictates whether we are using the full screen.
@@ -332,11 +355,12 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
      * While the expanded keyboard is on screen, ask TouchPassthroughService to
      * route touches on it straight to the keyboard, bypassing screen reader
      * explore by touch. The shrunk keyboard is left to the screen reader so it
-     * can be found and activated like any other control.
+     * can be found and activated like any other control, as is the keyboard
+     * menu.
      */
     private void updateTouchPassthrough() {
         BrailleView view = brailleView;
-        if (view == null || !inputViewStarted || !view.isShown()
+        if (view == null || !inputViewStarted || !view.isShown() || menuShown
                 || view.getShrinkKeyboard() || view.getWidth() == 0
                 || view.getHeight() == 0 || view.getDisplay() == null) {
             TouchPassthroughService.clearKeyboardRegion();
@@ -667,6 +691,51 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             return brailleParser.switchTable(this);
         }
         return null;
+    }
+
+    @Override
+    public List<String> getTableNames() {
+        List<String> names = new ArrayList<String>();
+        if (brailleParser != null) {
+            for (TableInfo table : brailleParser.getSwitchTables(this)) {
+                names.add(BrailleParser.describeTable(this, table));
+            }
+        }
+        return names;
+    }
+
+    @Override
+    public int getTableIndex() {
+        if (brailleParser == null) {
+            return -1;
+        }
+        TableInfo active = brailleParser.getTable(this);
+        List<TableInfo> tables = brailleParser.getSwitchTables(this);
+        for (int i = 0; active != null && i < tables.size(); i++) {
+            if (tables.get(i).getId().equals(active.getId())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public String selectTable(int index) {
+        finishComposingText();
+        if (brailleParser == null) {
+            return null;
+        }
+        List<TableInfo> tables = brailleParser.getSwitchTables(this);
+        if (index < 0 || index >= tables.size()) {
+            return null;
+        }
+        return brailleParser.selectTable(this, tables.get(index));
+    }
+
+    @Override
+    public void onMenuShown(boolean shown) {
+        menuShown = shown;
+        updateTouchPassthrough();
     }
 
     @Override

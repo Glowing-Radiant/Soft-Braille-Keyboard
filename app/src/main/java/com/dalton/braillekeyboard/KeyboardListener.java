@@ -16,6 +16,7 @@
 
 package com.dalton.braillekeyboard;
 
+import java.util.List;
 import java.util.Locale;
 
 import android.view.inputmethod.ExtractedText;
@@ -59,6 +60,37 @@ public interface KeyboardListener {
      * @return A String describing the table suitable to show to the user.
      */
     String switchTable();
+
+    /**
+     * Describes the "on the fly" Braille tables of the active BrailleType,
+     * including the active table, in the order switchTable() goes through
+     * them.
+     *
+     * @return Strings describing the tables suitable to show to the user.
+     */
+    List<String> getTableNames();
+
+    /**
+     * Returns the position of the active table in getTableNames(), or -1.
+     */
+    int getTableIndex();
+
+    /**
+     * Make a table from getTableNames() the active one.
+     *
+     * @param index
+     *            The table's position in getTableNames().
+     * @return A String describing the table suitable to show to the user, or
+     *         null if there is no such table.
+     */
+    String selectTable(int index);
+
+    /**
+     * Called when the keyboard menu is shown on screen and when it closes.
+     * While it is shown it gets touches like any other window, rather than
+     * the keyboard getting them all.
+     */
+    void onMenuShown(boolean shown);
 
     /**
      * This method is once for every Braille cell that is typed. The

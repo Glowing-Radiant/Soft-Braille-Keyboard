@@ -342,7 +342,7 @@
     <string name="granularity_words">Words</string>
     <string name="granularity_lines">Lines</string>
     <string name="granularity_spelling">Spelling corrections</string>
-    <!-- Items of the spoken keyboard menu. -->
+    <!-- Items of the keyboard menu. -->
     <string name="menu_read_all">Read all text</string>
     <string name="menu_switch_grade">Switch computer and literary braille</string>
     <string name="menu_switch_table">Switch braille table</string>
@@ -359,6 +359,15 @@
     <string name="menu_opened">Keyboard menu.</string>
     <string name="menu_closed">Menu closed</string>
     <string name="menu_instructions">Keyboard menu. Swipe up or down to move, right to choose, left to close.</string>
+    <!-- The keyboard menu shown on screen with a screen reader on, where settings show their value. -->
+    <string name="menu_title">Keyboard menu</string>
+    <string name="menu_close">Close</string>
+    <string name="menu_braille_type">Braille type</string>
+    <string name="menu_braille_table">Braille table</string>
+    <string name="menu_value_on">On</string>
+    <string name="menu_value_off">Off</string>
+    <!-- %1$s is a setting and %2$s its value, for example "Auto-correct, On". -->
+    <string name="menu_item_value">%1$s, %2$s</string>
     <!-- Spoken feedback. -->
     <string name="no_editor_action">No action available</string>
     <string name="nothing_selected">Nothing selected</string>

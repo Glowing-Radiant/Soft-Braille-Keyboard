@@ -135,9 +135,34 @@ public class BrailleView extends View {
         public void onShutup() {
             speech.stop();
         }
+
+        @Override
+        public boolean onShowMenu(KeyboardMenu.Model model,
+                final KeyboardMenu.OnCloseListener closeListener) {
+            // Without a screen reader the menu can't be explored.
+            if (!accessibilityManager.isTouchExplorationEnabled()
+                    || getWindowToken() == null) {
+                return false;
+            }
+            dismissMenu();
+            menu = new KeyboardMenu(getContext(), model,
+                    new KeyboardMenu.OnCloseListener() {
+                        @Override
+                        public void onClose(boolean performing) {
+                            menu = null;
+                            listener.onMenuShown(false);
+                            closeListener.onClose(performing);
+                        }
+                    });
+            listener.onMenuShown(true);
+            menu.show(BrailleView.this);
+            return true;
+        }
     };
 
     private ActionHandler actionHandler;
+    // The keyboard menu while it is shown on screen.
+    private KeyboardMenu menu;
     private DisplayParams displayParams = null;
     private boolean dot7;
     private boolean dot8;
@@ -211,6 +236,7 @@ public class BrailleView extends View {
      * Release resources and vibrate the device to tell the user we are closing.
      */
     public void close() {
+        dismissMenu();
         if (Options.getBooleanPreference(
                 getContext(),
                 R.string.pref_vibrate_on_exit_key,
@@ -222,6 +248,14 @@ public class BrailleView extends View {
         actionHandler.shutdown();
         sounds.release();
         setLocale(Locale.getDefault(), false);
+    }
+
+    private void dismissMenu() {
+        if (menu != null) {
+            menu.dismiss();
+            menu = null;
+            listener.onMenuShown(false);
+        }
     }
 
     @Override
@@ -415,7 +449,10 @@ public class BrailleView extends View {
                     lastDotList.clear();
                 } else if (pad != null && pressedDotString() != NO_DOTS) {
                     setDots();
-                    if (!handledSwipe) {
+                    if (!handledSwipe && actionHandler.isMenuOpen()) {
+                        // The spoken menu is navigated with TalkBack gestures.
+                        handleTalkBackGesture();
+                    } else if (!handledSwipe && !handleClassicMenuGesture()) {
                         // single finger flicks
                         if ((swipe = handledSwipeAction(dotsDown,
                                 isPortraitLayout())) != Swipe.NONE) {
@@ -482,7 +519,14 @@ public class BrailleView extends View {
             } else if (!setPad(id, width, height)) {
                 updatePointer(dotsDown, id, x, y, false);
                 setDots();
-                if (isClassicHoldSwipeNow()
+                if (getGestureStyle() == GestureStyle.CLASSIC
+                        && actionHandler.isMenuOpen()) {
+                    // The spoken menu's gestures are recognised once all
+                    // fingers lift.
+                } else if (getGestureStyle() == GestureStyle.CLASSIC
+                        && !handledSwipe && handleClassicMenuGesture()) {
+                    handledSwipe = true;
+                } else if (isClassicHoldSwipeNow()
                         && (swipe = handledSwipeAction(dotsDown,
                         isPortraitLayout())) != Swipe.NONE) {
                     // Hold one finger while swiping with another
@@ -506,6 +550,19 @@ public class BrailleView extends View {
         Log.d(TAG, MotionEvent.actionToString(action) + " pointers="
                 + event.getPointerCount() + " latency="
                 + (SystemClock.uptimeMillis() - event.getEventTime()) + "ms");
+    }
+
+    /**
+     * Goes back a step in the keyboard menu if it is shown on screen.
+     *
+     * @return false if the menu isn't shown.
+     */
+    public boolean backInMenu() {
+        if (menu == null) {
+            return false;
+        }
+        menu.back();
+        return true;
     }
 
     public boolean getShrinkKeyboard() {
@@ -924,6 +981,19 @@ public class BrailleView extends View {
                 handleTypedCharacter();
             }
         }
+    }
+
+    // With the classic gestures, swiping up with three fingers opens the
+    // keyboard menu, as with TalkBack's. Returns true if it was that gesture.
+    private boolean handleClassicMenuGesture() {
+        byte[] directions = getDotDirections();
+        if (TalkBackGesture.classify(directions)
+                != TalkBackGesture.Action.HELP_AND_OTHER_ACTIONS) {
+            return false;
+        }
+        actionHandler.handleTalkBackAction(getContext(),
+                TalkBackGesture.Action.HELP_AND_OTHER_ACTIONS, directions);
+        return true;
     }
 
     // Types the pressed dots, or performs the TalkBack gesture if any finger

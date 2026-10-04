@@ -344,18 +344,68 @@ public class BrailleParser {
                 setTable(context, table);
 
                 // Found a table return a formatted String describing it.
-                String result = String.format(
-                        table.getLocale(),
-                        "%s %s %s",
-                        table.getLocale().getDisplayLanguage(),
-                        table.getLocale().getDisplayCountry(),
-                        table.isEightDot() ? "" : String.format(
-                                context.getString(R.string.grade_table),
-                                table.getGrade()));
-                return result.trim();
+                return describeTable(context, table);
             }
         }
         return null;
+    }
+
+    /**
+     * The tables of the active BrailleType that can be switched on the fly,
+     * in the order they are switched through, and the active table even if
+     * it isn't one of them.
+     *
+     * @param context
+     *            The application context.
+     * @return The tables, empty if there are none.
+     */
+    public List<TableInfo> getSwitchTables(Context context) {
+        List<TableInfo> switchTables = new ArrayList<TableInfo>();
+        List<TableInfo> tables = getTables(getBrailleType(context));
+        TableInfo active = getTable(context);
+        if (tables == null) {
+            return switchTables;
+        }
+        Set<String> onFly = Options.getStringSetPreference(context,
+                R.string.pref_switch_tables_key, new HashSet<String>());
+        for (TableInfo table : tables) {
+            if (onFly.contains(table.getId())
+                    || (active != null && active.getId()
+                            .equals(table.getId()))) {
+                switchTables.add(table);
+            }
+        }
+        return switchTables;
+    }
+
+    /**
+     * Make a table the active one.
+     *
+     * @param context
+     *            The application context.
+     * @param table
+     *            The table, such as one of getSwitchTables().
+     * @return A String describing the table which can be shown to the user.
+     */
+    public String selectTable(Context context, TableInfo table) {
+        setTable(context, table);
+        return describeTable(context, table);
+    }
+
+    /**
+     * Describes a table to the user, such as "English United States Grade 2".
+     */
+    public static String describeTable(Context context, TableInfo table) {
+        String result = String.format(
+                table.getLocale(),
+                "%s %s %s",
+                table.getLocale().getDisplayLanguage(),
+                table.getLocale().getDisplayCountry(),
+                table.isEightDot() ? "" : String.format(
+                        context.getString(R.string.grade_table),
+                        table.getGrade()));
+        // Tables for a language rather than a country have no country.
+        return result.trim().replaceAll(" +", " ");
     }
 
     /**

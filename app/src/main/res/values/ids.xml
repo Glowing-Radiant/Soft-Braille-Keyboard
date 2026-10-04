@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The first accessibility action choosing a value of a setting in the
+         keyboard menu. The others follow it. -->
+    <item name="menu_value" type="id" />
+</resources>

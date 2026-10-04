@@ -17,6 +17,7 @@
 package com.dalton.braillekeyboard;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -125,6 +126,16 @@ public class ActionHandler {
         void onPrivacy();
 
         void onShutup();
+
+        /**
+         * Called to show the keyboard menu on screen, for screen reader
+         * users to explore.
+         *
+         * @return false if it can't be shown, such as when no screen reader
+         *         is on. The menu is spoken instead then.
+         */
+        boolean onShowMenu(KeyboardMenu.Model model,
+                KeyboardMenu.OnCloseListener listener);
     }
 
     /**
@@ -218,32 +229,49 @@ public class ActionHandler {
     }
 
     /**
-     * Items of the spoken menu opened with TalkBack's three finger swipe up.
-     * It gives TalkBack gesture users the features that have no TalkBack
-     * gesture. Most items perform the equivalent classic gesture.
+     * Items of the keyboard menu opened with a three finger swipe up. It
+     * gives TalkBack gesture users the features that have no TalkBack
+     * gesture. Most items perform the equivalent classic gesture. With a
+     * screen reader on the menu is shown on screen, where settings show
+     * their value and change in place, otherwise it is spoken.
      */
     private enum MenuItem {
-        READ_ALL(R.string.menu_read_all, Swipe.HOLD_SIX_UP), SWITCH_GRADE(
-                R.string.menu_switch_grade, Swipe.HOLD_THREE_RIGHT), SWITCH_TABLE(
-                R.string.menu_switch_table, Swipe.HOLD_THREE_DOWN), VOICE_INPUT(
-                R.string.menu_voice_input, null), SHRINK_KEYBOARD(
-                R.string.menu_shrink_keyboard, Swipe.HOLD_ONE_LEFT), WORD_COUNT(
-                R.string.menu_word_count, Swipe.HOLD_ONE_DOWN), KEYBOARD_ECHO(
-                R.string.menu_keyboard_echo, Swipe.TWO_DOWN), KEYBOARD_FEEDBACK(
-                R.string.menu_keyboard_feedback, Swipe.ONE_DOWN), AUTO_CAPS(
-                R.string.menu_auto_caps, Swipe.HOLD_ONE_UP), AUTO_CORRECT(
-                R.string.menu_auto_correct, null), SPEAK_PASSWORDS(
-                R.string.menu_speak_passwords, Swipe.HOLD_SIX_DOWN), PRIVACY(
-                R.string.menu_privacy, Swipe.FOUR_UP), GESTURE_PRACTICE(
-                R.string.menu_gesture_practice, null), SETTINGS(
-                R.string.menu_settings, null), HELP(R.string.menu_help, null);
+        READ_ALL(R.string.menu_read_all, 0, Swipe.HOLD_SIX_UP),
+        SWITCH_GRADE(R.string.menu_switch_grade, R.string.menu_braille_type,
+                Swipe.HOLD_THREE_RIGHT),
+        SWITCH_TABLE(R.string.menu_switch_table, R.string.menu_braille_table,
+                Swipe.HOLD_THREE_DOWN),
+        VOICE_INPUT(R.string.menu_voice_input, 0, null),
+        SHRINK_KEYBOARD(R.string.menu_shrink_keyboard, 0,
+                Swipe.HOLD_ONE_LEFT),
+        WORD_COUNT(R.string.menu_word_count, 0, Swipe.HOLD_ONE_DOWN),
+        KEYBOARD_ECHO(R.string.menu_keyboard_echo,
+                R.string.pref_echo_feedback_title, Swipe.TWO_DOWN),
+        KEYBOARD_FEEDBACK(R.string.menu_keyboard_feedback,
+                R.string.pref_keyboard_feedback_title, Swipe.ONE_DOWN),
+        AUTO_CAPS(R.string.menu_auto_caps, R.string.pref_auto_caps_title,
+                Swipe.HOLD_ONE_UP),
+        AUTO_CORRECT(R.string.menu_auto_correct,
+                R.string.pref_auto_correct_title, null),
+        SPEAK_PASSWORDS(R.string.menu_speak_passwords,
+                R.string.speak_passwords, Swipe.HOLD_SIX_DOWN),
+        PRIVACY(R.string.menu_privacy, R.string.pref_privacy_title,
+                Swipe.FOUR_UP),
+        GESTURE_PRACTICE(R.string.menu_gesture_practice,
+                R.string.pref_gesture_practice_title, null),
+        SETTINGS(R.string.menu_settings, 0, null),
+        HELP(R.string.menu_help, 0, null);
 
         public final int resource;
+        // The name of a setting, shown with its value in the on screen
+        // menu, or 0 for items that are actions.
+        public final int setting;
         // The classic gesture performing this item, if any.
         public final Swipe swipe;
 
-        MenuItem(int resource, Swipe swipe) {
+        MenuItem(int resource, int setting, Swipe swipe) {
             this.resource = resource;
+            this.setting = setting;
             this.swipe = swipe;
         }
     }
@@ -344,12 +372,6 @@ public class ActionHandler {
         }
 
         value = normaliseSwipe(value);
-        String message = null;
-        boolean notify = true;
-        boolean setDots = false;
-        boolean considerPassword = false;
-        // states for dots 7 and 8
-        boolean dots[] = { false, false };
         boolean fastDoubleSwipe = fastDoubleSwipe(value, DOUBLE_TOUCH_THRESHOLD);
 
         // Practising gestures only describes them. Opening settings still
@@ -360,6 +382,18 @@ public class ActionHandler {
             speak(GesturePractice.describe(context, value));
             return true;
         }
+        return performSwipe(context, value, fastDoubleSwipe);
+    }
+
+    // Does what a classic gesture does.
+    private boolean performSwipe(Context context, Swipe value,
+            boolean fastDoubleSwipe) {
+        String message = null;
+        boolean notify = true;
+        boolean setDots = false;
+        boolean considerPassword = false;
+        // states for dots 7 and 8
+        boolean dots[] = { false, false };
 
         switch (value) {
         case ONE_LEFT:
@@ -999,10 +1033,204 @@ public class ActionHandler {
         }
     }
 
-    private void openMenu(Context context) {
+    private void openMenu(final Context context) {
+        if (callback.onShowMenu(createMenuModel(context),
+                new KeyboardMenu.OnCloseListener() {
+                    @Override
+                    public void onClose(boolean performing) {
+                        closeMenu(context, !performing);
+                    }
+                })) {
+            return;
+        }
         menuPosition = 0;
         speak(context.getString(R.string.menu_opened) + " "
-                + context.getString(MenuItem.values()[0].resource));
+                + getMenuLabel(context, MenuItem.values()[0]));
+    }
+
+    // The name of an item in the spoken menu.
+    private String getMenuLabel(Context context, MenuItem item) {
+        return context.getString(item.resource);
+    }
+
+    // The menu as shown on screen.
+    private KeyboardMenu.Model createMenuModel(final Context context) {
+        return new KeyboardMenu.Model() {
+            @Override
+            public int getCount() {
+                return MenuItem.values().length;
+            }
+
+            @Override
+            public String getTitle(int item) {
+                MenuItem menuItem = MenuItem.values()[item];
+                return menuItem.setting != 0 ? context
+                        .getString(menuItem.setting) : getMenuLabel(context,
+                        menuItem);
+            }
+
+            @Override
+            public String[] getValues(int item) {
+                return getMenuValues(context, MenuItem.values()[item]);
+            }
+
+            @Override
+            public int getValue(int item) {
+                return getMenuValue(context, MenuItem.values()[item]);
+            }
+
+            @Override
+            public String setValue(int item, int value) {
+                return setMenuValue(context, MenuItem.values()[item], value);
+            }
+
+            @Override
+            public void perform(int item) {
+                performMenuItem(context, MenuItem.values()[item]);
+            }
+        };
+    }
+
+    // The values of a setting in the menu, or null if the item isn't one.
+    private String[] getMenuValues(Context context, MenuItem item) {
+        switch (item) {
+        case SWITCH_GRADE:
+            return new String[] { context.getString(R.string.grade_literary),
+                    context.getString(R.string.grade_computer) };
+        case SWITCH_TABLE:
+            List<String> tables = listener.getTableNames();
+            return tables.toArray(new String[tables.size()]);
+        case KEYBOARD_ECHO:
+            return getOptionNames(context, KeyboardEcho.values());
+        case KEYBOARD_FEEDBACK:
+            return getOptionNames(context, KeyboardFeedback.values());
+        case AUTO_CAPS:
+        case AUTO_CORRECT:
+        case SPEAK_PASSWORDS:
+        case PRIVACY:
+        case GESTURE_PRACTICE:
+            return new String[] { context.getString(R.string.menu_value_off),
+                    context.getString(R.string.menu_value_on) };
+        default:
+            return null;
+        }
+    }
+
+    private static String[] getOptionNames(Context context,
+            Options.OptionList[] options) {
+        String[] names = new String[options.length];
+        for (int i = 0; i < options.length; i++) {
+            names[i] = context.getString(options[i].getResource());
+        }
+        return names;
+    }
+
+    // The position of a setting's value in getMenuValues().
+    private int getMenuValue(Context context, MenuItem item) {
+        switch (item) {
+        case SWITCH_GRADE:
+            return listener.getDots() == 8 ? 1 : 0;
+        case SWITCH_TABLE:
+            return listener.getTableIndex();
+        case KEYBOARD_ECHO:
+            return KeyboardEcho.valueOf(
+                    Integer.parseInt(Options.getStringPreference(context,
+                            R.string.pref_echo_feedback_key,
+                            KeyboardEcho.CHARACTER.getValue()))).ordinal();
+        case KEYBOARD_FEEDBACK:
+            return KeyboardFeedback.valueOf(
+                    Integer.parseInt(Options.getStringPreference(context,
+                            R.string.pref_keyboard_feedback_key,
+                            KeyboardFeedback.ALL.getValue()))).ordinal();
+        default:
+            return Options.getBooleanPreference(context,
+                    getMenuPreference(item), Boolean.parseBoolean(context
+                            .getString(getMenuDefault(item)))) ? 1 : 0;
+        }
+    }
+
+    // Changes a setting in the menu. Returns a message for the user, or null
+    // to say the new value.
+    private String setMenuValue(Context context, MenuItem item, int value) {
+        switch (item) {
+        case SWITCH_GRADE:
+            if (getMenuValue(context, item) != value) {
+                listener.switchBrailleType();
+                callback.onSetLocale(listener.getLocale());
+            }
+            return null;
+        case SWITCH_TABLE:
+            String table = listener.selectTable(value);
+            callback.onSetLocale(listener.getLocale());
+            return table == null ? context.getString(R.string.no_braille_table)
+                    : null;
+        case KEYBOARD_ECHO:
+            Options.writeStringPreference(context,
+                    R.string.pref_echo_feedback_key,
+                    KeyboardEcho.values()[value].getValue());
+            return null;
+        case KEYBOARD_FEEDBACK:
+            Options.writeStringPreference(context,
+                    R.string.pref_keyboard_feedback_key,
+                    KeyboardFeedback.values()[value].getValue());
+            return null;
+        default:
+            Options.writeBooleanPreference(context, getMenuPreference(item),
+                    value == 1);
+            if (item == MenuItem.PRIVACY) {
+                callback.onPrivacy();
+            } else if (item == MenuItem.AUTO_CORRECT && value == 1) {
+                return getAutoCorrectWarning(context);
+            }
+            return null;
+        }
+    }
+
+    // The preference of a menu item that turns something on or off.
+    private static int getMenuPreference(MenuItem item) {
+        switch (item) {
+        case AUTO_CAPS:
+            return R.string.pref_auto_caps_key;
+        case AUTO_CORRECT:
+            return R.string.pref_auto_correct_key;
+        case SPEAK_PASSWORDS:
+            return R.string.pref_echo_passwords_key;
+        case PRIVACY:
+            return R.string.pref_privacy_key;
+        default:
+            return R.string.pref_gesture_practice_key;
+        }
+    }
+
+    private static int getMenuDefault(MenuItem item) {
+        switch (item) {
+        case AUTO_CAPS:
+            return R.string.pref_auto_caps_default;
+        case AUTO_CORRECT:
+            return R.string.pref_auto_correct_default;
+        case SPEAK_PASSWORDS:
+            return R.string.pref_echo_passwords_default;
+        case PRIVACY:
+            return R.string.pref_privacy_default;
+        default:
+            return R.string.pref_gesture_practice_default;
+        }
+    }
+
+    // Why auto-correct that was just turned on won't correct anything, or
+    // null if it will.
+    private String getAutoCorrectWarning(Context context) {
+        autoCorrect.setLocale(listener.getLocale());
+        if (autoCorrect.isAvailable()) {
+            return null;
+        }
+        Locale language = autoCorrect.getLocale();
+        if (language == null) {
+            return context.getString(R.string.auto_correct_unavailable);
+        }
+        return String.format(context
+                .getString(R.string.auto_correct_unavailable_language),
+                language.getDisplayLanguage());
     }
 
     private void closeMenu(Context context, boolean announce) {
@@ -1021,12 +1249,12 @@ public class ActionHandler {
         case MOVE_CURSOR_BACKWARD:
             menuPosition = (menuPosition - 1 + items.length) % items.length;
             callback.onNotify(true, Earcons.Sound.MOVE);
-            speak(context.getString(items[menuPosition].resource));
+            speak(getMenuLabel(context, items[menuPosition]));
             break;
         case MOVE_CURSOR_FORWARD:
             menuPosition = (menuPosition + 1) % items.length;
             callback.onNotify(true, Earcons.Sound.MOVE);
-            speak(context.getString(items[menuPosition].resource));
+            speak(getMenuLabel(context, items[menuPosition]));
             break;
         case ADD_SPACE:
             MenuItem item = items[menuPosition];
@@ -1045,7 +1273,8 @@ public class ActionHandler {
 
     private void performMenuItem(Context context, MenuItem item) {
         if (item.swipe != null) {
-            handleSwipe(context, item.swipe);
+            // Done even while practising gestures.
+            performSwipe(context, item.swipe, false);
             return;
         }
         switch (item) {
@@ -1056,14 +1285,9 @@ public class ActionHandler {
             boolean correct = Options.switchBooleanPreference(context,
                     R.string.pref_auto_correct_key, Boolean.parseBoolean(context
                             .getString(R.string.pref_auto_correct_default)));
-            autoCorrect.setLocale(listener.getLocale());
-            Locale language = autoCorrect.getLocale();
-            if (correct && !autoCorrect.isAvailable() && language == null) {
-                speak(context.getString(R.string.auto_correct_unavailable));
-            } else if (correct && !autoCorrect.isAvailable()) {
-                speak(String.format(context.getString(
-                        R.string.auto_correct_unavailable_language),
-                        language.getDisplayLanguage()));
+            String warning = correct ? getAutoCorrectWarning(context) : null;
+            if (warning != null) {
+                speak(warning);
             } else {
                 speak(context.getString(correct ? R.string.auto_correct_enabled
                         : R.string.auto_correct_disabled));
