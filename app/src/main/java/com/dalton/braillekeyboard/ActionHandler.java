@@ -32,6 +32,7 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.InputMethodManager;
 
 import com.dalton.braillekeyboard.EditingUtilities.Word;
+import com.dalton.braillekeyboard.Options.GestureStyle;
 import com.dalton.braillekeyboard.Options.KeyboardEcho;
 import com.dalton.braillekeyboard.Options.KeyboardFeedback;
 import com.dalton.braillekeyboard.Pad.Swipe;
@@ -259,6 +260,7 @@ public class ActionHandler {
                 Swipe.FOUR_UP),
         GESTURE_PRACTICE(R.string.menu_gesture_practice,
                 R.string.pref_gesture_practice_title, null),
+        TUTORIAL(R.string.menu_start_tutorial, 0, null),
         SETTINGS(R.string.menu_settings, 0, null),
         HELP(R.string.menu_help, 0, null);
 
@@ -285,6 +287,8 @@ public class ActionHandler {
     private ReadingGranularity readingGranularity = ReadingGranularity.CHARACTER;
     // Index into MenuItem.values() while the spoken menu is open, else -1.
     private int menuPosition = -1;
+    // The running tutorial, if any.
+    private Tutorial tutorial;
     private long lastTouchTime = 0; // Time screen was last touched.
     private Swipe lastSwipe = Swipe.NONE; // Type of last gesture.
     private KeyboardListener listener;
@@ -374,6 +378,11 @@ public class ActionHandler {
         value = normaliseSwipe(value);
         boolean fastDoubleSwipe = fastDoubleSwipe(value, DOUBLE_TOUCH_THRESHOLD);
 
+        // The tutorial checks gestures rather than doing them.
+        if (value != Swipe.NONE && tutorial != null) {
+            respond(tutorial.onSwipe(context, value));
+            return true;
+        }
         // Practising gestures only describes them. Opening settings still
         // works, so there is always a way to turn practice off.
         if (value != Swipe.NONE && GesturePractice.isOn(context)
@@ -650,6 +659,11 @@ public class ActionHandler {
                     context.getString(R.string.menu_instructions), false);
             return;
         }
+        if (tutorial != null) {
+            respond(tutorial.onCell(context, value));
+            callback.onSetDots(false, false);
+            return;
+        }
         String result;
         if ((result = listener.handleTypedCharacter(value)) == null) {
             // IME couldn't handle the dot pattern propergate the error to the
@@ -696,6 +710,14 @@ public class ActionHandler {
             if (action != null) {
                 handleMenuAction(context, action);
             }
+            return;
+        }
+        // The tutorial checks gestures rather than doing them, except opening
+        // the menu, which has the item to stop the tutorial.
+        if (tutorial != null
+                && (action != TalkBackGesture.Action.HELP_AND_OTHER_ACTIONS
+                        || tutorial.expects(action))) {
+            respond(tutorial.onAction(context, action, directions));
             return;
         }
         // Practising gestures only describes them, except opening the menu
@@ -903,6 +925,21 @@ public class ActionHandler {
         callback.onText("%s", message, false);
     }
 
+    // Says how the user did in the tutorial, which ends after the last step.
+    private void respond(Tutorial.Response response) {
+        callback.onNotify(true, response.right ? Earcons.Sound.SELECT
+                : Earcons.Sound.ERROR);
+        speak(response.message);
+        if (tutorial.isFinished()) {
+            tutorial = null;
+        }
+    }
+
+    private void startTutorial(Context context) {
+        tutorial = new Tutorial(GestureStyle.get(context));
+        speak(tutorial.start(context));
+    }
+
     // Cut, copy or paste the real text selection like TalkBack does.
     private void clipboardAction(Context context, int id, int success,
             int error) {
@@ -1050,6 +1087,9 @@ public class ActionHandler {
 
     // The name of an item in the spoken menu.
     private String getMenuLabel(Context context, MenuItem item) {
+        if (item == MenuItem.TUTORIAL && tutorial != null) {
+            return context.getString(R.string.menu_stop_tutorial);
+        }
         return context.getString(item.resource);
     }
 
@@ -1273,7 +1313,7 @@ public class ActionHandler {
 
     private void performMenuItem(Context context, MenuItem item) {
         if (item.swipe != null) {
-            // Done even while practising gestures.
+            // Done even while practising gestures or in the tutorial.
             performSwipe(context, item.swipe, false);
             return;
         }
@@ -1300,6 +1340,14 @@ public class ActionHandler {
                                     .getString(R.string.pref_gesture_practice_default)));
             speak(context.getString(practice ? R.string.gesture_practice_enabled
                     : R.string.gesture_practice_disabled));
+            break;
+        case TUTORIAL:
+            if (tutorial != null) {
+                tutorial = null;
+                speak(context.getString(R.string.tutorial_stopped));
+            } else {
+                startTutorial(context);
+            }
             break;
         case SETTINGS:
             callback.onSetLocale(Locale.getDefault());

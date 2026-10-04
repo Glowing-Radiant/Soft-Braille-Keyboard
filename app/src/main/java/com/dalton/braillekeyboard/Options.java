@@ -128,6 +128,26 @@ public class Options {
         }
     }
 
+    /** The gesture styles the user can choose in the settings. */
+    public enum GestureStyle {
+        CLASSIC, TALKBACK, MIXED;
+
+        /** Returns the gesture style the user chose. */
+        public static GestureStyle get(Context context) {
+            String style = getStringPreference(context,
+                    R.string.pref_gesture_style_key,
+                    context.getString(R.string.pref_gesture_style_default));
+            if (context.getString(R.string.pref_gesture_style_talkback_value)
+                    .equals(style)) {
+                return TALKBACK;
+            } else if (context.getString(
+                    R.string.pref_gesture_style_mixed_value).equals(style)) {
+                return MIXED;
+            }
+            return CLASSIC;
+        }
+    }
+
     public static boolean getBooleanPreference(Context context, int resource,
             boolean defaultValue) {
         SharedPreferences sharedPref = PreferenceManager

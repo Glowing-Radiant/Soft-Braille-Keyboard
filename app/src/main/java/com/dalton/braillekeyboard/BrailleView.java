@@ -41,6 +41,7 @@ import android.view.Surface;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 
+import com.dalton.braillekeyboard.Options.GestureStyle;
 import com.dalton.braillekeyboard.Options.KeyboardFeedback;
 import com.dalton.braillekeyboard.Pad.Coords;
 import com.dalton.braillekeyboard.Pad.Swipe;
@@ -920,23 +921,8 @@ public class BrailleView extends View {
         return Swipe.NONE;
     }
 
-    // The gesture styles the user can choose in the settings.
-    private enum GestureStyle {
-        CLASSIC, TALKBACK, MIXED
-    }
-
     private GestureStyle getGestureStyle() {
-        String style = Options.getStringPreference(getContext(),
-                R.string.pref_gesture_style_key,
-                getContext().getString(R.string.pref_gesture_style_default));
-        if (getContext().getString(R.string.pref_gesture_style_talkback_value)
-                .equals(style)) {
-            return GestureStyle.TALKBACK;
-        } else if (getContext().getString(
-                R.string.pref_gesture_style_mixed_value).equals(style)) {
-            return GestureStyle.MIXED;
-        }
-        return GestureStyle.CLASSIC;
+        return GestureStyle.get(getContext());
     }
 
     private byte[] getDotDirections() {

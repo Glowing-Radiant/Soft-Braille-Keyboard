@@ -359,6 +359,8 @@
     <string name="menu_opened">Keyboard menu.</string>
     <string name="menu_closed">Menu closed</string>
     <string name="menu_instructions">Keyboard menu. Swipe up or down to move, right to choose, left to close.</string>
+    <string name="menu_start_tutorial">Start tutorial</string>
+    <string name="menu_stop_tutorial">Stop tutorial</string>
     <!-- The keyboard menu shown on screen with a screen reader on, where settings show their value. -->
     <string name="menu_title">Keyboard menu</string>
     <string name="menu_close">Close</string>
@@ -519,4 +521,38 @@
     <string name="action_next_misspelling">Next misspelled word</string>
     <string name="action_next_suggestion">Next spelling suggestion</string>
     <string name="action_previous_suggestion">Previous spelling suggestion</string>
+
+    <!-- Tutorial, started from the keyboard menu. [CHAR LIMIT="NONE"] -->
+    <string name="tutorial_intro">Tutorial. Until it ends, typing and gestures won\'t change your text. To stop it, swipe up with three fingers to open the keyboard menu and choose Stop tutorial.</string>
+    <string name="tutorial_type_a">Tap dot 1 to type the letter a.</string>
+    <string name="tutorial_type_b">Tap dots 1 and 2 together to type b.</string>
+    <string name="tutorial_type_l">Tap dots 1, 2 and 3 together to type l.</string>
+    <string name="tutorial_classic_space">Swipe dot 4 right to type a space.</string>
+    <string name="tutorial_classic_delete">Swipe dot 4 left to delete a character.</string>
+    <string name="tutorial_classic_delete_word">Swipe dot 5 left to delete a word.</string>
+    <string name="tutorial_classic_enter">Swipe dot 4 down for enter, which starts a new line or sends, depending on the field.</string>
+    <string name="tutorial_classic_previous_character">Swipe dot 1 left to move back a character. Swiping it right moves forward.</string>
+    <string name="tutorial_classic_next_word">Swipe dot 2 right to move to the next word. Swiping it left moves back a word.</string>
+    <string name="tutorial_classic_read_line">Swipe dot 3 up to read the line.</string>
+    <string name="tutorial_classic_read_all">Hold dot 6 still and swipe a finger of your other hand up to read all the text.</string>
+    <string name="tutorial_talkback_space">Swipe right with one finger to type a space.</string>
+    <string name="tutorial_talkback_delete">Swipe left with one finger to delete a character.</string>
+    <string name="tutorial_talkback_delete_word">Swipe left with two fingers to delete a word.</string>
+    <string name="tutorial_talkback_new_line">Swipe right with two fingers for a new line.</string>
+    <string name="tutorial_talkback_move_back">Swipe up with one finger to move back. Swiping down moves forward.</string>
+    <string name="tutorial_talkback_previous_word">Hold dot 5 still and swipe up with one finger of your other hand to move back a word.</string>
+    <string name="tutorial_talkback_granularity">Swipe right with three fingers to choose what swiping up and down moves by: characters, words or lines.</string>
+    <string name="tutorial_talkback_submit">Swipe up with two fingers to submit, such as to send a message.</string>
+    <string name="tutorial_menu">Last, swipe up with three fingers to open the keyboard menu, which has more settings and the user guide.</string>
+    <!-- %s is the next step. -->
+    <string name="tutorial_well_done">Well done. %s</string>
+    <!-- %1$s is what the keyboard felt, such as "dots 1 2" or "Space. swipe dot 4 right", %2$s the step again. -->
+    <string name="tutorial_try_again">That was %1$s. %2$s</string>
+    <!-- %s is a list of dot numbers such as "1 2". -->
+    <plurals name="tutorial_dots">
+        <item quantity="one">dot %s</item>
+        <item quantity="other">dots %s</item>
+    </plurals>
+    <string name="tutorial_complete">Well done, that\'s the end of the tutorial. To try any gesture without changing your text, turn on gesture practice in the keyboard menu.</string>
+    <string name="tutorial_stopped">Tutorial stopped</string>
 </resources>
