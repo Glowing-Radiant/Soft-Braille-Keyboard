@@ -400,6 +400,21 @@ public class BrailleParser {
         return backTranslate(uncontractedTranslator, cellBytes);
     }
 
+    /**
+     * Whether the uncontracted table of the active contracted table's
+     * language has a meaning for a cell, unlike cells that only stand for
+     * contractions, such as "ch", or start them, such as dot 5.
+     */
+    public boolean uncontractedReads(byte cell) {
+        if (status != STATUS_OK || uncontractedTranslator == null) {
+            return false;
+        }
+        String text = uncontractedTranslator.backTranslate(new byte[] { 0,
+                cell, 0 });
+        return text != null
+                && !text.contains("\\" + computeCellValue(cell) + "/");
+    }
+
     private String backTranslate(BrailleTranslator translator,
             Byte[] cellBytes) {
         // Convert from a Byte[] to a byte[]O

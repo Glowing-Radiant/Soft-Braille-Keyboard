@@ -64,8 +64,6 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
     // With a contracted table the cells of a word are held back until the
     // word ends, since each new cell can change what the earlier ones mean.
     private boolean holdingCells = false;
-    // The uncontracted reading of the held cells, echoed as they are typed.
-    private String heldEcho = "";
 
     private BrailleParser brailleParser;
     private BrailleView brailleView = null;
@@ -538,9 +536,7 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         return null;
     }
 
-    // Holds a cell of a contracted word and returns the change to the word's
-    // uncontracted reading, so the user hears letters rather than
-    // contractions that change as the word goes on.
+    // Holds a cell of a contracted word and returns what it adds to the word.
     private String holdCharacter(byte dots) {
         setCells(dots);
         Byte[] typed = cells.toArray(new Byte[cells.size()]);
@@ -549,56 +545,86 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             cells.remove(cells.size() - 1);
             return null;
         }
-        String echo = brailleParser.backTranslateUncontracted(typed);
-        if (echo == null) {
-            echo = text;
-        }
-        String change = describeCell(stringDifference(heldEcho, echo), dots);
-        heldEcho = echo;
-        return change;
+        return describeLastCell(typed);
     }
 
-    // Uncontracted braille has no reading for cells that only stand for a
-    // contraction, like "the", so those are said as the contraction alone.
-    private String describeCell(String uncontracted, byte cell) {
-        if (isPlainText(uncontracted)) {
+    // Says what the last of the held cells adds to the word. Letters are
+    // said as the uncontracted table reads them, so the user hears letters
+    // rather than contractions that change as the word goes on. Cells that
+    // table has no letters for, such as "ch" or "in", or that end a
+    // contraction it can't read, such as "time", are said as the
+    // contraction they are in the word.
+    private String describeLastCell(Byte[] word) {
+        Byte[] before = new Byte[word.length - 1];
+        System.arraycopy(word, 0, before, 0, before.length);
+        String contracted = change(brailleParser.backTranslate(this, before),
+                brailleParser.backTranslate(this, word));
+        String uncontracted = change(
+                brailleParser.backTranslateUncontracted(before),
+                brailleParser.backTranslateUncontracted(word));
+        // A cell after one the uncontracted table can't read finishes a
+        // contraction, like dot 5 then t for "time".
+        boolean afterContraction = before.length > 1
+                && !brailleParser.uncontractedReads(before[before.length - 1]);
+        return chooseCellEcho(afterContraction ? "" : uncontracted,
+                contracted);
+    }
+
+    /**
+     * Chooses how to say a typed cell of a contracted word: its uncontracted
+     * reading if that is letters, else its contracted reading if that has
+     * letters, else whichever isn't empty.
+     */
+    static String chooseCellEcho(String uncontracted, String contracted) {
+        if (isLetters(uncontracted)) {
             return uncontracted;
         }
-        String alone = brailleParser.backTranslate(this, new Byte[] { cell });
-        return alone != null && alone.length() > 0 ? alone : uncontracted;
+        if (hasLetter(contracted)) {
+            return contracted;
+        }
+        return uncontracted.length() > 0 ? uncontracted : contracted;
     }
 
-    private static boolean isPlainText(String text) {
+    // The text added to a word, or "" if nothing was. Null translations
+    // count as no text.
+    private static String change(String before, String after) {
+        before = before == null ? "" : before;
+        after = after == null ? "" : after;
+        if (before.equalsIgnoreCase(after)) {
+            return "";
+        }
+        return stringDifference(before, after);
+    }
+
+    private static boolean isLetters(String text) {
         if (text.length() == 0) {
             return false;
         }
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (!Character.isLetterOrDigit(c)
-                    && (c >= 128 || Character.isISOControl(c))) {
+            if (!Character.isLetter(text.charAt(i))) {
                 return false;
             }
         }
         return true;
     }
 
+    private static boolean hasLetter(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isLetter(text.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String deleteHeldCell() {
-        if (!holdingCells || cells.size() <= 1) {
+        if (!holdingCells || cells.size() <= 1 || brailleParser == null) {
             return null;
         }
-        byte cell = cells.remove(cells.size() - 1);
-        String echo = "";
-        if (cells.size() > 1 && brailleParser != null) {
-            Byte[] typed = cells.toArray(new Byte[cells.size()]);
-            echo = brailleParser.backTranslateUncontracted(typed);
-            if (echo == null) {
-                echo = brailleParser.backTranslate(this, typed);
-            }
-            echo = echo == null ? "" : echo;
-        }
-        String deleted = describeCell(stringDifference(echo, heldEcho), cell);
-        heldEcho = echo;
+        String deleted = describeLastCell(cells.toArray(new Byte[cells
+                .size()]));
+        cells.remove(cells.size() - 1);
         return deleted;
     }
 
@@ -881,7 +907,6 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
             composingText.setLength(0);
         }
         cells.clear();
-        heldEcho = "";
     }
 
     private void setCells(byte dots) {
