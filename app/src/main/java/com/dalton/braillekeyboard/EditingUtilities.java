@@ -234,61 +234,38 @@ public class EditingUtilities {
         return new Word(text.subSequence(0, length).toString(), length, 0);
     }
 
-    // The word at the cursor, which moving by word speaks, and the
-    // separators after it, to delete ahead of the cursor. The cursor is
-    // moved to the start of the word. On separators it is them and the
-    // word after. Null if the cursor is at the end.
-    public static Word getFocusedWord(KeyboardListener listener) {
-        int cursor = listener.getCursor();
-        CharSequence before = listener.getTextBeforeCursor(MAX_WORD_LENGTH);
-        CharSequence after = listener.getTextAfterCursor(MAX_WORD_LENGTH);
-        if (cursor == -1 || before == null || after == null
-                || after.length() == 0) {
-            return null;
-        }
-        String text = after.toString();
-        int start = before.length();
-        int wordStart = 0;
-        int end = 0;
-        if (matchesSeparator(text.charAt(0), WORD_SEPARATORS)) {
-            while (end < text.length()
-                    && matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
-                ++end;
-            }
-            wordStart = end;
-            while (end < text.length()
-                    && !matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
-                ++end;
-            }
-        } else {
-            while (start > 0
-                    && !matchesSeparator(before.charAt(start - 1),
-                            WORD_SEPARATORS)) {
-                --start;
-            }
-            while (end < text.length()
-                    && !matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
-                ++end;
+    /**
+     * Gets the word before the cursor and the separators after it, to delete
+     * them as backspace does, and moves the cursor to their start. Then
+     * word.charsBefore characters after the cursor are to be deleted.
+     *
+     * @param focused
+     *            Whether the character at the cursor was just spoken by
+     *            moving or reading. It is deleted too, as if the cursor were
+     *            after it, but nothing after it is.
+     * @return The word, or null if the text can't be read.
+     */
+    public static Word getWordToDelete(KeyboardListener listener,
+            boolean focused) {
+        if (focused) {
+            Word character = getFocusedCharacter(listener);
+            if (character != null) {
+                listener.setSelection(listener.getCursor()
+                        + character.charsBefore);
             }
         }
-        int wordEnd = end;
-        if (wordStart == 0) {
-            while (end < text.length()
-                    && matchesSeparator(text.charAt(end), WORD_SEPARATORS)) {
-                ++end;
+        Word space = skipSepBackwards(listener, WORD_SEPARATORS);
+        Word word = getWord(listener);
+        if (word != null) {
+            if (space != null) {
+                word.charsBefore += space.charsBefore;
             }
+            if (word.word.length() > word.charsBefore) {
+                word.word = word.word.substring(0, word.charsBefore);
+            }
+            moveToPreviousWord(listener);
         }
-
-        String deleted = before.toString().substring(start)
-                + text.substring(0, end);
-        String word = before.toString().substring(start)
-                + text.substring(wordStart, wordEnd);
-        int charsBefore = before.length() - start;
-        if (charsBefore > 0) {
-            listener.setSelection(cursor - charsBefore);
-        }
-        return new Word(word.length() > 0 ? word : deleted, deleted.length(),
-                0);
+        return word;
     }
 
     public static Word getWord(KeyboardListener listener) {

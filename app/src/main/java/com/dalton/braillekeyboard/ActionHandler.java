@@ -1555,18 +1555,17 @@ public class ActionHandler {
             focusCursor = -1;
             return true;
         }
-        // After moving or reading, delete the text that was spoken.
+        // After moving or reading, the character that was spoken is deleted
+        // too, as if the cursor were after it, but never the text after it.
         boolean focused = focusCursor != -1
                 && focusCursor == listener.getCursor();
         focusCursor = -1;
-        boolean deletedFocus = false;
         switch (granularity) {
         case CHARACTER:
             if (focused) {
                 listener.finishComposingText();
                 word = EditingUtilities.getFocusedCharacter(listener);
                 if (word != null) {
-                    deletedFocus = true;
                     correctedFrom = null;
                     break;
                 }
@@ -1579,25 +1578,7 @@ public class ActionHandler {
             break;
         case WORD:
             listener.finishComposingText();
-            if (focused) {
-                word = EditingUtilities.getFocusedWord(listener);
-                if (word != null) {
-                    deletedFocus = true;
-                    break;
-                }
-            }
-            Word space = EditingUtilities.skipSepBackwards(listener,
-                    EditingUtilities.WORD_SEPARATORS);
-            word = EditingUtilities.getWord(listener);
-            if (word != null) {
-                if (space != null) {
-                    word.charsBefore += space.charsBefore;
-                }
-                if (word.word.length() > word.charsBefore) {
-                    word.word = word.word.substring(0, word.charsBefore);
-                }
-                EditingUtilities.moveToPreviousWord(listener);
-            }
+            word = EditingUtilities.getWordToDelete(listener, focused);
             break;
         case LINE:
             canDelete = isConfirmed(context, fastDoubleTouch);
@@ -1624,12 +1605,7 @@ public class ActionHandler {
             break;
         default:
         }
-        boolean deleted = performDelete(context, word, canDelete);
-        if (deletedFocus) {
-            // The text after the deleted text is now the focus.
-            focusCursor = listener.getCursor();
-        }
-        return deleted;
+        return performDelete(context, word, canDelete);
     }
 
     // Given the text to delete and a canDelete flag do the actual deletion.

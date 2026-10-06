@@ -85,46 +85,36 @@ public class EditingUtilitiesTest {
     @Test
     public void hasNoCharacterAtTheEnd() {
         assertNull(EditingUtilities.getFocusedCharacter(new Field("abc|").listener));
-        assertNull(EditingUtilities.getFocusedWord(new Field("abc|").listener));
+    }
+
+    // Deletes a word as ActionHandler does.
+    private static String deleteWord(String textWithCursor, boolean focused) {
+        Field field = new Field(textWithCursor);
+        EditingUtilities.Word word = EditingUtilities.getWordToDelete(
+                field.listener, focused);
+        return field.delete(word);
     }
 
     @Test
-    public void deletesTheWordAtTheCursorAndTheSpaceAfterIt() {
-        // At the start of the word, as moving by word leaves the cursor.
-        Field field = new Field("one |two three");
-        EditingUtilities.Word word = EditingUtilities
-                .getFocusedWord(field.listener);
-        assertEquals("two", word.word);
-        assertEquals("one |three", field.delete(word));
-
-        // Inside the word, as moving by character can leave the cursor.
-        field = new Field("one tw|o three");
-        word = EditingUtilities.getFocusedWord(field.listener);
-        assertEquals("two", word.word);
-        assertEquals("one |three", field.delete(word));
-
-        field = new Field("|one two");
-        word = EditingUtilities.getFocusedWord(field.listener);
-        assertEquals("one", word.word);
-        assertEquals("|two", field.delete(word));
-
-        field = new Field("one |two");
-        word = EditingUtilities.getFocusedWord(field.listener);
-        assertEquals("two", word.word);
-        assertEquals("one |", field.delete(word));
+    public void deletesTheWordBeforeTheCursor() {
+        assertEquals("one |three", deleteWord("one two|three", false));
+        assertEquals("one |", deleteWord("one two|", false));
+        assertEquals("one |", deleteWord("one two |", false));
+        assertEquals("one |wo", deleteWord("one t|wo", false));
+        assertEquals("| two", deleteWord("one| two", false));
+        assertEquals("|one", deleteWord("|one", false));
     }
 
     @Test
-    public void deletesTheSpaceAtTheCursorWithTheWordAfterIt() {
-        Field field = new Field("one| two three");
-        EditingUtilities.Word word = EditingUtilities
-                .getFocusedWord(field.listener);
-        assertEquals("two", word.word);
-        assertEquals("one| three", field.delete(word));
-
-        field = new Field("one|  ");
-        word = EditingUtilities.getFocusedWord(field.listener);
-        assertEquals("  ", word.word);
-        assertEquals("one|", field.delete(word));
+    public void neverDeletesTheWordAfterTheCursor() {
+        // Moving by word leaves the cursor at the start of the word it
+        // speaks. Only its first character, which is focused, goes.
+        assertEquals("one |wo three", deleteWord("one |two three", true));
+        // Moving by character focuses the character after the cursor.
+        assertEquals("one | three", deleteWord("one tw|o three", true));
+        // A focused space goes with the word before it.
+        assertEquals("|two", deleteWord("one| two", true));
+        // At the end nothing is focused.
+        assertEquals("one |", deleteWord("one two|", true));
     }
 }
