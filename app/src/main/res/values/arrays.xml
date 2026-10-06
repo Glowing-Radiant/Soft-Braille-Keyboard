@@ -207,4 +207,12 @@
         <item>minimal</item>
         <item>abstract</item>
     </string-array>
+    <string-array name="spell_checker_entries">
+        <item>@string/spell_checker_builtin</item>
+        <item>@string/spell_checker_system</item>
+    </string-array>
+    <string-array name="spell_checker_values" translatable="false">
+        <item>@string/pref_spell_checker_builtin_value</item>
+        <item>@string/pref_spell_checker_system_value</item>
+    </string-array>
 </resources>

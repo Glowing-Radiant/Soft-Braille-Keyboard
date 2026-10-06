@@ -414,6 +414,33 @@
     <!-- %s is the word as it was typed before it was corrected. -->
     <string name="auto_correct_undone">%s restored</string>
 
+    <!-- Built-in spell checker dictionaries. [CHAR LIMIT="NONE"] -->
+    <string name="pref_spell_checker_key" translatable="false">SPELL_CHECKER</string>
+    <string name="pref_spell_checker_builtin_value" translatable="false">builtin</string>
+    <string name="pref_spell_checker_system_value" translatable="false">system</string>
+    <string name="pref_spell_checker_default" translatable="false">builtin</string>
+    <string name="pref_spell_checker_title">Spell checker</string>
+    <string name="pref_spell_checker_summary">%s</string>
+    <string name="spell_checker_builtin">Built-in dictionaries, with the phone\'s spell checker for other languages</string>
+    <string name="spell_checker_system">The phone\'s spell checker</string>
+    <string name="pref_import_dictionary_key" translatable="false">IMPORT_DICTIONARY</string>
+    <string name="pref_import_dictionary_title">Import a spell checker dictionary</string>
+    <string name="pref_import_dictionary_summary">US and UK English are built in. Add another language by choosing a Hunspell dictionary\'s two files, named after its language, such as de_DE.dic and de_DE.aff. LibreOffice and Firefox use these dictionaries.</string>
+    <string name="pref_remove_dictionary_key" translatable="false">REMOVE_DICTIONARY</string>
+    <string name="pref_remove_dictionary_title">Remove an imported dictionary</string>
+    <!-- %s is the dictionary's language, such as "German (Germany)". -->
+    <string name="dictionary_imported">%s dictionary imported</string>
+    <!-- %s is the reason. -->
+    <string name="dictionary_import_failed">Dictionary not imported: %s</string>
+    <string name="dictionary_need_both">Choose both files of the dictionary, the .dic and the .aff file.</string>
+    <string name="dictionary_bad_name">The files must be named after the dictionary\'s language, such as de_DE.dic and de_DE.aff.</string>
+    <string name="dictionary_none_imported">No dictionaries have been imported</string>
+    <!-- %s is the dictionary's language. -->
+    <string name="dictionary_remove_confirm">Remove the %s dictionary?</string>
+    <string name="dictionary_remove">Remove</string>
+    <!-- %s is the dictionary's language. -->
+    <string name="dictionary_removed">%s dictionary removed</string>
+
     <!-- Sound themes. [CHAR LIMIT="NONE"] -->
     <string name="pref_sound_theme_key" translatable="false">SOUND_THEME</string>
     <string name="pref_sound_theme_default" translatable="false">minimal</string>

@@ -231,7 +231,7 @@ public final class SoundThemeImporter {
                 : name.toLowerCase(Locale.ROOT);
     }
 
-    private static String displayName(ContentResolver resolver, Uri uri) {
+    static String displayName(ContentResolver resolver, Uri uri) {
         Cursor cursor = null;
         try {
             cursor = resolver.query(uri,

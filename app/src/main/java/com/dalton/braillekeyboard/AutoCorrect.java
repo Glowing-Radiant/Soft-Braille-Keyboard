@@ -17,10 +17,13 @@
 package com.dalton.braillekeyboard;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Locale;
 import java.util.Queue;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
@@ -67,8 +70,12 @@ public class AutoCorrect {
 
     // Results arrive in the order the words were sent.
     private final Queue<Request> pending = new ArrayDeque<Request>();
+    private final Context context;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final TextServicesManager textServices;
     private SpellCheckerSession session;
+    // The built-in dictionary used instead of the session, if any.
+    private String dictionary;
     private Locale locale;
     private boolean localeSet = false;
 
@@ -112,6 +119,7 @@ public class AutoCorrect {
     };
 
     public AutoCorrect(Context context) {
+        this.context = context.getApplicationContext();
         textServices = (TextServicesManager) context
                 .getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
     }
@@ -125,18 +133,22 @@ public class AutoCorrect {
      *            spell checker's language setting.
      */
     public void setLocale(Locale locale) {
+        String dictionary = SpellDictionaries.find(context, locale);
         if (localeSet && (locale == null ? this.locale == null : locale
-                .equals(this.locale))) {
+                .equals(this.locale))
+                && (dictionary == null ? this.dictionary == null : dictionary
+                        .equals(this.dictionary))) {
             return;
         }
         localeSet = true;
         this.locale = locale;
+        this.dictionary = dictionary;
         pending.clear();
         if (session != null) {
             session.close();
             session = null;
         }
-        if (textServices == null) {
+        if (textServices == null || dictionary != null) {
             return;
         }
         // Without a language the spell checker's own setting is used. With
@@ -157,7 +169,7 @@ public class AutoCorrect {
      * set with setLocale.
      */
     public boolean isAvailable() {
-        return session != null;
+        return dictionary != null || session != null;
     }
 
     /**
@@ -167,6 +179,10 @@ public class AutoCorrect {
      * @return false if there is no spell checker.
      */
     public boolean check(String word, Listener listener) {
+        if (dictionary != null) {
+            checkWithDictionary(dictionary, word, listener);
+            return true;
+        }
         if (session == null) {
             return false;
         }
@@ -175,6 +191,36 @@ public class AutoCorrect {
         session.getSentenceSuggestions(new TextInfo[] { new TextInfo(word
                 + " ") }, MAX_SUGGESTIONS);
         return true;
+    }
+
+    // Checks the word with a built-in dictionary in the background.
+    private void checkWithDictionary(final String name, final String word,
+            final Listener listener) {
+        final Locale caseLocale = locale != null ? locale : Locale.getDefault();
+        SpellDictionaries.run(new Runnable() {
+            @Override
+            public void run() {
+                Hunspell hunspell = SpellDictionaries.load(context, name);
+                final boolean misspelled = hunspell != null
+                        && !hunspell.isCorrect(word);
+                String suggestion = null;
+                if (misspelled) {
+                    List<String> suggestions = hunspell.suggest(word, 1);
+                    if (!suggestions.isEmpty()) {
+                        suggestion = matchCase(word, suggestions.get(0),
+                                caseLocale);
+                    }
+                }
+                final String correction = word.equals(suggestion) ? null
+                        : suggestion;
+                mainHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        listener.onChecked(word, correction, misspelled);
+                    }
+                });
+            }
+        });
     }
 
     public void destroy() {

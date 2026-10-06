@@ -213,6 +213,20 @@
          android:title="@string/pref_auto_correct_title"
          android:summary="@string/pref_auto_correct_summary"
          android:defaultValue="@string/pref_auto_correct_default" />
+         <ListPreference
+             android:key="@string/pref_spell_checker_key"
+             android:title="@string/pref_spell_checker_title"
+             android:summary="@string/pref_spell_checker_summary"
+             android:entries="@array/spell_checker_entries"
+             android:entryValues="@array/spell_checker_values"
+             android:defaultValue="@string/pref_spell_checker_default" />
+         <Preference
+             android:key="@string/pref_import_dictionary_key"
+             android:title="@string/pref_import_dictionary_title"
+             android:summary="@string/pref_import_dictionary_summary" />
+         <Preference
+             android:key="@string/pref_remove_dictionary_key"
+             android:title="@string/pref_remove_dictionary_title" />
          <CheckBoxPreference
          android:key="@string/pref_double_space_period_key"
          android:title="@string/pref_double_space_period_title"

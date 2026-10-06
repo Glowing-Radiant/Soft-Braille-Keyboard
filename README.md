@@ -26,6 +26,15 @@ licensed under the GNU Lesser General Public License version 2.1 or
 later. See
 [`app/src/main/cpp/liblouis/COPYING.LESSER`](app/src/main/cpp/liblouis/COPYING.LESSER).
 
+Spell checking uses [Hunspell](https://hunspell.github.io), which is
+licensed under the Mozilla Public License 1.1, the GNU General Public
+License version 2 or later, or the GNU Lesser General Public License version
+2.1 or later. See [`app/src/main/cpp/hunspell`](app/src/main/cpp/hunspell).
+The bundled English dictionaries come from
+[LibreOffice](https://github.com/LibreOffice/dictionaries); their authors
+and licenses are in
+[`app/src/main/assets/dictionaries`](app/src/main/assets/dictionaries).
+
 ## Building the app
 
 You need JDK 17 or later and the Android SDK with:

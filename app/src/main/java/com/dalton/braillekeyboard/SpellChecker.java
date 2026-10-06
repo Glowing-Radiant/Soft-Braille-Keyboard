@@ -17,12 +17,15 @@
 package com.dalton.braillekeyboard;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
@@ -96,8 +99,12 @@ public class SpellChecker {
         }
     };
 
+    private final Context context;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final TextServicesManager textServices;
     private SpellCheckerSession spellChecker;
+    // The built-in dictionary used instead of the session, if any.
+    private String dictionary;
     private Locale locale;
     private SpellingSuggestionsReadyListener listener;
     private int cursor;
@@ -107,6 +114,7 @@ public class SpellChecker {
     private int endOffset;
 
     public SpellChecker(Context context) {
+        this.context = context.getApplicationContext();
         textServices = (TextServicesManager) context
                 .getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
         spellChecker = textServices.newSpellCheckerSession(null, null,
@@ -115,10 +123,12 @@ public class SpellChecker {
 
     /**
      * Sets the language to check, the braille table's, as auto-correct does
-     * so the two agree. If the spell checker lacks it, its own language
-     * setting is used.
+     * so the two agree. A built-in dictionary for it is used if there is
+     * one. Otherwise, if the spell checker lacks the language, its own
+     * language setting is used.
      */
     public void setLocale(Locale locale) {
+        dictionary = SpellDictionaries.find(context, locale);
         if (locale == null ? this.locale == null : locale.equals(this.locale)) {
             return;
         }
@@ -138,6 +148,10 @@ public class SpellChecker {
 
     public boolean checkSpelling(SpellingSuggestionsReadyListener listener,
             String text, int cursor, Direction direction) {
+        if (dictionary != null && text.length() > 0) {
+            checkWithDictionary(dictionary, listener, text, cursor, direction);
+            return true;
+        }
         if (isSpellCheckAvailable() && text.length() > 0) {
             this.cursor = cursor;
             this.direction = direction;
@@ -170,8 +184,114 @@ public class SpellChecker {
     }
 
     public boolean isSpellCheckAvailable() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
-                && spellChecker != null;
+        return dictionary != null
+                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
+                        && spellChecker != null);
+    }
+
+    // Finds the misspelled word in the given direction from the cursor with
+    // a built-in dictionary, in the background.
+    private void checkWithDictionary(final String name,
+            final SpellingSuggestionsReadyListener listener, final String text,
+            final int cursor, final Direction direction) {
+        SpellDictionaries.run(new Runnable() {
+            @Override
+            public void run() {
+                final Suggestion result = findMisspelling(
+                        SpellDictionaries.load(context, name), text, cursor,
+                        direction);
+                mainHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        listener.suggestionsReady(result);
+                    }
+                });
+            }
+        });
+    }
+
+    private static Suggestion findMisspelling(Hunspell hunspell, String text,
+            int cursor, Direction direction) {
+        if (hunspell == null) {
+            return null;
+        }
+        List<int[]> words = findWords(text);
+        if (direction == Direction.LEFT) {
+            Collections.reverse(words);
+        }
+        for (int[] word : words) {
+            if (!isDirection(direction, cursor, word[1] - word[0], word[0])) {
+                continue;
+            }
+            String spelling = text.substring(word[0], word[1]);
+            if (!hunspell.isCorrect(spelling)) {
+                Suggestion suggestion = new Suggestion(spelling, word[0]);
+                suggestion.results.addAll(hunspell.suggest(spelling,
+                        MAX_SUGGESTIONS));
+                return suggestion;
+            }
+            if (direction == Direction.UNDER_CURSOR) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Finds the words to check in a text: letters, with apostrophes inside
+     * them, that aren't part of something else such as 3rd, an address or a
+     * user name.
+     *
+     * @return The start and end of each word.
+     */
+    static List<int[]> findWords(String text) {
+        List<int[]> words = new ArrayList<int[]>();
+        int i = 0;
+        while (i < text.length()) {
+            if (!Character.isLetter(text.charAt(i))) {
+                i++;
+                continue;
+            }
+            int start = i;
+            while (i < text.length() && (isWordCharacter(text.charAt(i))
+                    || (isApostrophe(text.charAt(i)) && i + 1 < text.length()
+                            && Character.isLetter(text.charAt(i + 1))))) {
+                i++;
+            }
+            if (!joinsSomethingElse(text, start - 1, -1)
+                    && !joinsSomethingElse(text, i, 1)) {
+                words.add(new int[] { start, i });
+            }
+        }
+        return words;
+    }
+
+    private static boolean isWordCharacter(char c) {
+        int type = Character.getType(c);
+        return Character.isLetter(c) || type == Character.NON_SPACING_MARK
+                || type == Character.COMBINING_SPACING_MARK;
+    }
+
+    private static boolean isApostrophe(char c) {
+        return c == '\'' || c == '\u2019';
+    }
+
+    // Whether the character next to a word, at index, makes it part of
+    // something else: a digit or a symbol used in addresses, or a full stop
+    // or colon with more letters after it, as in example.com.
+    private static boolean joinsSomethingElse(String text, int index,
+            int step) {
+        if (index < 0 || index >= text.length()) {
+            return false;
+        }
+        char c = text.charAt(index);
+        if (Character.isDigit(c) || "@_/\\#".indexOf(c) >= 0) {
+            return true;
+        }
+        int beyond = index + step;
+        return (c == '.' || c == ':') && beyond >= 0
+                && beyond < text.length()
+                && Character.isLetterOrDigit(text.charAt(beyond));
     }
 
     /**
@@ -181,7 +301,8 @@ public class SpellChecker {
      */
     static boolean isMisspelled(int attributes) {
         return (attributes & SuggestionsInfo.RESULT_ATTR_IN_THE_DICTIONARY) == 0
-                && (attributes & SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0;
+                && (attributes
+                        & SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0;
     }
 
     private Suggestion compileSuggestions(SuggestionsInfo suggestionInfo,

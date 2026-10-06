@@ -79,6 +79,7 @@ public class PreferenceIME extends PreferenceActivity {
         // Opens the system text-to-speech settings screen.
         private static final String ACTION_TTS_SETTINGS = "com.android.settings.TTS_SETTINGS";
         private static final int REQUEST_IMPORT_SOUND_THEME = 1;
+        private static final int REQUEST_IMPORT_DICTIONARY = 2;
 
         private BrailleParser brailleParser;
         private TextToSpeech tts;
@@ -98,6 +99,7 @@ public class PreferenceIME extends PreferenceActivity {
             addOptions(keyboardEcho, KeyboardEcho.ALL);
             addSoundThemes();
             setUpSoundThemeImport();
+            setUpDictionaryImport();
             addTTSList(textToSpeechPreference);
             setUpSpeechPreferences();
 
@@ -234,11 +236,42 @@ public class PreferenceIME extends PreferenceActivity {
                     });
         }
 
+        private void setUpDictionaryImport() {
+            findPreference(getString(R.string.pref_import_dictionary_key))
+                    .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                            intent.addCategory(Intent.CATEGORY_OPENABLE);
+                            // Dictionary files have no common type.
+                            intent.setType("*/*");
+                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                            try {
+                                startActivityForResult(intent,
+                                        REQUEST_IMPORT_DICTIONARY);
+                            } catch (ActivityNotFoundException e) {
+                                toast(getString(R.string.dictionary_import_failed,
+                                        e.getMessage()));
+                            }
+                            return true;
+                        }
+                    });
+            findPreference(getString(R.string.pref_remove_dictionary_key))
+                    .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            chooseDictionaryToRemove();
+                            return true;
+                        }
+                    });
+        }
+
         @Override
         public void onActivityResult(int requestCode, int resultCode,
                 Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode != REQUEST_IMPORT_SOUND_THEME
+            if ((requestCode != REQUEST_IMPORT_SOUND_THEME
+                    && requestCode != REQUEST_IMPORT_DICTIONARY)
                     || resultCode != Activity.RESULT_OK || data == null) {
                 return;
             }
@@ -251,9 +284,86 @@ public class PreferenceIME extends PreferenceActivity {
             } else if (data.getData() != null) {
                 uris.add(data.getData());
             }
-            if (!uris.isEmpty()) {
+            if (uris.isEmpty()) {
+                return;
+            }
+            if (requestCode == REQUEST_IMPORT_DICTIONARY) {
+                importDictionary(uris);
+            } else {
                 askThemeName(uris);
             }
+        }
+
+        private void importDictionary(final List<Uri> uris) {
+            final Activity activity = getActivity();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String message;
+                    try {
+                        String name = SpellDictionaries.importDictionary(
+                                activity, uris);
+                        message = activity.getString(
+                                R.string.dictionary_imported,
+                                SpellDictionaries.displayName(name));
+                    } catch (SpellDictionaries.ImportException e) {
+                        message = e.getMessage();
+                    } catch (Exception e) {
+                        message = activity.getString(
+                                R.string.dictionary_import_failed,
+                                e.getMessage());
+                    }
+                    final String result = message;
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (isAdded()) {
+                                toast(result);
+                            }
+                        }
+                    });
+                }
+            }).start();
+        }
+
+        private void chooseDictionaryToRemove() {
+            final List<String> dictionaries = SpellDictionaries
+                    .listImported(getActivity());
+            if (dictionaries.isEmpty()) {
+                toast(getString(R.string.dictionary_none_imported));
+                return;
+            }
+            String[] names = new String[dictionaries.size()];
+            for (int i = 0; i < names.length; i++) {
+                names[i] = SpellDictionaries.displayName(dictionaries.get(i));
+            }
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.pref_remove_dictionary_title)
+                    .setItems(names, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            confirmRemoveDictionary(dictionaries.get(which));
+                        }
+                    }).setNegativeButton(android.R.string.cancel, null).show();
+        }
+
+        private void confirmRemoveDictionary(final String dictionary) {
+            final String name = SpellDictionaries.displayName(dictionary);
+            new AlertDialog.Builder(getActivity())
+                    .setMessage(getString(R.string.dictionary_remove_confirm,
+                            name))
+                    .setPositiveButton(R.string.dictionary_remove,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                        int which) {
+                                    SpellDictionaries.delete(getActivity(),
+                                            dictionary);
+                                    toast(getString(R.string.dictionary_removed,
+                                            name));
+                                }
+                            })
+                    .setNegativeButton(android.R.string.cancel, null).show();
         }
 
         private void askThemeName(final List<Uri> uris) {

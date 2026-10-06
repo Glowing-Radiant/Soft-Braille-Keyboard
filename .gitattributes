@@ -1,0 +1,3 @@
+# Dictionaries are bundled byte for byte.
+*.dic -text
+*.aff -text
