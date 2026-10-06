@@ -1970,6 +1970,8 @@ public class ActionHandler {
             }
         };
 
+        // Checked in the language of the braille table, like auto-correct.
+        spellChecker.setLocale(listener.getLocale());
         String text = getInput(Granularity.ALL);
         spellingDirection = direction;
         directionThroughSuggestionList = move;

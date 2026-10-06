@@ -18,6 +18,7 @@ package com.dalton.braillekeyboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -95,7 +96,9 @@ public class SpellChecker {
         }
     };
 
-    private final SpellCheckerSession spellChecker;
+    private final TextServicesManager textServices;
+    private SpellCheckerSession spellChecker;
+    private Locale locale;
     private SpellingSuggestionsReadyListener listener;
     private int cursor;
     private Direction direction;
@@ -104,10 +107,33 @@ public class SpellChecker {
     private int endOffset;
 
     public SpellChecker(Context context) {
-        final TextServicesManager tsm = (TextServicesManager) context
+        textServices = (TextServicesManager) context
                 .getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        spellChecker = tsm.newSpellCheckerSession(null, null,
+        spellChecker = textServices.newSpellCheckerSession(null, null,
                 spellCheckerListener, true);
+    }
+
+    /**
+     * Sets the language to check, the braille table's, as auto-correct does
+     * so the two agree. If the spell checker lacks it, its own language
+     * setting is used.
+     */
+    public void setLocale(Locale locale) {
+        if (locale == null ? this.locale == null : locale.equals(this.locale)) {
+            return;
+        }
+        this.locale = locale;
+        SpellCheckerSession session = locale == null ? null : textServices
+                .newSpellCheckerSession(null, locale, spellCheckerListener,
+                        false);
+        if (session == null) {
+            session = textServices.newSpellCheckerSession(null, null,
+                    spellCheckerListener, true);
+        }
+        if (spellChecker != null) {
+            spellChecker.close();
+        }
+        spellChecker = session;
     }
 
     public boolean checkSpelling(SpellingSuggestionsReadyListener listener,
@@ -148,9 +174,19 @@ public class SpellChecker {
                 && spellChecker != null;
     }
 
+    /**
+     * Whether a spell checker's result means the word is misspelled. Words
+     * it doesn't know but that don't look like typos, such as names, are
+     * not.
+     */
+    static boolean isMisspelled(int attributes) {
+        return (attributes & SuggestionsInfo.RESULT_ATTR_IN_THE_DICTIONARY) == 0
+                && (attributes & SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0;
+    }
+
     private Suggestion compileSuggestions(SuggestionsInfo suggestionInfo,
             int length, int offset) {
-        if (suggestionInfo.getSuggestionsAttributes() == SuggestionsInfo.RESULT_ATTR_IN_THE_DICTIONARY
+        if (!isMisspelled(suggestionInfo.getSuggestionsAttributes())
                 || !isPotentialWord(text.substring(offset, offset + length))) {
             return null;
         }

@@ -94,7 +94,8 @@ public class AutoCorrect {
                     }
                 }
             }
-            if (info == null || !isMisspelled(info.getSuggestionsAttributes())) {
+            if (info == null || !SpellChecker
+                    .isMisspelled(info.getSuggestionsAttributes())) {
                 request.listener.onChecked(request.word, null, false);
                 return;
             }
@@ -182,12 +183,6 @@ public class AutoCorrect {
             session.close();
             session = null;
         }
-    }
-
-    private static boolean isMisspelled(int attributes) {
-        return (attributes & SuggestionsInfo.RESULT_ATTR_IN_THE_DICTIONARY) == 0
-                && (attributes & (SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO
-                        | SuggestionsInfo.RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS)) != 0;
     }
 
     /**
