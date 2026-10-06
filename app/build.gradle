@@ -13,7 +13,7 @@ android {
         targetSdk 35
         // The release workflow passes the version from the git tag.
         versionCode project.findProperty('sbkVersionCode')?.toInteger() ?: 57
-        versionName project.findProperty('sbkVersionName') ?: "6.0.0"
+        versionName project.findProperty('sbkVersionName') ?: "7.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // Lets resources name this app's package, see the debug build type.
