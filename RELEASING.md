@@ -41,7 +41,14 @@ Never commit the keystore; `*.jks` is ignored by git.
 
 ## Publishing a release
 
-Push a tag named after the version:
+First write the release notes in `release-notes/VERSION.md`, for example
+`release-notes/3.2.0.md`, and commit them. The workflow refuses to release a
+version without notes. Write them for the people using the keyboard: what
+they can now do, what works differently and what was fixed, under the
+headings New, Changed, Fixed and Removed as needed. The release shows them
+followed by GitHub's link to the full list of changes.
+
+Then push a tag named after the version:
 
 ```bash
 git tag v3.2.0

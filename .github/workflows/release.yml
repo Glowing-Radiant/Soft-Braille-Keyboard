@@ -52,6 +52,11 @@ jobs:
           echo "::error::'$version' isn't a version like 3.2.0 or 3.2.0-beta1"
           exit 1
         fi
+        # Every release has notes written for its users.
+        if [ ! -s "release-notes/$version.md" ]; then
+          echo "::error::Write release-notes/$version.md first. See RELEASING.md."
+          exit 1
+        fi
         echo "name=$version" >> "$GITHUB_OUTPUT"
         # Android only installs updates with a higher versionCode, so derive
         # it from the ever increasing run number of this workflow.
@@ -95,6 +100,8 @@ jobs:
         sha256sum "$apk" > "$apk.sha256"
         prerelease=""
         if [[ "$VERSION_NAME" == *-* ]]; then prerelease="--prerelease"; fi
+        # The release notes, followed by GitHub's link to the changes.
         gh release create "v$VERSION_NAME" "$apk" "$apk.sha256" \
           --title "Soft Braille Keyboard $VERSION_NAME" \
+          --notes-file "release-notes/$VERSION_NAME.md" \
           --target "$GITHUB_SHA" --generate-notes $prerelease
