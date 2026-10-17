@@ -27,14 +27,16 @@ public class TableInfo {
     private final Locale locale;
     private final boolean eightDot;
     private final int grade;
+    private final String variant;
     private final String fileName;
 
     public TableInfo(String id, Locale locale, boolean eightDot, int grade,
-            String fileName) {
+            String variant, String fileName) {
         this.id = id;
         this.locale = locale;
         this.eightDot = eightDot;
         this.grade = grade;
+        this.variant = variant != null ? variant : "";
         this.fileName = fileName;
     }
 
@@ -54,6 +56,14 @@ public class TableInfo {
     /** Contraction grade, 0 for computer braille tables. */
     public int getGrade() {
         return grade;
+    }
+
+    /**
+     * Tells apart tables for the same locale and grade, such as "UEB" for
+     * Unified English Braille. Empty if there is none.
+     */
+    public String getVariant() {
+        return variant;
     }
 
     /** The liblouis table file name. */

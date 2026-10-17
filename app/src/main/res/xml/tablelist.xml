@@ -128,12 +128,14 @@
          locale="en_US"
          dots="6"
          grade="1"
+         variant="EBAE"
          fileName="en-us-g1.ctb" />
     <table
          id="en-US-g2"
          locale="en_US"
          dots="6"
          grade="2"
+         variant="EBAE"
          fileName="en-us-g2.ctb" />
 
     <!-- Estonian -->

@@ -487,8 +487,14 @@ public class PreferenceIME extends PreferenceActivity {
                 boolean verbose, String defaultId) {
             for (TableInfo table : tables) {
                 String text = table.getLocale().getDisplayLanguage();
-                String country = table.getLocale().getDisplayCountry();
-                text += (country.equals("") ? "" : " (" + country + ")");
+                // Such as "United States, EBAE", to tell the old American
+                // braille apart from UEB.
+                String details = table.getLocale().getDisplayCountry();
+                if (table.getVariant().length() > 0) {
+                    details += (details.equals("") ? "" : ", ")
+                            + table.getVariant();
+                }
+                text += (details.equals("") ? "" : " (" + details + ")");
                 if (verbose) {
                     String grade = getActivity().getString(
                             R.string.grade_computer);

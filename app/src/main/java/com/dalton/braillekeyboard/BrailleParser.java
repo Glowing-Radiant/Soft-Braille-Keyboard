@@ -393,14 +393,16 @@ public class BrailleParser {
     }
 
     /**
-     * Describes a table to the user, such as "English United States Grade 2".
+     * Describes a table to the user, such as "English United States EBAE
+     * Grade 2".
      */
     public static String describeTable(Context context, TableInfo table) {
         String result = String.format(
                 table.getLocale(),
-                "%s %s %s",
+                "%s %s %s %s",
                 table.getLocale().getDisplayLanguage(),
                 table.getLocale().getDisplayCountry(),
+                table.getVariant(),
                 table.isEightDot() ? "" : String.format(
                         context.getString(R.string.grade_table),
                         table.getGrade()));

@@ -133,12 +133,14 @@ public class TranslatorClient {
                 boolean eightDot = "8".equals(
                         parser.getAttributeValue(null, "dots"));
                 String grade = parser.getAttributeValue(null, "grade");
+                String variant = parser.getAttributeValue(null, "variant");
                 if (id == null || locale == null || fileName == null) {
                     Log.w(TAG, "Skipping incomplete table entry " + id);
                     continue;
                 }
                 result.add(new TableInfo(id, parseLocale(locale), eightDot,
-                        grade != null ? Integer.parseInt(grade) : 0, fileName));
+                        grade != null ? Integer.parseInt(grade) : 0, variant,
+                        fileName));
             }
         } finally {
             parser.close();
