@@ -752,9 +752,10 @@ public class ActionHandler {
             backspace(context, Granularity.CHARACTER, false);
             break;
         case SUBMIT_TEXT:
-            if (listener.performEditorAction()) {
-                listener.hideKeyboard();
-            } else {
+            // The keyboard stays open, as in TalkBack's braille keyboard, so
+            // the next message can be typed straight away. Apps that are done
+            // with the keyboard, such as after a search, hide it themselves.
+            if (!listener.performEditorAction()) {
                 speak(context.getString(R.string.no_editor_action));
             }
             break;

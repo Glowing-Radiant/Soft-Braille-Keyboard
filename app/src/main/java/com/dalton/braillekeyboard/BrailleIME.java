@@ -59,6 +59,8 @@ import com.googlecode.eyesfree.braille.translate.TableInfo;
  * 
  */
 public class BrailleIME extends InputMethodService implements KeyboardListener {
+    private static final long EDITOR_ACTION_DELAY_MS = 50;
+
     private final List<Byte> cells = new ArrayList<Byte>();
     private final StringBuilder composingText = new StringBuilder();
     // With a contracted table the cells of a word are held back until the
@@ -864,10 +866,32 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
 
     @Override
     public boolean performEditorAction() {
+        final InputConnection ic = getCurrentInputConnection();
+        EditorInfo info = getCurrentInputEditorInfo();
+        if (ic == null || info == null || brailleView == null) {
+            return false;
+        }
+        final int action = info.imeOptions & EditorInfo.IME_MASK_ACTION;
+        // A field that holds many lines and names no action, like many
+        // messaging apps' fields, has nothing to submit: its "action" would
+        // only add a line or do nothing.
+        if (action == EditorInfo.IME_ACTION_NONE
+                || (action == EditorInfo.IME_ACTION_UNSPECIFIED
+                        && isMultiLine(info))) {
+            return false;
+        }
         finishComposingText();
-        // Not from the enter key, so the action runs even in fields that
-        // don't want enter to trigger it, like many messaging apps.
-        return sendDefaultEditorAction(false);
+        // Some apps, such as Google Messages, check what there is to send
+        // asynchronously, so the action follows the text after a moment, as
+        // in TalkBack's braille keyboard. It runs even in fields that don't
+        // want the enter key to trigger it, like many messaging apps.
+        brailleView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ic.performEditorAction(action);
+            }
+        }, EDITOR_ACTION_DELAY_MS);
+        return true;
     }
 
     @Override
@@ -890,12 +914,16 @@ public class BrailleIME extends InputMethodService implements KeyboardListener {
         }
         // The enter key would perform the editor's action in many apps, like
         // sending a message, so commit the line break as text.
-        if ((info.inputType & (InputType.TYPE_TEXT_FLAG_MULTI_LINE
-                | InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE)) == 0) {
+        if (!isMultiLine(info)) {
             return false;
         }
         ic.commitText("\n", 1);
         return true;
+    }
+
+    private static boolean isMultiLine(EditorInfo info) {
+        return (info.inputType & (InputType.TYPE_TEXT_FLAG_MULTI_LINE
+                | InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE)) != 0;
     }
 
     @Override
