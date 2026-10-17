@@ -310,6 +310,17 @@
 <p>Turn these gestures off. Search the phone's settings for "screenshot" and "split screen" and turn off every gesture that uses three fingers. On Realme, Oppo and OnePlus phones they are usually under Additional settings, Screenshot.</p>
 <h3 id="troubleshooting-talkback">TalkBack reads the screen instead of typing</h3>
 <p>Turn on <a href="#talkback-enable">touch pass-through</a>. If typing is unreliable while another app that uses touch pass-through is active, turn that app's service off.</p>
+<p>If touch pass-through is off, the keyboard tells you when you touch it. Double tap it to open the accessibility settings and turn touch pass-through on again.</p>
+<h3 id="troubleshooting-passthrough-off">Touch pass-through keeps turning off</h3>
+<p>Android turns off an app's accessibility services whenever the app is force stopped. Some phones, notably Xiaomi, Redmi and POCO phones, force stop apps by themselves to save battery or memory, so touch pass-through turns off now and then. To stop this on those phones:</p>
+<ol>
+  <li>Open Settings, Apps, Manage apps, Soft Braille Keyboard.</li>
+  <li>Turn on <strong>Autostart</strong>.</li>
+  <li>Choose <strong>Battery saver</strong>, or <strong>Battery</strong>, and select <strong>No restrictions</strong>.</li>
+  <li>Don't use <strong>Force stop</strong> on the keyboard, and keep it out of cleaner apps and the Security app's cleanup.</li>
+</ol>
+<p>Other phones have similar settings, often called battery optimisation, background activity or auto launch: allow the keyboard to run in the background.</p>
+<p>If the switch for touch pass-through is greyed out or the phone says the setting is restricted, the phone is blocking accessibility services of apps not installed from an app store. Allow restricted settings as described in <a href="#talkback-enable">Turning on touch pass-through</a>. Some phones block it again after you install an update by opening the APK file. Installing updates with an app store app such as Obtainium avoids this.</p>
 
 <h2 id="feedback">11. Problems and feedback</h2>
 <p>Please report problems and ideas on the project's issue tracker: <a href="https://github.com/Glowing-Radiant/Soft-Braille-Keyboard/issues">github.com/Glowing-Radiant/Soft-Braille-Keyboard/issues</a>.</p>

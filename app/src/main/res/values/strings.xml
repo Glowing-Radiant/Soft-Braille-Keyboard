@@ -297,7 +297,9 @@
     <string name="touch_passthrough_service_description">Lets you type braille with several fingers while TalkBack or another screen reader has explore by touch turned on.\n\nWhile the Soft Braille Keyboard is expanded on screen, touches on the keyboard go straight to it instead of to the screen reader. As soon as the keyboard is shrunk or closed, the screen reader works normally again. This service does not read your screen or monitor what you do.</string>
     <string name="button_touch_passthrough">Enable touch pass-through for TalkBack</string>
     <string name="braille_keyboard_ready">Braille keyboard ready. Use six or eight finger positions to type in braille.</string>
-    <string name="touch_passthrough_needed">TalkBack is getting your touches instead of the keyboard. To type braille, turn on Soft Braille Keyboard touch pass-through in accessibility settings.</string>
+    <string name="touch_passthrough_needed">TalkBack is getting your touches instead of the keyboard. To type braille, turn on Soft Braille Keyboard touch pass-through in accessibility settings. Double tap to open them.</string>
+    <string name="touch_passthrough_turned_off">Touch pass-through has been turned off, so TalkBack is getting your touches. Some phones, such as Xiaomi phones, turn it off when they close apps to save battery. Double tap to open accessibility settings and turn it on again. The user guide explains how to stop this.</string>
+    <string name="pref_touch_passthrough_used_key" translatable="false">TOUCH_PASSTHROUGH_USED</string>
 
     <!-- Text to speech settings. [CHAR LIMIT="NONE"] -->
     <string name="pref_speak_through_screen_reader_key" translatable="false">SPEAK_THROUGH_SCREEN_READER</string>

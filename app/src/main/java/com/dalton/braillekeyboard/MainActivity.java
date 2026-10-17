@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 
     // Triggered when the user clicks the enable touch pass-through button.
     public void onTouchPassthroughSettings(View view) {
-        startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
+        TouchPassthroughService.openSettings(this);
     }
 
     // Triggered when the button to change default input method is pressed.

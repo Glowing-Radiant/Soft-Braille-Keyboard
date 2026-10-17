@@ -19,13 +19,17 @@ package com.dalton.braillekeyboard;
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.annotation.TargetApi;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.graphics.Region;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
@@ -73,6 +77,11 @@ public class TouchPassthroughService extends AccessibilityService {
     private static final long[] AFTER_TOUCH_DELAYS_MS = { 5, 10, 15, 20, 25,
             30, 35, 40, 45, 50, 60, 70, 80, 100, 150, 250, 400, 700, 1000,
             1500, 2500, 4000 };
+    // Extras that the settings app reads to scroll to and highlight an item.
+    private static final String EXTRA_FRAGMENT_ARG_KEY =
+            ":settings:fragment_args_key";
+    private static final String EXTRA_SHOW_FRAGMENT_ARGUMENTS =
+            ":settings:show_fragment_args";
 
     private static final Handler mainHandler = new Handler(
             Looper.getMainLooper());
@@ -135,6 +144,31 @@ public class TouchPassthroughService extends AccessibilityService {
      */
     public static boolean isRunning() {
         return instance != null;
+    }
+
+    /**
+     * Returns true if the service has been on since the app was installed,
+     * so if it isn't running now it was turned off, perhaps by the phone.
+     */
+    public static boolean wasUsed(Context context) {
+        return Options.getBooleanPreference(context,
+                R.string.pref_touch_passthrough_used_key, false);
+    }
+
+    /**
+     * Opens the accessibility settings so the user can turn this service on.
+     * The settings of many phones scroll to it and highlight it.
+     */
+    public static void openSettings(Context context) {
+        String key = new ComponentName(context, TouchPassthroughService.class)
+                .flattenToString();
+        Bundle args = new Bundle();
+        args.putString(EXTRA_FRAGMENT_ARG_KEY, key);
+        Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+        intent.putExtra(EXTRA_FRAGMENT_ARG_KEY, key);
+        intent.putExtra(EXTRA_SHOW_FRAGMENT_ARGUMENTS, args);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     /**
@@ -221,6 +255,8 @@ public class TouchPassthroughService extends AccessibilityService {
         appliedDisplayId = -1;
         appliedBounds = null;
         apply();
+        Options.writeBooleanPreference(this,
+                R.string.pref_touch_passthrough_used_key, true);
         registerListeners();
         updateJieshuoOn();
     }

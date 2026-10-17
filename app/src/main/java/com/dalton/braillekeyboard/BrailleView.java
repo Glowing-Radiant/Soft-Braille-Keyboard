@@ -28,6 +28,7 @@ import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.AttributeSet;
@@ -40,6 +41,7 @@ import android.view.SoundEffectConstants;
 import android.view.Surface;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.dalton.braillekeyboard.Options.GestureStyle;
 import com.dalton.braillekeyboard.Options.KeyboardFeedback;
@@ -269,6 +271,18 @@ public class BrailleView extends View {
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if (!shrinkKeyboard) {
+            // What the screen reader says about the keyboard, whether or not
+            // the circles are shown.
+            if (accessibilityManager.isTouchExplorationEnabled()) {
+                setContentDescription(TouchPassthroughService.isRunning()
+                        ? getContext().getString(
+                                R.string.braille_keyboard_ready)
+                        : getTouchExplorationHint());
+            } else {
+                setContentDescription(null);
+            }
+        }
         if (!shrinkKeyboard
                 && displayParams != null
                 && Options.getBooleanPreference(
@@ -278,15 +292,6 @@ public class BrailleView extends View {
                                 R.string.pref_show_circles_default)))) {
             // We should show a visual representation of the view according to
             // user preference.
-            
-            if (accessibilityManager.isTouchExplorationEnabled()) {
-                setContentDescription(TouchPassthroughService.isRunning() ? getContext()
-                        .getString(R.string.braille_keyboard_ready)
-                        : getTouchExplorationHint());
-            } else {
-                setContentDescription(null);
-            }
-
             List<Coords> keys = getKeys();
             // For each dot draw a circle on the screen at it's position and
             // write the corresponding dot number in the circle.
@@ -372,9 +377,43 @@ public class BrailleView extends View {
 
     // What a screen reader user must do for the keyboard to get their touches.
     private String getTouchExplorationHint() {
-        return getContext().getString(
-                TouchPassthroughService.isSupported() ? R.string.touch_passthrough_needed
-                        : R.string.switch_off_talkback);
+        if (!TouchPassthroughService.isSupported()) {
+            return getContext().getString(R.string.switch_off_talkback);
+        }
+        // Some phones turn accessibility services off when they close apps,
+        // so tell those who had it on what happened.
+        int hint = TouchPassthroughService.wasUsed(getContext())
+                ? R.string.touch_passthrough_turned_off
+                : R.string.touch_passthrough_needed;
+        return getContext().getString(hint);
+    }
+
+    // While the screen reader gets the touches because touch pass-through is
+    // off, double tapping the keyboard opens the settings to turn it on.
+    private boolean opensTouchPassthroughSettings() {
+        return !shrinkKeyboard && TouchPassthroughService.isSupported()
+                && !TouchPassthroughService.isRunning()
+                && accessibilityManager.isTouchExplorationEnabled();
+    }
+
+    @Override
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+        super.onInitializeAccessibilityNodeInfo(info);
+        if (opensTouchPassthroughSettings()) {
+            info.setClickable(true);
+            info.addAction(
+                    AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
+        }
+    }
+
+    @Override
+    public boolean performAccessibilityAction(int action, Bundle arguments) {
+        if (action == AccessibilityNodeInfo.ACTION_CLICK
+                && opensTouchPassthroughSettings()) {
+            TouchPassthroughService.openSettings(getContext());
+            return true;
+        }
+        return super.performAccessibilityAction(action, arguments);
     }
 
     @Override
